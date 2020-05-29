@@ -1,0 +1,72 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div class="newsletter">
+  <div class="wrapper">
+    {% unless section.settings.heading == blank %}
+      <div class="section-header text-center">
+        <h2 class="h1 section-header__title">{{ section.settings.heading | escape }}</h2>
+        {% if section.settings.subheading == blank %}
+          <hr class="hr--small">
+        {% endif %}
+      </div>
+    {% endunless %}
+    {% unless section.settings.subheading == blank %}
+      <div class="section-subheading text-center">
+        <p>{{ section.settings.subheading | escape }}</p>
+        <hr class="hr--small">
+      </div>
+    {% endunless %}
+    {% form 'customer' %}
+      {{ form.errors | default_errors }}
+      {% if form.posted_successfully? %}
+        <div class="newsletter--form">
+          <div class="note form-success">{% comment %}ly_i18n_replace_for_[ 'general.newsletter_form.newsletter_confirmation' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.newsletter_form.newsletter_confirmation' | t }}{% endcapture %}{% include 'ly-static-string' with '8850601' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</div>
+        </div>
+      {% else %}
+        <label for="Email" class="newsletter__label hidden-label">{% comment %}ly_i18n_replace_for_[ 'general.newsletter_form.newsletter_email' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.newsletter_form.newsletter_email' | t }}{% endcapture %}{% include 'ly-static-string' with '8850602' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <div class="newsletter--form">
+          <div class="input-group">
+            <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{% comment %}ly_i18n_replace_for_[ 'general.newsletter_form.newsletter_placeholder' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.newsletter_form.newsletter_placeholder' | t }}{% endcapture %}{% include 'ly-static-string' with '8850603' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" name="contact[email]" id="Email" class="input-group-field newsletter__input" autocorrect="off" autocapitalize="off">
+            <span class="input-group-btn">
+              <button type="submit" class="btn newsletter__submit" name="commit" id="Subscribe">
+                <span class="newsletter__submit-text--large">{% comment %}ly_i18n_replace_for_[ 'general.newsletter_form.submit' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.newsletter_form.submit' | t }}{% endcapture %}{% include 'ly-static-string' with '8850604' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+                <span class="newsletter__submit-text--small">
+                  <span class="icon icon-arrow-right" aria-hidden="true"></span>
+                </span>
+              </button>
+            </span>
+          </div>
+        </div>
+      {% endif %}
+    {% endform %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Newsletter",
+    "class": "index-newsletter-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Subscribe to our newsletter"
+      },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading",
+        "default": "A short sentence describing what someone will receive by subscribing"
+      },
+      {
+        "type": "paragraph",
+        "content": "Any customers who sign up will have an account created for them in Shopify. [View customers](/admin/customers?query=&accepts_marketing=1)"
+      }
+    ],
+    "presets": [{
+      "name": "Newsletter signup",
+      "category": "Promotional"
+    }],
+    "blocks" : []
+  }
+{% endschema %}

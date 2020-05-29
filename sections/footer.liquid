@@ -1,0 +1,578 @@
+<svg class="defs" style="position: absolute;">
+  <defs>
+    <clipPath id="myPath" clipPathUnits="objectBoundingBox">
+      <path d="M0.5,1 C0.5,1,0,0.7,0,0.3 A0.25,0.25,1,1,1,0.5,0.3 A0.25,0.25,1,1,1,1,0.3 C1,0.7,0.5,1,0.5,1 Z"></path>
+    </clipPath>
+  </defs>
+</svg>
+
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+{%- assign social_icons = false -%}
+
+{% if
+  settings.social_twitter_link != blank
+  or settings.social_facebook_link != blank
+  or settings.social_pinterest_link != blank
+  or settings.social_instagram_link != blank
+  or settings.social_tumblr_link != blank
+  or settings.social_snapchat_link != blank
+  or settings.social_youtube_link != blank
+  or settings.social_vimeo_link != blank
+  or template.name == 'article'
+  or template.name == 'blog'
+%}
+  {%- assign social_icons = true -%}
+{% endif %}
+<div class="footer-real-bg"></div>
+<div class="footer-real" style="background-image: url('{{ section.settings.top-mg | img_url: '2048x' }}');">
+    <div class="inner-real">
+    <h1><ly-as-8850552>Nom d'un chien, n'hésitez plus !<br></ly-as-8850552></h1>
+      <br>
+    <h4><ly-as-8850553>Tous nos produits sont certifiés 100% bio et made in France.</ly-as-8850553></h4>
+    <h4><ly-as-8850553>1€ reversé à la Société Protectrice des Animaux sur chaque commande !</ly-as-8850553></h4>
+  </div>
+    <!--<div class="button-real">
+      <a href="#"><ly-as-8850554>Voir nos produits</ly-as-8850554></a>
+    </div>-->
+  </div>
+<div class="middle-bg" style="background-image: url('{{ section.settings.middle-bg | img_url: '2048x' }}');">
+
+
+
+  <h4 class="middle-text"><div><span class="rotated_line" style="position:relative;"><strike><ly-as-8850555>Chien</ly-as-8850555></strike></span> = <span class="border-line"><strike><ly-as-8850556>Meilleur</ly-as-8850556></strike></span></div><div><span class="border-line"><strike><ly-as-8850557>Ami de l'homme</ly-as-8850557></strike></span></div></h4>
+  <span class="middle-text1"><ly-as-8850558>Sushi 4 Ever</ly-as-8850558></span>
+  <span class="middle-text2"><div><ly-as-8850559>Les chiens font</ly-as-8850559></div><div> <ly-as-8850560>pas des chats</ly-as-8850560></div></span>
+  <span class="middle-text3"><ly-as-8850561>Les chats domineront la planete</ly-as-8850561></span>
+   <span class="middle-text4">
+  <img src="{{ section.settings.heart-mg | img_url: '100x' }}" />
+  </span>
+
+
+</div>
+<footer class="site-footer" role="contentinfo" style="background-image: url('{{ section.settings.footer-bg | img_url: '2048x' }}');">
+  <div class="page-width">
+    <div class="grid grid--no-gutters ler-ftr">
+         <div class="grid__item large--three-tenths logo-footer-div {% if section.settings.footer_newsletter_enable and section.settings.footer_linklist_two != blank %} medium-up--one-quarter{% elsif section.settings.footer_linklist_two == blank and section.settings.footer_newsletter_enable %} medium-up--one-half{% else %} text-cente{% endif %}">
+          {% if section.settings.logo %}
+            {%- assign img_url = section.settings.logo | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            <a href="/" itemprop="url" class="site-header__logo-image{% if section.settings.align_logo == 'center' %} site-header__logo-image--centered{% endif %}">
+              {% capture logo_alt %}{{ section.settings.logo.alt | default: langify_shop_name }}{% endcapture %}
+              <img class="lazyload js tedet"
+                   src="{{ section.settings.logo | img_url: '300x300' }}"
+                   data-src="{{ img_url }}"
+                   data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                   data-aspectratio="{{ section.settings.logo.aspect_ratio }}"
+                   data-sizes="auto"
+                   alt="{{ logo_alt | escape }}"
+                   style="">
+              <noscript>
+                {% capture image_size %}{{ section.settings.logo_max_width | escape }}x{% endcapture %}
+                <img src="{{ section.settings.logo | img_url: image_size }}"
+                     srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+                     alt="{{ section.settings.logo.alt | default: langify_shop_name }}"
+                     itemprop="logo"
+                     style="">
+              </noscript>
+            </a>
+           {% endif %}
+          
+<!--         <div class="grid__item{% if section.settings.footer_newsletter_enable %} medium-up--one-half{% else %} text-center{% endif %}"> -->
+ 
+         {% include 'social-icons' %}
+         </div>
+      
+      <div class="grid__item large--one-fifth footer-center tetd  {% if section.settings.footer_newsletter_enable and section.settings.footer_linklist_two != blank %} medium-up--one-quarter{% elsif section.settings.footer_linklist_two == blank and section.settings.footer_newsletter_enable %} medium-up--one-half{% else %} text-cente{% endif %}">
+        {% comment %}
+       <h3 class="footer_link_title">Get in touch</h3>
+        <img class="addimg" src="{{ section.settings.add-bg | img_url: '100x' }}" /><p class="footer-address addre">Avenida La Mancha <br> Altos de la Bahia F9 <br> Manz 14 n 210 <br> 03183 Torrevieja (Alicante)</p>
+        <p class="footer-address tel"><img src="{{ section.settings.tel-bg | img_url: '100x' }}" /> 01-800 123-4567</p>
+       <p class="footer-address email"> <img src="{{ section.settings.emai-bg | img_url: '100x' }}" /> info@popyourpup.cpm</p>
+      {% endcomment %}
+        {%- assign footer_linklist = section.settings.footer_linklist -%}
+        {% if linklists[footer_linklist].links.size > 0 %}
+           <div class="last_block_heading_div">
+             <h3 class="footer_link_title"> {% comment %}ly_code_replace_for_[ linklists[footer_linklist].title ]_begin{% endcomment %}{% include 'ly-title' with linklists[footer_linklist] %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %} <span class="btn_click hide"><i class="fa fa-angle-down"></i></span> </h3>
+	      </div>
+        <ul class="site-footer__linklist{% unless section.settings.footer_newsletter_enable %} site-footer__linklist--center{% endunless %}">
+          
+            {% for link in linklists[footer_linklist].links %}
+              <li class="site-footer__linklist-item">
+<!--               <i class="fa fa-stop" aria-hidden="true"></i>  -->
+                <a href="{{ link.url }}">{% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+
+      <div class="grid__item large--one-fifth{% if section.settings.footer_newsletter_enable and section.settings.footer_linklist != blank %} medium-up--one-quarter{% elsif section.settings.footer_linklist == blank and section.settings.footer_newsletter_enable %} medium-up--one-half{% else %} text-cente{% endif %} footer-center">
+        {%- assign footer_linklist_two = section.settings.footer_linklist_two -%}
+        {% if linklists[footer_linklist_two].links.size > 0 %}
+         <div class="last_block_heading_div">
+	                  <h3 class="footer_link_title"> {% comment %}ly_code_replace_for_[ linklists[footer_linklist_two].title ]_begin{% endcomment %}{% include 'ly-title' with linklists[footer_linklist_two] %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}  <span class="btn_click hide"><i class="fa fa-angle-down"></i></span></h3>
+	      </div>
+        
+        <ul class="site-footer__linklist{% unless section.settings.footer_newsletter_enable %} site-footer__linklist--center{% endunless %}">
+             
+            {% for link in linklists[footer_linklist_two].links %}
+              <li class="site-footer__linklist-item">
+<!--            <i class="fa fa-stop" aria-hidden="true"></i> -->
+                <a href="{{ link.url }}">{% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+       {% comment %}
+      <div class="grid__item large--one-quarter{% if section.settings.footer_newsletter_enable and section.settings.footer_linklist != blank %} medium-up--one-quarter{% elsif section.settings.footer_linklist == blank and section.settings.footer_newsletter_enable %} medium-up--one-half{% else %} text-cente{% endif %}">
+        {%- assign footer_linklist_three = section.settings.footer_linklist_three -%}
+        {% if linklists[footer_linklist_three].links.size > 0 %}
+           <div class="last_block_heading_div">
+	                  <h3> {% comment %}ly_code_replace_for_[ linklists[footer_linklist_three].title ]_begin{% endcomment %}{% include 'ly-title' with linklists[footer_linklist_three] %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h3>
+	        </div>
+        
+        <ul class="site-footer__linklist{% unless section.settings.footer_newsletter_enable %} site-footer__linklist--center{% endunless %}">
+            
+            {% for link in linklists[footer_linklist_three].links %}
+              <li class="site-footer__linklist-item">
+<!--            <i class="fa fa-stop" aria-hidden="true"></i>  -->
+                <a href="{{ link.url }}">{% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+      
+   {% endcomment %}
+      
+      {% if section.settings.footer_newsletter_enable %}
+        <div class="grid__item large--three-tenths Newsletter footer-center">
+          <div class="site-footer__newslette">
+            <label for="Email" class="footer_link_title">{{ section.settings.footer_address_bar_title | escape }}</label>
+               <p> {{ section.settings.footer_address | escape }} </p>
+            {% form 'customer' %}
+              {{ form.errors | default_errors }}
+              {% if form.posted_successfully? %}
+                
+                          <p  class="form--success" style="color:green"><ly-as-8850562>Merci ! Nous vous tiendrons informé régulièrement, pensez à vérifiez vos mails de temps en temps !</ly-as-8850562></p>
+              {% else %}
+                
+            <div class="input-group nl-form">
+               
+              <input type="hidden" name="contact[tags]" value="newsletter">
+                  <input type="email"
+                    name="contact[email]"
+                    id="Email"
+                    class="input-group__field newsletter__input"
+                
+                    placeholder="<ly-as-8850565>Votre adresse mail ...</ly-as-8850565>"
+                    autocorrect="off"
+                    autocapitalize="off">
+                </div>
+              <span class="input-group__btn">
+                    <button type="submit" class="newsletter__submit" name="commit" id="Subscribe">
+                      <span class="newsletter__submit-text--large">{% comment %}ly_i18n_replace_for_[ 'general.newsletter_form.submit' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.newsletter_form.submit' | t }}{% endcapture %}{% include 'ly-static-string' with '8850566' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+                    </button>
+                  </span> 
+                 
+              {% endif %}
+            {% endform %}
+          </div>
+      {% comment %}
+          {% include 'social-icons' %}
+      {% endcomment %}
+        </div>
+      {% endif %}
+      
+    
+      {% comment %}
+         <div class="grid__item medium-up--one-quarter text-cente contact-us">
+	                <div class="contact-us_heading">
+	                  <h3>{{ section.settings.footer_address_bar_title | escape }}</h3>
+	                </div>
+	                <div class="contact-us_list">
+	                	<ul>
+                          
+		                    <li class="contact-div">
+                         {% if section.settings.footer_address_enable %}
+		                    	<div class="footer-icon-div">
+          
+		                 <i class="fa fa-map-marker" aria-hidden="true"></i>
+                 
+		                        </div>
+                                
+<!--                                 <label>Address:</label> -->
+                                <p>
+                                 {{ section.settings.footer_address | escape }}
+                               </p>
+                         {% endif %}      
+                           </li>
+                          
+                            <li class="contact-div">
+		                    {% if section.settings.footer_email_checkbox_enable %}	
+                              <div class="footer-icon-div">
+                    <i class="fa fa-envelope-open"></i>
+                                </div>    
+                                
+<!--                                 <label>Email:</label> -->
+                              <p><a href="mailto:{{ section.settings.footer_email_enable | escape }}" target="_top">
+                                
+                                 {{ section.settings.footer_email_enable | escape }}
+                                
+                                </a>
+                              </p>
+ 						{% endif %}
+                            </li>
+                          
+		                    <li class="contact-div">
+                             {% if section.settings.footer_telephone_checkbox_enable %} 
+		                    	<div class="footer-icon-div">
+		                      	<i class="fa fa-phone" aria-hidden="true"></i>
+                                </div>
+                              
+<!--                                 <label>Phone:</label> -->
+                              <p>
+                                
+                                <a href="tel:{{ section.settings.footer_telephone_enable }}">
+								{{ section.settings.footer_telephone_enable }}
+                                </a>
+                              </p>
+                               {% endif %}
+                           </li>
+                          
+		                  
+                          
+	                	</ul>
+	                </div>
+	     </div>
+      {% endcomment %}
+      
+      
+      
+    </div>
+ </div>
+  
+    <div class="footer-copyright grid grid--no-gutters copyright-wrapper">
+    
+      
+      <div class="grid__item">
+<!--         <div class="site-footer__copyright{% if social_icons and section.settings.footer_newsletter_enable != blank %} site-footer__copyright--right medium-up--text-right{% elsif social_icons == false and section.settings.footer_newsletter_enable %} medium-up--text-left{% endif %}"> -->
+    <div class="site-footer__copyright">
+    <div class="page-width">
+      {% if section.settings.copy-right-text-enable  %}  
+     <div class="medium-up--one-half copy-right-text-left">     
+      <small class="site-footer__copyright-content">
+         <a href="/"><ly-as-8850563>© 2018 - MYANIMART - Tous droits réservés - France.</ly-as-8850563></a>
+        </small>
+       
+<!--             <small class="site-footer__copyright-content site-footer__copyright-content--powered-by"><a href="https://www.expertvillagemedia.com/"><ly-as-8850564>Designed By Expert Village Media Technology</ly-as-8850564></a></small> -->
+         
+      </div> 
+      {% endif %} 
+      
+          {% if section.settings.show_payment_icons %}
+            <div class="site-footer__payment-icons medium-up--one-half{% unless social_icons or section.settings.footer_newsletter_enable == blank %} site-footer__payment-icons--right{% endunless %}">
+             {% comment %}
+                  {% unless shop.enabled_payment_types == empty %}
+                    {%- assign payment_icons_available = 'amazon_payments,american_express,apple_pay,bitcoin,cirrus,dankort,diners_club,discover,dogecoin,dwolla,forbrugsforeningen,interac,jcb,litecoin,maestro,master,paypal,stripe,visa' | split: ',' -%}
+                    <ul class="payment-icons list--inline">
+                      {% for type in shop.enabled_payment_types %}
+                        {% if payment_icons_available contains type %}
+                          <li class="payment-icon">
+                            {%- assign icon_name = type | prepend: 'icon-' -%}
+                            {% include icon_name %}
+                          </li>
+                        {% endif %}
+                      {% endfor %}
+                    </ul>
+                  {% endunless %}
+              {% endcomment %} 
+              {% comment %}ly_asset_replace_for_[ 'payment.png' | asset_url | img_tag ]_begin{% endcomment %}{% assign ly_asset = 'payment.png' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  | img_tag }}{% comment %}ly_asset_replace_end{% endcomment %}
+              
+            </div>
+          {% endif %}
+       
+        </div>
+        </div>
+      </div>
+    
+  </div>
+  
+  {% comment %}
+    {% if social_icons and section.settings.footer_newsletter_enable and section.settings.show_payment_icons %}
+      <div class="site-footer__copyright--bottom">
+        <small class="site-footer__copyright-content">&copy; {{ 'now' | date: "%Y" }}, {{ langify_shop_name | link_to: '/' }}</small>
+        <small class="site-footer__copyright-content">{{ powered_by_link }}</small>
+      </div>
+    {% endif %}
+  {% endcomment %}
+ 
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight.js"></script>
+
+<script>
+$(document).ready(function(){
+  
+  
+    setTimeout(function(){ $(".announcement-bar").css('height', '35px'); }, 1000);
+  
+  $('.banner-text-block').matchHeight({
+    
+  	property: 'min-height'
+  });
+  
+});
+  
+</script>
+<style>
+  @media only screen and (width: 375px) {  	
+    .grid__item.large--three-tenths.Newsletter.footer-center {
+      margin-bottom: 30px;
+    }
+  }
+  @media only screen and (width: 360px) {  	
+    .grid__item.large--three-tenths.Newsletter.footer-center {
+      margin-bottom: 30px;
+    }
+  }
+  @media only screen and (width: 1920px) {
+    .site-footer .footer-center {
+        margin-top: 30px;
+    }
+  }
+  @media only screen and (min-width: 991px) {   
+	.site-footer .grid__item {
+        float: left;
+        padding-left: 0px;
+        min-height: 1px;
+    }
+    .site-footer p, .site-footer .paragraph {
+        margin: 0 0 20px 0;
+        margin-bottom: 20px;
+    }
+    .site-footer .btn {
+        font-family: "Roboto",sans-serif;
+        font-weight: 400;
+        letter-spacing: 0em;
+        padding: 9px 20px;
+        margin: 0;
+        min-width: 90px;
+        line-height: 1.42;
+        font-size: 1em;
+        background: #00ce5a url(//cdn.shopify.com/s/files/1/0004/0809/2719/files/arrows.png?v=1530301543) no-repeat 150% 35%;
+            background-size: auto auto;
+        background-size: 29px;
+    }
+  	.site-footer .btn:hover, .site-footer .btn--secondary:hover, .site-footer .collapsibles-wrapper .site-footer .spr-summary-actions a:hover, .site-footer .collapsibles-wrapper .spr-button:hover, .site-footer .rte .btn:hover, .site-footer .rte .btn--secondary:hover, .site-footer .rte .collapsibles-wrapper .spr-summary-actions a:hover, .site-footer .collapsibles-wrapper .spr-summary-actions .rte a:hover, .site-footer .rte .collapsibles-wrapper .spr-button:hover, .site-footer .collapsibles-wrapper .rte .spr-button:hover {
+        color: #fff;
+        padding-right: 55px;
+        background-position: 91% 35%;
+    }
+  }
+    
+</style>
+
+<script type="text/javascript">
+
+
+    window.onload=function(){
+     
+      
+$(document).ready(function(){
+   
+$('.top-products').owlCarousel({
+    nav:false,
+    loop:false,
+    items:4,
+  	slideBy:1,
+    responsive:{
+        0:{
+            items:2,
+            margin:20
+        },
+        600:{
+            items:3,
+            margin:20
+        },
+        1000:{
+            items:4,
+          margin:30
+        }
+    }
+});
+
+
+});
+
+    }
+
+</script>
+<!-- <script>
+  $(document).ready(function(){
+    $(".slick-current .image-wrap").click(function(){
+      var flag = false;
+      
+      $(this).animate({ 'zoom': 1.2 }, 400);
+      
+      
+    });
+});
+</script> -->
+<!--   <div class="site-footer__copyright{% if social_icons and section.settings.footer_newsletter_enable != blank %} site-footer__copyright--right medium-up--text-right{% elsif social_icons == false and section.settings.footer_newsletter_enable %} medium-up--text-left{% endif %}"> -->
+
+ {% unless social_icons and section.settings.footer_newsletter_enable and section.settings.show_payment_icons %} 
+
+{% endunless %}
+
+
+{% schema %}
+  {
+    "name": "Footer",
+    "settings": [
+{
+        "type": "image_picker",
+        "id": "top-mg",
+        "label": "Logo image"
+      },
+{
+        "type": "image_picker",
+        "id": "add-bg",
+        "label": "Logo image"
+      },
+{
+        "type": "image_picker",
+        "id": "tel-bg",
+        "label": "Logo image"
+      },
+{
+        "type": "image_picker",
+        "id": "emai-bg",
+        "label": "Logo image"
+      },
+{
+        "type": "image_picker",
+        "id": "middle-bg",
+        "label": "Logo image"
+      },
+{
+        "type": "image_picker",
+        "id": "footer-bg",
+        "label": "Logo image"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo image"
+      },
+{
+        "type": "image_picker",
+        "id": "heart-mg",
+        "label": "Logo image"
+      },
+      {
+        "type": "text",
+        "id": "logo_max_width",
+        "label": "Custom logo width (in pixels)",
+        "default": "100"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_linklist",
+        "label": "Primary menu",
+        "default": "footer"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_linklist_two",
+        "label": "Additional menu",
+        "default": "main-menu"
+      },
+      {
+        "type": "link_list",
+        "id": "footer_linklist_three",
+        "label": "Additional menu",
+        "default": "main-menu"
+      },
+{
+        "type": "image_picker",
+        "id": "email-mg",
+        "label": "Logo image"
+      },
+      {
+        "type": "checkbox",
+        "id": "footer_newsletter_enable",
+        "label": "Show newsletter signup",
+        "default": false
+      },
+
+    {
+        "type": "checkbox",
+        "id": "social-icons_enable",
+        "label": "Show social icons",
+        "default": false
+      },
+     {
+        "type": "checkbox",
+        "id": "footer_address_enable",
+        "label": "Show_footer_address_bar",
+        "default": false
+      },
+	  {
+        "type": "text",
+        "id": "footer_address_bar_title",
+        "label": "Addressbar Title",
+        "default": "Enter title here"
+      },
+      {
+        "type": "textarea",
+        "id": "footer_address",
+        "label": "Address bar",
+        "default": "Enter your address"
+      },
+      {
+        "type": "checkbox",
+        "id": "footer_telephone_checkbox_enable",
+        "label": "Show footer telephone bar",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "footer_telephone_enable",
+        "label": "Enter telphone no",
+        "default": "Enter telephone no here"
+      },
+      {
+        "type": "checkbox",
+        "id": "footer_email_checkbox_enable",
+        "label": "Show footer email bar",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "footer_email_enable",
+        "label": "Enter your email id",
+        "default": "Enter email id here"
+      },
+      {
+        "type": "checkbox",
+        "id": "copy-right-text-enable",
+        "label": "Show Copy right text",
+        "default": false
+      } ,
+      {
+        "type": "checkbox",
+        "id": "show_payment_icons",
+        "label": "Show payment icons",
+        "default": false
+      }
+
+    ]
+  }
+{% endschema %}
+
+
+
+
+
+

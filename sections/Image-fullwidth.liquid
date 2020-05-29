@@ -1,0 +1,346 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<div class="hero full-width-image desktop-img hero--{{ section.settings.hero_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %} box ratio-container lazyload js"
+     {% if section.settings.image %}
+     data-bgset="{% include 'bgset', image: section.settings.image %}"
+     data-sizes="auto"
+     data-parent-fit="cover"
+     style="background-position: {{ section.settings.alignment }}; background-image: url('{{ section.settings.image | img_url: '300x300' }});"
+     {% endif %} data-aos="background-media-text__animation">
+  {% if section.settings.image == blank %}
+    <div class="placeholder-background">
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    </div>
+  {% endif %}
+  <div class="wrapper">
+  <div class="hero_inner text-img-container custom-nice">
+    
+    <div class="page-width text-cente">
+      {% if section.settings.title != blank %}
+        <h4 class="h1 mega-title subhead-img-section{% if section.settings.text_size == 'large' %} mega-title--large{% endif %}">{{ section.settings.title | escape }}</h4>
+      {% endif %}
+      <div class="box-relative">
+        <div class="border-box-content-text-nice">
+          
+        </div>
+        <div class="box-content-text-nice">
+          {% if section.settings.text != blank %}
+            <div class="rte-setting mega-subtitle{% if section.settings.text_size == 'large' %} mega-subtitle--large{% endif %}">{{ section.settings.text }}</div>
+          {% endif %}
+          </div>
+          {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+            <a href="{{ section.settings.button_link }}" class="btn hero__btn">
+              {{ section.settings.button_label | escape }}
+            </a>
+          {% endif %}
+      </div>
+    </div>
+   </div>
+  </div>
+</div>
+
+<noscript>
+  <div class="hero hero--{{ section.settings.hero_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %}"{% if section.settings.image %} style="background-image: url('{{ section.settings.image | img_url: '2048x' }}'); background-position: center {{ section.settings.alignment }};"{% endif %}></div>
+</noscript>
+
+
+<div class="mobile-img" style="text-align:center;">
+<img src="{{section.settings.mobile_img | img_url:'large' }}" style=""/>
+</div>
+
+
+
+
+{% comment %}
+<h2>Talk about your brand</h2>
+<div id="ProductThumbs-1502288824013" class="product__thumbs product__thumbs--beside aos-init slick-initialized slick-slider slick-vertical aos-animate" data-position="beside" data-aos="">
+<div aria-live="polite" class="slick-list draggable" style="height: 742.5px;"><div class="slick-track" role="listbox" style="opacity: 1; height: 552px;">
+<div class="product__thumb-item slick-slide slick-current slick-active" data-index="0" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide10" style="width: 80px;">
+          <div class="image-wrap" style="height: 0; padding-bottom: 149.926793558%;">
+            <div class="product__thumb product__thumb-1502288824013 js-no-transition" data-id="23306649416" data-zoom="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_0bc1d520-4d30-49dd-b560-78a983927ed7_1800x1800.jpg?v=1508432785">
+              
+                <span class="product__thumb-play" style="position: relative;
+">
+                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-play" viewBox="0 0 32 32"><style>.st0{fill:#444}</style>
+<path class="st0" d="M9.3 6.2l17.1 9.7-17.1 9.7"></path></svg>
+                </span>
+              
+<img style="margin-top: -100px;" class="lazyautosizes lazyloaded" data-widths="[180, 360, 540]" data-aspectratio="0.6669921875" data-sizes="auto" alt="Chambray Button Down" data-srcset="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_0bc1d520-4d30-49dd-b560-78a983927ed7_180x.jpg?v=1508432785 180w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_0bc1d520-4d30-49dd-b560-78a983927ed7_360x.jpg?v=1508432785 360w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_0bc1d520-4d30-49dd-b560-78a983927ed7_540x.jpg?v=1508432785 540w" sizes="76px" srcset="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_0bc1d520-4d30-49dd-b560-78a983927ed7_180x.jpg?v=1508432785 180w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_0bc1d520-4d30-49dd-b560-78a983927ed7_360x.jpg?v=1508432785 360w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_0bc1d520-4d30-49dd-b560-78a983927ed7_540x.jpg?v=1508432785 540w">
+                <noscript>
+                  &lt;img class="lazyloaded" src="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_0bc1d520-4d30-49dd-b560-78a983927ed7_180x.jpg?v=1508432785" alt="Chambray Button Down"&gt;
+                </noscript>
+              
+            </div>
+          </div>
+        </div>
+<div class="product__thumb-item slick-slide slick-active" data-index="1" data-slick-index="1" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide11" style="width: 80px;">
+          <div class="image-wrap" style="height: 0; padding-bottom: 149.926793558%;">
+            <div class="product__thumb product__thumb-1502288824013 js-no-transition" data-id="22322311112" data-zoom="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_1800x1800.jpg?v=1508432785">
+               
+<img class="lazyautosizes lazyloaded" data-widths="[180, 360, 540]" data-aspectratio="0.6669921875" data-sizes="auto" alt="Chambray Button Down" data-srcset="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_180x.jpg?v=1508432785 180w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_360x.jpg?v=1508432785 360w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_540x.jpg?v=1508432785 540w" sizes="76px" srcset="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_180x.jpg?v=1508432785 180w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_360x.jpg?v=1508432785 360w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_540x.jpg?v=1508432785 540w">
+                <noscript>
+                  &lt;img class="lazyloaded" src="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_180x.jpg?v=1508432785" alt="Chambray Button Down"&gt;
+                </noscript>
+              
+            </div>
+          </div>
+        </div>
+<div class="product__thumb-item slick-slide slick-active" data-index="2" data-slick-index="2" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide12" style="width: 80px;">
+          <div class="image-wrap" style="height: 0; padding-bottom: 149.926793558%;">
+            <div class="product__thumb product__thumb-1502288824013 js-no-transition" data-id="22322316168" data-zoom="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock2_1800x1800.jpg?v=1508432785">
+               
+<img class="lazyautosizes lazyloaded" data-widths="[180, 360, 540]" data-aspectratio="0.6669921875" data-sizes="auto" alt="Chambray Button Down" data-srcset="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock2_180x.jpg?v=1508432785 180w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock2_360x.jpg?v=1508432785 360w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock2_540x.jpg?v=1508432785 540w" sizes="76px" srcset="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock2_180x.jpg?v=1508432785 180w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock2_360x.jpg?v=1508432785 360w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock2_540x.jpg?v=1508432785 540w">
+                <noscript>
+                  &lt;img class="lazyloaded" src="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock2_180x.jpg?v=1508432785" alt="Chambray Button Down"&gt;
+                </noscript>
+              
+            </div>
+          </div>
+        </div>
+<div class="product__thumb-item slick-slide" data-index="3" data-slick-index="3" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide13" style="width: 80px;">
+          <div class="image-wrap" style="height: 0; padding-bottom: 149.926793558%;">
+            <div class="product__thumb product__thumb-1502288824013 js-no-transition" data-id="22322321288" data-zoom="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock3_1800x1800.jpg?v=1508432785">
+              
+<img class="lazyautosizes lazyloaded" data-widths="[180, 360, 540]" data-aspectratio="0.6669921875" data-sizes="auto" alt="Chambray Button Down" data-srcset="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock3_180x.jpg?v=1508432785 180w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock3_360x.jpg?v=1508432785 360w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock3_540x.jpg?v=1508432785 540w" sizes="76px" srcset="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock3_180x.jpg?v=1508432785 180w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock3_360x.jpg?v=1508432785 360w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock3_540x.jpg?v=1508432785 540w">
+                <noscript>
+                  &lt;img class="lazyloaded" src="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock3_180x.jpg?v=1508432785" alt="Chambray Button Down"&gt;
+                </noscript>
+              
+            </div>
+          </div>
+        </div>
+</div></div>
+   
+    </div>
+<div class="product__main-photos aos-init aos-animate" data-aos="">
+      <div id="ProductPhotos-1502288824013" class="slick-initialized slick-slider">
+        
+   
+          <div aria-live="polite" class="slick-list draggable"><div class="slick-track" role="listbox" style="opacity: 1; width: 1980px; transform: translate3d(0px, 0px, 0px);">
+<div class="starting-slide slick-slide photo-zoom-init slick-current slick-active" data-index="0" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide00" style="width: 495px;">
+            <div class="product-image-main">
+              <div class="image-wrap
+                 hide
+                
+                " style="height: 0; padding-bottom: 149.926793558%;">
+                <div class="photo-zoom-link photo-zoom-link--enable" data-zoom-size="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_0bc1d520-4d30-49dd-b560-78a983927ed7_1800x1800.jpg?v=1508432785" style="position: relative; overflow: hidden;">
+
+<img class="photo-zoom-link__initial lazyload" data-src="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_0bc1d520-4d30-49dd-b560-78a983927ed7_{width}x.jpg?v=1508432785" data-widths="[360, 540, 720, 900, 1080]" data-aspectratio="0.6669921875" data-sizes="auto" alt="Chambray Button Down">
+                      <noscript>
+                        &lt;img class="photo-zoom-link__initial lazyloaded" src="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_0bc1d520-4d30-49dd-b560-78a983927ed7_620x.jpg?v=1508432785" alt="Chambray Button Down"&gt;
+                      </noscript>
+                    
+                  
+                <img role="presentation" src="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_0bc1d520-4d30-49dd-b560-78a983927ed7_1800x1800.jpg?v=1508432785" class="zoomImg" style="position: absolute; top: 0px; left: 0px; opacity: 0; width: 1201px; height: 1800px; border: none; max-width: none; max-height: none;"><img role="presentation" src="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_0bc1d520-4d30-49dd-b560-78a983927ed7_1800x1800.jpg?v=1508432785" class="zoomImg" style="position: absolute; top: 0px; left: 0px; opacity: 0; width: 1201px; height: 1800px; border: none; max-width: none; max-height: none;">
+</div>
+              </div>
+              
+<div data-video-type="youtube" class="product__video-wrapper loaded" data-video-style="muted" style="padding-bottom: 150.0%;">
+                  
+                    <iframe id="ProductVideo-1502288824013-1" class="product__video" data-image-count="4" data-video-type="youtube" data-video-style="muted" data-youtube-id="wbpOidLOGkw" data-video-width="500" data-video-height="750" frameborder="0" allowfullscreen="1" allow="autoplay; encrypted-media" title="YouTube video player" width="500" height="750" src="https://www.youtube.com/embed/wbpOidLOGkw?autohide=0&amp;autoplay=1&amp;branding=0&amp;cc_load_policy=0&amp;controls=0&amp;fs=0&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;quality=hd720&amp;rel=0&amp;showinfo=0&amp;wmode=opaque&amp;widget_referrer=https%3A%2F%2Fthemes.shopify.com%2Fthemes%2Fmotion%2Fstyles%2Fclassic%2Fpreview&amp;enablejsapi=1&amp;origin=https%3A%2F%2Fmotion-theme-adventure.myshopify.com&amp;widgetid=1"></iframe>
+                  
+                  
+                  
+                </div>
+              
+            </div>
+          </div>
+<div class="secondary-slide slick-slide" data-index="1" data-slick-index="1" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide01" style="width: 495px;">
+            <div class="product-image-main">
+              <div class="image-wrap
+                
+                
+                " style="height: 0; padding-bottom: 149.926793558%;">
+                <div class="photo-zoom-link photo-zoom-link--enable" data-zoom-size="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_1800x1800.jpg?v=1508432785">
+
+                  
+                    
+<img class="lazyautosizes lazyloaded" data-widths="[360, 540, 720, 900, 1080]" data-aspectratio="0.6669921875" data-sizes="auto" alt="Chambray Button Down" data-srcset="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_360x.jpg?v=1508432785 360w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_540x.jpg?v=1508432785 540w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_720x.jpg?v=1508432785 720w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_900x.jpg?v=1508432785 900w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_1080x.jpg?v=1508432785 1080w" sizes="495px" srcset="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_360x.jpg?v=1508432785 360w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_540x.jpg?v=1508432785 540w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_720x.jpg?v=1508432785 720w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_900x.jpg?v=1508432785 900w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_1080x.jpg?v=1508432785 1080w">
+                        <noscript>
+                          &lt;img class="lazyloaded" src="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock1_620x.jpg?v=1508432785" alt="Chambray Button Down"&gt;
+                        </noscript>
+                    
+                  
+                </div>
+              </div>
+              
+            </div>
+          </div>
+<div class="secondary-slide slick-slide" data-index="2" data-slick-index="2" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide02" style="width: 495px;">
+            <div class="product-image-main">
+              <div class="image-wrap
+                
+                
+                " style="height: 0; padding-bottom: 149.926793558%;">
+                <div class="photo-zoom-link photo-zoom-link--enable" data-zoom-size="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock2_1800x1800.jpg?v=1508432785">
+
+                  
+                    
+<img class="lazyautosizes lazyloaded" data-widths="[360, 540, 720, 900, 1080]" data-aspectratio="0.6669921875" data-sizes="auto" alt="Chambray Button Down" data-srcset="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock2_360x.jpg?v=1508432785 360w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock2_540x.jpg?v=1508432785 540w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock2_720x.jpg?v=1508432785 720w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock2_900x.jpg?v=1508432785 900w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock2_1080x.jpg?v=1508432785 1080w" sizes="495px" srcset="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock2_360x.jpg?v=1508432785 360w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock2_540x.jpg?v=1508432785 540w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock2_720x.jpg?v=1508432785 720w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock2_900x.jpg?v=1508432785 900w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock2_1080x.jpg?v=1508432785 1080w">
+                        <noscript>
+                          &lt;img class="lazyloaded" src="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock2_620x.jpg?v=1508432785" alt="Chambray Button Down"&gt;
+                        </noscript>
+                    
+                  
+                </div>
+              </div>
+              
+            </div>
+          </div>
+<div class="secondary-slide slick-slide" data-index="3" data-slick-index="3" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide03" style="width: 495px;">
+            <div class="product-image-main">
+              <div class="image-wrap
+                
+                
+                " style="height: 0; padding-bottom: 149.926793558%;">
+                <div class="photo-zoom-link photo-zoom-link--enable" data-zoom-size="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock3_1800x1800.jpg?v=1508432785">
+
+                  
+                    
+<img class="lazyautosizes lazyloaded" data-widths="[360, 540, 720, 900, 1080]" data-aspectratio="0.6669921875" data-sizes="auto" alt="Chambray Button Down" data-srcset="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock3_360x.jpg?v=1508432785 360w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock3_540x.jpg?v=1508432785 540w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock3_720x.jpg?v=1508432785 720w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock3_900x.jpg?v=1508432785 900w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock3_1080x.jpg?v=1508432785 1080w" sizes="495px" srcset="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock3_360x.jpg?v=1508432785 360w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock3_540x.jpg?v=1508432785 540w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock3_720x.jpg?v=1508432785 720w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock3_900x.jpg?v=1508432785 900w, //cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock3_1080x.jpg?v=1508432785 1080w">
+                        <noscript>
+                          &lt;img class="lazyloaded" src="//cdn.shopify.com/s/files/1/2091/0251/products/m-wenlock3_620x.jpg?v=1508432785" alt="Chambray Button Down"&gt;
+                        </noscript>
+                    
+                  
+                </div>
+              </div>
+              
+            </div>
+          </div>
+</div></div>
+     
+      </div>
+    </div>
+{% endcomment %}
+
+
+{% schema %}
+  {
+    "name": "Image Full Width",
+    "class": "index-section index-section--flush",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobile_img",
+        "label": "Mobile Image"
+      },
+      {
+        "type": "select",
+        "id": "alignment",
+        "label": "Image alignment",
+        "default": "center",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          },
+          {
+            "value": "center",
+            "label": "Middle"
+          },
+          {
+            "value": "bottom",
+            "label": "Bottom"
+          }
+        ]
+      },
+       {
+        "type": "text",
+        "id": "title1",
+        "label": "Heading",
+        "default": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Sub Heading",
+        "default": "Image with text overlay"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.</p>"
+      },
+      {
+        "type": "select",
+        "id": "hero_size",
+        "label": "Section height",
+        "default": "medium",
+        "options": [
+          {
+            "label": "Extra Small",
+            "value": "x-small"
+          },
+          {
+            "label": "Small",
+            "value": "small"
+          },
+          {
+            "label": "Medium",
+            "value": "medium"
+          },
+          {
+            "label": "Large",
+            "value": "large"
+          },
+          {
+            "label": "Extra Large",
+            "value": "x-large"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "text_size",
+        "label": "Text size",
+        "default": "medium",
+        "options": [
+          {
+            "label": "Medium",
+            "value": "medium"
+          },
+          {
+            "label": "Large",
+            "value": "large"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image Full Width",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}
+<style>
+
+@media only screen and (max-width: 600px) {
+  .desktop-img {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .mobile-img {
+    display: none !important;
+  }
+}
+
+</style>

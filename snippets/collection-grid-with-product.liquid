@@ -1,0 +1,33 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+{% assign previous_index = collection_index | minus: 1 %}
+{% assign remaining_length = collection_count | minus: collection_index %}
+{% assign previous__remaining_length = remaining_length | minus: 1 %}
+{% assign remaining_divisible_by_three = previous__remaining_length | modulo:3 %}
+{% assign image_size = 'grande' %}
+
+{% if collection_index < 4 %}
+  {% assign is_three_row = false %}
+
+  {% if previous_index == 2 and remaining_divisible_by_three > 0 %}
+    {% assign is_three_row = true %}
+  {% endif %}
+
+{% endif %}
+
+
+{% if collection_index > 4 %}
+  {% assign is_three_row = true %}
+{% endif %}
+
+
+{% if divisible_by_three == 0 %}
+  {% assign is_three_row = true %}
+{% endif %}
+
+{% if is_three_row == false %}
+{% include 'custom-col' %}
+{% endif %}
+
+{% if is_three_row == true %}
+{% include 'custom-col' %}
+{% endif %}

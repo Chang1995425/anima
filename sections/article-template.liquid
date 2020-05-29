@@ -1,0 +1,152 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<!-- /templates/article.liquid -->
+{% assign number_of_comments = article.comments_count %}
+
+{% if comment and comment.created_at %}
+  {% assign number_of_comments = article.comments_count | plus: 1 %}
+{% endif %}
+
+<div class="grid ">
+  <article class="grid__item large--five-sixths push--large--one-twelfth article" itemscope itemtype="http://schema.org/Article">
+	{% include 'breadcrumb' %}
+    <header class="section-header text-center">
+      <h1>{% comment %}ly_code_replace_for_[ article.title ]_begin{% endcomment %}{% include 'ly-title' with article %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h1>
+      <hr class="hr--small">
+      <p>
+        <span class="date"><time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time></span>
+      </p>
+    </header>
+
+    <div class="grid">
+      <div class="grid__item large--four-fifths push--large--one-tenth">
+
+        <div class="rte rte--indented-images" itemprop="articleBody">
+          {% comment %}ly_code_replace_for_[ article.content ]_begin{% endcomment %}{% include 'ly-content' with article %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+        </div>
+
+        <ul class="tags tags--article inline-list">
+          {% include 'tags-article' %}
+        </ul>
+
+        {% if section.settings.social_sharing_blog %}
+          {% include 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
+        {% endif %}
+
+        {% if blog.comments_enabled? %}
+
+          {% if number_of_comments > 0 %}
+            <hr class="hr--large">
+            <h2 class="h3 text-center">{% comment %}ly_i18n_replace_for_[ 'blogs.comments.with_count' | t: count: number_of_comments ]_begin{% endcomment %}{% if number_of_comments  == 0 %}{% capture ly_template %}{{ 'blogs.comments.with_count' | t: count: number_of_comments }}{% endcapture %}{% include 'ly-static-string' with '8850425' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = number_of_comments  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% elsif number_of_comments  == 1 %}{% capture ly_template %}{{ 'blogs.comments.with_count' | t: count: number_of_comments }}{% endcapture %}{% include 'ly-static-string' with '8850424' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = number_of_comments  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% elsif number_of_comments  == 2 %}{% capture ly_template %}{{ 'blogs.comments.with_count' | t: count: number_of_comments }}{% endcapture %}{% include 'ly-static-string' with '8850425' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = number_of_comments  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% else %}{% capture ly_template %}{{ 'blogs.comments.with_count' | t: count: number_of_comments }}{% endcapture %}{% include 'ly-static-string' with '8850425' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = number_of_comments  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h2>
+            <hr class="hr--small hr--clear">
+          {% endif %}
+
+          {% paginate article.comments by 5 %}
+            {% comment %}
+              #comments is required, it is used as an anchor link by Shopify.
+            {% endcomment %}
+            <div id="comments">
+
+              {% if comment and comment.created_at %}
+                <p class="note form-success">
+                  {% if blog.moderated? %}
+                    {% comment %}ly_i18n_replace_for_[ 'blogs.comments.success_moderated' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.comments.success_moderated' | t }}{% endcapture %}{% include 'ly-static-string' with '8850428' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                  {% else %}
+                    {% comment %}ly_i18n_replace_for_[ 'blogs.comments.success' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.comments.success' | t }}{% endcapture %}{% include 'ly-static-string' with '8850429' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                  {% endif %}
+                </p>
+              {% endif %}
+
+              {% if number_of_comments > 0 %}
+                <ul class="no-bullets">
+                  {% comment %}
+                    If a comment was just submitted with no blank field, show it.
+                  {% endcomment %}
+                  {% if comment and comment.created_at %}
+                    <li id="{{ comment.id }}" class="comment first{% if article.comments_count == 0 %} last{% endif %}">
+                      {% include 'comment' %}
+                    </li>
+                  {% endif %}
+
+                  {% comment %}
+                    Showing the rest of the comments.
+                  {% endcomment %}
+                  {% for comment in article.comments %}
+                    <li id="{{ comment.id }}" class="comment{% unless number_of_comments > article.comments_count %}{% if forloop.first %} first{% endif %}{% endunless %}{% if forloop.last %} last {% endif %}">
+                      {% include 'comment' %}
+                    </li>
+
+                    {% unless forloop.last %}
+                      <li><hr class="hr--clear"></li>
+                    {% endunless %}
+                  {% endfor %}
+                </ul>
+
+                {% if paginate.pages > 1 %}
+                  {% include 'pagination' %}
+                {% endif %}
+
+              {% endif %}
+
+              <hr class="hr--large">
+
+              <h2 class="h3 text-center">{% comment %}ly_i18n_replace_for_[ 'blogs.comments.title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.comments.title' | t }}{% endcapture %}{% include 'ly-static-string' with '8850430' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h2>
+              <hr class="hr--small hr--clear">
+
+              <div class="form-vertical">
+                {% form 'new_comment', article %}
+
+                  {{ form.errors | default_errors }}
+
+                  <div class="grid grid--small">
+                    <div class="grid__item large--one-half">
+                      <label for="CommentAuthor" class="hidden-label">{% comment %}ly_i18n_replace_for_[ 'blogs.comments.name' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.comments.name' | t }}{% endcapture %}{% include 'ly-static-string' with '8850431' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+                      <input class="input-full{% if form.errors contains 'author' %} error{% endif %}" type="text" name="comment[author]" placeholder="{% comment %}ly_i18n_replace_for_[ 'blogs.comments.name' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.comments.name' | t }}{% endcapture %}{% include 'ly-static-string' with '8850431' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" id="CommentAuthor" value="{{ form.author }}" autocapitalize="words">
+                    </div>
+                    <div class="grid__item large--one-half">
+                      <label for="CommentEmail" class="hidden-label">{% comment %}ly_i18n_replace_for_[ 'blogs.comments.email' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.comments.email' | t }}{% endcapture %}{% include 'ly-static-string' with '8850432' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+                      <input class="input-full{% if form.errors contains 'email' %} error{% endif %}" type="email" name="comment[email]" placeholder="{% comment %}ly_i18n_replace_for_[ 'blogs.comments.email' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.comments.email' | t }}{% endcapture %}{% include 'ly-static-string' with '8850432' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" id="CommentEmail" value="{{ form.email }}" autocorrect="off" autocapitalize="off">
+                    </div>
+                  </div>
+
+                  <label for="CommentBody" class="hidden-label">{% comment %}ly_i18n_replace_for_[ 'blogs.comments.message' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.comments.message' | t }}{% endcapture %}{% include 'ly-static-string' with '8850433' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+                  <textarea class="input-full{% if form.errors contains 'body' %} error{% endif %}" name="comment[body]" id="CommentBody" placeholder="{% comment %}ly_i18n_replace_for_[ 'blogs.comments.message' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.comments.message' | t }}{% endcapture %}{% include 'ly-static-string' with '8850433' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">{{ form.body }}</textarea>
+
+                  <div class="text-center">
+                    {% if blog.moderated? %}
+                      <p>{% comment %}ly_i18n_replace_for_[ 'blogs.comments.moderated' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.comments.moderated' | t }}{% endcapture %}{% include 'ly-static-string' with '8850434' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</p>
+                    {% endif %}
+
+                    <input type="submit" class="btn" value="{% comment %}ly_i18n_replace_for_[ 'blogs.comments.post' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.comments.post' | t }}{% endcapture %}{% include 'ly-static-string' with '8850435' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+                  </div>
+
+                {% endform %}
+              </div>
+
+            </div>
+          {% endpaginate %}
+        {% endif %}
+
+      </div>
+    </div>
+
+  </article>
+</div>
+
+<hr class="hr--medium hr--clear">
+<div class="text-center">
+  <a href="{{ blog.url }}" class="return-link">&larr; {% comment %}ly_i18n_replace_for_[ 'blogs.article.back_to_blog' | t: title: blog.title ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.article.back_to_blog' | t: title: blog.title }}{% endcapture %}{% include 'ly-static-string' with '8850437' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% include 'ly-title' with blog %}{% assign replacement = ly_translation %}{% assign ly_template = ly_template | replace: '[[title]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
+</div>
+
+{% schema %}
+  {
+    "name": "Article pages",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "social_sharing_blog",
+        "label": "Show social sharing buttons",
+        "default": true
+      }
+    ]
+  }
+{% endschema %}

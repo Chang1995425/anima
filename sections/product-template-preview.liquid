@@ -1,0 +1,779 @@
+
+{% include 'breadcrumb' %}
+<div itemscope itemtype="http://schema.org/Product" id="ProductSection--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product-template" data-image-zoom-type="{{ section.settings.zoom_enable }}" data-enable-history-state="true" data-scroll-to-image="{% if section.settings.image_layout == "stacked" %}true{% else %}false{% endif %}">
+
+    <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+    <meta itemprop="image" content="{{ product.featured_image.src | img_url: 'grande' }}">
+
+    {% assign current_variant = product.selected_or_first_available_variant %}
+    {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
+  
+  <div class="product-single__meta mobile-single">
+  	{% if section.settings.product_vendor_enable %}
+    	<h2 class="product-single__vendor" itemprop="brand">{{ product.vendor }}</h2>
+    {% endif %}
+    
+     <h1 class="product-single__title" itemprop="name"><center>{{ product.title }}</center></h1>
+     <a href="#looxReviews"><div class="loox-rating" data-id="{{ product.id }}" data-rating="{{ product.metafields.loox.avg_rating }}" data-raters="{{ product.metafields.loox.num_reviews }}"></div></a>
+   
+    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            {% comment %}
+              Optionally show the 'compare at' or original price of the product.
+            {% endcomment %}
+
+            {% if product.compare_at_price_max > product.price %}
+              <span id="PriceA11y" class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+              <span class="product-single__price--wrapper">
+                <span id="ComparePrice" class="product-single__price--compare-at">
+                  {% if current_variant.compare_at_price > current_variant.price %}
+                    {{ current_variant.compare_at_price | money }}
+                  {% endif %}
+                </span>
+              </span>
+              <span id="ComparePriceA11y" class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
+            {% else %}
+              <span id="PriceA11y" class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+            {% endif %}
+
+            <span id="ProductPrice"
+              class="product-single__price{% if product.compare_at_price > product.price %} on-sale{% endif %}"
+              itemprop="price"
+              content="{{ current_variant.price | divided_by: 100.00 }}">
+              {{ current_variant.price | money }}
+            </span>
+    </div>
+  </div>
+    <div class="grid product-single product-container-pp">
+      <div class="grid__item large--six-twelfths medium--seven-twelfths text-center">
+
+        {% if section.settings.image_layout == "stacked" %}
+         
+          <div class="product-single__photos">
+            {% capture img_id_class %}product-single__photo-{{ featured_image.id }}{% endcapture %}
+            {% capture wrapper_id %}ProductImageWrapper-{{ featured_image.id }}{% endcapture %}
+
+            <div class="product-single__photo--flex-wrapper">
+              <div class="product-single__photo--flex">
+                {% include 'image-style' with image: featured_image, width: 575, height: 850, small_style: true, wrapper_id: wrapper_id, img_id_class: img_id_class %}
+                <div id="{{ wrapper_id }}" class="product-single__photo--container">
+                  <div id="main_image" class="product-single__photo-wrapper" style="padding-top:{{ 1 | divided_by: featured_image.aspect_ratio | times: 100}}%;">
+                   
+                     {% assign img_url = featured_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                    
+                    
+                    <img class="product-single__photo lazyload {{ img_id_class }}"
+                      src="{{ featured_image | img_url: '300x300' }}"
+                      data-src="{{ img_url }}"
+                      data-widths="[180, 360, 590, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                      data-aspectratio="{{ featured_image.aspect_ratio }}"
+                      data-sizes="auto"
+                      {% if section.settings.zoom_enable %}data-mfp-src="{{ featured_image | img_url: '1024x1024' }}"{% endif %}
+                      data-image-id="{{ featured_image.id }}"
+                      alt="{{ featured_image.alt | escape }}">
+                    
+                   
+
+                    <noscript>
+                      <img class="product-single__photo"
+                        src="{{ featured_image | img_url: 'master' }}"
+                        {% if section.settings.zoom_enable %}data-mfp-src="{{ featured_image | img_url: '1024x1024' }}"{% endif %}
+                        alt="{{ featured_image.alt | escape }}" data-image-id="{{ featured_image.id }}">
+                    </noscript>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {% for image in product.images %}
+              {% unless image contains featured_image %}
+
+                {% capture img_id_class %}product-single__photo-{{ image.id }}{% endcapture %}
+                {% capture wrapper_id %}ProductImageWrapper-{{ image.id }}{% endcapture %}
+
+                <div class="product-single__photo--flex-wrapper">
+                  <div class="product-single__photo--flex">
+                    {% include 'image-style' with image: image, width: 575, height: 850, small_style: true, wrapper_id: wrapper_id, img_id_class: img_id_class %}
+                    <div id="{{ wrapper_id }}" class="product-single__photo--container">
+                      <div class="product-single__photo-wrapper" style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;">
+                        {% assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                        <img class="product-single__photo lazyload {{ img_id_class }}"
+                          src="{{ image | img_url: '300x' }}"
+                          data-src="{{ img_url }}"
+                          data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                          data-aspectratio="{{ image.aspect_ratio }}"
+                          data-sizes="auto"
+                          {% if section.settings.zoom_enable %}data-mfp-src="{{ image.src | img_url: '1024x1024' }}"{% endif %}
+                          data-image-id="{{ image.id }}"
+                          alt="{{ image.alt | escape }}">
+
+                        <noscript>
+                          <img class="product-single__photo" src="{{ image.src | img_url: 'master' }}"
+                            {% if section.settings.zoom_enable %}data-mfp-src="{{ image.src | img_url: '1024x1024' }}"{% endif %}
+                            alt="{{ image.alt | escape }}"
+                            data-image-id="{{ image.id }}">
+                        </noscript>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endunless %}
+            {% endfor %}
+
+          </div>
+
+        {% else %}
+         
+          <div data-aos="zoom-out" data-aos-delay="200" class="product-thumbnail__photos  test-web regular">
+             
+            {% capture img_id_class %}product-single__photo-{{ featured_image.id }}{% endcapture %}
+            {% capture wrapper_id %}ProductImageWrapper-{{ featured_image.id }}{% endcapture %}
+
+            <div>
+              
+                {% include 'image-style' with image: featured_image, width: 575, height: 850, small_style: true, wrapper_id: wrapper_id, img_id_class: img_id_class %}
+                
+
+
+              
+                    {% assign pieces =  featured_image.alt | escape %}
+
+                   	{% if pieces contains "https://"  %}
+
+ <iframe  id="video_player" class="product-single__photo lazyload {{ img_id_class }}" frameborder="0" src="{{pieces}}"  allow></iframe>
+
+              {% else %}
+                   
+                    {% assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+              <div data-fancybox="gallery" href="{{ featured_image | img_url: '2048x2048' }}">
+                    <img class="image-wrap pro-img image-zoom" data-zoom="{{ featured_image | img_url: '2000x', scale: 2 }}"
+                      src="{{ featured_image | img_url: '1000x' }}"
+                      alt="{{ featured_image.alt | escape }}">
+                <div class="image-details"></div>
+              </div>
+                      <div class="click mobile">
+                        <a href="javascript:void(0)">
+                          <i class="fa fa-search-plus"></i>
+                          <span class="tap-desktop"> Cliquez pour zoomer</span>
+                          <span class="tap-mobile"> Appuyez pour zoomer</span></a></div>
+
+					 {% endif %}	
+                   
+                  
+                </div>
+              
+            {% for image in product.images %}
+              {% unless image contains featured_image %}
+
+                {% comment %}
+                  We need to figure out the max width we want the image to be on the page
+                  based on the aspect ratio of the image and based on the size of the
+                  image.
+                {% endcomment %}
+                {% capture img_id_class %}product-single__photo-{{ image.id }}{% endcapture %}
+                {% capture wrapper_id %}ProductImageWrapper-{{ image.id }}{% endcapture %}
+           <div>
+                      {% assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+             <div data-fancybox="gallery" href="{{ image | img_url: '1024x' }}">
+             <img  class="webcast-image-fixed image-zoom" data-zoom="{{ image | img_url: '1024x1024', scale: 2 }}"
+                          src="{{ image | img_url: '1024x' }}"
+                          
+                          alt="{{ image.alt | escape }}">
+             </div>
+             
+             
+             
+        
+             
+             
+              <div class="click mobile">
+                        <a href="javascript:void(0)">
+                          <i class="fa fa-search-plus"></i>
+                          <span class="tap-desktop"> Cliquez pour zoomer</span>
+                          <span class="tap-mobile"> Appuyez pour zoomer</span></a></div>
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+             
+         </div>
+            
+             {% endunless %}
+            {% endfor %}
+
+            {% comment %}
+              Display thumbnails
+            {% endcomment %}
+           
+          </div>
+        
+             <ul data-aos="zoom-out" data-aos-delay="200" class="product-single--thum product-single__thumbnails grid-uniform" id="ProductThumbs">
+              {% for image in product.images %}
+                {% if product.images.size > 1 %}
+                  <li class="image-wrap grid__item medium--one-third large--one-quarter product-single__photo-wrapper {% if image contains featured_image %} active-thumb{% endif %}">
+                    <a data-image-id="{{ image.id }}" href="{{ image.src | img_url: 'grande' }}" class="product-single__thumbnail">
+                      <img class="animation-delay-{{forloop.index }} product-single__thumb"  src="{{ image.src | img_url: '200x' }}" alt="{{ image.alt | escape }}">
+                      {% assign piece =  image.alt | escape %}
+                    
+                   		{% if piece contains "https://"  %}
+                      <span class="product__thumb-play" style="position: absolute; top:25%;left:0px;right:0px;margin:0px auto;text-align:center;">
+                        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-play" viewBox="0 0 32 32" ><style>.st0{fill:#444} .product__thumb-play svg.icon-play{width:45px;}</style><path class="st0" d="M9.3 6.2l17.1 9.7-17.1 9.7"></path></svg>
+                      </span>	
+                      {% endif %}
+                    </a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+
+        {% endif %}
+      </div>
+
+      <div class="grid__item large--six-twelfths  product-single__meta--wrapper medium--five-twelfths large--five-twelfths">
+        <div class="product-single__meta desktop-single">
+          {% if section.settings.product_vendor_enable %}
+            <h2 class="product-single__vendor" itemprop="brand">{{ product.vendor }}</h2>
+          {% endif %}
+
+          <h1 class="product-single__title" itemprop="name">{{ product.title }}</h1>
+          <a class="mobile-hide" href="#looxReviews"><div class="loox-rating" data-id="{{ product.id }}" data-rating="{{ product.metafields.loox.avg_rating }}" data-raters="{{ product.metafields.loox.num_reviews }}"></div></a>         
+          
+
+          <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            {% comment %}
+              Optionally show the 'compare at' or original price of the product.
+            {% endcomment %}
+
+            {% if product.compare_at_price_max > product.price %}
+              <span id="PriceA11y" class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+              <span class="product-single__price--wrapper">
+                <span id="ComparePrice" class="product-single__price--compare-at">
+                  {% if current_variant.compare_at_price > current_variant.price %}
+                    {{ current_variant.compare_at_price | money }}
+                  {% endif %}
+                </span>
+              </span>
+              <span id="ComparePriceA11y" class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
+            {% else %}
+              <span id="PriceA11y" class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
+            {% endif %}
+
+            <span id="ProductPrice"
+              class="product-single__price{% if product.compare_at_price > product.price %} on-sale{% endif %}"
+              itemprop="price"
+              content="{{ current_variant.price | divided_by: 100.00 }}">
+              {{ current_variant.price | money }}
+            </span>
+
+            <hr class="hr--small">
+
+            <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+            <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
+			{% include  'preview'  %}
+            <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm--{{ section.id }}" class="product-single__form">
+              
+              <input type="hidden" id="mod1Num" name="properties[Total Dogs]" value="1">
+              <input type="hidden" id="dog1Name" name="properties[Dog 1 name]" value="">
+              <input type="hidden" id="dog2Name" name="properties[Dog 2 name]" value="">
+              <input type="hidden" id="dog3Name" name="properties[Dog 3 name]" value="">
+              <input type="hidden" id="dogbreed1" name="properties[Dog 1 image]" value="">
+              <input type="hidden" id="dogbreed2" name="properties[Dog 2 image]" value="">
+              <input type="hidden" id="dogbreed3" name="properties[Dog 3 image]" value="">
+              <input type="hidden" id="backside" name="properties[Backside]" value="">
+
+              <input type="hidden" id="mod2Num" name="properties[Total person]" value="1">
+              <input type="hidden" id="skincolor1" name="properties[Skin color 1]" value="1">
+              <input type="hidden" id="skincolor2" name="properties[Skin color 2]" value="1">
+              <input type="hidden" id="skincolor3" name="properties[Skin color 3]" value="1">
+
+              <input type="hidden" id="hairStyle1" name="properties[Hair style 1]" value="">
+              <input type="hidden" id="hairStyle2" name="properties[Hair style 2]" value="">
+              <input type="hidden" id="hairStyle3" name="properties[Hair style 3]" value="">
+              
+              <input type="hidden" id="person1" name="properties[Person Name 1]" value="">
+              <input type="hidden" id="person2" name="properties[Person Name 2]" value="">
+              <input type="hidden" id="person3" name="properties[Person Name 3]" value="">
+              
+              {% unless product.has_only_default_variant %}
+                {% for option in product.options_with_values %}
+                  
+             <center> <div class="radio-wrapper js product-form__item">
+                    <label class="single-option-radio__label{% if option.name == 'Default' or option.name == 'Title' %} hidden-label{% endif %}"
+                      for="ProductSelect-option-{{ forloop.index0 }}">
+                      {{ option.name | escape }}
+                    </label>
+                    {% if section.settings.product_selector == 'radio' %}
+                      <fieldset class="single-option-radio"
+                        name="{{ option.name | handleize }}"
+                        id="ProductSelect-option-{{ forloop.index0 }}">
+                        {% assign option_index = forloop.index %}
+                        {% for value in option.values %}
+                          {% assign variant_label_state = true %}
+                          {% if product.options.size == 1 %}
+                            {% unless product.variants[forloop.index0].available  %}
+                              {% assign variant_label_state = false %}
+                            {% endunless %}
+                          {% endif %}
+                          <input type="radio"
+                            {% if option.selected_value == value %} checked="checked"{% endif %}
+                            {% unless variant_label_state %} disabled="disabled"{% endunless %}
+                            value="{{ value | escape }}"
+                            data-index="option{{ option_index }}"
+                            name="{{ option.name | handleize }}"
+                            class="single-option-selector__radio{% unless variant_label_state %} disabled{% endunless %}"
+                            id="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
+                          <label for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}"{% unless variant_label_state %} class="disabled"{% endunless %}>{{ value | escape }}</label>
+                        {% endfor %}
+                      </fieldset>
+                    {% else %}
+                      <select class="single-option-selector__radio single-option-selector-{{ section.id }} product-form__input" id="SingleOptionSelector-{{ forloop.index0 }}" data-index="option{{ forloop.index }}">
+                        {% for value in option.values %}
+                          <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value | escape }}</option>
+                        {% endfor %}
+                      </select>
+                    {% endif %}
+               </div></center>
+              
+                {% endfor %}
+              {% endunless %}
+
+              <select name="id" id="ProductSelect" class="product-single__variants no-js">
+                {% for variant in product.variants %}
+                  {% if variant.available %}
+                    <option {% if variant == product.selected_or_first_available_variant %}
+                      selected="selected" {% endif %}
+                      data-sku="{{ variant.sku }}"
+                      value="{{ variant.id }}">
+                      {{ variant.title }} - {{ variant.price | money_with_currency }}
+                    </option>
+                  {% else %}
+                    <option disabled="disabled">
+                      {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                    </option>
+                  {% endif %}
+                {% endfor %}
+              </select>
+
+              {% if section.settings.quantity_enabled %}
+              <div class="product-single__quantity">
+                <label for="Quantity" class="product-single__quantity-label js-quantity-selector">{{ 'products.product.quantity' | t }}</label>
+                <input type="number" hidden="hidden" id="Quantity" name="quantity" value="1" min="1" class="js-quantity-selector">
+              </div>
+              {% endif %}
+
+<!--         <div class="product-form__item product-form__item--logo">            
+           <label for="custom_photo">VEUILLEZ SÉLECTIONNER UNE IMAGE (N'IMPORTE QUEL ANIMAL):</label><br><br>
+              
+              <input required id="custom_photo" type="file" name="properties[Logo]" class="product-form__input">           
+        </div> -->
+<!--               <div class="product-form__item product-form__item--logo">            
+                <center><label for="custom_photo" id="custom_photo_label">VEUILLEZ SÉLECTIONNER UNE IMAGE (N'IMPORTE QUEL ANIMAL):</label></center>
+                <div class="progress_container" style="display:none;"><br/>
+                  <center><span>Importation de la photo ... <span class="data-bar">10%</span></span></center>
+                   <br/>
+                  <div class="progress progress-success progress-striped active">
+                  <div class="bar" style="width: 10%;"></div>
+                </div>
+                </div>  
+             <input required id="custom_photo" type="file" name="uploadphoto" class="product-form__input text-center" onchange="addPhoto('images');" accept=".jpg,.jpeg,.png">
+                <input required id="hidden_photo" type="hidden" name="properties[Logo]" value="">           
+            </div> -->
+
+              
+              
+              <div class="product-single__add-to-cart">
+                <button type="submit" name="add" id="AddToCart--{{ section.id }}" class="button btn-grad-log btn--full"{% unless current_variant.available %} disabled="disabled"{% endunless %}>
+                 <img src="{{ "dog-face_1f436.png" | asset_url }}" style="top: 4px;position: relative;"> <span class="add-to-cart-text">
+                    
+                    {% if current_variant.available %}
+                      {{ 'products.product.add_to_cart' | t }}
+                    {% else %}
+                      {{ 'products.product.sold_out' | t }}
+                    {% endif %}
+                    
+                  </span> <img src="{{ "cat-face_1f431.png" | asset_url }}" style="top: 4px;position: relative;">
+                </button>
+              </div>
+              
+              <br>
+              
+              <div class="product-single__description rte" itemprop="description">
+          <!--             <h3>Product Description11</h3> -->
+            {{ product.description }}
+       
+           </div>
+		  
+           
+            </form>
+			
+          </div>
+
+       <div class="shg-row product-key-points">
+<div class="shg-c-lg-4 shg-c-md-4 shg-c-sm-4 shg-c-xs-4">
+<div id="s-2b1ce4ae-6b25-4749-85e2-b2fa130a9ea1" class="shg-c  shg-align-center">
+<div class="shogun-image-container">
+<img src="https://i.imgur.com/60slC9c.png" width="" height="" alt="" class="shogun-image img-responsive ">
+<div class="shogun-image-overlay shg-middle-center" style=""></div>
+</div>
+</div>
+</div>
+<div class="shg-c-lg-4 shg-c-md-4 shg-c-sm-4 shg-c-xs-4">
+<div id="s-701b6510-96d6-434d-9238-f2c1f8e4f9bc" class="shg-c  shg-align-center">
+<div class="shogun-image-container">
+<img src="https://i.imgur.com/EtteOon.jpg" width="" height="" alt="" class="shogun-image img-responsive ">
+<div class="shogun-image-overlay shg-middle-center" style=""></div>
+</div>
+</div>
+</div>
+<div class="shg-c-lg-4 shg-c-md-4 shg-c-sm-4 shg-c-xs-4">
+<div id="s-8830b4d3-cb3b-48f9-bcdf-e1118188aa1c" class="shg-c  shg-align-center">
+<div class="shogun-image-container">
+<img src="https://i.imgur.com/Crf3im6.png" width="" height="" alt="" class="shogun-image img-responsive ">
+<div class="shogun-image-overlay shg-middle-center" style=""></div>
+ <br> <br/>
+</div>
+</div>
+</div>
+</div>
+   <center>
+        {% comment %}
+       {% include  'product-des-accordion'  %}
+        {% endcomment %}
+          {% if section.settings.social_sharing_products %}
+            {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
+          {% endif %}
+   </center>  
+        </div>
+      </div>
+    </div>
+
+</div>
+
+<br><br><br>
+<u><b><center><h1> Avis de nos clients !</h1></center></b></u>
+
+<hr class="hr--clear pp-clear-btm">
+<div id="looxReviews" data-product-id="{{product.id}}" >{{ product.metafields.loox.reviews }}</div>
+
+{% comment %}<div class="yotpo yotpo-main-widget" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&amp;','%26'}}" data-description="{{ product.description | escape }}"></div>{% endcomment %}
+<div class="section-you-may-like">
+{% include  'related-products'  %}
+</div> 
+
+
+{% unless product.empty == empty %}
+  <script type="application/json" id="ProductJson-{{ section.id }}">
+    {{ product | json }}
+  </script>
+{% endunless %}
+
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<!-- <script type="text/javascript" src="/fancybox/jquery.easing-1.4.pack.js"></script> -->
+
+
+
+   <script>
+     $('[data-fancybox="gallery"]').fancybox({
+	thumbs : {
+// 		autoStart : true,
+      smallBtn: "true"
+	}
+});
+     
+     
+   // $('.regular').zoom({ on: 'click'  });     
+//     var win_width = $( window ).width();
+//      if(win_width >= 768){
+     
+//        $('.image-zoom').css('display', 'block').parent().zoom({
+//         on:'mouseover',
+//         touch: false,
+//         magnify: 1.5,
+//         url: $(this).find('img').attr('data-zoom'),
+//         onZoomIn: function(){
+//         $(this).parent().css('cursor','zoom-out')
+//       },
+//       onZoomOut: function(){
+//       $(this).parent().css('cursor','zoom-in')
+//     }
+//       });
+       
+//      }
+   
+  
+     $(".regular").not('.slick-initialized').slick({
+         slidesToShow: 1,
+         slidesToScroll: 1,
+         dots: false,
+         focusOnSelect: true,
+         arrows: false,
+         swipe: false,
+       loop:false,
+      });
+     
+     $('ul#ProductThumbs li').click(function(e) {
+     e.preventDefault();
+     var slideno = $(this).index();
+     // $('.regular')..slick('slickGoTo', slideno-1);
+     $('.regular').slickGoTo(slideno);   
+   });  
+  </script>
+  
+  
+  
+{% schema %}
+  {
+    "name": "Product pages",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "zoom_enable",
+        "label": "Enable image zoom"
+      },
+      {
+        "type": "checkbox",
+        "id": "social_sharing_products",
+        "label": "Enable product sharing",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "product_vendor_enable",
+        "label": "Show product vendor"
+      },
+      {
+        "type": "select",
+        "id": "image_layout",
+        "label": "Image display",
+        "default": "stacked",
+        "options": [
+          {
+            "value": "stacked",
+            "label": "Stacked"
+          },
+          {
+            "value": "thumbnails",
+            "label": "Thumbnails"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Product options form"
+      },
+      {
+        "type": "checkbox",
+        "id": "quantity_enabled",
+        "label": "Show quantity picker"
+      },
+      {
+        "type": "select",
+        "id": "product_selector",
+        "label": "Picker type",
+        "options": [
+          {
+            "value": "radio",
+            "label": "Button"
+          },
+          {
+            "value": "select",
+            "label": "Dropdown"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Add to cart button"
+      },
+      {
+        "type": "select",
+        "id": "add_to_cart_button_size",
+        "label": "Button size",
+        "default": "small",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ]
+      }
+],
+"blocks": [
+     {
+        "type": "startmain",
+        "name": "Start Main Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "s_head",
+            "label": "Main Block Heading"
+          }
+          
+        ]
+      },
+     {
+        "type": "head",
+        "name": "Heading",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Slider Heading"
+          }
+          
+        ]
+      },
+      {
+        "type": "start",
+        "name": "Start slider",
+        "settings": [
+        ]
+      },
+      {
+        "type": "logo_image",
+        "name": "Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image_1",
+            "label": "Slider image"
+          }
+          
+        ]
+      },
+      {
+        "type": "exit",
+        "name": "Close Slider",
+        "settings": [
+        ]
+      },{
+        "type": "endmain",
+        "name": "END Main block",
+        "settings": [
+          
+        ]
+      },
+		{
+        "type": "content",
+        "name": "content",
+        "settings": [
+			{
+            "type": "textarea",
+            "id": "content_text",
+            "label": "Rich text"
+          }
+          
+        ]
+      }
+	  
+    ]
+  
+  }
+{% endschema %}
+<style>
+
+  .single-option-radio input[type="radio"]:checked + label {
+    border: 2px solid #000000;
+/*     padding: 13px 25px; */padding:9px 11px;
+}
+  .product-container-pp input#custom_photo {
+    border: 1px solid #dbdcdb;
+    margin: 17px 0px 17px -1px;
+}
+  .add-to-cart{
+   background: #1cadff;
+  font-family: "Roboto",!sans-serif important;
+  font-weight: bolder;
+  letter-spacing: -0.025em;
+  line-height: 1.42;
+  font-size: 14px;
+    text-transform: inherit;
+  }
+  .add-to-cart:hover{
+   background: #1cadff !important;
+  }
+  .product-single__thumb{
+    width: 76px;
+  }
+  .accordion .accordion-head{
+    font-size: 1em;
+  }
+  .accordion-head a{
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    position: relative;
+  }
+  .accordion-head a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    border-bottom: 2px solid #000;
+    transition: width 0.5s ease;
+}
+  .accordion-head a:hover::after, .accordion-head a:focus::after {
+    width: 100%;
+}
+  .regular:hover { 
+  cursor: move; 
+    cursor: zoom-in;
+ cursor: -moz-grab;
+  cursor: -webkit-zoom-in;
+}
+  
+  @media screen and (min-width: 591px) {
+  .mobile-zoom{display:none}
+    }
+@media screen and (max-width: 590px) {
+  .mobile-zoom{display:inline}
+    }
+/*
+.regular:focus{
+  cursor: zoom-out;
+  cursor: -moz-zoom-out;
+  cursor: -webkit-zoom-out;
+}*/
+/*   .aos-animate {
+    animation: zoom-fade 1.5s cubic-bezier(0.26, 0.54, 0.32, 1) 0s forwards;
+} */
+</style>
+<script src="https://lipis.github.io/bootstrap-sweetalert/dist/sweetalert.js"></script>
+<link rel="stylesheet" href="https://lipis.github.io/bootstrap-sweetalert/dist/sweetalert.css">
+
+<style>
+@media only screen and (max-width: 600px) {
+ .template-product .video-wrapper, .template-product .webcast-image-fixed {
+    height: 413px !important;
+  }
+  .mobile-hide {
+    display:none !important;
+  }
+  .button{
+    margin:10px 0 10px 0px;
+  }
+}
+  @media only screen and (min-width: 600px) {
+    .template-product .video-wrapper, .template-product .webcast-image-fixed{
+      height:758px !important;}
+  }
+  
+</style>

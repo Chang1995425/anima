@@ -1,0 +1,223 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+  {% comment %}ly_asset_replace_for_[ 'owl.carousel.js' | asset_url | script_tag ]_begin{% endcomment %}{% assign ly_asset = 'owl.carousel.js' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  | script_tag }}{% comment %}ly_asset_replace_end{% endcomment %}
+  {% comment %}ly_asset_replace_for_[ 'owl.carousel.min.js' | asset_url | script_tag ]_begin{% endcomment %}{% assign ly_asset = 'owl.carousel.min.js' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  | script_tag }}{% comment %}ly_asset_replace_end{% endcomment %}
+
+  {% comment %}ly_asset_replace_for_[ 'owl.carousel.css' | asset_url | stylesheet_tag ]_begin{% endcomment %}{% assign ly_asset = 'owl.carousel.css' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  | stylesheet_tag }}{% comment %}ly_asset_replace_end{% endcomment %}
+
+  {% comment %}ly_asset_replace_for_[ 'owl.carousel.min.css' | asset_url | stylesheet_tag ]_begin{% endcomment %}{% assign ly_asset = 'owl.carousel.min.css' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  | stylesheet_tag }}{% comment %}ly_asset_replace_end{% endcomment %}
+<div class="feedback">
+<div class="page-width wrapper custom-quotes" data-section-id="{{ section.id }}" data-section-type="quotes" >
+  {% if section.settings.title != blank %}
+    <div class="section-header text-center testimonial-header">
+      <h2 class="testtimonial-head">{{ section.settings.title | escape }}</h2> 
+      <hr>
+    </div>
+  {% endif %}
+
+  {% if section.blocks.size > 0 %}
+    <div class="quotes-wrapper">
+      <div class="quotes-slider owl-carousel owl-theme owl-feedback" id="Quotes-{{ section.id }}" data-count="{{ section.blocks.size }}">
+        {% for block in section.blocks %}
+        <div class="item">
+          	<div class="owl-image">						
+              <img class="lazyload js tedet"
+                   src="{{ block.settings.clientimage | img_url: '96x120' }}"
+                   data-src="{{ img_url }}"
+                   data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                   data-aspectratio="{{ section.settings.logo.aspect_ratio }}"
+                   data-sizes="auto"
+                   alt="{{ logo_alt | escape }}"
+                   style="max-width: {{ section.settings.logo_max_width }}px">
+         	 </div>
+              <div class="owl-content">
+                	<div class="text">		
+                      <p>{% if block.settings.quote != blank %}{{ block.settings.quote }}{% endif %}</p>
+                	</div>
+  					<div class="bottom">
+                        <div class="name">						                       
+                            {% if block.settings.author != blank %}
+                            	<h4>{{ block.settings.author | escape }}</h4>
+                          	{% endif %}
+                          
+                        </div>
+                        <div class="icon">
+                          <i class="fa fa-quote-right" aria-hidden="true"></i>
+                        </div>
+                  </div>
+              </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
+  {% if section.blocks.size == 0 %}
+    {% include 'no-blocks' %}
+  {% endif %}
+  <div class="box-starrating">
+    
+    <div class="review">
+					
+      <div class="sub1">
+
+        <span>Review</span>
+
+      </div>
+
+      <div class="sub2">
+
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+
+      </div>
+		{% if section.settings.no-of-review != blank %}
+       	<div class="sub3">
+        	<cite class="no-of-review"><a href="#">Wrire A Review</a></cite>
+        </div>
+        {% endif %}
+    </div>
+    
+  </div>
+</div>
+</div>
+
+
+<!--script>
+            window.onload=function(){
+             
+      
+$(document).ready(function(){
+$('.top-products').owlCarousel({
+    nav:true,
+    loop:false,
+    items:2,
+  	slideBy:1,
+    responsive:{
+        0:{
+            items:2,
+            margin:20
+        },
+        600:{
+            items:3,
+            margin:20
+        },
+        1000:{
+            items:4,
+          margin:30
+        }
+    }
+});
+
+
+});
+
+    }
+          </script>
+<!--  <script>
+            $(document).ready(function() {
+              var owl = $('.owl-carousel');
+              owl.owlCarousel({
+                items: 3,
+                loop: true,
+                margin: 10,
+                nav: true,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true
+              });
+//               $('.play').on('click', function() {
+//                 owl.trigger('play.owl.autoplay', [1000])
+//               })
+//               $('.stop').on('click', function() {
+//                 owl.trigger('stop.owl.autoplay')
+//               })
+            })
+          </script> -->
+   
+   
+{% schema %}
+  {
+    "name": "Testimonial Slider",
+    "class": "index-section",
+    "max_blocks": 9,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Testimonials"
+      },
+     {
+            "type": "text",
+            "id": "no-of-review",
+            "label": "No of review",
+            "default": "No of review"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "quote",
+        "name": "Testimonial",
+        "settings": [
+           {
+            "type": "text",
+            "id": "short-review",
+            "label": "Short review",
+            "default": "Short review"
+          },
+          
+          {
+            "type": "richtext",
+            "id": "quote",
+            "label": "Text",
+            "default": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>"
+          },
+          
+          {
+            "type": "text",
+            "id": "author",
+            "label": "Author",
+            "default": "Author's name"
+          },
+          {
+            "type": "text",
+            "id": "review-date",
+            "label": "Review Date",
+            "default": "Review Date"
+          },
+          {
+            "type": "image_picker",
+            "id": "clientimage",
+            "label": "client image"
+          },
+         {
+            "type": "text",
+            "id": "reviewed-product",
+            "label": "Product name",
+            "default": "Product name"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Testimonial slider",
+        "category": "Text",
+        "blocks": [
+          {
+            "type": "quote"
+          },
+          {
+            "type": "quote"
+          },
+          {
+            "type": "quote"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

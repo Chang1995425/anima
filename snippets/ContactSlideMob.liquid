@@ -1,0 +1,501 @@
+{%- assign collectionMob = collections[section.settings.collectionMob] -%}
+
+
+<div class="Featured-collection-wrapper MobCollectionSlide">
+<header class="wrapper section-header">
+<h2 class="section-header__title">🐶 Un coup de coeur ? 🐱</h2>
+  </header>
+<div class="product-template__container page-width product-page-related" itemscope itemtype="http://schema.org/Product" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true">
+ <aside class="grid">
+    <div class="grid__item">
+
+<div class="grid-uniform product-related product-related-owrp">
+    <div class=" wrp-related-products variable-width" style="margin-bottom: 0;">    
+
+      
+      <div class="product-template__container page-width product-page-related" itemscope itemtype="http://schema.org/Product" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true">
+        <aside class="grid">
+          <div class="grid__item">
+            {% unless heading == blank %}
+            <header class="section-header">
+              <h2 class="section-header__title">{{ heading }}</h1>
+            </header>
+            {% endunless %}
+
+            <div class="grid-uniform product-related">
+              <div class="owl-carousel related-products aaaaaaaaaa owl-theme" style="margin-bottom: 0;">        
+
+                
+                {% for product in collections[section.settings.collectionMob].products %}
+                <div class="item">
+                  <div class="grid__item grid-product">
+                    <div class="grid-product__wrapper">
+                      <div data-aos="zoom-out" data-aos-delay="200" class="grid-product__image-wrapper" data-aos="row-of-4">
+                        <a style="background:url({{ product.featured_image | product_img_url: 'large' }})" class="shop-now" href="{{ product.url }}">
+                          <img src="{{ product.featured_image | product_img_url: 'large' }}" alt="{{ product.title | escape  }}" />  
+                        </a> 
+
+                        <a class="shop-now" href="{{ product.url }}">
+                          <span class="grid-product__title">{{ product.title }}</span>
+                          {% comment %}<div class="yotpo bottomLine" data-product-id="{{ product.id }}"> </div>{% endcomment %}
+                          <div class="loox-rating" data-id="{{ product.id }}" data-rating="{{ product.metafields.loox.avg_rating }}" data-raters="{{ product.metafields.loox.num_reviews }}"></div>
+                          <span class="grid-product__price-wrap">
+                            <span class="grid-product__price">
+                              <span class="visually-hidden">Regular price</span>
+                              {{ product.price | money }}
+                            </span>
+                          </span>
+                        </a>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+                
+              </div>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+      
+  
+  </div>
+</div>
+ 
+</div>
+  </aside>
+  
+</div>
+  
+  {% if section.settings.TextBottomMob %}
+  <div class="InnerTextBlockMob">
+    <p>{{ section.settings.TextBottomMob }}</p>
+  </div>
+  {% endif %}
+  
+</div>
+
+
+<!-- <style>
+  .owl-nav{
+	    position: absolute;
+    top: 35%;
+    width: 104%;
+    display: flex;
+    justify-content: space-between;
+    left: -27px;
+  }
+.owl-item{
+  	padding: 0px 5px;
+  }
+
+  @media screen and (max-width: 768px){
+    .owl-item{
+      opacity: 0;
+    }
+    .owl-item.active{
+      opacity: 1;
+    }
+    .owl-nav{
+     top: 20.5%;
+    }
+    .owl-nav {
+    width: 107%;   
+    left: -14px;
+}
+  .owl-item {
+    padding: 0px 12px;
+}
+  }
+</style>
+<script>
+ 
+$('.product-template__container .grid-uniform').owlCarousel({
+    nav:true,
+    responsive:{
+        0:{
+          	items:2
+      	},
+        600:{
+            items:3
+        },
+        1200:{
+            items:4
+        }
+    }
+})
+
+</script>
+ -->
+<style>
+.section-header{
+    text-align:center;
+  text-transform: none!important;
+}
+.Featured-collection-wrapper .section-header__title{
+    float:none;
+}
+.product-related.grid-uniform{
+   padding:0px 30px; 
+}
+:focus {outline:none;}
+.grid-product__title {
+    font-size: 1em;
+    margin-top: 15px;
+}
+.Featured-collection-wrapper{
+   background:#fff;
+}
+  .grid__item .section-header {
+  display: none;
+}
+.image-wrap.product--wrapper img {
+    margin: 0 auto;
+    text-align: center;
+}
+ 
+.wrp-related-products .owl-stage-outer{
+    min-height: 530px;
+}
+.wrp-related-products .owl-dots{
+    text-align:center;
+}
+
+  
+.wrp-related-products .owl-nav .owl-prev{
+   left:-33;
+   top:29%
+}
+.wrp-related-products .owl-nav .owl-next{
+   right:-33;
+   top:29%
+}
+  .slick-slider .slick-dots li button{
+     text-indent:0px;
+  }
+.slick-slider .slick-dots li button::before {
+   border:1px solid #000;
+  
+}
+.slick-slider .slick-dots li.slick-active button::before {
+   background:#000;
+}
+.slick-dots{
+   border-top:3px solid #000;
+}
+.slick-dots li button {
+
+   border: 0;
+  background: transparent;
+  display: block;
+  height: 54px;
+  line-height: 1.4;
+  font-size: 22px;
+  color: #000;
+  padding: 5px;
+  cursor: pointer;
+  width: 240px;
+}
+
+  .slick-dots li {
+
+    width: auto;
+  }
+  
+  .slick-dots li button::before {
+    transform: rotate(45deg);
+    border-radius: 0px !important;
+    position: absolute;
+    top: -32px;
+    left: 0;
+    content: "\f078";
+    width: 26px !important;
+height: 26px!important;
+    font-family: "FontAwesome";
+    font-size: 6px;
+    line-height: 20px;
+    text-align: center;
+    color: #00ce5a;
+    opacity: 0.25;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    left: 0 !important;
+    right: 0!important;
+    margin: 0 auto!important;
+}
+  
+.owl-next.disabled span,
+.owl-prev.disabled span{
+    color: #d6d6d6;
+}
+.owl-dots{
+   bottom: 40px;
+   position: absolute;
+   width: 100%;
+}
+#choix-de-l-39-arriere-plan .owl-dots{
+   bottom: 98px;
+}
+.owl-dots .owl-dot{
+   width: 10px;
+   height: 10px;
+   border: 1px;
+   display: inline-block;
+   background:#000;
+   border-radius: 10px;
+   margin: 0px 3px;
+}
+.owl-dots .owl-dot.active{
+   background:#0f33a0; 
+}
+.owl-item{
+   padding-bottom:88px;
+}
+  
+  
+  /* On screens that are 1124px or less, set the background color to blue */
+@media screen and (max-width: 1124px) {
+  .slick-dots li button {
+      border: 0;
+      background: transparent;
+      display: block;
+      height: 81px;
+      line-height: 0;
+      font-size: 18px;
+      color: #000;
+      padding: 5px;
+      cursor: pointer;
+      width: 200px;
+  }
+  .wrp-related-products .owl-nav .owl-prev{
+     top:24%
+  }
+  .wrp-related-products .owl-nav .owl-next{
+     top:24%
+  }
+}
+  
+  /* On screens that are 1124px or less, set the background color to blue */
+@media screen and (max-width: 1220px) {
+  	.slick-dots li button { 
+        width: 200px;
+    }
+   
+     .slick-dots li button {
+        width: 170px;
+        height: 50px;
+    }
+}
+  
+  /* On screens that are 1124px or less, set the background color to blue */
+@media screen and (max-width: 1010px) {
+ 
+  .wrp-related-products .owl-nav .owl-prev{
+     top:19%
+  }
+  .wrp-related-products .owl-nav .owl-next{
+     top:19%
+  }
+}
+  
+  /* On screens that are 1124px or less, set the background color to blue */
+@media screen and (max-width: 1000px) {
+ 
+  .wrp-related-products .owl-nav .owl-prev{
+     top:28%
+  }
+  .wrp-related-products .owl-nav .owl-next{
+     top:28%
+  }
+}
+  
+  
+  /* On screens that are 920px or less, set the background color to blue */
+@media screen and (max-width: 920px) {
+  .slick-dots li button {
+      border: 0;
+      background: transparent;
+      display: block;
+      height: 81px;
+      line-height: 0;
+      font-size: 15px;
+      color: #000;
+      padding: 5px;
+      cursor: pointer;
+      width: 140px;
+  }
+  
+   .wrp-related-products .owl-nav .owl-prev{
+     top:24%
+  }
+  .wrp-related-products .owl-nav .owl-next{
+     top:24%
+  }
+  .slick-dots li button {
+    border: 0;
+    background: transparent;
+    display: block;
+    height: 50px;
+  }
+
+}
+
+    /* On screens that are 766px or less, set the background color to blue */
+@media screen and (max-width: 766px) {
+  .slick-dots li button::before {   
+      top: -13px;
+      width: 18px !important;
+      height: 18px !important;
+  }
+  
+  .slick-dots li button {
+    height: 81px;
+    font-size: 14px;
+    width: 141px;
+	}
+  .wrp-related-products .owl-nav .owl-prev{
+       top:18%
+    }
+    .wrp-related-products .owl-nav .owl-next{
+       top:18%
+    }
+    .wrp-related-products .owl-stage-outer {
+        min-height: 338px;
+    }
+    .wrp-related-products .slick-dots .slick-active button{
+       color:#0a2f9d !important;
+       font-weight:700 !important;
+    }
+    
+
+}
+  
+    /* On screens that are 766px or less, set the background color to blue */
+@media screen and (max-width: 766px) {
+  .slick-dots li {
+      width: 50%;
+      height: auto;
+  }
+  .slick-dots li button::before {   
+      display:none;
+  }
+  .slick-dots {
+      border-top: 0px solid #000;
+  }
+  .slick-dots li button {
+      height: auto;
+      font-size: 14px;
+      width: 100%;
+      line-height:1.4;
+	}
+  .owl-item {
+      padding-bottom: 44px;
+  }
+  .owl-dots {
+    bottom: 18px;
+  }
+  
+  
+  .slick-slider .slick-dots li:nth-child(2),
+  .slick-slider .slick-dots li:nth-child(4){
+      border-left: 1px solid #eee;
+  }
+  .related-products .owl-dots {
+      display: block;
+  }
+  .product-related-owrp.product-related{
+      padding:0px;
+  }
+  
+}
+  
+</style>
+
+<script>
+$(document).ready(function(){
+ 
+ 
+  $(".slick-dots li:nth-child(1) button").text("Vetements");
+  $(".slick-dots li:nth-child(2) button").text("Tableaux");
+  $(".slick-dots li:nth-child(3) button").text("Accessoires");
+  $(".slick-dots li:nth-child(4) button").text("Cartes-cadeaux");
+  
+  
+ 
+  
+$('.related-products').owlCarousel({
+    nav:true,
+  dot:true,
+    loop:false,
+  	slideBy:4,
+    responsive:{
+        0:{
+            slideBy:2,
+            items:2,
+            margin:20,
+           
+        },
+        600:{
+            slideBy:3,
+            items:3,
+            margin:20
+        },
+        1000:{
+            slideBy:4,
+            items:4,
+            margin:30
+        }
+    }
+});
+  
+
+
+
+$('.related-products').on('changed.owl.carousel',function(property){
+    var current = property.item.index;
+    var itemsAmount = property.item.count;
+    console.log(property);
+    console.log(current);
+    console.log(itemsAmount);
+    var webcast;
+    if(property.page.size == 2){
+    webcast = 2;
+    }
+    else {
+    webcast = 1;
+    }
+    
+    //if (current === itemsAmount+webcast) {
+    //console.log(current);
+    if(property.page.size == 4 && property.property.value == 7) {
+    $('.owl-prev').click(function (){
+    	//$(".related-products").trigger('to.owl.carousel', [0, 500]);
+    })
+  	$(".related-products").trigger('prev.owl.carousel', 500);
+  } 
+  else if (current === itemsAmount+webcast) {
+    $(".related-products").trigger('to.owl.carousel', [0, 500]);
+    }
+  //}
+});
+});
+  
+
+  
+  $('.variable-width').not('.slick-initialized').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: false,
+  autoplaySpeed: 2000,
+  dots: true,
+  arrows:false,
+  draggable: false,
+    swipeToSlide: false,
+touchMove: false,
+    swipe: false
+});
+  
+
+</script>

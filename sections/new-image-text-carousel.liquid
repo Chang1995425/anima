@@ -1,0 +1,246 @@
+<div class="row">
+  <div class="mobile-block-text" style="width:50%;display:inline-block;padding:40px;padding-bottom:0;text-align:center;{% if section.settings.align_text == 'left' %}float:left;{% else %} float:right; {% endif %}">
+    <div class="title-section">
+        <h2 class="mobil-titl">{{ section.settings.title }}</h2>
+    </div>
+    
+    <div class="image-wrap-new desktop-block" style="width:100%;padding-left:11%;display:inline-block;padding:0px 15px;text-align:center;{% if section.settings.align_text == 'right' %}float:left;{% endif %}">
+      <div class="why-try-one">
+      <div class="wrapper container">     
+        <div class="dog-carous">      
+           <div class="owl-carousel owl-carouselaa owl-theme">       
+           <div class="item"> <span><img style="width:310px;height:310px" src="{{section.settings.image  | img_url: 'large'}}" alt="{{section.settings.image}}" /></span></div>
+           <div class="item"> <span><img style="width:310px;height:310px" src="{{section.settings.image1  | img_url: 'large'}}" alt="{{section.settings.image}}" /></span></div>
+           <div class="item"><span><img style="width:310px;height:310px" src="{{section.settings.image2  | img_url: 'large'}}" alt="{{section.settings.image}}" /></span></div>
+         </div>
+        </div>
+        </div>
+      </div>    
+    </div>
+    
+    
+    <div class="text-desc" style="margin-top:10%;">
+    	
+      	<div class="title-section" style="margin-bottom:50px;">
+        	<h2 class="mobil-titl2" style="font-weight: 700;">{{ section.settings.title }}</h2>
+    	</div>
+      
+      <p>{{section.settings.text_desc}}<p>
+    
+    </div>
+    <div class="button-new {% if section.settings.btn_colr == 'Blue' %}button btn-grad-log{% endif %}{% if section.settings.btn_colr == 'Red' %}button btn-grad-sign{% endif %}">{{section.settings.button_label}}</div>
+  </div>
+  
+  <div class="image-wrap-new mobile-block" style="width:50%;padding-left:11%;display:inline-block;padding:25px 0px 10px 0px;text-align:center;{% if section.settings.align_text == 'right' %}float:left;padding-top:15px;{% endif %}">
+    <div class="why-try-one">
+    <div class="wrapper container">     
+      <div class="dog-carous">      
+         <div class="owl-carousel owl-carouselaa owl-theme">       
+         <div class="item"> <span><img style="width:310px;height:310px" src="{{section.settings.image  | img_url: 'large'}}" alt="{{section.settings.image}}" /></span></div>
+         <div class="item"> <span><img style="width:310px;height:310px" src="{{section.settings.image1  | img_url: 'large'}}" alt="{{section.settings.image}}" /></span></div>
+         <div class="item"><span><img style="width:310px;height:310px" src="{{section.settings.image2  | img_url: 'large'}}" alt="{{section.settings.image}}" /></span></div>
+       </div>
+      </div>
+      </div>
+    </div>    
+  </div>
+</div>
+<style>
+  .button-new{width:50%;margin-left:20%;margin-right:20%;}
+  .mobil-titl{font-weight:700;}
+  @media only screen and (max-width: 600px) {
+  .mobile-block {
+    display:block !important;
+    width:100% !important;
+    margin:0 18%;
+  }
+    .mobile-block-text{display:block !important;
+    width:100% !important;
+    /*margin:0 5% !important;*/
+    }
+    .button-new{
+      width:65% !important;
+      margin:0 auto !important;
+    }  
+    .dog-carous {
+    margin: 5px auto 0 !important;
+      overflow: visible;
+    }
+    #shopify-section-1550250217174 .text-desc {
+       margin-bottom: 12% !important;
+    }
+    #shopify-section-1550250217174 .button-new {
+       margin-bottom: -5% !important;
+    }
+    #shopify-section-1550299636182 .text-desc {
+      margin-top: 4% !important;
+      display: inline-block;
+      margin-bottom: 6% !important;
+    }
+    .text-desc {
+      margin-top: 2% !important;
+    }
+    .dog-carous button.owl-prev {
+    margin-left: -18% !important;
+    }
+    .dog-carous button.owl-next {
+    margin-right: -18% !important;
+    }
+    .mobile-block-text {
+      padding: 50px 50px !important;
+    }
+    .dog-carous .owl-nav {
+      top: 40% !important;
+    }
+    .desktop-block .dog-carous .owl-carouselaa.owl-theme.owl-loaded.owl-drag .owl-item .item img {
+        width: auto !important;
+        height: auto !important;
+    }
+
+}
+  .fa-chevron-left{
+  top:50%;
+    left:-50px;
+    position:absolute;
+    margin-top:-30px;
+  }
+  
+  .fa-chevron-right{
+  top:50%;
+    right:-50px;
+    position:absolute;
+    margin-top:-30px;
+  }
+  .dog-carous .owl-carouselaa.owl-theme.owl-loaded.owl-drag .owl-item .item img{width:200px !important;height:200px !important}
+/*  div.mobile-block .slick-list{padding:25px; }
+  .slick-new.slick-initialized.slick-slider{padding:25px; }*/
+</style>
+<script>
+$(document).ready(function(){
+ $('.slick-new').not('.slick-initialized').slick({
+  nextArrow: '<i class="fa fa-chevron-right fa-3x"></i>',
+  prevArrow: '<i class="fa fa-chevron-left fa-3x"></i>', 
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1
+});
+});
+  
+ $('.owl-carouselaa').owlCarousel({
+    loop:true, 
+    margin:0,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+});
+</script>
+{% schema %}
+  {
+    "name": "New Image CarouselText",
+    "settings": [
+     {
+        "type": "checkbox",
+        "id": "new_img_carousel",
+        "label": "New image carousel with text left"
+     },
+{
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+     },
+{
+   "type": "select",
+   "id": "align_text",
+   "options": [
+      { "value": "left", "label": "Left"},
+      { "value": "right", "label": "Right"}
+   ],
+   "label": "Text Alignment"
+},
+{
+   "type": "select",
+   "id": "btn_colr",
+   "options": [
+      { "value": "Blue", "label": "Blue"},
+      { "value": "Red", "label": "Red"}
+   ],
+   "label": "Button Color"
+},
+{
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image1",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image2",
+        "label": "Image"
+      },
+      {
+        "type": "html",
+        "id": "text_desc",
+        "label": "Text Description"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      }
+   ],
+   "presets": [
+      {
+        "name": "New image carousel with text left",
+        "category": "Image"
+      }
+    ]
+  }
+
+{% endschema %}
+<style>
+  
+  @media only screen and (max-width: 600px) {
+    .mobile-block {
+      display: none !important;
+    }
+  }
+  
+  @media only screen and (min-width: 600px) {
+  .dog-carous .owl-carouselaa.owl-theme.owl-loaded.owl-drag .owl-item .item img {
+        margin: 0 auto;
+        width: 350px !important;
+        height: 350px !important;
+    }
+    .dog-carous .owl-carouselaa button.owl-next, 
+    .dog-carous .owl-carouselaa button.owl-prev {
+     width: 30px;
+      height: 60px;
+    }
+    .dog-carous .owl-nav{top:38% !important;}
+    
+    .desktop-block {
+      display: none !important;
+    }
+    
+  }
+  
+}
+ </style>

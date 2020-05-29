@@ -1,0 +1,348 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<div class="page-width wrapper text-bottom-home-wrapper">
+    <div class="section-header text-center">
+      {% if section.settings.title != blank %}
+  
+      <h2 class="section-title1" style="font-size:{{section.settings.font_size}};margin-top:{{section.settings.title_margin_top}};margin-bottom:{{section.settings.title_heading_margin_bottom}}">{{ section.settings.title }}</h2>
+      {% endif %}
+      {% if section.settings.dsktsub_title != blank %}
+      <div class="html-text-desktop" style="margin-top:{{section.settings.subtitle_margin_top}};margin-bottom:{{section.settings.tsubtitle_margin_bottom}}">{{ section.settings.dsktsub_title }}</div>
+     {% if section.settings.mblsub_title != blank %}
+      <div class="html-text-mobile" style="">{{ section.settings.mblsub_title }}</div>
+      {% endif %}
+      {% endif %}
+    </div>
+
+  <div class="grid {% unless section.blocks.size == 5 %}grid--uniform{% endunless %} grid--flush-bottom">
+    {%- assign grid_item_width = 'large--one-third' -%}
+    {%- assign max_height = 345 -%}
+    {% case section.blocks.size %}
+      {% when 1 %}
+        {%- assign grid_item_width = 'medium-up--one-half' -%}
+        {%- assign max_height = 530 -%}
+      {% when 2 %}
+        {%- assign grid_item_width = 'medium-up--one-half' -%}
+        {%- assign max_height = 530 -%}
+      {% when 4 %}
+        {%- assign grid_item_width = 'large--one-quarter' -%}
+        {%- assign max_height = 530 -%}
+    {% endcase %}
+    {% for block in section.blocks %}
+      {% if section.blocks.size == 5 and forloop.index < 5 %}
+        {%- assign column_width = 'large--one-fourth' -%}
+        {%- assign max_height = 530 -%}
+      {% else %}
+        {%- assign column_width = grid_item_width -%}
+      {% endif %}
+      <div class="grid__item grid_mobile {{ column_width }} text-{{ section.settings.align_text }}" {{ block.shopify_attributes }}>
+        {% if block.settings.enable_image %}
+          {% if block.settings.image != blank %}
+            {% capture img_id %}TextColumnImage-{{ block.id }}{% endcapture %}
+            {% capture wrapper_id %}TextColumnImageWrapper-{{ block.id }}{% endcapture %}
+            {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+            {% include 'image-style' with image: block.settings.image, width: max_height, height: max_height, small_style: true, wrapper_id: wrapper_id, img_id: img_id %}
+            <div id="{{ wrapper_id }}" class="feature-row__image-wrapper js">
+              <div class="custom-box-key-point" style="padding-top:{{ 1 | divided_by: block.settings.image.aspect_ratio | times: 100}}%;">
+                <img id="{{ img_id }}"  data-aos="zoom-out" data-aos-delay="200"
+                     class="feature-row__image lazyload"
+                     src="{{ block.settings.image | img_url: '200x200' }}"
+                     data-src="{{ img_url }}"
+                     data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                     data-aspectratio="{{ block.settings.image.aspect_ratio }}"
+                     data-sizes="auto"
+                     alt="{{ block.settings.image.alt | escape }}" style="max-width:300px;">
+              </div>
+            </div>
+            <noscript>
+              <p>
+                {{ block.settings.image | img_url: '300x300', scale: 2 | img_tag: block.settings.image.alt, 'feature-row__image' }}
+              </p>
+            </noscript>
+          {% else %}
+            <p>
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            </p>
+          {% endif %}
+        {% endif %}
+        {% if block.settings.title != blank %}
+          <h3 class="h4 title-img">{{ block.settings.title | escape }}</h3>
+        {% endif %}
+        {% if block.settings.text != blank %}
+          <div class="rte-setting description-img">{{ block.settings.text }}</div>
+        {% endif %}
+        {% if block.settings.button_label != blank and block.settings.button_link != blank %}
+          <a href="{{ block.settings.button_link }}" class="btn btn--secondary btn--small">
+            {{ block.settings.button_label | escape }}
+          </a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+  <style>
+    @media only screen and (max-width: 600px) {
+  .banner-text-block {
+    width:100% !important;
+    display:block !important;
+  }
+      
+      .html-text-desktop{display:none !important;}
+      .html-text-mobile{margin-top:25px !important;}
+      .section-title1{font-size:30px !important;margin-top:-65px !important;}
+      .banner-text-block h5{margin-bottom:10px !important;}
+}
+    @media only screen and (min-width: 600px) {
+      .html-text-mobile{display:none !important;}
+    
+    }
+    
+  </style>
+  {% if section.blocks.size == 0 %}
+    {% include 'no-blocks' %}
+  {% endif %}
+  <div class="home-sec-btn" style="text-align:center;margin-bottom:{{section.settings.button_margin_bottom}};margin-top:{{section.settings.button_margin_top}};margin-left:33%;margin-right:33%;">
+     <a href="/collections/shop" class="button btn-grad-sign">{{section.settings.button_text_new}}</a>
+  </div>
+</div>
+
+  {% if section.settings.text_banner %}
+  <div class= "top-spc" style="display: flex;justify-content: center;vertical-align:middle;text-align:center; margin-top:80px; margin-bottom:{{section.settings.banner_margin_bottom}}">
+    
+    <div class="banner-text-block" style="vertical-align:top; padding:25px; width:33.15%; background-color:blue; text-align:center;color:#fff;display:inline-block;color:{{section.settings.color_heading_banner}}">
+      <h5 class="text-tit" style="font-size:{{section.settings.font_size_banner_heading}};color:{{section.settings.color_heading_banner}}">{{section.settings.banner_heading_one}}</h5>
+      <span class="text-blk" style="font-size:{{section.settings.font_size_banner_subheading}};color:{{section.settings.color_subheading_banner}}">{{section.settings.banner_subheading_one}}</span>
+    </div>
+    
+    <div class="banner-text-block" style="vertical-align:top; padding:25px; width:33.15%; color:#000; background-color:white; display:inline-block;text-align:center;color:#fff;color:{{section.settings.color_heading_banner}}">
+    <h5 class="text-tit" style="font-size:{{section.settings.font_size_banner_heading}};color:#000;">{{section.settings.banner_heading_two}}</h5>
+      <span class="text-blk" style="font-size:{{section.settings.font_size_banner_subheading}};color:#000;">{{section.settings.banner_subheading_two}}</span>
+    </div>
+    
+    
+    <div  class="banner-text-block" style="vertical-align:top; padding:25px; width:33.15%;  background-color:red; display:inline-block;text-align:center;color:#fff;color:{{section.settings.color_heading_banner}}">
+    <h5 class="text-tit" style="font-size:{{section.settings.font_size_banner_heading}};color:{{section.settings.color_heading_banner}}">{{section.settings.banner_heading_three}}</h5>
+      <span class="text-blk" style="font-size:{{section.settings.font_size_banner_subheading}};color:{{section.settings.color_subheading_banner}}">{{section.settings.banner_subheading_three}}</span>
+    </div>
+  
+  </div>
+  {% endif %}
+  
+  
+
+{% schema %}
+  {
+    "name": "Text columns with images",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "html",
+        "id": "title",
+        "label": "Heading",
+        "default": "Text columns with images"
+      },
+      {
+        "type": "text",
+        "id": "font_size",
+        "label": "Font Size",
+        "default": "24px"
+      },
+      {
+        "type": "html",
+        "id": "dsktsub_title",
+        "label": "Desktop Subheading",
+        "default": "<div><p>Some HTML content</p></div>"
+      },
+      {
+        "type": "html",
+        "id": "mblsub_title",
+        "label": "Mobile Subheading",
+        "default": "<div><p>Some HTML content</p></div>"
+      },
+      {
+        "type": "select",
+        "id": "align_text",
+        "label": "Text alignment",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Centered"
+          }
+         ]
+        },
+        {
+            "type": "text",
+            "id": "button_text_new",
+            "label": "Button Text"
+        },
+        {
+            "type": "text",
+            "id": "button_margin_top",
+            "label": "Button Margin Top",
+            "default": "25px"
+        },
+        {
+            "type": "text",
+            "id": "button_margin_bottom",
+            "label": "Button Margin Bottom",
+            "default": "50px"
+        },
+         {
+            "type": "checkbox",
+            "id": "text_banner",
+            "label": "Text Banner"
+          },
+          {
+            "type": "text",
+            "id": "banner_text",
+            "label": "Banner Text"
+          },
+          {
+            "type": "text",
+            "id": "textbanner_background",
+            "label": "Banner Background Color"
+          },
+          {
+            "type": "text",
+            "id": "banner_margin_top",
+            "label": "Banner Margin Top"
+          },
+          {
+            "type": "text",
+            "id": "banner_margin_bottom",
+            "label": "Banner Margin Bottom"
+          },
+          {
+            "type": "text",
+            "id": "font_size_banner_heading",
+            "label": "Banner Heading Font Size"
+          },
+          {
+            "type": "text",
+            "id": "color_heading_banner",
+            "label": "Banner Heading Font Color"
+          },
+          {
+            "type": "text",
+            "id": "font_size_banner_subheading",
+            "label": "Banner Subheading Font Size"
+          },
+          {
+            "type": "text",
+            "id": "color_subheading_banner",
+            "label": "Banner Subheading Font Color"
+          },
+          {
+            "type": "text",
+            "id": "title_margin_top",
+            "label": "Title Margin Top"
+          },
+          {
+            "type": "text",
+            "id": "title_margin_bottom",
+            "label": "Title Margin Bottom"
+          },
+          {
+            "type": "text",
+            "id": "subtitle_margin_top",
+            "label": "Subtitle Margin Top"
+          },
+          {
+            "type": "text",
+            "id": "subtitle_margin_bottom",
+            "label": "Subtitle Margin Bottom"
+          },
+          {
+            "type": "text",
+            "id": "banner_heading_one",
+            "label": "Banner Heading One"
+          },
+          {
+            "type": "text",
+            "id": "banner_subheading_one",
+            "label": "Banner Subheading One"
+          },
+          {
+            "type": "text",
+            "id": "banner_heading_two",
+            "label": "Banner Heading Two"
+          },
+          {
+            "type": "text",
+            "id": "banner_subheading_two",
+            "label": "Banner Subheading Two"
+          },
+          {
+            "type": "text",
+            "id": "banner_heading_three",
+            "label": "Banner Heading Three"
+          },
+          {
+            "type": "text",
+            "id": "banner_subheading_three",
+            "label": "Banner Subheading Three"
+          }
+    ],
+    "blocks": [
+      {
+        "type": "text_block",
+        "name": "Column",
+        "settings": [
+          {
+            "type": "checkbox",
+            "id": "enable_image",
+            "label": "Show image",
+            "default": true
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Add a title or tagline"
+          },
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "Text",
+            "default": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button label"
+          },
+          {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Text columns with images",
+        "category": "Text",
+        "blocks": [
+          {
+            "type": "text_block"
+          },
+          {
+            "type": "text_block"
+          },
+          {
+            "type": "text_block"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

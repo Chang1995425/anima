@@ -1,0 +1,10 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<!-- /templates/404.liquid -->
+{% comment %}
+{% include 'breadcrumb' %}
+{% endcomment %}
+<header class="section-header section-header--404 text-center">
+  <h1>{% comment %}ly_i18n_replace_for_[ 'general.404.title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.404.title' | t }}{% endcapture %}{% include 'ly-static-string' with '8850811' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h1>
+  <hr class="hr--small">
+  <p>{% comment %}ly_i18n_replace_for_[ 'general.404.subtext_html' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.404.subtext_html' | t }}{% endcapture %}{% include 'ly-static-string' with '8850812' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</p>
+</header>

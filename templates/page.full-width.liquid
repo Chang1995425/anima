@@ -1,0 +1,18 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<!-- /templates/page.full-width.liquid -->
+<header class="section-header text-center">
+  <h1>{% comment %}ly_code_replace_for_[ page.title ]_begin{% endcomment %}{% include 'ly-title' with page %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h1>
+  <hr class="hr--small">
+</header>
+
+
+
+<br/>
+
+
+
+<div class="rte">
+  {% comment %}ly_code_replace_for_[ page.content ]_begin{% endcomment %}{% include 'ly-content' with page %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+</div>
+
+

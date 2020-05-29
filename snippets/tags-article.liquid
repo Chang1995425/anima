@@ -1,0 +1,9 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<!-- /snippets/tags-article.liquid -->
+{% if article.tags.size > 0 %}
+  <li>
+    <span class="tags__title">{% comment %}ly_i18n_replace_for_[ 'blogs.article.tags' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.article.tags' | t }}{% endcapture %}{% include 'ly-static-string' with '8850810' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}:</span>
+    {% for tag in article.tags %}
+      <a href="{{ blog.url }}/tagged/{{ tag | handle }}" class="text-link">{{ tag }}</a>
+    {% endfor %}
+  </li>
+{% endif %}

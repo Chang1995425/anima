@@ -1,0 +1,158 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<!-- /templates/customers/login.liquid -->
+
+<div class="grid login" >
+
+  <div class="grid__item large--one-third push--large--one-third text-center" style="margin: 0 auto;">
+
+    <header class="section-header">
+      <h1>{% comment %}ly_i18n_replace_for_[ 'customer.recover_password.title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.recover_password.title' | t }}{% endcapture %}{% include 'ly-static-string' with '8850889' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h1>
+      <p>{% comment %}ly_i18n_replace_for_[ 'customer.recover_password.subtext' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.recover_password.subtext' | t }}{% endcapture %}{% include 'ly-static-string' with '8850890' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</p>
+      <hr class="hr--small">
+    </header>
+
+    {% comment %}
+      If a user has successfully requested a new password, the form.posted_successfully? variable
+      is set to true within the 'recover_customer_password' form only. Within that form you'll see
+      the variable 'resetPassword' set to true, which is used to initialize timber.resetPasswordSuccess().
+    {% endcomment %}
+    <div class="note form-success" id="ResetSuccess" style="display:none;">
+      {% comment %}ly_i18n_replace_for_[ 'customer.recover_password.success' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.recover_password.success' | t }}{% endcapture %}{% include 'ly-static-string' with '8850882' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+    </div>
+ <div id="RecoverPasswordForm" >
+
+     
+
+      <div class="form-vertical">
+        {% form 'recover_customer_password' %}
+
+          {{ form.errors | default_errors }}
+
+          {% comment %}
+            Assign variable to be used after timber.init() is run in theme.liquid
+          {% endcomment %}
+          {% if form.posted_successfully? %}
+            {% assign resetPassword = true %}
+          {% endif %}
+
+          <label for="RecoverEmail" class="hidden-label">{% comment %}ly_i18n_replace_for_[ 'customer.recover_password.email' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.recover_password.email' | t }}{% endcapture %}{% include 'ly-static-string' with '8850891' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+          <input type="email" value="" name="email" id="RecoverEmail" class="input-full" placeholder="{% comment %}ly_i18n_replace_for_[ 'customer.recover_password.email' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.recover_password.email' | t }}{% endcapture %}{% include 'ly-static-string' with '8850891' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" autocorrect="off" autocapitalize="off">
+
+          <p>
+            <button type="submit" class="button btn-grad-log btn--full">{% comment %}ly_i18n_replace_for_[ 'customer.recover_password.submit' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.recover_password.submit' | t }}{% endcapture %}{% include 'ly-static-string' with '8850892' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+            </button></p>
+          <a href="/account/login"><button type="button" id="HideRecoverPasswordLink">{% comment %}ly_i18n_replace_for_[ 'customer.recover_password.cancel' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.recover_password.cancel' | t }}{% endcapture %}{% include 'ly-static-string' with '8850893' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</button></a>
+        {% endform %}
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="clear"></div>
+
+<style>
+  .register-button-panel-top{ width:63%; margin: 50px 0 15px 55px; }
+  .register-button-panel-bottom{ width:63%; margin: 50px 0 15px 55px; }
+  .login-box-left{width:52.3%; float:left; border-right:1px solid #dbdcdb;}
+
+  .login-box-right{width:52.5%; float:left;}
+  .form-vertical input, .form-vertical select, .form-vertical textarea {
+    	background-color: white;
+    	border: 1px solid #dbdcdb;
+  }
+  
+  .oxi_login {
+      margin-top: -6px;
+  }
+  
+  .oxi_login #social_login_frame {
+  	height: 53px !important;
+  }
+  
+  #CustomerEmail {
+      width: 70%;
+      margin-left:15%;
+  }
+
+  #CustomerPassword {
+      width: 70%;
+      margin-left: 15%;
+  }
+
+  #FirstName {
+      width: 26%;
+      float: left;
+      margin: 0 4% 0 11%;
+  }
+
+  #LastName {
+      width: 26%;
+  }
+
+  #Email {
+      width: 50%;
+      float: left;
+      margin: 0 4% 0 -13%;
+  }
+
+  #CreatePassword {
+      width: 50%;
+  }
+  
+  .btn {
+    background-color: #0cff76 !important;
+  }
+  
+  .errors {
+      width: 80%;
+      margin: -20px 40px 48px;
+    }
+  
+  @media screen and (max-width: 765px) {
+  	svg {
+    	display: none;
+    }
+    
+    .register {
+    	display: block;
+    }
+    
+    .login {
+      	margin-left: 0;
+    	width: 100% !important;
+      	float: none !important;
+      	border-right: none !important;
+    }
+    
+    .large--one-third {
+    	width: 100% !important;
+    }
+    
+    .errors {
+    	width: 100% !important;
+      	margin: 6% 2% 11% !important;
+    }
+  }
+  @media screen and (max-width: 768px) {
+      .login-box-left{width:100%; float:left; border-right:1px solid #dbdcdb;}
+  .login-box-right{width:100%; float:left;}
+    #FirstName,#LastName,#Email,#CreatePassword {
+    width: 100%;
+    float: none;
+    margin: 10px 0px;
+}
+    .register-button-panel-top{ width:100%; margin: 10px 0px;padding-top:20px; }
+    .register-button-panel-bottom{ width:100%; margin: 10px 0px; }
+    #CustomerEmail,#CustomerPassword {
+    width: 100%;
+    margin-left: 0px;
+}
+  }
+
+</style>
+
+

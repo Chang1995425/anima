@@ -1,0 +1,69 @@
+<div class="page-width">
+    <div class="title">{{ section.settings.title }}</div>
+    <div class=""></div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Proof pages",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title"
+      },
+      {
+        "type": "select",
+        "id": "image_layout",
+        "label": "Image display",
+        "default": "stacked",
+        "options": [
+          {
+            "value": "stacked",
+            "label": "Stacked"
+          },
+          {
+            "value": "thumbnails",
+            "label": "Thumbnails"
+          }
+        ]
+      }
+    ],
+    "blocks": [
+     {
+        "type": "solid",
+        "name": "Solid Colors",
+        "settings": [
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Color name"
+          },
+          {
+            "type": "color",
+            "id": "color",
+            "label": "Color text"
+          }
+        ]
+     },
+     {
+        "type": "munchies",
+        "name": "Munchies",
+        "settings": [
+          {
+            "type": "text",
+            "id": "name",
+            "label": "Color name"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }
+    ]
+  
+  }
+{% endschema %}

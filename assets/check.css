@@ -1,0 +1,5 @@
+@media screen and (max-width:600px){
+	#chatra.chatra--pos-right{left:20px;bottom:100px;}
+  	.site-footer .grid.grid--no-gutters{margin-bottom:0px !important;}
+}
+ul.tags.webcast-collection-tags.tags--collection.inline-list{margin-bottom:2.5em;}

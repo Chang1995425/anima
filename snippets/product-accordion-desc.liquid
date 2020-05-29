@@ -1,0 +1,221 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div class="shogun-root">
+  
+					
+                    <!-- Main accordian inner content -->
+                    
+                   
+                      {% assign l = 0 %}
+                      {% assign j = 0 %}
+
+                    {% for block in section.blocks %}  
+                    {% case block.type %}
+                      
+                      {% when 'startmain' %}
+                      
+                      
+                      <div class="shg-box shg-c  " id="s-7d6511f4-b13e-4907-9274-622cbf2b18c0">
+                        <div class="shg-box-overlay"></div>
+                            <div class="shg-box-content">
+                                <div id="s-08591f16-7293-4635-aef1-37260f22a3a8" class="shg-c  ">
+                                    <div class="shogun-panel-group" data-multi="">
+                                      <!-- Main Accordian Start -->
+                                        <div class="shogun-panel">
+                                          <!-- Main Accordian Heading -->
+                                          <div class="shogun-panel-heading">
+                                            <h4 class="shogun-panel-title">
+                                                <a href="javascript:void(0)">{{ block.settings.s_head }}</a>
+                                            </h4>
+                                          </div>
+                     <div class="shogun-panel-body" id="accordion_1" style="display:none;"> 
+                    
+                      
+                      
+                       {% when 'head' %}  <!-- Inner Accordian In LOOP Start From Here -->
+                       {% if block.settings.heading == 'Examples >' %}
+                       		<div id="s-ddc8d03f-701b-4ddc-acb3-e6fbe2c3ffec" class="shg-c" style="display:none">
+                           {% else %}
+                              <div id="s-ddc8d03f-701b-4ddc-acb3-e6fbe2c3ffec" class="shg-c">
+                       {% endif %}
+                      
+                       
+                    <div class="shogun-panel-group" id="" data-multi="">
+                        <div class="shogun-panel">
+                            <div class="shogun-panel-heading">
+                              <h4 class="shogun-panel-title">
+                                <a href="javascript:void(0)">{{ block.settings.heading }}</a>
+                              </h4>
+                            </div>
+
+                      {% when 'start' %}
+                       {% assign l = l | plus:1  %}  
+                          
+                          <!-- Inner Accordian Content -->
+                          <div class="shogun-panel-body" id="accordion_{{l}}" style="display:none;">
+                          <div id="slider-{{ l }}" class="shg-c  ">
+                          <div id="slider-{{ l }}" class="shg-sld">
+                          <div class="shg-sld-content">
+                          <div class="shg-sld-slides">
+
+
+
+
+
+                                {% when 'logo_image' %}       
+                                {% assign j = j | plus:1  %}
+                                    <div class="shg-sld-item {% if j == 1 %} shg-sld-active{% endif %}">
+                                        <div class="shg-sld-fade">
+                                          <div id="s_{{forloop.index }}" class="shg-c  shg-align-center">
+                                            <div class="shogun-image-container">
+                                              <img src="{{ block.settings.image_1  | img_url: 'original' }}" class="shogun-image img-responsive ">
+                                              <div class="shogun-image-overlay shogun-lightbox-item shg-middle-center" style=""></div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                     </div>
+
+
+                            {% when 'exit' %}        
+                             </div>
+                              <span class="shg-sld-nav-button shg-sld-left "></span>
+                              <span class="shg-sld-nav-button shg-sld-right "></span>
+                              </div>
+                              <div class="shg-sld-dots">
+                                     {% for i in (1..40) %} 
+                                        <span class="shg-sld-dot {% if i == 1 %} shg-sld-active {% endif %}"></span>
+                                         {% if i == j %}
+                                             {% break %}
+                                         {% endif %}
+                                    {% endfor %}
+                              </div>
+                              </div>
+
+                              <script type="text/javascript">
+                                window.SHOGUN_SLIDERS = window.SHOGUN_SLIDERS || new Array();
+                                window.SHOGUN_SLIDERS.push({
+                                  id: '#slider-{{ l }}',
+                                  interval: 5,
+                                  autoplay: false,
+                                  pauseOnHover: false
+                                })
+                              </script>
+
+                              </div>
+                              </div>
+                              </div>
+                           </div>
+                            </div>
+                                {% assign j = 0  %}
+                      
+                      {% when 'endmain' %}
+                            </div>
+                          </div>
+                      </div>
+                   </div>
+              </div>
+          </div>
+  
+  {% when 'content'%} 
+  <!--{{ block.settings.content_text }}-->
+  
+                         {% endcase %}
+  
+                       {% endfor %}
+
+                  
+</div>
+
+<div id="s-1949eccc-2d51-468d-9565-25fef17b5fa5" class="shg-c ">
+<hr style="border: 0; width: 100%; border-top: 1px solid #ddd">
+</div>
+
+<div id="s-57fde251-63eb-48e6-86c6-c75e1b65c735" class="shg-c shg-align-left">
+<div class="shogun-heading-component">
+<h4> <ly-as-8850692>Shipping Info</ly-as-8850692> </h4>
+</div>
+</div>
+<div id="s-7f53f99c-da2c-4deb-a209-5365b4e856fc" class="shg-c ">
+<div class="shogun-panel-group" data-multi="">
+<div class="shogun-panel">
+<div class="shogun-panel-heading">
+<h4 class="shogun-panel-title">
+<a href="javascript:void(0)"><ly-as-8850693>Common Questions</ly-as-8850693> &gt;</a>
+</h4>
+</div>
+<div class="shogun-panel-body" id="accordion_1">
+<div id="s-c95f4e07-fde1-4fc8-b3c2-b3047d2d0a00" class="shg-c  ">
+<div class="shogun-panel-group" data-multi="">
+<div class="shogun-panel">
+<div class="shogun-panel-heading">
+<h4 class="shogun-panel-title">
+<a href="javascript:void(0)"><ly-as-8850694>When will my order be shipped out?</ly-as-8850694> &gt;</a>
+</h4>
+</div>
+<div class="shogun-panel-body" id="accordion_1">
+<div id="s-86d5508a-d143-4fc0-928f-54dcd2b1ae26" class="shg-c  ">
+<p>
+<span style="font-size:14px"><ly-as-8850695>We will print and ship out your product within one business day, from when you approve your proof, and finalize your order.</ly-as-8850695></span></p>
+</div>
+</div>
+</div>
+<div class="shogun-panel">
+<div class="shogun-panel-heading">
+<h4 class="shogun-panel-title">
+<a href="javascript:void(0)"><ly-as-8850696>Estimated transit time free- standard shipping</ly-as-8850696> &gt;</a>
+</h4>
+</div>
+<div class="shogun-panel-body" id="accordion_2">
+<div id="s-dc9bf52b-cb74-4c29-9175-b1dc6b6787e6" class="shg-c  shg-align-center">
+<div class="shogun-image-container">
+<img src="https://ucarecdn.com/02ea66bd-4f98-4da1-9c8a-05d12d1801ef/-/stretch/off/-/resize/3000x/-/quality/best/" alt="" class="shogun-image img-responsive " height="" width="">
+<div class="shogun-image-overlay shg-middle-center" style=""></div>
+</div>
+</div>
+</div>
+</div>
+<div class="shogun-panel">
+<div class="shogun-panel-heading">
+<h4 class="shogun-panel-title">
+<a href="javascript:void(0)"><ly-as-8850697>Estimated transit time for international shipping</ly-as-8850697> &gt;</a>
+</h4>
+</div>
+<div class="shogun-panel-body" id="accordion_3">
+<div id="s-54252bc1-65f8-472d-876c-dd2ae94f5bed" class="shg-c  ">
+<p>
+<span style="font-size:14px"><ly-as-8850698>Transit times vary from country to country due to customs procedures. Typically 12-15 business days are the longest we have seen for international transit.</ly-as-8850698></span></p>
+</div>
+</div>
+</div>
+<div class="shogun-panel">
+<div class="shogun-panel-heading">
+<h4 class="shogun-panel-title">
+<a href="javascript:void(0)"><ly-as-8850699>Upgraded Shipping</ly-as-8850699> &gt;</a>
+</h4>
+</div>
+<div class="shogun-panel-body" id="accordion_4">
+<div id="s-f17336d4-7e66-4c37-ac22-c0bce763cd01" class="shg-c  ">
+<p>
+<span style="font-size:14px"><ly-as-8850700>We offer 2 upgraded shipping methods:</ly-as-8850700></span></p>
+<p>
+<span style="font-size:14px">
+<strong><ly-as-8850701>1- Day Shipping</ly-as-8850701></strong> <ly-as-8850702>(price calculated at check out)</ly-as-8850702></span></p>
+<p>
+<span style="font-size:14px">
+<strong><ly-as-8850703>2- Day Shipping</ly-as-8850703></strong> <ly-as-8850702>(price calculated at check out)</ly-as-8850702></span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<style>
+#s-1949eccc-2d51-468d-9565-25fef17b5fa5 { padding-top: 30px;  padding-bottom: 30px;}
+  #s-1949eccc-2d51-468d-9565-25fef17b5fa5 hr {height:2px;margin:10px 0px;}
+  .product-single__description .shg-c { margin: 0px;}
+  #s-d8f8c6b1-d613-40bf-bc4a-c39a6386888f { padding-top: 10px;  padding-bottom: 10px;}
+</style>

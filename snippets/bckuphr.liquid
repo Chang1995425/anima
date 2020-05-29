@@ -1,0 +1,522 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<style>
+  .site-header__logo img {
+    max-width: {{ section.settings.logo_max_width | escape | default: '180' | remove: 'px' | append: 'px' }};
+  }
+
+  @media screen and (max-width: 768px) {
+    .site-header__logo img {
+      max-width: 100%;
+    }
+  }
+  .section-header.text-center>h1, .section-header.text-center>.h1{
+        font-family: "Montserrat" !important;
+  }
+  .template-list-collections .wrapper{
+   max-width:1300px; 
+  }
+  .burger-icon{
+   background:black !important; 
+  }
+ 
+</style>
+
+{% assign hero_full_height = true %}
+<div data-section-id="{{ section.id }}" data-section-type="header-section" data-template="{{ template.name }}">
+  <div class="header-container">
+    <div class="header-wrapper{% unless hero_full_height %} header-wrapper--over-hero{% endunless %}">
+      {% if section.settings.show_announcement %}
+        {% if section.settings.home_page_only == false or template.name == 'index' %}
+          <style>
+            .announcement-bar {
+              background-color: {{ section.settings.color_bg }};
+            }
+
+            .announcement-bar--link:hover {
+              {% assign brightness = section.settings.color_bg | color_brightness %}
+
+              {% if brightness <= 192 %}
+                {% assign lightenAmount = 255 | minus: brightness | divided_by: 255 | times: 16 %}
+                background-color: {{ section.settings.color_bg | color_lighten: lightenAmount }};
+              {% else %}
+                {% assign darkenAmount = 255 | divided_by: brightness | times: 8 %}
+                background-color: {{ section.settings.color_bg | color_darken: darkenAmount }};
+              {% endif %}
+            }
+
+            .announcement-bar__message {
+              color: {{ section.settings.color_text }};
+            }
+          </style>
+
+          {% if section.settings.link == blank %}
+            <div class="announcement-bar">
+          {% else %}
+            <a href="{{ section.settings.link }}" class="announcement-bar announcement-bar--link">
+          {% endif %}
+
+            <p class="announcement-bar__message">{{ section.settings.text | escape }}
+             <button class="text-link announcement__close" type="button"> 
+               <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 37 40"><path d="M21.3 23l11-11c.8-.8.8-2 0-2.8-.8-.8-2-.8-2.8 0l-11 11-11-11c-.8-.8-2-.8-2.8 0-.8.8-.8 2 0 2.8l11 11-11 11c-.8.8-.8 2 0 2.8.4.4.9.6 1.4.6s1-.2 1.4-.6l11-11 11 11c.4.4.9.6 1.4.6s1-.2 1.4-.6c.8-.8.8-2 0-2.8l-11-11z"/></svg>
+           </button>
+              </p>
+
+          {% if section.settings.link == blank %}
+            </div>
+          {% else %}
+            </a>
+          {% endif %}
+
+        {% endif %}
+      {% endif %}
+      
+            <ul class="site-nav large--hide" id="mob-nav">
+                  <div class="site_nav_mob">
+                    <li class="site-nav__item site-nav__item--compressed" style="margin-left: -6px;">
+                      <a href="/cart" class="site-nav__link site-nav__link--icon cart-link js-drawer-open-button-right" aria-controls="CartDrawer">
+                        <span class="icon-fallback-text">
+                          <span class="fa fa-shopping-cart" aria-hidden="true"></span>
+                          <span class="fallback-text">{% comment %}ly_i18n_replace_for_[ 'layout.cart.title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.cart.title' | t }}{% endcapture %}{% include 'ly-static-string' with '8850662' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+                        </span>
+                        <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}"></span>
+                      </a>
+                    </li>
+                    <li class="site-nav__item site-nav__item--compressed menu-btns">
+                      <div class="site-nav--open site-nav--mobile">
+                        <button type="button" class="icon-fallback-text site-nav__link js-drawer-open-button-left" aria-controls="NavDrawer">
+                          <i class="fa fa-bars" aria-hidden="true"></i>
+                          <span class="fallback-text">{% comment %}ly_i18n_replace_for_[ 'general.drawers.navigation' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.drawers.navigation' | t }}{% endcapture %}{% include 'ly-static-string' with '8850663' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+                        </button>
+                      </div>
+                  </li>
+                  <li class="dropdown site-nav__item site-nav__expanded-item site-nav__item--compressed">
+					
+                    <button onclick="myFunction()" class="dropbtn icon icon-customer" aria-hidden="true"></button>
+                    <div id="myDropdown" class="dropdown-content">
+                      <a href="#home"><ly-as-8850656>Home</ly-as-8850656></a>
+                      <a href="#about"><ly-as-8850657>About</ly-as-8850657></a>
+                      <a href="#contact"><ly-as-8850658>Contact</ly-as-8850658></a>
+                    </div>
+
+                    {% comment %}
+                    <a class="site-nav__link site-nav__link--icon" href="/account">
+                      <span class="icon-fallback-text">
+                        <span class="icon icon-customer" aria-hidden="true"></span>
+                        <span class="fallback-text">
+                          {% if customer %}
+                            {% comment %}ly_i18n_replace_for_[ 'layout.customer.account' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.customer.account' | t }}{% endcapture %}{% include 'ly-static-string' with '8850664' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                          {% else %}
+                            {% comment %}ly_i18n_replace_for_[ 'layout.customer.log_in' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.customer.log_in' | t }}{% endcapture %}{% include 'ly-static-string' with '8850665' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                          {% endif %}
+                        </span>
+                      </span>
+                    </a>
+                    {% endcomment %}
+                  </li>      
+                    </div>  
+              </ul>      
+      
+      <div class="top-header-panel">
+          <div class="wrapper">
+             <div class="grid__item large--one-third large--text-left">
+               {% if section.settings.display_header_text_order %}
+                 <p class="text_order" style="color:{{ section.settings.header_text_order_text_color }};">
+                  {{ section.settings.header_text_order}}
+                 </p>
+               {% endif %}
+             </div>             
+             
+            <div class="grid__item large--one-third text-center">
+              {% if section.settings.display_header_text_order %}
+                <p class="text_order ht_free-shipping" style="color:{{ section.settings.header_free_shipping_text_color }};">                  
+                  <strong>{{ section.settings.header_free_shipping }}</strong>
+                </p>
+              {% endif %}
+            </div>
+                
+              
+            <div class="grid__item large--one-third large--text-right cart_desktop">  
+              <div class="hl-right-top"> 
+              <div class="site-nav__item site-nav__item--compressed">
+                  <a href="/cart" class="hp-cart cart-link js-drawer-open-button-right" aria-controls="CartDrawer">
+                    <span class="icon-fallback-text">
+                      {% comment %}<span class="icon icon-cart" aria-hidden="true"></span>{% endcomment %}
+                      <span class="hp-fallback-text">{{ '<ly-as-8850659>Mon Panier</ly-as-8850659>' }}</span>
+                      {% if cart.item_count > 0 %}
+                      <span class="cart_item_count">( {{ cart.item_count }} )</span>
+                      {% else %}
+                      <span class="cart_item_count">( 0 )</span>
+                      {% endif %}
+                    </span>
+                  </a>
+                
+                 <a class="btn-check-out" onclick="window.location='/checkout'" data-translate="cart.general.checkout">
+                   <font style="vertical-align: inherit;"><ly-as-8850660>Procéder au paiement</ly-as-8850660></font>
+                </a>
+                 
+                
+                </div>               
+               </div>
+            </div>
+
+          </div>       
+           
+        
+      </div>
+  
+      
+      <div class="js-search-header-close hp-close"></div>
+      <header class="site-header" role="banner">           
+        
+        <div class="site-header__search-container" tabindex="-1">
+            <div class="site-header__search" style="height: 110px;">
+                  <div class="wrapper">
+                    <form action="/search" method="get" class="site-header__search-form {{ search_bar_location }}" role="search">
+                    
+
+                      <button type="submit" class="text-link site-header__search-btn">
+                        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><defs><style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px}</style></defs><path class="cls-1" d="M44 27a17 17 0 1 1-17-17 17 17 0 0 1 17 17zm9.85 26.92L39.23 39.29"></path></svg>
+                        
+                      </button>
+                      <input autofocus="autofocus" id="sec-inp" type="search" name="q" value="{{ search.terms | escape }}" placeholder="<ly-as-8850661>Search our store</ly-as-8850661>" class="site-header__search-input" aria-label="Search our store hidden ">
+                    </form>
+                    <button type="button" class="js-search-header-close text-link site-header__search-btn">
+                      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><defs><style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:2px}</style></defs><path class="cls-1" d="M19 17.61l27.12 27.13m0-27.12L19 44.74"></path></svg>
+                      
+                    </button>
+                  </div>
+             </div>
+          </div>
+        
+        <div class="wrapper">
+          <div class="grid--full grid--table">
+           
+           
+            <div class="desktop-nav">
+              <nav class="grid__item large--two-thirds large--text-right medium-down--hide" role="navigation">
+              {% comment %}
+                List out your main-menu linklist (default)
+
+                More info on linklists:
+                  - http://docs.shopify.com/themes/liquid-variables/linklists
+              {% endcomment %}
+                <center style="margin-bottom: 0px;">
+              {% comment %}
+                Use the uploaded logo from theme settings if enabled.
+                Site name gets precedence with H1 tag on homepage, div on other pages.
+              {% endcomment %}
+              {% if template.name == 'index' %}
+                <h1 class="" itemscope itemtype="http://schema.org/Organization">
+              {% else %}
+                <div class="" itemscope itemtype="http://schema.org/Organization">
+              {% endif %}
+                {% if section.settings.logo_max_width != blank %}
+                  {% capture image_size %}{{ section.settings.logo_max_width | escape }}x{% endcapture %}
+                {% else %}
+                  {% assign image_size = "180x" %}
+                {% endif %}
+
+                {% if section.settings.logo-inverted and template.name == 'index' %}
+                  <a href="/" itemprop="url" class="site-header__logo-link" >
+                    <img src="{{ section.settings.logo-inverted | img_url: image_size }}" style="width: 20%;"
+                    srcset="{{ section.settings.logo-inverted | img_url: image_size }} 1x, {{ section.settings.logo-inverted | img_url: image_size, scale: 2 }} 2x"
+                    alt="{{ section.settings.logo-inverted.alt | default: langify_shop_name }}"
+                    itemprop="logo">
+                  </a>
+                {% elsif section.settings.logo %}
+                  <a href="/" itemprop="url" class="site-header__logo-link">
+                     <img src="{{ section.settings.logo | img_url: image_size }}" style="width: 20%;"
+                     srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+                     alt="{{ section.settings.logo.alt | default: langify_shop_name }}"
+                     itemprop="logo">
+                  </a>
+                {% else %}
+                  <a href="/" itemprop="url">{{ langify_shop_name }}</a>
+                {% endif %}
+              {% if template.name == 'index' %}
+                </h1>
+              {% else %}
+                </div>
+              {% endif %}
+            </center>
+              <!-- begin site-nav -->
+              <ul class="site-nav" style="text-align:center;width:100%" id="AccessibleNav">
+                {% for link in linklists[section.settings.main_menu_link_list].links %}
+                  {% if link.links != blank %}
+                  {% assign parent_index = forloop.index %}
+                    <li
+                      class="site-nav__item site-nav--has-dropdown {% if link.active %}site-nav--active{% endif %}"
+                      aria-haspopup="true"
+                      data-meganav-type="parent">
+                      <a
+                        href="{{ link.url }}"
+                        class="site-nav__link"
+                        data-meganav-type="parent"
+                        aria-controls="MenuParent-{{ parent_index }}"
+                        aria-expanded="false"
+                        {% unless template.name == 'index' %}{% if link.active %}aria-current="page"{% endif %}{% endunless%}>
+                          {% comment %}ly_code_replace_for_[ link.title | escape ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}
+                          <span class="icon icon-arrow-down" aria-hidden="true"></span>
+                      </a>
+                      <ul
+                        id="MenuParent-{{ parent_index }}"
+                        class="site-nav__dropdown {% if link.levels == 2 %}site-nav--has-grandchildren{% endif %}"
+                        data-meganav-dropdown>
+                        {% for childlink in link.links %}
+                          {% if childlink.links != blank %}
+                          {% assign child_index = forloop.index %}
+                            <li
+                              class="site-nav__item site-nav--has-dropdown site-nav--has-dropdown-grandchild {% if childlink.active %}site-nav--active{% endif %}"
+                              aria-haspopup="true">
+                              <a
+                                href="{{ childlink.url }}"
+                                class="site-nav__dropdown-link"
+                                aria-controls="MenuChildren-{{ parent_index }}-{{ child_index }}"
+                                data-meganav-type="parent"
+                                {% unless template.name == 'index' %}{% if childlink.active %}aria-current="page"{% endif %}{% endunless%}
+                                tabindex="-1">
+                                  {% comment %}ly_code_replace_for_[ childlink.title | escape ]_begin{% endcomment %}{% include 'ly-title' with childlink %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}
+                                  <span class="icon icon-arrow-down" aria-hidden="true"></span>
+                              </a>
+                              <div class="site-nav__dropdown-grandchild">
+                                <ul
+                                  id="MenuChildren-{{ parent_index }}-{{ child_index }}"
+                                  data-meganav-dropdown>
+                                  {% for grandchildlink in childlink.links %}
+                                    <li{% if grandchildlink.active %} class="site-nav--active"{% endif %}>
+                                      <a
+                                        href="{{ grandchildlink.url }}"
+                                        class="site-nav__dropdown-link"
+                                        data-meganav-type="child"
+                                        {% unless template.name == 'index' %}{% if grandchildlink.active %}aria-current="page"{% endif %}{% endunless %}
+                                        tabindex="-1">
+                                          {% comment %}ly_code_replace_for_[ grandchildlink.title | escape ]_begin{% endcomment %}{% include 'ly-title' with grandchildlink %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}
+                                        </a>
+                                    </li>
+                                  {% endfor %}
+                                </ul>
+                              </div>
+                            </li>
+                          {% else %}
+                            <li{% if childlink.active %} class="site-nav--active"{% endif %}>
+                              <a
+                                href="{{ childlink.url }}"
+                                class="site-nav__dropdown-link"
+                                data-meganav-type="child"
+                                {% if childlink.active %}aria-current="page"{% endif %}
+                                tabindex="-1">
+                                  {% comment %}ly_code_replace_for_[ childlink.title | escape ]_begin{% endcomment %}{% include 'ly-title' with childlink %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}
+                              </a>
+                            </li>
+                          {% endif %}
+                        {% endfor %}
+                      </ul>
+                    </li>
+                  {% else %}
+                    <li class="site-nav__item{% if link.active %} site-nav--active{% endif %}">
+                      <a
+                        href="{{ link.url }}"
+                        class="site-nav__link"
+                        data-meganav-type="child"
+                        {% unless template.name == 'index' %}{% if link.active %}aria-current="page"{% endif %}{% endunless%}>
+                          {% comment %}ly_code_replace_for_[ link.title | escape ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}
+                      </a>
+                    </li>
+                  {% endif %}
+                {% endfor %}
+
+                {% comment %}
+                  Remove comment tags below to add a search box to your header, visible on screens where your header menu
+                  is displayed inline.
+                  <li class="site-nav__item site-nav--search__bar medium-down--hide">
+                    {% include 'search-bar', search_btn_style: 'btn', search_bar_location: 'search-bar--header' %}
+                  </li>
+                {% endcomment %}
+                {% if shop.customer_accounts_enabled %}
+                  <li class="site-nav__item site-nav__expanded-item site-nav__item--compressed">
+                    <a class="site-nav__link site-nav__link--icon" href="/account">
+                      <span class="icon-fallback-text">
+                        <span class="icon icon-customer" aria-hidden="true"></span>
+                        <span class="fallback-text">
+                          {% if customer %}
+                            {% comment %}ly_i18n_replace_for_[ 'layout.customer.account' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.customer.account' | t }}{% endcapture %}{% include 'ly-static-string' with '8850664' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                          {% else %}
+                            {% comment %}ly_i18n_replace_for_[ 'layout.customer.log_in' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.customer.log_in' | t }}{% endcapture %}{% include 'ly-static-string' with '8850665' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                          {% endif %}
+                        </span>
+                      </span>
+                    </a>
+                  </li>
+                {% endif %}              
+              </ul>
+                
+              <ul class="site-nav" id="tab-nav">
+                <li class="site-nav__item large--hide site-nav__item--compressed site_cart_sticky">
+                  <a href="/cart" class="site-nav__link site-nav__link--icon cart-link js-drawer-open-button-right" aria-controls="CartDrawer">
+                    <span class="icon-fallback-text">
+                      <span class="fa fa-shopping-cart" style="
+                          font-size: 18px;
+                          margin-top: 10px;
+                      " aria-hidden="true"></span>
+                  
+                      <span class="fallback-text">{% comment %}ly_i18n_replace_for_[ 'layout.cart.title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.cart.title' | t }}{% endcapture %}{% include 'ly-static-string' with '8850662' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+                    </span>
+                    <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}">{% if cart.item_count > 0 %}{{ cart.item_count }}{% endif %}</span>
+                  </a>
+                </li>
+
+                
+                {% if section.settings.search == 'page' or section.settings.search == 'modal' %}
+                  {% assign search_modal = true %}
+                  {% if section.settings.search == 'page' %}
+                    {% assign search_modal = false %}
+                  {% endif %}
+                  <li class="site-nav__item site-nav__item--compressed">
+                    <a href="/search" class="search_pops site-nav__link site-nav__link--icon">
+                      <!--{% if search_modal %} js-toggle-search-modal{% endif %}" data-mfp-src="#SearchModal">-->
+                      <span class="icon-fallback-text">
+                        <span class="fa fa-search" style="
+                          font-size: 18px;
+                          margin-right:  40px;
+                          margin-top: 10px;
+                      " aria-hidden="true"></span>
+                        <span class="fallback-text">{% comment %}ly_i18n_replace_for_[ 'general.search.title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.search.title' | t }}{% endcapture %}{% include 'ly-static-string' with '8850666' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+                      </span>
+                    </a>
+                  </li>
+                {% endif %}
+
+              </ul>
+              <!-- //site-nav -->
+            </nav>
+            </div>
+
+            
+            <ul class="site-nav large--hide" id="mob-nav">
+               
+                 	<div class="mobile_logo_search">  
+
+                  	{% comment %}
+                    Use the uploaded logo from theme settings if enabled.
+                    Site name gets precedence with H1 tag on homepage, div on other pages.
+                    {% endcomment %}
+                    {% if template.name == 'index' %}
+                      <h1 class="" itemscope itemtype="http://schema.org/Organization">
+                    {% else %}
+                      <div class="" itemscope itemtype="http://schema.org/Organization">
+                    {% endif %}
+                    {% if section.settings.logo_max_width != blank %}
+                      {% capture image_size %}{{ section.settings.logo_max_width | escape }}x{% endcapture %}
+                    {% else %}
+                      {% assign image_size = "180x" %}
+                    {% endif %}
+
+                    {% if section.settings.logo-inverted and template.name == 'index' %}
+                      <a href="/" itemprop="url" class="site-header__logo-link" >
+                        <img src="{{ section.settings.logo-inverted | img_url: image_size }}" style="width: 20%;;margin-top: 17px;"
+                        srcset="{{ section.settings.logo-inverted | img_url: image_size }} 1x, {{ section.settings.logo-inverted | img_url: image_size, scale: 2 }} 2x"
+                        alt="{{ section.settings.logo-inverted.alt | default: langify_shop_name }}"
+                        itemprop="logo">
+                      </a>
+                    {% elsif section.settings.logo %}
+                      <a href="/" itemprop="url" class="site-header__logo-link">
+                         <img src="{{ section.settings.logo | img_url: image_size }}" style="width: 20%;margin-top: 17px;"
+                         srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+                         alt="{{ section.settings.logo.alt | default: langify_shop_name }}"
+                         itemprop="logo">
+                      </a>
+                    {% else %}
+                      <a href="/" itemprop="url">{{ langify_shop_name }}</a>
+                    {% endif %}
+                    {% if template.name == 'index' %}
+                      </h1>
+                    {% else %}
+                      </div>
+                    {% endif %}
+                   
+                    {% if section.settings.search == 'page' or section.settings.search == 'modal' %}
+    
+                      <li class="site-nav__item site-nav__item--compressed">
+					      {% include 'search-bar', search_btn_style: 'btn', search_bar_location: 'search-bar--drawer' %}
+                      </li>
+                    {% endif %}                   
+              </div>
+                   
+              </ul>
+                       
+            {% comment %}
+           <div class="grid__item small--three-quarters large--hide">
+            <div class="grid__item large--hide one-quarter mobile-carts">
+              <div class="site-nav--mobile text-right">
+                <a href="/cart" class="site-nav__link cart-link js-drawer-open-button-right" aria-controls="CartDrawer">
+                  <span class="icon-fallback-text">
+                    <span class="icon icon-cart" aria-hidden="true"></span>
+                    <span class="fallback-text">{% comment %}ly_i18n_replace_for_[ 'layout.cart.title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.cart.title' | t }}{% endcapture %}{% include 'ly-static-string' with '8850662' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+                  </span>
+                  <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}"></span>
+                </a>
+              </div>
+            </div>
+            </div> 
+            {% endcomment %}
+          </div>
+
+        </div>
+        
+      </header>
+    </div>
+  </div>
+</div>
+
+
+<style>
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover {background-color: #ddd}
+
+.show {display:block;}
+</style>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>

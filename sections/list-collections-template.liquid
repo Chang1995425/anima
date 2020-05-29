@@ -1,0 +1,302 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+{% comment %}
+
+  This page represents the /collections and /products pages.
+  It is an optional, but highly recommended, template for your theme.
+
+  More info:
+    - http://docs.shopify.com/manual/configuration/store-customization/taking-control-of-collections-listing
+
+  Loop through each collection, except 'frontpage'.
+{% endcomment %}
+
+<header class="section-header text-center">
+
+  <h1>TOUS NOS PRODUITS</h1>
+  <hr>
+  
+  
+  
+  
+  
+  
+
+  <br />
+  <h4><strong></strong></h4>
+  <h5 class="page page-top" style="text-align: center;">
+    <span>Pour toute information, question ou conseil relatif à votre commande,</span>
+    <br />
+    <span>veuillez prendre contact par mail: </span>
+    <strong>info@myanimart.com</strong>
+    <span> ou via notre formulaire de contact en cliquant 
+      <a href="https://mycreanimale.com/pages/contact-us" style="color:#337ab7;text-decoration: underline;">ici</a>.</span></h5></center>
+  <h5 style="text-align: center;"><strong></strong><br /><br /></h5>
+
+  
+  
+  
+  
+  
+</header>
+
+{% comment %}
+<p style="text-align: center;"><strong></strong></p>
+{% endcomment %}
+
+
+
+<br /><br />
+
+
+
+{%- assign collection_count = 0 -%}
+{%- assign isEmpty = true -%}
+
+
+{% if section.settings.display_type == 'all' %}
+  {% case section.settings.sort %}
+    {% when 'products_high' or 'products_low' %}
+      {%- assign list_collections = collections | sort: 'all_products_count' -%}
+    {% when 'date' or 'date_reversed' %}
+      {%- assign list_collections = collections | sort: 'published_at' -%}
+    {% else %}
+      {%- assign list_collections = collections -%}
+  {% endcase %}
+  {% for collection in list_collections %}
+    {% unless collection.handle == 'frontpage' %}
+      {%- assign collection_count = collection_count | plus: 1 -%}
+    {% endunless %}
+  {% endfor %}
+{% else %}
+  {%- assign collection_count = section.blocks.size -%}
+{% endif %}
+
+{% if collection_count > 0 %}
+  {%- assign isEmpty = false -%}
+{% endif %}
+
+{%- assign collection_index = 0 -%}
+{%- assign divisible_by_three = collection_count | modulo: 3 -%}
+{%- assign divisible_by_two = collection_count | modulo: 2 -%}
+
+{% comment %}
+<div class="grid collection-grid tests">
+  {% if section.settings.display_type == 'all' %}
+    {% if section.settings.sort == 'products_low' or section.settings.sort == 'date' or section.settings.sort == 'alphabetical' %}
+      {% if isEmpty %}
+        {% comment %}
+          Add default collections to help with onboarding
+        {% endcomment %}
+        {% include 'onboarding-featured-collections' %}
+      {% else %}
+        {% for collection in list_collections %}
+          {%- assign collection_handle = collection.handle -%}
+
+          {% if collection_handle == 'frontpage' %}
+            {% continue %}
+          {% else %}
+            {%- assign collection_index = collection_index | plus: 1 -%}
+          {% endif %}
+          {% include 'collection-grid-collage' %}
+        {% endfor %}
+      {% endif %}
+    {% else %}
+      {% if isEmpty %}
+        {% comment %}
+          Add default collections to help with onboarding
+        {% endcomment %}
+        {% include 'onboarding-featured-collections' %}
+      {% else %}
+        {% for collection in list_collections reversed %}
+          {%- assign collection_handle = collection.handle -%}
+
+          {% if collection_handle == 'frontpage' %}
+            {% continue %}
+          {% else %}
+            {%- assign collection_index = collection_index | plus: 1 -%}
+          {% endif %}
+          {% include 'collection-grid-collage' %}
+        {% endfor %}
+      {% endif %}
+    {% endif %}
+  {% else %}
+    {% for block in section.blocks %}
+      {%- assign collection = collections[block.settings.collection] -%}
+      {%- assign collection_handle = collection.handle -%}
+      {%- assign collection_index = forloop.index -%}
+      {% include 'collection-grid-collage' %}
+    {% endfor %}
+  {% endif %}
+</div>
+{% endcomment %}
+
+
+<div class="grid collection-grid sss">
+  {% if section.settings.display_type == 'all' %}
+    {% if section.settings.sort == 'products_low' or section.settings.sort == 'date' or section.settings.sort == 'alphabetical' %}
+      {% if isEmpty %}
+        {% comment %}
+          Add default collections to help with onboarding
+        {% endcomment %}
+        {% include 'onboarding-featured-collections' %}
+      {% else %}
+        {% for collection in list_collections %}
+          {%- assign collection_handle = collection.handle -%}
+
+          {% if collection_handle == 'frontpage' %}
+            {% continue %}
+          {% else %}
+            {%- assign collection_index = collection_index | plus: 1 -%}
+          {% endif %}
+          {% include 'collection-grid-with-product' %}
+        {% endfor %}
+      {% endif %}
+    {% else %}
+      {% if isEmpty %}
+        {% include 'onboarding-featured-collections' %}
+      {% else %}
+        {% for collection in list_collections reversed %}
+          {%- assign collection_handle = collection.handle -%}
+
+          {% if collection_handle == 'frontpage' %}
+            {% continue %}
+          {% else %}
+            {%- assign collection_index = collection_index | plus: 1 -%}
+          {% endif %}
+          {% include 'collection-grid-with-product' %}
+        {% endfor %}
+      {% endif %}
+    {% endif %}
+  {% else %}
+    {% for block in section.blocks %}
+      {%- assign collection = collections[block.settings.collection] -%}
+      {%- assign collection_handle = collection.handle -%}
+      {%- assign collection_index = forloop.index -%}
+      {% include 'collection-grid-with-product'' %}
+    {% endfor %}
+  {% endif %}
+</div>
+
+<div id="insta-feed"></div>
+
+{% schema %}
+  {
+    "name": "Collections list page",
+    "settings": [
+	  {
+        "id": "banner_collections",
+        "type": "image_picker",
+        "label": "Banner"
+      },
+	  {
+        "id": "title_banner_1",
+        "type": "text",
+        "label": "Title 1"
+      },
+	  {
+        "id": "title_banner_2",
+        "type": "text",
+        "label": "Title 2"
+      },
+	  {
+        "id": "text_bt_banner",
+        "type": "text",
+        "label": "Text Button"
+      },
+	  {
+        "id": "link_bt_banner",
+        "type": "text",
+        "label": "Link Button"
+      },
+      {
+        "type": "paragraph",
+        "content": "All of your collections are listed by default. To customize your list, choose 'Selected' and add collections."
+      },
+      {
+        "type": "radio",
+        "id": "product-type",
+        "label": "Select collections to show",
+        "default": "all",
+        "options": [
+          {
+            "value": "all",
+            "label": "All"
+          },
+          {
+            "value": "selected",
+            "label": "Selected"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "sort",
+        "label": "Sort collections by:",
+        "info": "Sorting only applies when 'All' is selected",
+        "default": "alphabetical",
+        "options": [
+          {
+            "value": "products_high",
+            "label": "Product count, high to low"
+          },
+          {
+            "value": "products_low",
+            "label": "Product count, low to high"
+          },
+          {
+            "value": "alphabetical",
+            "label": "Alphabetically, A-Z"
+          },
+          {
+            "value": "alphabetical_reversed",
+            "label": "Alphabetically, Z-A"
+          },
+          {
+            "value": "date",
+            "label": "Date, old to new"
+          },
+          {
+            "value": "date_reversed",
+            "label": "Date, new to old"
+          }
+        ]
+      }
+    ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "label": "Collection",
+            "id": "collection",
+            "type": "collection"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+
+<script>
+  $(document).ready(function(){
+    
+    /*$('.main-content').prepend('<div class="banner-collections banner-collectionss">'+
+  '<ul>'+
+    '<li><a href="/">Accueil</a></li>'+
+  	'<li class="active">Tous nos produits</li>'+
+ ' </ul>'+
+ 
+'</div>');
+    
+  })*/
+  $('.main-content').prepend('<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">'+
+    '<a href="/" title="Home">Accueil</a>'+
+     '<span aria-hidden="true">|</span>'+
+  	'<span>Tous nos produits</span>'+
+ 
+'</nav>');
+    
+  })  
+</script>

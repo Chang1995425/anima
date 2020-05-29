@@ -1,0 +1,20 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<!-- /templates/page.liquid -->
+<div class="grid">
+  <div class="grid__item large--five-sixths push--large--one-twelfth">
+    <header class="section-header text-center">
+      <h1>{% comment %}ly_code_replace_for_[ page.title ]_begin{% endcomment %}{% include 'ly-title' with page %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h1>
+      <hr class="hr--small">
+    </header>
+<div class="vv" style="alignment:center !important; font-size:20px !important;">
+    </div>
+    <div class="grid">      
+         <div class="grid__item large">
+        <div class="rte rte--nomargin rte--indented-images">
+          {% comment %}ly_code_replace_for_[ page.content ]_begin{% endcomment %}{% include 'ly-content' with page %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

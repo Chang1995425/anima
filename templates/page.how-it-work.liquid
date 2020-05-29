@@ -1,0 +1,55 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<!-- /templates/page.liquid -->
+<!-- /templates/page.contact.liquid -->
+
+
+
+<header class="section-header text-center">
+    <h1>Comment ça marche ?</h1>
+  
+<hr class="hr--small">
+</header>
+
+
+<div class="rte">
+  {% comment %}ly_code_replace_for_[ page.content ]_begin{% endcomment %}{% include 'ly-content' with page %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+</div>
+
+<br/>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!--   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+  
+  {% section 'how-it-works' %}
+<div class="section-you-may-like"></div>
+<div class="slideHIW">
+   {% section 'slideronhowitworks' %}
+  </div>
+<style>
+  .slick-slider .slick-dots {
+      bottom: -42px !important; 
+   }
+  .hr--small{
+    display:block;
+  }
+  h4{
+  	 line-height: 1.4 !important;
+  }
+  hr {
+	clear: both;
+	border-top: solid #1c1d1d;
+	border-width: 1px 0 0;
+	margin: 30px 0;
+	height: 0;
+}
+  .slick-slider .slick-dots{bottom: -50px;}
+  .owl-dots{}
+  #shopify-section-how-it-works img{width:100%;}
+  .template-page header.section-header{ margin: 30px 0 50px 0px; }
+</style>  
+
+</div>  

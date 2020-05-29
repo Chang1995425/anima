@@ -1,0 +1,81 @@
+
+ <div class="slider-pop-culture ss">
+    	<div class="owl-carousel owl-theme owl-pop-culture">
+          <div class="item">
+            <div class="owl-image">
+              <img src="{{ section.settings.pop_culture1 | img_url : '2080x'}}" alt="{{ section.settings.pop_culture1.alt | escape }}">
+            </div>
+            <u><h3 class="t-blue">Background Style 1</h3></u>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy </p>
+          </div>
+          <div class="item">
+            <div class="owl-image">
+              <img src="{{ section.settings.pop_culture2 | img_url : '2080x'}}" alt="{{ section.settings.pop_culture2.alt | escape }}">
+            </div>
+            <u><h3 class="t-blue">Background Style 2</h3></u>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy </p>
+          </div>
+          <div class="item">
+            <div class="owl-image">
+              <img src="{{ section.settings.pop_culture3 | img_url : '2080x'}}" alt="{{ section.settings.pop_culture3.alt | escape }}">
+            </div>
+            <u> <h3 class="t-blue">Background Style 3</h3></u>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy </p>
+          </div>
+          <div class="item">
+            <div class="owl-image">
+              <img src="{{ section.settings.pop_culture4 | img_url : '2080x'}}" alt="{{ section.settings.pop_culture4.alt | escape }}">
+            </div>
+            <u> <h3 class="t-blue">Background Style 4</h3></u>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy </p>
+          </div>
+      	</div>
+    </div>
+{% schema %} 
+ {
+    "name": "Content Background sec",
+    "settings": [
+      {
+        "id": "image_banner",
+        "type": "image_picker",
+        "label": "Image Banner"
+      },
+      {
+        "id": "pop_culture1",
+        "type": "image_picker",
+        "label": "Image Pop Culture 1"
+      },
+      {
+        "id": "pop_culture2",
+        "type": "image_picker",
+        "label": "Image Pop Culture 2"
+      },
+      {
+        "id": "pop_culture3",
+        "type": "image_picker",
+        "label": "Image Pop Culture 3"
+      },
+      {
+        "id": "pop_culture4",
+        "type": "image_picker",
+        "label": "Image Pop Culture 4"
+      }
+	
+  
+],
+
+    "presets": [
+      {
+        "name": "Content Background sec",
+
+        "category": "Content Background"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

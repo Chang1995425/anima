@@ -1,0 +1,442 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<!-- /templates/cart.liquid -->
+{% comment %}
+
+  For info on test orders:
+    - General http://docs.shopify.com/manual/your-store/orders/test-orders
+    - Shopify Payments - http://docs.shopify.com/manual/more/shopify-payments/testing-shopify-payments
+
+{% endcomment %}
+<div class="grid">
+  
+  <div class="grid__item {% if cart.item_count > 0 %} large--five-sixths push--large--one-twelfth{% else %} large--one-whole {% endif %} da__sp_gd">
+    {% if cart.item_count > 0 %}
+   
+      <header class="section-header text-center">
+        <h1 class="text-center">{% comment %}ly_i18n_replace_for_[ 'cart.general.title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.general.title' | t }}{% endcapture %}{% include 'ly-static-string' with '8850816' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h1>
+        <hr class="hr--small">
+      </header>
+
+      <form action="/cart{% comment %}ly_checkout_begin{% endcomment %}{% assign language = cart.attributes["language"] %}{% if language == nil %}{% assign language = shop.metafields["languages"]["default"] %}{% endif %}{% assign checkout_code = shop.metafields.language_codes[language] %}{% if checkout_code %}{% assign checkout_code = '?locale=' | append: checkout_code %}{{ checkout_code }}{% endif %}{% comment %}ly_checkout_end{% endcomment %}" method="post" novalidate class="cart">
+
+        <div class="cart__row medium-down--hide cart__header-labels">
+          <div class="grid--full">
+            <div class="grid__item large--two-fifths push--large--three-fifths">
+              <div class="grid--full">
+                <div class="grid__item one-third medium-down--half text-center">
+                  {% comment %}ly_i18n_replace_for_[ 'cart.label.quantity' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.label.quantity' | t }}{% endcapture %}{% include 'ly-static-string' with '8850817' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                </div>
+                <div class="grid__item two-thirds medium-down--half text-right">
+                  {% comment %}ly_i18n_replace_for_[ 'cart.label.total' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.label.total' | t }}{% endcapture %}{% include 'ly-static-string' with '8850818' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {% comment %}
+          Loop through products in the cart
+        {% endcomment %}
+        {% for item in cart.items %}
+          <div class="cart__row">
+            <div class="grid--full cart__row--table-large my_flex">
+
+              <div class="grid__item large--three-fifths item_img_desc">
+                <div class="grid my_flex">
+
+                  <div class="grid__item one-third da__img">
+                    <a href="{{ item.url | within: collections.all }}" class="cart__image">
+
+                      {% comment %}
+                        More image size options at:
+                          - http://docs.shopify.com/themes/filters/product-img-url
+                      {% endcomment %}
+                      <img src="{{ item | img_url: 'medium' }}" alt="{% comment %}ly_code_replace_for_[ item.title | escape ]_begin{% endcomment %}{% include 'ly-title' with item %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}">
+                    </a>
+                  </div>
+
+                  <div class="grid__item two-thirds webcast-mobile-cart-padding da__info">
+                    <a href="{{ item.url }}" class="h4 cart__product-name">
+                      {% comment %}ly_code_replace_for_[ item.product.title ]_begin{% endcomment %}{% include 'ly-title' with item.product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+                    </a>
+                    {% unless item.variant.title contains 'Default' %}
+                      <p class="cart__product-meta">
+                        <span>
+                          Couleur: {{ item.variant.options[0] | capitalize }}
+
+                          <br>
+                          Taille: {{item.variant.options[1]}}
+
+                        </span>
+                        {% comment %}ly_code_replace_for_[ item.variant.title ]_begin{% endcomment %}{% comment %}{% include 'ly-title' with item.variant %}{{ ly_translation }}{% endcomment %}{% comment %}ly_code_replace_end{% endcomment %}
+                      </p>
+                    {% endunless %}
+
+                    {% if settings.product_vendor_enable %}
+                      <p class="cart__product-meta">{% comment %}ly_code_replace_for_[ item.vendor ]_begin{% endcomment %}{% include 'ly-vendor' with item %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</p>
+                    {% endif %}
+
+                    {%- assign property_size = item.properties | size -%}
+               {% if property_size > 0 %}
+                 <div class="cart__meta-text">
+                   {% for p in item.properties %}
+                     {% unless p.last == blank %}
+                     
+                   		{{ p.first }} :
+                       {% if p.last contains '.amazonaws.' %}
+                         <a style="color: blue;text-decoration: underline;" href="{{ p.last }}">Voir l'image</a>
+                       {% else %}
+                         {{ p.last }}
+                       {% endif %}
+                     {% endunless %}
+                   {% endfor %}
+                 </div>
+               {% endif %}
+
+                    <p class="cart__product-meta cart-delete-link">
+                      <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0">
+                        {% comment %}ly_i18n_replace_for_[ 'cart.general.remove' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.general.remove' | t }}{% endcapture %}{% include 'ly-static-string' with '8850819' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                      </a>
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="grid__item large--two-fifths item_qty_price">
+                <div class="grid--full cart__row--table da__special_row">
+                  <div class="grid__item small--one-fifth text-left medium--hide large--hide qty__label">
+                  	<label for="updates_{{ item.key }}">{% comment %}ly_i18n_replace_for_[ 'cart.label.quantity' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.label.quantity' | t }}{% endcapture %}{% include 'ly-static-string' with '8850817' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>                   
+                  </div>
+
+                  <div style="position:relative" class="grid__item one-third small--two-fifths text-center qty__inp">
+
+                    <label for="updates_{{ item.key }}" class="visually-hidden">{% comment %}ly_i18n_replace_for_[ 'cart.label.quantity' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.label.quantity' | t }}{% endcapture %}{% include 'ly-static-string' with '8850817' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+                    <input type="number"  name="updates[]"  id="updates_{{ item.key }}" class="cart__product-qty myqnty-{{ item.key }}" value="{{ item.quantity }}" min="0" data-id="{{ item.key }}">
+                    <input type="button" onclick="increment('updates_{{ item.key }}')" value="˄" class="btn-up" />
+                    <input type="button" onclick="decrement('updates_{{ item.key }}')" value="˅" class="btn-down" />
+                    
+                  </div>
+				<!-- for only mobile webcast -->
+                  {% comment %}
+                  <div class="grid__item one-quarter text-center large--hide medium--hide">
+                  	<label for="updates_{{ item.key }}" class="">{% comment %}ly_i18n_replace_for_[ 'cart.label.quantity' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.label.quantity' | t }}{% endcapture %}{% include 'ly-static-string' with '8850817' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+                  </div>
+                  <div class="grid__item one-third text-center large--hide medium--hide">
+
+                    <input type="number" name="updates[]" id="updates_{{ item.key }}" class="cart__product-qty" value="{{ item.quantity }}" min="0" data-id="{{ item.key }}">
+
+                  </div>
+                  {% endcomment %}
+                  <div class="grid__item small--one-fifth text-center large--hide medium--hide just_hide">
+                    <i class="fa fa-arrow-right" style="font-size: 20px;"></i>
+                  </div>
+                  <div class="grid__item small--one-fifth text-right large--hide medium--hide da__price">                    
+                    {% if item.original_line_price != item.line_price %}
+                      <small class="cart__price cart__price--strikethrough">{{ item.original_line_price | money }}</small>
+                    {% endif %}
+
+                    <span class="cart__price">{{ item.line_price | money }}</span>
+
+                    {% assign discounts_size = item.discounts | size %}
+                    {% if discounts_size > 0 %}
+                      {% for discount in item.discounts %}
+                        <small class="cart__discount">{% comment %}ly_code_replace_for_[ discount.title ]_begin{% endcomment %}{% include 'ly-title' with discount %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</small>
+                      {% endfor %}
+                    {% endif %}
+                  </div>
+                  <!-- end mobile part webcast-->
+                  <div class="grid__item two-thirds text-right small--hide">
+                    {% if item.original_line_price != item.line_price %}
+                      <small class="cart__price cart__price--strikethrough">{{ item.original_line_price | money }}</small>
+                    {% endif %}
+
+                    <span class="cart__price">{{ item.line_price | money }}</span>
+
+                    {% assign discounts_size = item.discounts | size %}
+                    {% if discounts_size > 0 %}
+                      {% for discount in item.discounts %}
+                        <small class="cart__discount">{% comment %}ly_code_replace_for_[ discount.title ]_begin{% endcomment %}{% include 'ly-title' with discount %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</small>
+                      {% endfor %}
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        {% endfor %}
+
+        <div class="cart__row">
+          <div class="grid--full cart__row--table-large">
+            {% comment %}
+              Optional, add a textarea for special notes
+                - Your theme settings can turn this on or off. Default is on.
+                - Make sure you have name="note" for the message to be submitted properly
+            {% endcomment %}
+            {% if settings.cart_notes_enable %}
+              <div class="grid__item large--seven-twelfths">
+                <div class="cart__note">
+                  <label for="CartSpecialInstructions">{% comment %}ly_i18n_replace_for_[ 'cart.general.note' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.general.note' | t }}{% endcapture %}{% include 'ly-static-string' with '8850820' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+                  <textarea style="margin-top: 25px;background:#e7e6e6;" name="note" class="input-full" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+                </div>
+              </div>
+            {% endif %}
+            <div class="grid__item large--five-twelfths text-center large--text-right{% unless settings.cart_notes_enable %} push--large--seven-twelfths{% endunless %}">
+              <div class="grid--full cart__row--table">
+                <div class="grid__item one-half large--two-thirds large--text-center">
+                  <p class="cart__subtotal">{% comment %}ly_i18n_replace_for_[ 'cart.general.subtotal' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.general.subtotal' | t }}{% endcapture %}{% include 'ly-static-string' with '8850821' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</p>
+                </div>
+                <div class="grid__item one-half large--one-third">
+                  <p class="cart__subtotal">{{ cart.total_price | money }}</p>
+                </div>
+              </div>
+
+              {% if cart.total_discounts > 0 %}
+                {% assign cartTotalDiscounts = cart.total_discounts | money %}
+                <p class="cart__savings">{% comment %}ly_i18n_replace_for_[ 'cart.general.savings_html' | t: savings: cartTotalDiscounts ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.general.savings_html' | t: savings: cartTotalDiscounts }}{% endcapture %}{% include 'ly-static-string' with '8850823' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = cartTotalDiscounts  %}{% assign ly_template = ly_template | replace: '[[savings]]', replacement %}{% if escape_content %}{{ ly_template}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</p>
+              {% endif %}
+              {% comment %}<p><em>{% comment %}ly_i18n_replace_for_[ 'cart.general.shipping_at_checkout' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.general.shipping_at_checkout' | t }}{% endcapture %}{% include 'ly-static-string' with '8850824' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</em></p>{% endcomment %}
+              <span><em>Les codes promo, les frais d'envoi et les taxes seront ajoutés<center>à la caisse.</center></em></span>
+              <div class="row-cart-panel">
+                <div class="row-cart-panel-left"><button type="submit" name="update" class="button btn-grad-sign btn--full">{% comment %}ly_i18n_replace_for_[ 'cart.general.update' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.general.update' | t }}{% endcapture %}{% include 'ly-static-string' with '8850825' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</button></div>
+                <div class="row-cart-panel-right"><button type="submit" name="checkout" class="button btn-grad-log btn--full">
+                {% comment %}ly_i18n_replace_for_[ 'cart.general.checkout' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.general.checkout' | t }}{% endcapture %}{% include 'ly-static-string' with '8850826' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %} 
+              </button></div>
+                <div class="clear"></div>
+              </div>  
+              
+              
+              
+
+              {% if additional_checkout_buttons and settings.cart_type != 'drawer' %}
+                <div class="additional_checkout_buttons">{{ content_for_additional_checkout_buttons }}</div>
+              {% endif %}
+            </div>
+          </div>
+
+        </div>
+
+      </form>
+
+
+      <div class="after__cart_item">
+      <div class="section-you-may-like"></div>
+        <div class="slideHIW">
+          {% section 'sectionCart' %}
+        </div>
+      </div>
+
+    {% else %}
+      {% comment %}
+        The cart is empty
+      {% endcomment %}
+      <header class="section-header text-center">
+        <h1 class="text-center">{% comment %}ly_i18n_replace_for_[ 'cart.general.title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.general.title' | t }}{% endcapture %}{% include 'ly-static-string' with '8850816' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h1>
+        <hr class="hr--small">
+        <p class="cart--empty-message">{% comment %}ly_i18n_replace_for_[ 'cart.general.empty' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.general.empty' | t }}{% endcapture %}{% include 'ly-static-string' with '8850827' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</p>
+        <p class="cart--continue-browsing">{% comment %}ly_i18n_replace_for_[ 'cart.general.continue_browsing_html' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.general.continue_browsing_html' | t }}{% endcapture %}{% include 'ly-static-string' with '8850828' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}<u/><b/></p>
+        <p class="cookie-message">{% comment %}ly_i18n_replace_for_[ 'cart.general.cookies_required' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.general.cookies_required' | t }}{% endcapture %}{% include 'ly-static-string' with '8850829' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</p>
+      </header>
+    
+    <div class="after__cart_item">
+      <div class="section-you-may-like"></div>
+        <div class="slideHIW">
+          {% section 'sectionCart' %}
+        </div>
+      </div>
+
+    {% endif %}
+  </div>
+</div>
+<script>    
+var myqnty;
+  function increment(id){
+  	myqnty=document.getElementById(id).value;
+   myqnty++;
+    document.getElementById(id).value=myqnty;
+  }
+  function decrement(id){
+ 	 myqnty=document.getElementById(id).value;
+    if(myqnty!=1){
+      myqnty--;
+      document.getElementById(id).value=myqnty;
+    }
+  }
+  
+</script>    
+<style>
+  input[type=number]::-webkit-outer-spin-button,
+  input[type=number]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+
+  input[type=number] {
+      -moz-appearance:textfield;
+  }
+  .btn-up, .btn-down {
+      position: absolute;
+      right: 35px;
+      top: 1px;
+  }
+  .btn-up{
+  	height: 1em;
+    width: 1em;
+    background: #fff;
+    border: 0.1em solid #ccc;
+    position: absolute;
+    border-radius: 5px 5px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    
+    margin-top: 0.5em;
+   
+    font-size: 1em;
+  }
+  .btn-down{
+  	height: 1em;
+    width: 1em;
+    background: #fff;
+    border: 0.1em solid #ccc;
+    position: absolute;
+    border-radius: 0px 0px 5px 5px;
+    padding: 0px 0px 0px 0px;
+    margin-top: 1.5em;
+    font-size: 1em;
+  }
+  
+  .template-cart form {
+    margin-top: 2.5em;
+
+  }
+  .site-header__search-btn {
+    padding: 0 20px;
+    position: absolute;
+    right: 210px;
+    top: 55px;
+}
+  .template-cart .grid__item .section-header {
+    display: block;
+}
+  .InnerTextBlockMob {
+    font-weight: normal;
+    margin-bottom: 20px;
+    padding-bottom: 25px;
+    display: block;
+}
+    @media screen and (min-width:414px) and (max-width:736px) {
+  .grid--full.cart__row--table {
+    margin-top: 40px !important;
+}
+    }
+  @media screen and (min-width:320px) and (max-width:767px) {
+  .shopping-cart .shopping-cart-items .item-name {
+    padding-right: 15px !important;
+    font-size: 13px;
+}
+    input.btn-up, .btn-down {
+    display: none;
+}
+  }  
+  @media only screen and (min-width: 991px) {
+  	.cart__product-meta.cart-delete-link {
+      position: relative;
+      top: 70px;
+	}
+  }
+  @media only screen and (width: 375px) {
+  	.cart__product-meta.cart-delete-link {
+      margin-top: 0;
+	}
+    .template-cart .grid__item.large--three-tenths.Newsletter.footer-center {
+      #margin-bottom: 73px;
+    }
+    .webcast-mobile-cart-padding {
+    	padding-left: 15px;
+      	padding-top: 4px;
+    }
+    .cart__product-qty {
+    	margin-left: 6px;
+    }
+  }
+  @media only screen and (width: 360px) {
+  	.cart__product-meta.cart-delete-link {
+      margin-top: 17%;
+	}
+    .template-cart .grid__item.large--three-tenths.Newsletter.footer-center {
+      #margin-bottom: 73px;
+    }
+    .webcast-mobile-cart-padding {
+    	padding-left: 15px;
+      	padding-top: 4px;
+    }
+    .cart__product-qty {
+    	margin-left: 6px;
+    }
+  }
+  @media only screen and (width: 320px) {
+  	.cart__product-meta.cart-delete-link {
+      margin-top: 0%;
+	}
+    .webcast-mobile-cart-padding {
+    	padding-left: 15px;
+      	padding-top: 4px;
+    }
+    .cart__product-qty {
+    	margin-left: 6px;
+    }
+  }
+  @media only screen and (width: 411px) {
+  	.cart__product-meta.cart-delete-link {
+      margin-top: 24%;
+	}
+  }
+  @media only screen and (width: 667px) {
+  	.cart__product-meta.cart-delete-link {
+      margin-top: 34%;
+	}
+    .template-cart .grid__item.large--three-tenths.Newsletter.footer-center {
+      #margin-bottom: 40px;
+    }
+  }
+  @media only screen and (width: 640px) {
+  	.cart__product-meta.cart-delete-link {
+      margin-top: 32%;
+	}
+  }
+  
+  .cart__product-meta.cart-delete-link a{
+  	color: red;
+    text-decoration: underline;
+  }
+	input[type=number]::-webkit-inner-spin-button, 
+	input[type=number]::-webkit-outer-spin-button 
+  	{  
+
+   		opacity: 1;
+
+	}
+/*   .template-cart .section-header{
+  	margin-bottom: -20px !important;
+  } */
+  .template-cart form {
+  	/*margin-top: 2.5em;*/
+  }
+  .main-content nav:first-child, .main-content nav:nth-child(2) {
+    display: none;
+  }
+    form.cart .cart__row:nth-of-type(5) {
+    margin-bottom: 15px !important;
+}
+  @media screen and (min-width:768px) {  
+/*   body.template-cart #shopify-section-footer {
+    margin-top: 45px !important;
+} */
+    .template-cart .section-header {
+    margin-bottom: 20px !important;
+}
+    form.cart {
+    margin-top: -20px;
+}
+  }
+</style>

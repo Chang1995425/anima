@@ -1,0 +1,53 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<div class="custom-bottom-image-full">
+  <div class="wrapper">
+    <div class="custom-bottom-image-full-left">
+      <img class="image-1" src="{{ section.settings.Image1 | img_url : '560x'}}" alt="{{ section.settings.Image1.alt | escape }}">
+      <img class="image-2" src="{{ section.settings.Image2 | img_url : '560x'}}" alt="{{ section.settings.Image2.alt | escape }}">
+      <img class="image-3" src="{{ section.settings.Image3 | img_url : '560x'}}" alt="{{ section.settings.Image3.alt | escape }}">
+    </div>
+    <div class="custom-bottom-image-full-right">
+      <img class="image-1" src="{{ section.settings.Image_right | img_url : '560x'}}" alt="{{ section.settings.Image_right.alt | escape }}">
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Full Image",
+    "settings": [
+      {
+        "id": "Image1",
+        "type": "image_picker",
+        "label": "Image 1"
+      },
+	  {
+        "id": "Image2",
+        "type": "image_picker",
+        "label": "Image 2"
+      },
+	  {
+        "id": "Image3",
+        "type": "image_picker",
+        "label": "Image 3"
+      },
+	  {
+		"id": "Image_right",
+        "type": "image_picker",
+        "label": "Image Right"
+	  }
+	],
+    "presets": [
+      {
+        "name": "Full Image",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

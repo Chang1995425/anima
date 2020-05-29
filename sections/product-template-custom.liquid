@@ -1,0 +1,564 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+
+<!-- /templates/product.liquid -->
+</div>
+</div>
+
+
+
+
+<div class="wrapper">
+{% include 'breadcrumb' %}
+<div itemscope itemtype="http://schema.org/Product" id="ProductSection--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product-template" data-image-zoom-type="{{ section.settings.zoom_enable }}" data-enable-history-state="true" data-scroll-to-image="{% if section.settings.image_layout == "stacked" %}true{% else %}false{% endif %}">
+
+    <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
+    <meta itemprop="image" content="{{ product.featured_image.src | img_url: 'grande' }}">
+
+    {% assign current_variant = product.selected_or_first_available_variant %}
+    {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
+
+    <div class="grid product-single product-container-pp">
+      <div class="grid__item large--six-twelfths medium--seven-twelfths text-center">
+
+        {% if section.settings.image_layout == "stacked" %}
+         
+          <div class="product-single__photos">
+            {% capture img_id_class %}product-single__photo-{{ featured_image.id }}{% endcapture %}
+            {% capture wrapper_id %}ProductImageWrapper-{{ featured_image.id }}{% endcapture %}
+
+            <div class="product-single__photo--flex-wrapper">
+              <div class="product-single__photo--flex">
+                {% include 'image-style' with image: featured_image, width: 575, height: 850, small_style: true, wrapper_id: wrapper_id, img_id_class: img_id_class %}
+                <div id="{{ wrapper_id }}" class="product-single__photo--container">
+                  <div id="main_image" class="product-single__photo-wrapper zoom" style="padding-top:{{ 1 | divided_by: featured_image.aspect_ratio | times: 100}}%;">
+                   
+                     {% assign img_url = featured_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                    <img class="product-single__photo lazyload {{ img_id_class }}"
+                      src="{{ featured_image | img_url: '300x300' }}"
+                      data-src="{{ img_url }}"
+                      data-widths="[180, 360, 590, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                      data-aspectratio="{{ featured_image.aspect_ratio }}"
+                      data-sizes="auto"
+                      {% if section.settings.zoom_enable %}data-mfp-src="{{ featured_image | img_url: '1024x1024' }}"{% endif %}
+                      data-image-id="{{ featured_image.id }}"
+                      alt="{{ featured_image.alt | escape }}">
+                    
+                   
+
+                    <noscript>
+                      <img class="product-single__photo"
+                        src="{{ featured_image | img_url: 'master' }}"
+                        {% if section.settings.zoom_enable %}data-mfp-src="{{ featured_image | img_url: '1024x1024' }}"{% endif %}
+                        alt="{{ featured_image.alt | escape }}" data-image-id="{{ featured_image.id }}">
+                    </noscript>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {% for image in product.images %}
+              {% unless image contains featured_image %}
+
+                {% capture img_id_class %}product-single__photo-{{ image.id }}{% endcapture %}
+                {% capture wrapper_id %}ProductImageWrapper-{{ image.id }}{% endcapture %}
+
+                <div class="product-single__photo--flex-wrapper">
+                  <div class="product-single__photo--flex">
+                    {% include 'image-style' with image: image, width: 575, height: 850, small_style: true, wrapper_id: wrapper_id, img_id_class: img_id_class %}
+                    <div id="{{ wrapper_id }}" class="product-single__photo--container">
+                      <div class="product-single__photo-wrapper" style="padding-top:{{ 1 | divided_by: image.aspect_ratio | times: 100}}%;">
+                        {% assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                        <img class="product-single__photo lazyload {{ img_id_class }}"
+                          src="{{ image | img_url: '300x' }}"
+                          data-src="{{ img_url }}"
+                          data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                          data-aspectratio="{{ image.aspect_ratio }}"
+                          data-sizes="auto"
+                          {% if section.settings.zoom_enable %}data-mfp-src="{{ image.src | img_url: '1024x1024' }}"{% endif %}
+                          data-image-id="{{ image.id }}"
+                          alt="{{ image.alt | escape }}">
+
+                        <noscript>
+                          <img class="product-single__photo" src="{{ image.src | img_url: 'master' }}"
+                            {% if section.settings.zoom_enable %}data-mfp-src="{{ image.src | img_url: '1024x1024' }}"{% endif %}
+                            alt="{{ image.alt | escape }}"
+                            data-image-id="{{ image.id }}">
+                        </noscript>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endunless %}
+            {% endfor %}
+
+          </div>
+
+        {% else %}
+        
+          <div class="product-thumbnail__photos  test-web regular">
+
+            {% capture img_id_class %}product-single__photo-{{ featured_image.id }}{% endcapture %}
+            {% capture wrapper_id %}ProductImageWrapper-{{ featured_image.id }}{% endcapture %}
+
+            <div>
+              
+                {% include 'image-style' with image: featured_image, width: 575, height: 850, small_style: true, wrapper_id: wrapper_id, img_id_class: img_id_class %}
+                
+                 
+                    {% assign pieces =  featured_image.alt | escape %}
+                    
+                   	{% if pieces contains "https://"  %}
+                  
+                     <iframe  class="class="product-single__photo lazyload {{ img_id_class }}"" frameborder="0" src="{{pieces}}"></iframe>
+                    {% else %}
+                   
+                    {% assign img_url = featured_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                    <img  class="pro-img" data-aos="zoom-out" data-aos-delay="400"
+                      src="{{ featured_image | img_url: 'master' }}"
+                      data-src="{{ img_url }}"
+                      data-widths="[180, 360, 590, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                      data-aspectratio="{{ featured_image.aspect_ratio }}"
+                      data-sizes="auto"
+                     data-mfp-src="{{ featured_image | img_url: '1024x1024' }}"
+                      data-image-id="{{ featured_image.id }}"
+                      alt="{{ featured_image.alt | escape }}"
+                         data-zoom="{{ image.src | img_url: product_image_zoom_size, scale: product_image_scale }}">
+					 {% endif %}	
+                   
+                  
+                </div>
+              
+            {% for image in product.images %}
+              {% unless image contains featured_image %}
+
+                {% comment %}
+                  We need to figure out the max width we want the image to be on the page
+                  based on the aspect ratio of the image and based on the size of the
+                  image.
+                {% endcomment %}
+                {% capture img_id_class %}product-single__photo-{{ image.id }}{% endcapture %}
+                {% capture wrapper_id %}ProductImageWrapper-{{ image.id }}{% endcapture %}
+
+               
+                  <div>
+                                        
+                      
+                        {% assign img_url = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                        <img 
+                          src="{{ image | img_url: '1024x' }}"
+                          data-src="{{ img_url }}"
+                          data-widths="[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                          data-aspectratio="{{ image.aspect_ratio }}"
+                          data-sizes="auto"
+                          {% if section.settings.zoom_enable %}data-mfp-src="{{ image.src | img_url: '1024x1024' }}"{% endif %}
+                          data-image-id="{{ image.id }}"
+                          alt="{{ image.alt | escape }}">
+
+                       
+                      
+                    
+                  </div>
+                
+              {% endunless %}
+            {% endfor %}
+
+            {% comment %}
+              Display thumbnails
+            {% endcomment %}
+           
+          </div>
+            
+             <ul class="product-single__thumbnails small--hide grid-uniform" id="ProductThumbs">
+              {% for image in product.images %}
+                {% if product.images.size < 1 %}
+                  <li class="grid__item medium--one-third large--one-quarter product-single__photo-wrapper">
+                    <a data-image-id="{{ image.id }}" href="{{ image.src | img_url: 'grande' }}" class="product-single__thumbnail {% if image contains featured_image %} active-thumb{% endif %}">
+                      <img class="product-single__thumb"data-aos="zoom-out" data-aos-delay="400"  src="{{ image.src | img_url: '150x' }}" alt="{{ image.alt | escape }}">
+                      {% assign piece =  image.alt | escape %}
+                    
+                   		{% if piece contains "https://"  %}
+                      <span class="product__thumb-play" style="position: absolute; top:25%;left:35%">
+                        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-play" viewBox="0 0 32 32" ><style>.st0{fill:#444} .product__thumb-play svg.icon-play{width:45px;}</style><path class="st0" d="M9.3 6.2l17.1 9.7-17.1 9.7"></path></svg>
+                      </span>	
+                      {% endif %}
+                    </a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            </ul>
+
+        {% endif %}
+      </div>
+
+      <div class="grid__item large--six-twelfths  product-single__meta--wrapper medium--five-twelfths large--five-twelfths">
+        <div class="product-single__meta">
+          {% if section.settings.product_vendor_enable %}
+            <h2 class="product-single__vendor" itemprop="brand">{% comment %}ly_code_replace_for_[ product.vendor ]_begin{% endcomment %}{% include 'ly-vendor' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h2>
+          {% endif %}
+
+          <h1 class="product-single__title" itemprop="name">{% comment %}ly_code_replace_for_[ product.title ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h1>
+
+          <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+            {% comment %}
+              Optionally show the 'compare at' or original price of the product.
+            {% endcomment %}
+
+            {% if product.compare_at_price_max > product.price %}
+              <span id="PriceA11y" class="visually-hidden">{% comment %}ly_i18n_replace_for_[ 'products.general.regular_price' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.general.regular_price' | t }}{% endcapture %}{% include 'ly-static-string' with '8850624' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+              <span class="product-single__price--wrapper">
+                <span id="ComparePrice" class="product-single__price--compare-at">
+                  {% if current_variant.compare_at_price > current_variant.price %}
+                    {{ current_variant.compare_at_price | money }}
+                  {% endif %}
+                </span>
+              </span>
+              <span id="ComparePriceA11y" class="visually-hidden">{% comment %}ly_i18n_replace_for_[ 'products.general.sale_price' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.general.sale_price' | t }}{% endcapture %}{% include 'ly-static-string' with '8850625' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+            {% else %}
+              <span id="PriceA11y" class="visually-hidden">{% comment %}ly_i18n_replace_for_[ 'products.general.regular_price' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.general.regular_price' | t }}{% endcapture %}{% include 'ly-static-string' with '8850624' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+            {% endif %}
+
+            <span id="ProductPrice"
+              class="product-single__price{% if product.compare_at_price > product.price %} on-sale{% endif %}"
+              itemprop="price"
+              content="{{ current_variant.price | divided_by: 100.00 }}">
+              {{ current_variant.price | money }}
+            </span>
+
+            <hr class="hr--small">
+
+            <meta itemprop="priceCurrency" content="{{ shop.currency }}">
+            <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
+
+            <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm--{{ section.id }}" class="product-single__form">
+              {% unless product.has_only_default_variant %}
+                {% for option in product.options_with_values %}
+                  <div class="radio-wrapper js product-form__item">
+                    <label class="single-option-radio__label{% if option.name == 'Default' or option.name == 'Title' %} hidden-label{% endif %}"
+                      for="ProductSelect-option-{{ forloop.index0 }}">
+                      {{ option.name | escape }}
+                    </label>
+                    {% if section.settings.product_selector == 'radio' %}
+                      <fieldset class="single-option-radio"
+                        name="{{ option.name | handleize }}"
+                        id="ProductSelect-option-{{ forloop.index0 }}">
+                        {% assign option_index = forloop.index %}
+                        {% for value in option.values %}
+                          {% assign variant_label_state = true %}
+                          {% if product.options.size == 1 %}
+                            {% unless product.variants[forloop.index0].available  %}
+                              {% assign variant_label_state = false %}
+                            {% endunless %}
+                          {% endif %}
+                          <input type="radio"
+                            {% if option.selected_value == value %} checked="checked"{% endif %}
+                            {% unless variant_label_state %} disabled="disabled"{% endunless %}
+                            value="{{ value | escape }}"
+                            data-index="option{{ option_index }}"
+                            name="{{ option.name | handleize }}"
+                            class="single-option-selector__radio{% unless variant_label_state %} disabled{% endunless %}"
+                            id="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}">
+                          <label for="ProductSelect-option-{{ option.name | handleize }}-{{ value | escape }}"{% unless variant_label_state %} class="disabled"{% endunless %}>{{ value | escape }}</label>
+                        {% endfor %}
+                      </fieldset>
+                    {% else %}
+                      <select class="single-option-selector__radio single-option-selector-{{ section.id }} product-form__input" id="SingleOptionSelector-{{ forloop.index0 }}" data-index="option{{ forloop.index }}">
+                        {% for value in option.values %}
+                          <option value="{{ value | escape }}"{% if option.selected_value == value %} selected="selected"{% endif %}>{{ value | escape }}</option>
+                        {% endfor %}
+                      </select>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+              {% endunless %}
+
+              <select name="id" id="ProductSelect" class="product-single__variants no-js">
+                {% for variant in product.variants %}
+                  {% if variant.available %}
+                    <option {% if variant == product.selected_or_first_available_variant %}
+                      selected="selected" {% endif %}
+                      data-sku="{{ variant.sku }}"
+                      value="{{ variant.id }}">
+                      {% comment %}ly_code_replace_for_[ variant.title ]_begin{% endcomment %}{% include 'ly-title' with variant %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %} - {{ variant.price | money_with_currency }}
+                    </option>
+                  {% else %}
+                    <option disabled="disabled">
+                      {% comment %}ly_code_replace_for_[ variant.title ]_begin{% endcomment %}{% include 'ly-title' with variant %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %} - {% comment %}ly_i18n_replace_for_[ 'products.product.sold_out' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.sold_out' | t }}{% endcapture %}{% include 'ly-static-string' with '8850626' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                    </option>
+                  {% endif %}
+                {% endfor %}
+              </select>
+
+              {% if section.settings.quantity_enabled %}
+              <div class="product-single__quantity">
+                <label for="Quantity" class="product-single__quantity-label js-quantity-selector">{% comment %}ly_i18n_replace_for_[ 'products.product.quantity' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.quantity' | t }}{% endcapture %}{% include 'ly-static-string' with '8850627' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+                <input type="number" hidden="hidden" id="Quantity" name="quantity" value="1" min="1" class="js-quantity-selector">
+              </div>
+              {% endif %}
+
+         <div class="product-form__item product-form__item--logo">            
+           <label for="custom_photo"><ly-as-8850614>UPLOAD A PHOTO (ALL ANIMALS WELCOME)</ly-as-8850614></label>
+           <input required id="custom_photo" type="file" name="properties[Logo]" class="product-form__input">           
+        </div>
+
+              
+              <div class="product-single__add-to-cart">
+                <button type="submit" name="add" id="AddToCart--{{ section.id }}" class="btn add-to-cart{% if section.settings.add_to_cart_button_size == 'large' %} add-to-cart--full-width{% endif %}"{% unless current_variant.available %} disabled="disabled"{% endunless %}>
+                  <span class="add-to-cart-text">
+                    {% if current_variant.available %}
+                      {% comment %}ly_i18n_replace_for_[ 'products.product.add_to_cart' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.add_to_cart' | t }}{% endcapture %}{% include 'ly-static-string' with '8850628' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                    {% else %}
+                      {% comment %}ly_i18n_replace_for_[ 'products.product.sold_out' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.sold_out' | t }}{% endcapture %}{% include 'ly-static-string' with '8850626' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                    {% endif %}
+                  </span>
+                </button>
+              </div>
+            </form>
+
+          </div>
+
+       <div class="shg-row product-key-points">
+<div class="shg-c-lg-4 shg-c-md-4 shg-c-sm-4 shg-c-xs-4">
+<div id="s-2b1ce4ae-6b25-4749-85e2-b2fa130a9ea1" class="shg-c  shg-align-center">
+<div class="shogun-image-container">
+<img src="https://ucarecdn.com/721f3209-d21c-4e78-be28-6971240ad5d1/-/format/auto/-/stretch/off/-/resize/3000x/-/quality/lighter/" width="" height="" alt="" class="shogun-image img-responsive ">
+<div class="shogun-image-overlay shg-middle-center" style=""></div>
+</div>
+</div>
+</div>
+<div class="shg-c-lg-4 shg-c-md-4 shg-c-sm-4 shg-c-xs-4">
+<div id="s-701b6510-96d6-434d-9238-f2c1f8e4f9bc" class="shg-c  shg-align-center">
+<div class="shogun-image-container">
+<img src="https://ucarecdn.com/cad855c9-138c-49cb-ae10-9de72887ffe8/-/format/auto/-/stretch/off/-/resize/3000x/-/quality/lighter/" width="" height="" alt="" class="shogun-image img-responsive ">
+<div class="shogun-image-overlay shg-middle-center" style=""></div>
+</div>
+</div>
+</div>
+<div class="shg-c-lg-4 shg-c-md-4 shg-c-sm-4 shg-c-xs-4">
+<div id="s-8830b4d3-cb3b-48f9-bcdf-e1118188aa1c" class="shg-c  shg-align-center">
+<div class="shogun-image-container">
+<img src="https://ucarecdn.com/da93fc8b-e0be-46e9-be5a-a317e56a7ad1/-/format/auto/-/stretch/off/-/resize/3000x/-/quality/lighter/" width="" height="" alt="" class="shogun-image img-responsive ">
+<div class="shogun-image-overlay shg-middle-center" style=""></div>
+</div>
+</div>
+</div>
+</div>
+          
+          
+          <div class="highlights">
+            <h3> <ly-as-8850615>Highlights</ly-as-8850615></h3>
+
+<ul>
+<li>
+<ly-as-8850616>Customized product of your pet in Pop Art</ly-as-8850616>
+</li>
+<li>
+<ly-as-8850617>Real Artists, no gimmicks</ly-as-8850617>
+</li>
+<li> <ly-as-8850618>Pop art proof completed in 1-2 business days</ly-as-8850618></li>
+<li><ly-as-8850619>Unlimited revisions/ "Love it, or money back guarantee."</ly-as-8850619>
+</li>
+<li><ly-as-8850620>Preview your pet on all of our backgrounds in real time</ly-as-8850620>
+</li>
+<li><ly-as-8850621>Free shipping in the USA</ly-as-8850621>
+</li>
+<li><ly-as-8850622>International Shipping</ly-as-8850622>
+</li>
+</ul>
+</div>
+          </div>
+          
+          <div class="trust-seal">
+                <img src="https://ucarecdn.com/79c9f209-d389-4130-8881-b14f898cb77e/-/format/auto/-/stretch/off/-/resize/3000x/-/quality/lighter/" width="" height="" alt="" class="shogun-image img-responsive ">
+          </div>
+          
+          <div class="product-single__description rte" itemprop="description">
+            <h3><ly-as-8850623>Product Description</ly-as-8850623></h3>
+            
+            {% comment %}ly_code_replace_for_[ product.description ]_begin{% endcomment %}{% include 'ly-description' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+          </div>
+          123
+       {% include  'product-des-accordion'  %}
+          
+
+          {% if section.settings.social_sharing_products %}
+            {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+  {% comment %}
+    {% if collection %}
+      <hr class="hr--clear">
+      <div class="text-center">
+        <a href="{{ collection.url }}" class="return-link">&larr; {% comment %}ly_i18n_replace_for_[ 'products.general.collection_return' | t: collection: collection.title ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.general.collection_return' | t: collection: collection.title }}{% endcapture %}{% include 'ly-static-string' with '8850630' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% include 'ly-title' with collection %}{% assign replacement = ly_translation %}{% assign ly_template = ly_template | replace: '[[collection]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
+      </div>
+    {% endif %}
+  {% endcomment %}
+  
+
+</div>
+</div>
+
+  
+{% unless product.empty == empty %}
+  <script type="application/json" id="ProductJson-{{ section.id }}">
+    {{ product | json }}
+  </script>
+{% endunless %}
+
+   <script>
+    
+     $(".regular").not('.slick-initialized').slick({
+         slidesToShow: 1,
+         slidesToScroll: 1,
+         dots: false,
+         focusOnSelect: true,
+         arrows: false,
+
+      });
+    $('ul#ProductThumbs li').click(function(e) {
+     e.preventDefault();
+     var slideno = $(this).index();
+     // $('.regular')..slick('slickGoTo', slideno-1);
+     $('.regular').slickGoTo(slideno);
+     
+   });
+    
+  </script>
+  
+  
+  
+{% schema %}
+  {
+    "name": "Product pages",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "zoom_enable",
+        "label": "Enable image zoom"
+      },
+      {
+        "type": "checkbox",
+        "id": "social_sharing_products",
+        "label": "Enable product sharing",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "product_vendor_enable",
+        "label": "Show product vendor"
+      },
+      {
+        "type": "select",
+        "id": "image_layout",
+        "label": "Image display",
+        "default": "stacked",
+        "options": [
+          {
+            "value": "stacked",
+            "label": "Stacked"
+          },
+          {
+            "value": "thumbnails",
+            "label": "Thumbnails"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Product options form"
+      },
+      {
+        "type": "checkbox",
+        "id": "quantity_enabled",
+        "label": "Show quantity picker"
+      },
+      {
+        "type": "select",
+        "id": "product_selector",
+        "label": "Picker type",
+        "options": [
+          {
+            "value": "radio",
+            "label": "Button"
+          },
+          {
+            "value": "select",
+            "label": "Dropdown"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Add to cart button"
+      },
+      {
+        "type": "select",
+        "id": "add_to_cart_button_size",
+        "label": "Button size",
+        "default": "small",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+<style>
+  .product-single__title {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+  .single-option-radio input[type="radio"]:checked + label {
+    border: 1px solid #dbdcdb;
+    padding: 13px 25px;
+}
+  .product-container-pp input#custom_photo {
+    border: 1px solid #dbdcdb;
+}
+  .add-to-cart{
+   background: #1cadff;
+  font-family: "Roboto",!sans-serif important;
+  font-weight: bolder;
+  letter-spacing: -0.025em;
+  line-height: 1.42;
+  font-size: 14px;
+    text-transform: inherit;
+  }
+  .add-to-cart:hover{
+   background: #1cadff !important;
+  }
+  .product-single__thumb{
+    width: 76px;
+  }
+  .accordion .accordion-head{
+    font-size: 1em;
+  }
+  .accordion-head a{
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    position: relative;
+  }
+  .accordion-head a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    border-bottom: 2px solid #000;
+    transition: width 0.5s ease;
+}
+  .accordion-head a:hover::after, .accordion-head a:focus::after {
+    width: 100%;
+}
+  .breadcrumb {
+    font-size: 13px;
+}
+</style>

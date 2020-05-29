@@ -1,0 +1,327 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+        
+<h5 class="page page-top" style="text-align: center;"><span>Pour toute information, question ou conseil relatif à votre commande,</span><br /><span>veuillez prendre contact par mail: </span><strong>info@myanimart.com</strong><span> ou via notre formulaire de contact en cliquant <u><a href="https://mycreanimale.com/pages/contact-us" style="color:#337ab7;">ici</a></u>.</span></h5>
+    
+<br><br/>
+      <div class="gri">
+        <!--<div class="row">
+          <div class="col-xs-12 banner-full-width">
+            <img src="{{ section.settings.image | img_url: 'master' }}">
+          </div>
+        </div>-->
+                    
+        <style>
+          #shopify-section-how-it-works .page-top span:first-child{line-height:0;}
+          h5.page.page-top{line-height:1.4;}
+          @media screen and (min-width: 768px) and (max-width: 1024px) {
+            #shopify-section-how-it-works .gri .row > div:last-child {
+                display: block;
+            }
+            #shopify-section-how-it-works .gri .row > div.img {
+              margin-top: 0 !important;
+            }
+          }
+           #shopify-section-how-it-works .gri .row > div.img {
+            	margin-top : -60px;
+          }
+          
+           #shopify-section-how-it-works .gri .row > div.img2, 
+          #shopify-section-how-it-works .gri .row > div.img5
+          {
+            	margin-top : -80px;
+          }
+           
+          /*#shopify-section-how-it-works .gri .row > div.img2 {
+            	margin-top : -115px;
+          }*/
+@media (max-width: 767px) {
+           .create-order-right img, .shogun-image-container img {
+    text-align: center;
+    margin: 0 auto;
+           width: 100% !important;
+}
+#shopify-section-how-it-works img {
+   width: 100% !important;
+}
+#shopify-section-how-it-works.gri.row .col-sm-6{
+  	order: 1;
+  }
+ .gri .row .left-content-page{
+  	order: 2;
+  }
+  .no_padding{
+  order:3;
+  }
+  #shopify-section-how-it-works .gri .row > div.img{
+  padding-top:0px;
+    margin-top : 0 !important;
+  }
+  #shopify-section-how-it-works .page-top span:first-child{
+  line-height:0
+  }
+}        
+          .left-content-page.first-section {
+            position: absolute;
+          }
+          @media screen and (max-width: 1023px) {
+            .left-content-page.first-section {
+              position: relative;
+            }
+          }
+        </style>
+
+
+        
+  <h2 style="font-weight: 600;padding-left: 20%;margin-top: 5%;"><b>Nos oeuvres ont du chien ..</b></h2>
+  <h2 style="text-align:center;font-weight: 600;"><b>alors qu'attendez-vous ? ;)</b></h2>
+  <a href="https://mycreanimale.com/collections" class="button btn-grad-log btn--full" style="width:20%;margin:0 auto;margin-top:40px;">Voir tous nos produits</a>
+        
+<style>
+  @media (max-width: 767px) {
+    a.button.btn-grad-log.btn--full {
+        width: 70%!important;
+    }
+    .desktopImg {
+        display:none;
+    }
+  }
+  @media (min-width: 767px) {
+    .mobileImg {
+        display:none;
+    }
+  }
+    
+  @media (max-width: 328px) {
+  body#comment-ca-marche header.section-header h2.section-header__title {
+      font-size: 20px;}
+  
+  }
+  
+</style>
+{% schema %}
+  {
+    "name": "How It Works",
+    "settings": [
+      
+      {
+        "type": "text",
+        "id": "heading1",
+        "label": "Section title",
+        "default": "Section Heading"
+      },
+        {
+        "type": "textarea",
+        "id": "title1",
+        "label": "Section Description",
+        "default": "Section Description"
+      },
+      {
+        "type": "header",
+        "content": "Desktop Images"
+      },
+      {
+        "type": "image_picker",
+        "id": "image12",
+        "label": "Section1 Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image2",
+        "label": "Section1 Image"
+      },
+	  {
+        "type": "image_picker",
+        "id": "image3",
+        "label": "Section2 Image"
+      },
+      {
+        "type": "header",
+        "content": "Mobile Images"
+      },
+      {
+        "type": "image_picker",
+        "id": "mob-image12",
+        "label": "Section1 Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mob-image2",
+        "label": "Section1 Image"
+      },
+	  {
+        "type": "image_picker",
+        "id": "mob-image3",
+        "label": "Section2 Image"
+      },
+      {
+        "type": "text",
+        "id": "heading2",
+        "label": "Section title",
+        "default": "Section Heading"
+      },
+        {
+        "type": "textarea",
+        "id": "title2",
+        "label": "Section Description",
+        "default": "Section Description"
+      },
+      {
+        "type": "header",
+        "content": "Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image13",
+        "label": "Section1 Image"
+      },
+      {
+        "type": "header",
+        "content": "Mobile Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mob-image13",
+        "label": "Section1 Image"
+      },
+      {
+        "type": "text",
+        "id": "heading3",
+        "label": "Section title",
+        "default": "Section Heading"
+      },
+        {
+        "type": "textarea",
+        "id": "title3",
+        "label": "Section Description",
+        "default": "Section Description"
+      },
+      {
+        "type": "header",
+        "content": "Desktop Images"
+      },
+      {
+        "type": "image_picker",
+        "id": "image4",
+        "label": "Section3 Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image14",
+        "label": "Section1 Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image5",
+        "label": "Section4 Image"
+      },
+      {
+        "type": "header",
+        "content": "Mobile Images"
+      },
+      {
+        "type": "image_picker",
+        "id": "mob-image4",
+        "label": "Section3 Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mob-image14",
+        "label": "Section1 Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mob-image5",
+        "label": "Section4 Image"
+      },
+      {
+        "type": "text",
+        "id": "heading4",
+        "label": "Section title",
+        "default": "Section Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "title4",
+        "label": "Section Description",
+        "default": "Section Description"
+      },
+      {
+        "type": "header",
+        "content": "Desktop Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image15",
+        "label": "Section1 Image"
+      },
+      {
+        "type": "header",
+        "content": "Mobile Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mob-image15",
+        "label": "Section1 Image"
+      },
+      {
+        "type": "text",
+        "id": "heading5",
+        "label": "Section title",
+        "default": "Section Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "title5",
+        "label": "Section Description",
+        "default": "Section Description"
+      },
+      {
+        "type": "header",
+        "content": "Desktop Images"
+      },
+      {
+        "type": "image_picker",
+        "id": "image16",
+        "label": "Section1 Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image6",
+        "label": "Section5 Image"
+      },
+      {
+        "type": "header",
+        "content": "Mobile Images"
+      },
+      {
+        "type": "image_picker",
+        "id": "mob-image16",
+        "label": "Section1 Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "mob-image6",
+        "label": "Section5 Image"
+      },
+             
+         {
+        "type": "text",
+        "id": "heading-btm",
+        "label": "Section bottom title",
+        "default": "Section Heading"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      }
+
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,78 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% if section.settings.social-icons_enable %}
+<!--         <div class="grid__item"> -->
+          <ul class="list--inline site-footer__social-icons social-icons">
+            {% if settings.social_facebook_link != blank %}
+              <li>
+                <a class="social-icons__link" href="{{ settings.social_facebook_link | escape }}" title="{% comment %}ly_i18n_replace_for_[ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Facebook' ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Facebook' }}{% endcapture %}{% include 'ly-static-string' with '8850780' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = langify_shop_name %}{% assign ly_template = ly_template | replace: '[[name]]', replacement %}{% include 'ly-static-string' with '8850779' %}{% if ly_translation %}{% assign replacement = ly_translation %}{% else %}{% assign replacement = 'Facebook ' %}{% endif %}{% assign ly_template = ly_template | replace: '[[platform]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+                  <span class="icon__fallback-text"><ly-as-8850769>Facebook</ly-as-8850769></span>
+                </a>
+              </li>
+            {% endif %}
+            {% if settings.social_twitter_link != blank %}
+              <li>
+                <a class="social-icons__link" href="{{ settings.social_twitter_link | escape }}" title="{% comment %}ly_i18n_replace_for_[ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Twitter' ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Twitter' }}{% endcapture %}{% include 'ly-static-string' with '8850783' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = langify_shop_name %}{% assign ly_template = ly_template | replace: '[[name]]', replacement %}{% include 'ly-static-string' with '8850782' %}{% if ly_translation %}{% assign replacement = ly_translation %}{% else %}{% assign replacement = 'Twitter ' %}{% endif %}{% assign ly_template = ly_template | replace: '[[platform]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+                 <span class="icon icon-twitter fa" aria-hidden="true"></span>
+                  <span class="icon__fallback-text"><ly-as-8850770>Twitter</ly-as-8850770></span>
+                </a>
+              </li>
+            {% endif %}
+            {% if settings.social_pinterest_link != blank %}
+              <li>
+                <a class="social-icons__link" href="{{ settings.social_pinterest_link | escape }}" title="{% comment %}ly_i18n_replace_for_[ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Pinterest' ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Pinterest' }}{% endcapture %}{% include 'ly-static-string' with '8850786' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = langify_shop_name %}{% assign ly_template = ly_template | replace: '[[name]]', replacement %}{% include 'ly-static-string' with '8850785' %}{% if ly_translation %}{% assign replacement = ly_translation %}{% else %}{% assign replacement = 'Pinterest ' %}{% endif %}{% assign ly_template = ly_template | replace: '[[platform]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+                 <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                  <span class="icon__fallback-text"><ly-as-8850771>Pinterest</ly-as-8850771></span>
+                </a>
+              </li>
+            {% endif %}
+            {% if settings.social_instagram_link != blank %}
+              <li>
+                <a class="social-icons__link" href="{{ settings.social_instagram_link | escape }}" title="{% comment %}ly_i18n_replace_for_[ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Instagram' ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Instagram' }}{% endcapture %}{% include 'ly-static-string' with '8850789' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = langify_shop_name %}{% assign ly_template = ly_template | replace: '[[name]]', replacement %}{% include 'ly-static-string' with '8850788' %}{% if ly_translation %}{% assign replacement = ly_translation %}{% else %}{% assign replacement = 'Instagram ' %}{% endif %}{% assign ly_template = ly_template | replace: '[[platform]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+                <span class="icon icon-instagram fa" aria-hidden="true"></span>
+                  <span class="icon__fallback-text"><ly-as-8850772>Instagram</ly-as-8850772></span>
+                </a>
+              </li>
+            {% endif %}
+            {% if settings.social_tumblr_link != blank %}
+              <li>
+                <a class="social-icons__link" href="{{ settings.social_tumblr_link | escape }}" title="{% comment %}ly_i18n_replace_for_[ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Tumblr' ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Tumblr' }}{% endcapture %}{% include 'ly-static-string' with '8850792' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = langify_shop_name %}{% assign ly_template = ly_template | replace: '[[name]]', replacement %}{% include 'ly-static-string' with '8850791' %}{% if ly_translation %}{% assign replacement = ly_translation %}{% else %}{% assign replacement = 'Tumblr ' %}{% endif %}{% assign ly_template = ly_template | replace: '[[platform]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+                  {% include 'icon-tumblr' %}
+                  <span class="icon__fallback-text"><ly-as-8850773>Tumblr</ly-as-8850773></span>
+                </a>
+              </li>
+            {% endif %}
+            {% if settings.social_snapchat_link != blank %}
+              <li>
+                <a class="social-icons__link" href="{{ settings.social_snapchat_link | escape }}" title="{% comment %}ly_i18n_replace_for_[ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Snapchat' ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Snapchat' }}{% endcapture %}{% include 'ly-static-string' with '8850795' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = langify_shop_name %}{% assign ly_template = ly_template | replace: '[[name]]', replacement %}{% include 'ly-static-string' with '8850794' %}{% if ly_translation %}{% assign replacement = ly_translation %}{% else %}{% assign replacement = 'Snapchat ' %}{% endif %}{% assign ly_template = ly_template | replace: '[[platform]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+                  {% include 'icon-snapchat' %}
+                  <span class="icon__fallback-text"><ly-as-8850774>Snapchat</ly-as-8850774></span>
+                </a>
+              </li>
+            {% endif %}
+            {% if settings.social_youtube_link != blank %}
+              <li>
+                <a class="social-icons__link" href="{{ settings.social_youtube_link | escape }}" title="{% comment %}ly_i18n_replace_for_[ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'YouTube' ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'YouTube' }}{% endcapture %}{% include 'ly-static-string' with '8850798' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = langify_shop_name %}{% assign ly_template = ly_template | replace: '[[name]]', replacement %}{% include 'ly-static-string' with '8850797' %}{% if ly_translation %}{% assign replacement = ly_translation %}{% else %}{% assign replacement = 'YouTube ' %}{% endif %}{% assign ly_template = ly_template | replace: '[[platform]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+                  <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                  <span class="icon__fallback-text"><ly-as-8850775>YouTube</ly-as-8850775></span>
+                </a>
+              </li>
+            {% endif %}
+            {% if settings.social_vimeo_link != blank %}
+              <li>
+                <a class="social-icons__link" href="{{ settings.social_vimeo_link | escape }}" title="{% comment %}ly_i18n_replace_for_[ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Vimeo' ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Vimeo' }}{% endcapture %}{% include 'ly-static-string' with '8850801' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = langify_shop_name %}{% assign ly_template = ly_template | replace: '[[name]]', replacement %}{% include 'ly-static-string' with '8850800' %}{% if ly_translation %}{% assign replacement = ly_translation %}{% else %}{% assign replacement = 'Vimeo ' %}{% endif %}{% assign ly_template = ly_template | replace: '[[platform]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+                  {% include 'icon-vimeo' %}
+                  <span class="icon__fallback-text"><ly-as-8850776>Vimeo</ly-as-8850776></span>
+                </a>
+              </li>
+            {% endif %}
+            {% if template.name == 'blog' or template.name == 'article' %}
+              <li>
+                <a class="social-icons__link" href="{{ shop.url }}{{ blog.url }}.atom">
+                  {% include 'icon-rss' %}
+                  <span class="icon__fallback-text"><ly-as-8850777>RSS</ly-as-8850777></span>
+                </a>
+              </li>
+            {% endif %}
+          </ul>
+<!--         </div> -->
+      {% endif %}

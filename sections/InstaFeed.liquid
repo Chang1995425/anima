@@ -1,0 +1,24 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+
+{% if section.settings.insta_feed %}
+<div id='insta-feed' class="mobile-block"></div>
+{% endif %}
+{% schema %}
+  {
+    "name": "InstaFeed",
+    "settings": [
+     {
+        "type": "checkbox",
+        "id": "insta_feed",
+        "label": "Instafeed"
+     }
+   ],
+   "presets": [
+      {
+        "name": "InstaFeed",
+        "category": "Image"
+      }
+    ]
+  }
+
+{% endschema %}

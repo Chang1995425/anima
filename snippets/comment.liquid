@@ -1,0 +1,12 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<!-- /snippets/comment.liquid -->
+<div class="grid">
+  <div class="grid__item large--one-fifth">
+    <span class="h5 comment-author">{{ comment.author }}</span>
+    <time datetime="{{ comment.created_at | date: '%Y-%m-%d' }}" class="comment-date">{{ comment.created_at | date: format: 'month_day_year' }}</time>
+  </div>
+  <div class="grid__item large--three-fifths">
+    <div class="rte rte--nomargin">
+      {% comment %}ly_code_replace_for_[ comment.content ]_begin{% endcomment %}{% include 'ly-content' with comment %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+    </div>
+  </div>
+</div>

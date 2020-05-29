@@ -1,0 +1,2499 @@
+{
+  "current": {
+    "color_body_bg": "#ffffff",
+    "color_headings": "#222323",
+    "color_body_text": "#222323",
+    "color_borders": "#1c1d1d",
+    "color_button_text": "#ffffff",
+    "color_primary": "#00ce5a",
+    "color_secondary": "#a26b25",
+    "color_product_background": "#f7f7f7",
+    "color_sale_tag": "#00ce5a",
+    "color_input": "#f6f6f6",
+    "color_newsletter": "#f6f6f6",
+    "color_drawer_background": "#ffffff",
+    "color_drawer_text": "#090808",
+    "color_drawer_border": "#343535",
+    "color_drawer_button": "#00ce5a",
+    "color_drawer_button_text": "#ffffff",
+    "type_header_family": "Google_Montserrat_400_sans",
+    "type_header_base_size": "26px",
+    "type_header_border_thickness": "2px",
+    "type_accent_family": "Google_Montserrat_400_sans",
+    "type_accent_transform": false,
+    "type_accent_spacing": false,
+    "type_accent_subheadings": false,
+    "type_base_family": "Google_Montserrat_400_sans",
+    "type_base_size": "14px",
+    "type_base_italize_titles": false,
+    "type_base_family_topbar": "Montserrat",
+    "font_weight3": "bold",
+    "font-style3": "normal",
+    "type_header_top_size": "14px",
+    "type_base_family_bradcrumb": "Montserrat",
+    "font_weight": "bold",
+    "font-style": "normal",
+    "type_base_family_navigation": "Montserrat",
+    "font_weight2": "bold",
+    "font-style2": "normal",
+    "cart_type": "drawer",
+    "cart_notes_enable": true,
+    "share_image": "",
+    "social_facebook_link": "https:\/\/www.facebook.com\/myanimart",
+    "social_twitter_link": "https:\/\/twitter.com\/myanimart",
+    "social_pinterest_link": "",
+    "social_instagram_link": "https:\/\/instagram.com\/myanimart",
+    "social_snapchat_link": "",
+    "social_google_plus_link": "",
+    "social_tumblr_link": "",
+    "social_youtube_link": "https:\/\/www.youtube.com\/channel\/UCQKLfO1QTIk1JjsLQERQ7HA",
+    "social_vimeo_link": "",
+    "social_fancy_link": "",
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_pinterest": true,
+    "insta_feed": false,
+    "favicon": "",
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#a26b25",
+    "checkout_button_color": "#000000",
+    "checkout_error_color": "#e32c2b",
+    "font-size3": "14px",
+    "text_weight": "bold",
+    "text-style": "italic",
+    "checkout_banner_background_color": "#fff",
+    "checkout_call_to_action_color": "#a26b25",
+    "checkout_use_header_image": false,
+    "collection_products_grid": "collage",
+    "customer_layout": "customer_area",
+    "favicon_enable": false,
+    "product_vendor_enable": false,
+    "social_sharing_style": "clean",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "main_menu_link_list": "main-menu",
+          "logo": "shopify:\/\/shop_images\/transparent-01_8ae35b31-c053-4767-9b53-e0df30337c98.png",
+          "logo-inverted": "shopify:\/\/shop_images\/TESTMOBILE2_02e32e34-f15c-4e3f-8e4c-4c9388c1c3ea.png",
+          "logo_max_width": "",
+          "search": "modal",
+          "show_announcement": false,
+          "home_page_only": false,
+          "text": "création artistique en 24h seulement !",
+          "link": "",
+          "color_bg": "#00ce5a",
+          "color_text": "#ffffff",
+          "bg_header_bottom_color": "#ffffff",
+          "display_header_text_order": true,
+          "header_text_order": "Une question ?  info@mycreanimale.com",
+          "header_text_order_text_color": "#141414",
+          "header_link_text_color": "#323232",
+          "display_header_free_shipping": true,
+          "header_free_shipping": "🐶 La griffe de vrais artistes, sans artifice 🐱",
+          "header_free_shipping_text_color": "#000000",
+          "show_header_search": true,
+          "bg_search_color": "#fafafa",
+          "border_search_color": "#e7e7e7",
+          "dropdowncart_type": "hover"
+        }
+      },
+      "slideshow": {
+        "type": "slideshow",
+        "blocks": {
+          "slideshow-0": {
+            "type": "slide",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/ezgif.com-webp-to-jpg.jpg",
+              "color_image_overlay": "rgba(0,0,0,0)",
+              "image_overlay_opacity": 100,
+              "slide_subheading": "",
+              "slide_heading": "",
+              "slide_heading_text_size": "24px",
+              "slide_subheading_text_size": "",
+              "slide_cta": "",
+              "slide_link": "shopify:\/\/collections",
+              "image_video": "",
+              "link_video": "https:\/\/www.youtube.com\/watch?v=_sI_Ps7JSEk&amp;autoplay=1&amp;rel=0&amp;controls=0&amp;showinfo=0"
+            }
+          }
+        },
+        "block_order": [
+          "slideshow-0"
+        ],
+        "settings": {
+          "hero_home_auto": true,
+          "home_hero_auto_speed": "5000",
+          "slide_text_color": "#ffffff",
+          "slide_button_label_color": "#ffffff",
+          "slide_button_background_color": "rgba(0,0,0,0)"
+        }
+      },
+      "drawer-menu": {
+        "type": "drawer-menu",
+        "settings": {
+          "drawer_top_link_list": "main-menu",
+          "drawer_bottom_link_list": "",
+          "drawer_search_enable": true
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "top-mg": "shopify:\/\/shop_images\/dog-footer_02a89c78-c825-41cb-88f6-b88afd6a05ac.png",
+          "add-bg": "shopify:\/\/shop_images\/location-icon.png",
+          "tel-bg": "shopify:\/\/shop_images\/phone-icon.png",
+          "emai-bg": "shopify:\/\/shop_images\/info-email-icon.png",
+          "middle-bg": "shopify:\/\/shop_images\/singal-footer-image-3.jpg",
+          "footer-bg": "shopify:\/\/shop_images\/footer-bg.png",
+          "logo": "shopify:\/\/shop_images\/transparent-01.png",
+          "heart-mg": "shopify:\/\/shop_images\/heart-icon.png",
+          "logo_max_width": "200",
+          "footer_linklist": "quick-links",
+          "footer_linklist_two": "informations",
+          "footer_linklist_three": "",
+          "email-mg": "shopify:\/\/shop_images\/enter-your-email-id-icon.png",
+          "footer_newsletter_enable": true,
+          "social-icons_enable": true,
+          "footer_address_enable": true,
+          "footer_address_bar_title": "VOUS VOUS EN MORDREZ LES DOIGTS",
+          "footer_address": "Des croquettes contre votre adresse mail ? Abonnez-vous afin de recevoir nos dernières promotions mais bénéficiez également de cadeaux surprises ...",
+          "footer_telephone_checkbox_enable": true,
+          "footer_telephone_enable": "Enter telephone no here",
+          "footer_email_checkbox_enable": true,
+          "footer_email_enable": "Des croquettes contre votre mail ?",
+          "copy-right-text-enable": true,
+          "show_payment_icons": false
+        }
+      },
+      "1520664128015": {
+        "type": "logo-bar",
+        "blocks": {
+          "1520664128015-0": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/bravo_160x160_6806a10a-3906-4aed-af50-8bc961dc5d9f.png",
+              "link": ""
+            }
+          },
+          "1520664128015-1": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/huff_160x160_3869b98e-9b3b-46c8-be1c-b03c28c2c85c.png",
+              "link": ""
+            }
+          },
+          "1520664128015-2": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/menshealth_160x160_62d9f2b2-dc4e-4fbf-b150-fdf77c415c19.png",
+              "link": ""
+            }
+          },
+          "1520664283987": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/buzzfeed_160x160_a9f3dc4e-e5dc-4d9f-8ba4-f583db8d0f08.png",
+              "link": ""
+            }
+          },
+          "1520664245533": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/medium_160x160_70e56d07-31d7-421e-b6f8-9afb4da6327f.png",
+              "link": ""
+            }
+          },
+          "1520664128015-3": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/elvis_160x160_4072ce3c-d91c-4055-9f75-acd60de9ff01.png",
+              "link": ""
+            }
+          },
+          "1520664264161": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/HG_160x160_766ec827-c702-4e6b-b06f-229d9aa40288.png",
+              "link": ""
+            }
+          },
+          "1520664641263": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/timeout_160x160_6efa5e0c-e923-4aa9-b7e0-b781437750f4.png",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1520664128015-0",
+          "1520664128015-1",
+          "1520664128015-2",
+          "1520664283987",
+          "1520664245533",
+          "1520664128015-3",
+          "1520664264161",
+          "1520664641263"
+        ],
+        "settings": {
+          "title": "In The Press"
+        }
+      },
+      "1520670823594": {
+        "type": "key-points",
+        "blocks": {
+          "1520670823594-0": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/11.jpg",
+              "title": "Nos artistes ont du mordant",
+              "text": "<p>Nos artistes redoublent de cr&eacute;ativit&eacute; pour donner du style &agrave; votre boule de poils. Ils travaillent &agrave; vos c&ocirc;t&eacute;s &agrave; chaque &eacute;tape pour vous offrir des designs qui ont du chien !<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "1520670823594-1": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/22.jpg",
+              "title": "En 24 heures seulement ?!",
+              "text": "<p>Nous prenons le taureau par les cornes pour vous d&eacute;livrer des cr&eacute;ations uniques en &agrave; peine une journ&eacute;e. Ne cherchez pas plus rapide ailleurs !<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "1520670823594-2": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/33.jpg",
+              "title": "Des révisions illimitées et ..",
+              "text": "<p>Vous trouvez que M&eacute;dor a le teint un peu blafard ? Nous effectuerons gratuitement toutes les modifications n&eacute;cessaires jusqu&rsquo;&agrave; votre pleine satisfaction.<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
+          "1550226730143": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/44.jpg",
+              "title": ".. un aperçu avant de commander !",
+              "text": "<p>Choisissez votre arri&egrave;re-plan en temps r&eacute;el afin d'obtenir le meilleur visuel possible et si vous avez une questions, posez-la, nous sommes en ligne&nbsp;24h\/24 !<\/p>",
+              "button_label": "",
+              "button_link": ""
+            }
+          }
+        },
+        "block_order": [
+          "1520670823594-0",
+          "1520670823594-1",
+          "1520670823594-2",
+          "1550226730143"
+        ],
+        "settings": {
+          "title": "<b>UNE EXPERIENCE UNIQUE<\/b>",
+          "font_size": "45px",
+          "dsktsub_title": "Chez <b>MyAnimArt<\/b>, sous sommes allergiques au conformisme et <b>réticents à l’idée que nos compagnons ne peuvent pas nous suivre partout.<br><\/b> Nous avons donc trouvé un <b>moyen original et stylé <\/b>de les inviter à rejoindre notre quotidien. \n<br> En nous soumettant la photo de votre compagnon de vie, <b>vous choisissez vous-même l’arrière-plan<\/b> qui vous convient. <br>Nous nous chargeons ensuite de lui <b>donner de l’éclat <\/b>et <b>de sublimer votre photo !<\/b><p><\/p>",
+          "mblsub_title": "Chez <b>MyAnimArt<\/b>, sous sommes allergiques au conformisme et <b>réticents à l’idée que nos compagnons ne peuvent pas nous suivre partout.<\/b> Nous avons donc trouvé un <b>moyen original et stylé <\/b>de les inviter à rejoindre notre quotidien. \n<br><br> En nous soumettant la photo de votre compagnon de vie, <b>vous choisissez vous-même l’arrière-plan<\/b> qui vous convient. Nous nous chargeons ensuite de lui <b>donner de l’éclat <\/b>et <b>de sublimer votre photo !<\/b><p><\/p>",
+          "align_text": "center",
+          "button_text_new": "🐶 Voir le shop ! 🐱",
+          "button_margin_top": "30px",
+          "button_margin_bottom": "50px",
+          "text_banner": true,
+          "banner_text": "Texttext",
+          "textbanner_background": "blue",
+          "banner_margin_top": "px",
+          "banner_margin_bottom": "px",
+          "font_size_banner_heading": "50px",
+          "color_heading_banner": "#FFF",
+          "font_size_banner_subheading": "20px",
+          "color_subheading_banner": "#FFF",
+          "title_margin_top": "-100px",
+          "title_margin_bottom": "10px",
+          "subtitle_margin_top": "50px",
+          "subtitle_margin_bottom": "px",
+          "banner_heading_one": "+ de 80 arrières-plans !",
+          "banner_subheading_one": "Prévisualisez en temps réel et choissiez votre favori !",
+          "banner_heading_two": "Produits 100% Français",
+          "banner_subheading_two": "Nous travaillons avec du bio et des produits 100% made in France.",
+          "banner_heading_three": "24 heures seulement !",
+          "banner_subheading_three": "Nous nous occupons directement de votre commande, rapide comme l'éclair !"
+        }
+      },
+      "product-template": {
+        "type": "product-template",
+        "blocks": {
+          "1523260788959": {
+            "type": "startmain",
+            "settings": {
+              "s_head": "Background Options >"
+            }
+          },
+          "1523082982286": {
+            "type": "head",
+            "settings": {
+              "heading": "Solid Colors >"
+            }
+          },
+          "1523082967347": {
+            "type": "start",
+            "settings": {}
+          },
+          "1523086053763": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best.png"
+            }
+          },
+          "1523085973108": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best1.png"
+            }
+          },
+          "1523086084506": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best2.png"
+            }
+          },
+          "1523086098656": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best3.png"
+            }
+          },
+          "1523086110703": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best4.png"
+            }
+          },
+          "1523086124969": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best5.png"
+            }
+          },
+          "1523086133538": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best6.png"
+            }
+          },
+          "1523086144248": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best7.png"
+            }
+          },
+          "1523086156944": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best8.png"
+            }
+          },
+          "1523086166650": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best9.png"
+            }
+          },
+          "1523086175302": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best10.png"
+            }
+          },
+          "1523086184675": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best11.png"
+            }
+          },
+          "1523086193435": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best12.png"
+            }
+          },
+          "1523086202728": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best13.png"
+            }
+          },
+          "1523086210757": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best14.png"
+            }
+          },
+          "1523086217639": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best15.png"
+            }
+          },
+          "1523086225404": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best16.png"
+            }
+          },
+          "1523086234540": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best17.png"
+            }
+          },
+          "1523086241209": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best18.png"
+            }
+          },
+          "1523086250258": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best19.png"
+            }
+          },
+          "1523086291472": {
+            "type": "exit",
+            "settings": {}
+          },
+          "1523086296561": {
+            "type": "head",
+            "settings": {
+              "heading": "Pop Culture >"
+            }
+          },
+          "1523086305159": {
+            "type": "start",
+            "settings": {}
+          },
+          "1523086309604": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_7.png"
+            }
+          },
+          "1523086435140": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download.png"
+            }
+          },
+          "1523086478988": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_1.png"
+            }
+          },
+          "1523086496302": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_2.png"
+            }
+          },
+          "1523086515858": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_3.png"
+            }
+          },
+          "1523086536465": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_4.png"
+            }
+          },
+          "1523086554145": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_5.png"
+            }
+          },
+          "1523086570887": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_6.png"
+            }
+          },
+          "1523086593822": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_8.png"
+            }
+          },
+          "1523086615477": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_9.png"
+            }
+          },
+          "1523086637182": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_10.png"
+            }
+          },
+          "1523086661202": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_11.png"
+            }
+          },
+          "1523086679181": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_12.png"
+            }
+          },
+          "1523086700332": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_13_1ab8d714-ce1a-4759-b39d-23f207bba382.png"
+            }
+          },
+          "1523086727416": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_14.png"
+            }
+          },
+          "1523086745808": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_15.png"
+            }
+          },
+          "1523086765010": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_16.png"
+            }
+          },
+          "1523086782678": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_17.png"
+            }
+          },
+          "1523086801853": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_18.png"
+            }
+          },
+          "1523086824227": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_19.png"
+            }
+          },
+          "1523086837087": {
+            "type": "exit",
+            "settings": {}
+          },
+          "1523086929438": {
+            "type": "head",
+            "settings": {
+              "heading": "Pop Text >"
+            }
+          },
+          "1523086933918": {
+            "type": "start",
+            "settings": {}
+          },
+          "1523086937668": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_21.png"
+            }
+          },
+          "1523087039204": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_22.png"
+            }
+          },
+          "1523087063760": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_23.png"
+            }
+          },
+          "1523087084165": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_24.png"
+            }
+          },
+          "1523087103296": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_25.png"
+            }
+          },
+          "1523087123958": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_26.png"
+            }
+          },
+          "1523087142530": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_27.png"
+            }
+          },
+          "1523087160589": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_28.png"
+            }
+          },
+          "1523087273066": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_29.png"
+            }
+          },
+          "1523087297284": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_30.png"
+            }
+          },
+          "1523087313777": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_31.png"
+            }
+          },
+          "1523087330247": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_32.png"
+            }
+          },
+          "1523087349667": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_33.png"
+            }
+          },
+          "1523087369089": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_34.png"
+            }
+          },
+          "1523087385900": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_35.png"
+            }
+          },
+          "1523087403387": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_36.png"
+            }
+          },
+          "1523087419923": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_37.png"
+            }
+          },
+          "1523087437902": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_38.png"
+            }
+          },
+          "1523087453245": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_39.png"
+            }
+          },
+          "1523087471903": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_40.png"
+            }
+          },
+          "1523087491455": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_41.png"
+            }
+          },
+          "1523087512451": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_42.png"
+            }
+          },
+          "1523087535157": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_43.png"
+            }
+          },
+          "1523087556421": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_44.png"
+            }
+          },
+          "1523087574482": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_45.png"
+            }
+          },
+          "1523087592195": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_46.png"
+            }
+          },
+          "1523087610695": {
+            "type": "exit",
+            "settings": {}
+          },
+          "1523087719260": {
+            "type": "head",
+            "settings": {
+              "heading": "Munchies >"
+            }
+          },
+          "1523087724347": {
+            "type": "start",
+            "settings": {}
+          },
+          "1523087726292": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_47.png"
+            }
+          },
+          "1523087764344": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_48.png"
+            }
+          },
+          "1523087780221": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_49.png"
+            }
+          },
+          "1523087796302": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_50.png"
+            }
+          },
+          "1523087812658": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_51.png"
+            }
+          },
+          "1523087830728": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_52.png"
+            }
+          },
+          "1523087848870": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_53.png"
+            }
+          },
+          "1523087865426": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_54.png"
+            }
+          },
+          "1523087883467": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_55.png"
+            }
+          },
+          "1523087905476": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_56.png"
+            }
+          },
+          "1523087923993": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_57.png"
+            }
+          },
+          "1523087942309": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_58.png"
+            }
+          },
+          "1523087966617": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_59.png"
+            }
+          },
+          "1523087984007": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_60.png"
+            }
+          },
+          "1523087994565": {
+            "type": "exit",
+            "settings": {}
+          },
+          "1523088013724": {
+            "type": "head",
+            "settings": {
+              "heading": "Floral >"
+            }
+          },
+          "1523088016534": {
+            "type": "start",
+            "settings": {}
+          },
+          "1523088018453": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_61.png"
+            }
+          },
+          "1523088106691": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_62.png"
+            }
+          },
+          "1523088112415": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_63.png"
+            }
+          },
+          "1523088117917": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_64.png"
+            }
+          },
+          "1523088161619": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_65.png"
+            }
+          },
+          "1523088176766": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_66.png"
+            }
+          },
+          "1523088264271": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_67.png"
+            }
+          },
+          "1523088269450": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_68.png"
+            }
+          },
+          "1523088277559": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_69.png"
+            }
+          },
+          "1523088286671": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_70.png"
+            }
+          },
+          "1523088293763": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_71.png"
+            }
+          },
+          "1523088297750": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_72.png"
+            }
+          },
+          "1523088307916": {
+            "type": "exit",
+            "settings": {}
+          },
+          "1523088562847": {
+            "type": "head",
+            "settings": {
+              "heading": "Mosaic >"
+            }
+          },
+          "1523088576407": {
+            "type": "start",
+            "settings": {}
+          },
+          "1523088578800": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_73.png"
+            }
+          },
+          "1523088669445": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_74.png"
+            }
+          },
+          "1523088678169": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_75.png"
+            }
+          },
+          "1523088694766": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_76.png"
+            }
+          },
+          "1523088755043": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_77.png"
+            }
+          },
+          "1523088799542": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_78.png"
+            }
+          },
+          "1523088826241": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_79.png"
+            }
+          },
+          "1523088843581": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_80.png"
+            }
+          },
+          "1523088862112": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_81.png"
+            }
+          },
+          "1523088881636": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_82.png"
+            }
+          },
+          "1523088902521": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_83.png"
+            }
+          },
+          "1523088918713": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_84.png"
+            }
+          },
+          "1523088937633": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_85.png"
+            }
+          },
+          "1523088955032": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_86.png"
+            }
+          },
+          "1523088972356": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_87.png"
+            }
+          },
+          "1523088981488": {
+            "type": "exit",
+            "settings": {}
+          },
+          "1523089007792": {
+            "type": "head",
+            "settings": {
+              "heading": "Botanical >"
+            }
+          },
+          "1523089011311": {
+            "type": "start",
+            "settings": {}
+          },
+          "1523089013353": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_88.png"
+            }
+          },
+          "1523089080422": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_89.png"
+            }
+          },
+          "1523089089180": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_90.png"
+            }
+          },
+          "1523089093695": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_91.png"
+            }
+          },
+          "1523089114944": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_92.png"
+            }
+          },
+          "1523089137519": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_93.png"
+            }
+          },
+          "1523089159236": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_94.png"
+            }
+          },
+          "1523089178352": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_95.png"
+            }
+          },
+          "1523089210772": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_96.png"
+            }
+          },
+          "1523089220704": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_97.png"
+            }
+          },
+          "1523089225444": {
+            "type": "exit",
+            "settings": {}
+          },
+          "1523089255013": {
+            "type": "head",
+            "settings": {
+              "heading": "Pop Ecletic >"
+            }
+          },
+          "1523089258258": {
+            "type": "start",
+            "settings": {}
+          },
+          "1523089260240": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_98.png"
+            }
+          },
+          "1523089307714": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_99.png"
+            }
+          },
+          "1523089311898": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download_100.png"
+            }
+          },
+          "1523089355348": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download1.png"
+            }
+          },
+          "1523089380057": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download2.png"
+            }
+          },
+          "1523089403369": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/download3.png"
+            }
+          },
+          "1523089407908": {
+            "type": "exit",
+            "settings": {}
+          },
+          "1523260812516": {
+            "type": "endmain",
+            "settings": {}
+          },
+          "1523262870170": {
+            "type": "content",
+            "settings": {
+              "content_text": "<div id=\"s-1949eccc-2d51-468d-9565-25fef17b5fa5\" class=\"shg-c \">\n<hr style=\"border: 0; width: 100%; border-top: 1px solid #ddd\">\n<\/div>\n\n<div id=\"s-86793011-43c6-49fc-874c-991778d6d44c\" class=\"shg-c shg-align-left\">\n<div class=\"shogun-heading-component\">\n<h4> What if I do not like my pop art? <\/h4>\n<\/div>\n<\/div>\n<div id=\"s-760afa2b-5b02-446f-8bbc-dd5eff5c8543\" class=\"shg-c \">\n<p>Our team of artists will work with you in creating a pop art you will LOVE. We offer unlimited revision requests! However, if you are still not loving your art, we will refund you completely.<\/p>\n<\/div>\n<div id=\"s-2bc7cb9e-7f5d-4349-892f-986307b5b381\" class=\"shg-c shg-align-left\">\n<div class=\"shogun-heading-component\">\n<h4> Will my photo work? <\/h4>\n<\/div>\n<\/div>\n<div id=\"s-e2d52534-30a6-438f-9cc2-4102886ab047\" class=\"shg-c \">\n<p>For best results, a close-up picture of your pet sitting or standing up will work best. Have no fear; if we find we need another photo to try, we will help you find a great option 😀<\/p>\n<\/div>"
+            }
+          },
+          "1523263300161": {
+            "type": "head",
+            "settings": {
+              "heading": "Examples >"
+            }
+          },
+          "1523261116846": {
+            "type": "start",
+            "settings": {}
+          },
+          "1523261120414": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best20.png"
+            }
+          },
+          "1523261567531": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best21.png"
+            }
+          },
+          "1523261607075": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best22.png"
+            }
+          },
+          "1523261630387": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best23.png"
+            }
+          },
+          "1523261659192": {
+            "type": "logo_image",
+            "settings": {
+              "image_1": "shopify:\/\/shop_images\/best24.png"
+            }
+          },
+          "1523261698284": {
+            "type": "exit",
+            "settings": {}
+          }
+        },
+        "block_order": [
+          "1523260788959",
+          "1523082982286",
+          "1523082967347",
+          "1523086053763",
+          "1523085973108",
+          "1523086084506",
+          "1523086098656",
+          "1523086110703",
+          "1523086124969",
+          "1523086133538",
+          "1523086144248",
+          "1523086156944",
+          "1523086166650",
+          "1523086175302",
+          "1523086184675",
+          "1523086193435",
+          "1523086202728",
+          "1523086210757",
+          "1523086217639",
+          "1523086225404",
+          "1523086234540",
+          "1523086241209",
+          "1523086250258",
+          "1523086291472",
+          "1523086296561",
+          "1523086305159",
+          "1523086309604",
+          "1523086435140",
+          "1523086478988",
+          "1523086496302",
+          "1523086515858",
+          "1523086536465",
+          "1523086554145",
+          "1523086570887",
+          "1523086593822",
+          "1523086615477",
+          "1523086637182",
+          "1523086661202",
+          "1523086679181",
+          "1523086700332",
+          "1523086727416",
+          "1523086745808",
+          "1523086765010",
+          "1523086782678",
+          "1523086801853",
+          "1523086824227",
+          "1523086837087",
+          "1523086929438",
+          "1523086933918",
+          "1523086937668",
+          "1523087039204",
+          "1523087063760",
+          "1523087084165",
+          "1523087103296",
+          "1523087123958",
+          "1523087142530",
+          "1523087160589",
+          "1523087273066",
+          "1523087297284",
+          "1523087313777",
+          "1523087330247",
+          "1523087349667",
+          "1523087369089",
+          "1523087385900",
+          "1523087403387",
+          "1523087419923",
+          "1523087437902",
+          "1523087453245",
+          "1523087471903",
+          "1523087491455",
+          "1523087512451",
+          "1523087535157",
+          "1523087556421",
+          "1523087574482",
+          "1523087592195",
+          "1523087610695",
+          "1523087719260",
+          "1523087724347",
+          "1523087726292",
+          "1523087764344",
+          "1523087780221",
+          "1523087796302",
+          "1523087812658",
+          "1523087830728",
+          "1523087848870",
+          "1523087865426",
+          "1523087883467",
+          "1523087905476",
+          "1523087923993",
+          "1523087942309",
+          "1523087966617",
+          "1523087984007",
+          "1523087994565",
+          "1523088013724",
+          "1523088016534",
+          "1523088018453",
+          "1523088106691",
+          "1523088112415",
+          "1523088117917",
+          "1523088161619",
+          "1523088176766",
+          "1523088264271",
+          "1523088269450",
+          "1523088277559",
+          "1523088286671",
+          "1523088293763",
+          "1523088297750",
+          "1523088307916",
+          "1523088562847",
+          "1523088576407",
+          "1523088578800",
+          "1523088669445",
+          "1523088678169",
+          "1523088694766",
+          "1523088755043",
+          "1523088799542",
+          "1523088826241",
+          "1523088843581",
+          "1523088862112",
+          "1523088881636",
+          "1523088902521",
+          "1523088918713",
+          "1523088937633",
+          "1523088955032",
+          "1523088972356",
+          "1523088981488",
+          "1523089007792",
+          "1523089011311",
+          "1523089013353",
+          "1523089080422",
+          "1523089089180",
+          "1523089093695",
+          "1523089114944",
+          "1523089137519",
+          "1523089159236",
+          "1523089178352",
+          "1523089210772",
+          "1523089220704",
+          "1523089225444",
+          "1523089255013",
+          "1523089258258",
+          "1523089260240",
+          "1523089307714",
+          "1523089311898",
+          "1523089355348",
+          "1523089380057",
+          "1523089403369",
+          "1523089407908",
+          "1523260812516",
+          "1523262870170",
+          "1523263300161",
+          "1523261116846",
+          "1523261120414",
+          "1523261567531",
+          "1523261607075",
+          "1523261630387",
+          "1523261659192",
+          "1523261698284"
+        ],
+        "settings": {
+          "zoom_enable": false,
+          "social_sharing_products": true,
+          "product_vendor_enable": false,
+          "image_layout": "thumbnails",
+          "quantity_enabled": true,
+          "product_selector": "radio",
+          "add_to_cart_button_size": "large"
+        }
+      },
+      "how-it-works": {
+        "type": "how-it-works",
+        "settings": {
+          "heading1": "1. Sortez votre appareil .. et CLIC !",
+          "title1": "C’est aussi simple que cela. Prenez une jolie photo de votre animal de compagnie, et nous nous chargerons de la mettre en valeur. Nous prenons un malin plaisir à donner de l’éclat à votre toutou.",
+          "image12": "shopify:\/\/shop_images\/firstimg.png",
+          "image2": "shopify:\/\/shop_images\/IMAGE2.png",
+          "image3": "shopify:\/\/shop_images\/iphone-x-mockup-being-held-against-transparent-background-a17188.png",
+          "mob-image12": "shopify:\/\/shop_images\/firstimg.png",
+          "mob-image2": "shopify:\/\/shop_images\/IMAGE2.png",
+          "mob-image3": "shopify:\/\/shop_images\/iphone-x-mockup-being-held-against-transparent-background-a17188.png",
+          "heading2": "2. Passez votre commande.",
+          "title2": "La prise en charge de votre commande est aussi aisée qu’elle ne parait. Suivez les instructions étape par étape : sélectionnez votre produit, transférez votre photo, choisissez l’arrière-plan le plus stylé et passez à la caisse. Vous vous verrez automatiquement attribuer un numéro de suivi relié à un accès direct à notre espace clients.",
+          "image13": "shopify:\/\/shop_images\/img2.png",
+          "mob-image13": "shopify:\/\/shop_images\/img2.png",
+          "heading3": "3. Recevez votre première création en 24 heures !",
+          "title3": "Nous ne voulons pas que votre enthousiasme retombe. Nous vous proposons donc notre premier design en une journée à peine ! Prenez-nous au mot, nous sommes vraiment loin de l’idée préconçue des  artistes paresseux.",
+          "image4": "shopify:\/\/shop_images\/test2.jpg",
+          "image14": "shopify:\/\/shop_images\/img3_da533ade-be0e-4df0-8f4b-a082f187f76f.png",
+          "image5": "shopify:\/\/shop_images\/front-shot-of-an-imac-mockup-on-a-wooden-desk-a20570.png",
+          "mob-image4": "shopify:\/\/shop_images\/test2.jpg",
+          "mob-image14": "shopify:\/\/shop_images\/img3.png",
+          "mob-image5": "shopify:\/\/shop_images\/front-shot-of-an-imac-mockup-on-a-wooden-desk-a20570.png",
+          "heading4": "4. Finalisez votre commande.",
+          "title4": "Laissez-nous apporter toutes les révisions nécessaires à votre design. Tant que vous ne souriez pas à grande dents, nous n’attendons aucun engagement de votre part et nous vous garantissons de vous rembourser. C’est votre approbation finale qui lancera l’impression et l’envoi de votre œuvre.",
+          "image15": "shopify:\/\/shop_images\/img4.png",
+          "mob-image15": "shopify:\/\/shop_images\/img4.png",
+          "heading5": "5. Sortez votre toutou et ayez fière allure !",
+          "title5": "Nous vous enverrons une confirmation d’envoi de votre objet personnalisé dans les 2 jours ouvrables. Nous serions ravis que vous partagiez votre retour d’expérience avec nous.  Utilisez #___ pour montrer votre originalité sur les réseaux sociaux.",
+          "image16": "",
+          "image6": "shopify:\/\/shop_images\/round-neck-t-shirt-mockup-of-twin-girls-at-a-photo-studio-22522.png",
+          "mob-image16": "",
+          "mob-image6": "shopify:\/\/shop_images\/round-neck-t-shirt-mockup-of-twin-girls-at-a-photo-studio-22522.png",
+          "heading-btm": "",
+          "button_link": "https:\/\/mycreanimale.myshopify.com\/collections"
+        }
+      },
+      "you-may-like": {
+        "type": "you-may-like",
+        "settings": {
+          "title": "🐶 Un coup de coeur ? 🐱",
+          "home_featured_products": "",
+          "collection_products_grid": "grid"
+        }
+      },
+      "collection-template": {
+        "type": "collection-template",
+        "settings": {
+          "collection_products_grid": "grid",
+          "collection_sort_enable": false,
+          "collection_tags_enable": true,
+          "product_vendor_enable": false,
+          "collectionMob": "miroirs",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "related-products": {
+        "type": "related-products",
+        "settings": {
+          "show_related_products": true,
+          "related_title": "🐶 Un coup de coeur ? 🐱",
+          "related_grid_num": "4",
+          "related_grid_row": "1",
+          "collectionMob": "customized-apparel-1",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "list-collections-template": {
+        "type": "list-collections-template",
+        "blocks": {
+          "1530849986049": {
+            "type": "collection",
+            "settings": {
+              "collection": "customized-apparel-1"
+            }
+          },
+          "1542483099306": {
+            "type": "collection",
+            "settings": {
+              "collection": "wrapped-canvas"
+            }
+          },
+          "1542483216105": {
+            "type": "collection",
+            "settings": {
+              "collection": "deco"
+            }
+          },
+          "1542483034481": {
+            "type": "collection",
+            "settings": {
+              "collection": "accessoires"
+            }
+          },
+          "1557710027917": {
+            "type": "collection",
+            "settings": {
+              "collection": "animaux"
+            }
+          },
+          "1530850387797": {
+            "type": "collection",
+            "settings": {
+              "collection": "cartes-cadeaux"
+            }
+          }
+        },
+        "block_order": [
+          "1530849986049",
+          "1542483099306",
+          "1542483216105",
+          "1542483034481",
+          "1557710027917",
+          "1530850387797"
+        ],
+        "settings": {
+          "banner_collections": "shopify:\/\/shop_images\/banner_99229d7a-28a4-41c8-8de4-c49d3231a817.png",
+          "title_banner_1": "NEW COLLECTION",
+          "title_banner_2": "There’s A Best Collection For Everyone.",
+          "text_bt_banner": "Get Started",
+          "link_bt_banner": "#",
+          "product-type": "all",
+          "sort": "alphabetical_reversed"
+        }
+      },
+      "1530781673551": {
+        "type": "new-how-it-work",
+        "settings": {
+          "title_section": "Comment ça marche ?",
+          "mobil_titl": "Comment ça marche ?",
+          "background": "shopify:\/\/shop_images\/bgr-2.png",
+          "background_2": "shopify:\/\/shop_images\/bgr-2.png",
+          "mobil_background": "shopify:\/\/shop_images\/testa.jpg",
+          "link_video": "https:\/\/www.youtube.com\/embed\/tgbNymZ7vqY"
+        }
+      },
+      "content-bgr": {
+        "type": "content-bgr",
+        "blocks": {
+          "1541854681121": {
+            "type": "main",
+            "settings": {
+              "pop_culture1": "shopify:\/\/shop_images\/pop-culture1_2bff2b89-74f1-4e61-8066-cfe3a7edd4b1.png",
+              "first_slid_head1": "asdsadsad",
+              "first_slid_para1": "<p>asdsadas<\/p>",
+              "pop_culture2": "shopify:\/\/shop_images\/pop-culture2.png",
+              "first_slid_head2": "Image with text",
+              "first_slid_para2": "<p>asdsadsad<\/p>",
+              "pop_culture3": "shopify:\/\/shop_images\/pop-culture3.png",
+              "first_slid_head3": "Image with text",
+              "first_slid_para3": "<p>add slide description.<\/p>",
+              "pop_culture4": "shopify:\/\/shop_images\/pop-culture4.png",
+              "first_slid_head4": "Image with text",
+              "first_slid_para4": "<p>add slide description.<\/p>"
+            }
+          },
+          "1541859329322": {
+            "type": "slideminisec",
+            "settings": {
+              "second_pop_culture1": "shopify:\/\/shop_images\/pop-culture1_2bff2b89-74f1-4e61-8066-cfe3a7edd4b1.png",
+              "second_slid_head1": "Image with text",
+              "second_slid_para1": "<p>add slide description.<\/p>",
+              "second_pop_culture2": "shopify:\/\/shop_images\/pop-culture4.png",
+              "second_slid_head2": "Image with text",
+              "second_slid_para2": "<p>add slide description.<\/p>",
+              "second_pop_culture3": "shopify:\/\/shop_images\/pop-culture3.png",
+              "second_slid_head3": "Image with text",
+              "second_slid_para3": "<p>add slide description.<\/p>",
+              "second_pop_culture4": "shopify:\/\/shop_images\/pop-culture2.png",
+              "second_slid_head4": "Image with text",
+              "second_slid_para4": "<p>add slide description.<\/p>"
+            }
+          },
+          "1541859429498": {
+            "type": "slideminithrd",
+            "settings": {
+              "third_pop_culture1": "shopify:\/\/shop_images\/pop-culture1_2bff2b89-74f1-4e61-8066-cfe3a7edd4b1.png",
+              "third_slid_head1": "Image with text",
+              "third_slid_para1": "<p>add slide description.<\/p>",
+              "third_pop_culture2": "shopify:\/\/shop_images\/pop-culture2.png",
+              "third_slid_head2": "Image with text",
+              "third_slid_para2": "<p>add slide description.<\/p>",
+              "third_pop_culture3": "shopify:\/\/shop_images\/pop-culture3.png",
+              "third_slid_head3": "Image with text",
+              "third_slid_para3": "<p>add slide description.<\/p>",
+              "third_pop_culture4": "shopify:\/\/shop_images\/bgr-bgr.png",
+              "third_slid_head4": "Image with text",
+              "third_slid_para4": "<p>add slide description.<\/p>"
+            }
+          },
+          "1541859441509": {
+            "type": "slideminifrth",
+            "settings": {
+              "four_pop_culture1": "shopify:\/\/shop_images\/pop-culture1_2bff2b89-74f1-4e61-8066-cfe3a7edd4b1.png",
+              "four_slid_head1": "Image with text",
+              "four_slid_para1": "<p>add slide description.<\/p>",
+              "four_pop_culture2": "shopify:\/\/shop_images\/pop-culture4.png",
+              "four_slid_head2": "Image with texts",
+              "four_slid_para2": "<p>add slide description.<\/p>",
+              "four_pop_culture3": "shopify:\/\/shop_images\/pop-culture3.png",
+              "four_slid_head3": "Image with text",
+              "four_slid_para3": "<p>add slide description.<\/p>",
+              "four_pop_culture4": "shopify:\/\/shop_images\/pop-culture2.png",
+              "four_slid_head4": "Image with text",
+              "four_slid_para4": "<p>add slide description.<\/p>"
+            }
+          },
+          "1541859446861": {
+            "type": "slideminififth",
+            "settings": {
+              "fifth_pop_culture1": "shopify:\/\/shop_images\/pop-culture3.png",
+              "fifth_slid_head1": "Image with text",
+              "fifth_slid_para1": "<p>add slide description.<\/p>",
+              "fifth_pop_culture2": "shopify:\/\/shop_images\/pop-culture3.png",
+              "fifth_slid_head2": "Image with text",
+              "fifth_slid_para2": "<p>add slide description.<\/p>",
+              "fifth_pop_culture3": "shopify:\/\/shop_images\/pop-culture4.png",
+              "fifth_slid_head3": "Image with text",
+              "fifth_slid_para3": "<p>add slide description.<\/p>",
+              "fifth_pop_culture4": "shopify:\/\/shop_images\/pop-culture1_2bff2b89-74f1-4e61-8066-cfe3a7edd4b1.png",
+              "fifth_slid_head4": "Image with text",
+              "fifth_slid_para4": "<p>add slide description.<\/p>"
+            }
+          },
+          "1541859452225": {
+            "type": "slideminisixth",
+            "settings": {
+              "sixth_pop_culture1": "shopify:\/\/shop_images\/pop-culture1_2bff2b89-74f1-4e61-8066-cfe3a7edd4b1.png",
+              "sixth_slid_head1": "Image with text",
+              "sixth_slid_para1": "<p>add slide description.<\/p>",
+              "sixth_pop_culture2": "shopify:\/\/shop_images\/pop-culture2.png",
+              "sixth_slid_head2": "Image with text",
+              "sixth_slid_para2": "<p>add slide description.<\/p>",
+              "sixth_pop_culture3": "shopify:\/\/shop_images\/pop-culture3.png",
+              "sixth_slid_head3": "Image with text",
+              "sixth_slid_para3": "<p>add slide description.<\/p>",
+              "sixth_pop_culture4": "shopify:\/\/shop_images\/pop-culture1_2bff2b89-74f1-4e61-8066-cfe3a7edd4b1.png",
+              "sixth_slid_head4": "Image with text",
+              "sixth_slid_para4": "<p>add slide description.<\/p>"
+            }
+          },
+          "1541859457292": {
+            "type": "slideminiseven",
+            "settings": {
+              "seventh_pop_culture1": "shopify:\/\/shop_images\/pop-culture3.png",
+              "seventh_slid_head1": "Image with text",
+              "seventh_slid_para1": "<p>add slide description.<\/p>",
+              "seventh_pop_culture2": "shopify:\/\/shop_images\/pop-culture4.png",
+              "seventh_slid_head2": "Image with text",
+              "seventh_slid_para2": "<p>add slide description.<\/p>",
+              "seventh_pop_culture3": "shopify:\/\/shop_images\/pop-culture1_2bff2b89-74f1-4e61-8066-cfe3a7edd4b1.png",
+              "seventh_slid_head3": "Image with text",
+              "seventh_slid_para3": "<p>add slide description.<\/p>",
+              "seventh_pop_culture4": "shopify:\/\/shop_images\/pop-culture2.png",
+              "seventh_slid_head4": "Image with text",
+              "seventh_slid_para4": "<p>add slide description.<\/p>"
+            }
+          },
+          "1541859461371": {
+            "type": "slideminieight",
+            "settings": {
+              "eight_pop_culture1": "shopify:\/\/shop_images\/pop-culture4.png",
+              "eight_slid_head1": "Image with text",
+              "eight_slid_para1": "<p>add slide description.<\/p>",
+              "eight_pop_culture2": "shopify:\/\/shop_images\/pop-culture3.png",
+              "eight_slid_head2": "Image with text",
+              "eight_slid_para2": "<p>add slide description.<\/p>",
+              "eight_pop_culture3": "shopify:\/\/shop_images\/pop-culture4.png",
+              "eight_slid_head3": "Image with text",
+              "eight_slid_para3": "<p>add slide description.<\/p>",
+              "eight_pop_culture4": "shopify:\/\/shop_images\/pop-culture1_2bff2b89-74f1-4e61-8066-cfe3a7edd4b1.png",
+              "eight_slid_head4": "Image with text",
+              "eight_slid_para4": "<p>add slide description.<\/p>"
+            }
+          },
+          "1541859468147": {
+            "type": "slideminininth",
+            "settings": {
+              "nine_pop_culture1": "shopify:\/\/shop_images\/pop-culture4.png",
+              "nine_slid_head1": "Image with text",
+              "nine_slid_para1": "<p>add slide description.<\/p>",
+              "nine_pop_culture2": "shopify:\/\/shop_images\/pop-culture1_c12347e4-8f1e-49e4-a93d-20762cf84011.png",
+              "nine_slid_head2": "Image with text",
+              "nine_slid_para2": "<p>add slide description.<\/p>",
+              "nine_pop_culture3": "shopify:\/\/shop_images\/pop-culture2.png",
+              "nine_slid_head3": "Image with text",
+              "nine_slid_para3": "<p>add slide description.<\/p>",
+              "nine_pop_culture4": "shopify:\/\/shop_images\/bgr-bgr.png",
+              "nine_slid_head4": "Image with text",
+              "nine_slid_para4": "<p>add slide description.<\/p>"
+            }
+          },
+          "1541859475156": {
+            "type": "slideminitenth",
+            "settings": {
+              "tenth_pop_culture1": "shopify:\/\/shop_images\/bgr-bgr.png",
+              "tenth_slid_head1": "Image with text",
+              "tenth_slid_para1": "<p>add slide description.<\/p>",
+              "tenth_pop_culture2": "shopify:\/\/shop_images\/pop-culture3.png",
+              "tenth_slid_head2": "Image with text",
+              "tenth_slid_para2": "<p>add slide description.<\/p>",
+              "tenth_pop_culture3": "shopify:\/\/shop_images\/pop-culture1_c12347e4-8f1e-49e4-a93d-20762cf84011.png",
+              "tenth_slid_head3": "Image with text",
+              "tenth_slid_para3": "<p>add slide description.<\/p>",
+              "tenth_pop_culture4": "shopify:\/\/shop_images\/pop-culture1_2bff2b89-74f1-4e61-8066-cfe3a7edd4b1.png",
+              "tenth_slid_head4": "Image with text",
+              "tenth_slid_para4": "<p>add slide description.<\/p>"
+            }
+          },
+          "1541859479894": {
+            "type": "slideminielev",
+            "settings": {
+              "elev_pop_culture1": "shopify:\/\/shop_images\/pop-culture1_2bff2b89-74f1-4e61-8066-cfe3a7edd4b1.png",
+              "elev_slid_head1": "Image with text",
+              "elev_slid_para1": "<p>add slide description.<\/p>",
+              "elev_pop_culture2": "shopify:\/\/shop_images\/bgr-bgr.png",
+              "elev_slid_head2": "Image with text",
+              "elev_slid_para2": "<p>add slide description.<\/p>",
+              "elev_pop_culture3": "shopify:\/\/shop_images\/pop-culture4.png",
+              "elev_slid_head3": "Image with text",
+              "elev_slid_para3": "<p>add slide description.<\/p>",
+              "elev_pop_culture4": "shopify:\/\/shop_images\/pop-culture2.png",
+              "elev_slid_head4": "Image with text",
+              "elev_slid_para4": "<p>add slide description.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "1541854681121",
+          "1541859329322",
+          "1541859429498",
+          "1541859441509",
+          "1541859446861",
+          "1541859452225",
+          "1541859457292",
+          "1541859461371",
+          "1541859468147",
+          "1541859475156",
+          "1541859479894"
+        ],
+        "settings": {
+          "collectionMob": "customized-apparel-1",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "1531758673348": {
+        "type": "featured-product",
+        "settings": {
+          "featured_product": "boys-crew",
+          "zoom_enable": false,
+          "show_variant_labels": true,
+          "show_vendor": false,
+          "show_share_buttons": true
+        }
+      },
+      "mobileheader": {
+        "type": "mobileheader",
+        "settings": {
+          "main_menu_link_list": "main-menu",
+          "logo": "",
+          "logo-inverted": "",
+          "logo_max_width": "180",
+          "search": "modal",
+          "show_announcement": false,
+          "home_page_only": true,
+          "text": "Announce something here",
+          "link": "",
+          "color_bg": "#1c1d1d",
+          "color_text": "#ffffff",
+          "bg_header_bottom_color": "#ffffff",
+          "display_header_text_order": true,
+          "header_text_order": "Order online or call us (1800) 000 8808",
+          "header_text_order_text_color": "#141414",
+          "header_link_text_color": "#323232",
+          "display_header_free_shipping": true,
+          "header_free_shipping": "Free shipping on All Orders.",
+          "header_free_shipping_text_color": "#000000",
+          "show_header_search": true,
+          "bg_search_color": "#fafafa",
+          "border_search_color": "#e7e7e7",
+          "dropdowncart_type": "click"
+        }
+      },
+      "slideronhowitworks": {
+        "type": "slideronhowitworks",
+        "settings": {
+          "collectionMob": "customized-apparel-1",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "sliderMobContact": {
+        "type": "sliderMobContact",
+        "settings": {
+          "collectionMob": "customized-apparel-1",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "sectionCart": {
+        "type": "sectionCart",
+        "settings": {
+          "collectionMob": "customized-apparel-1",
+          "TextBottomMob": "<div class=\"no-und\">\nRetrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>\n<\/div>"
+        }
+      },
+      "collection-customized-apparel": {
+        "type": "collection-customized-apparel",
+        "settings": {
+          "collection_products_grid": "grid",
+          "collection_sort_enable": false,
+          "collection_tags_enable": true,
+          "product_vendor_enable": false,
+          "collectionMob": "wrapped-canvas",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "collection-customized-apparel-1": {
+        "type": "collection-customized-apparel-1",
+        "settings": {
+          "collection_products_grid": "grid",
+          "collection_sort_enable": false,
+          "collection_tags_enable": true,
+          "product_vendor_enable": false,
+          "collectionMob": "customized-apparel-1",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "collection-femme": {
+        "type": "collection-femme",
+        "settings": {
+          "collection_products_grid": "grid",
+          "collection_sort_enable": false,
+          "collection_tags_enable": true,
+          "product_vendor_enable": false,
+          "collectionMob": "femme",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "collection-enfant": {
+        "type": "collection-enfant",
+        "settings": {
+          "collection_products_grid": "grid",
+          "collection_sort_enable": false,
+          "collection_tags_enable": true,
+          "product_vendor_enable": false,
+          "collectionMob": "customized-apparel-1",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "collection-wrapped-canvas": {
+        "type": "collection-wrapped-canvas",
+        "settings": {
+          "collection_products_grid": "grid",
+          "collection_sort_enable": false,
+          "collection_tags_enable": true,
+          "product_vendor_enable": false,
+          "collectionMob": "wrapped-canvas",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "collection-34x34": {
+        "type": "collection-34x34",
+        "settings": {
+          "collection_products_grid": "grid",
+          "collection_sort_enable": false,
+          "collection_tags_enable": true,
+          "product_vendor_enable": false,
+          "collectionMob": "customized-apparel-1",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "collection-35x35": {
+        "type": "collection-35x35",
+        "settings": {
+          "collection_products_grid": "grid",
+          "collection_sort_enable": false,
+          "collection_tags_enable": true,
+          "product_vendor_enable": false,
+          "collectionMob": "customized-apparel-1",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "collection-48x48": {
+        "type": "collection-48x48",
+        "settings": {
+          "collection_products_grid": "grid",
+          "collection_sort_enable": false,
+          "collection_tags_enable": true,
+          "product_vendor_enable": false,
+          "collectionMob": "customized-apparel-1",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "collection-deco": {
+        "type": "collection-deco",
+        "settings": {
+          "collection_products_grid": "grid",
+          "collection_sort_enable": false,
+          "collection_tags_enable": true,
+          "product_vendor_enable": false,
+          "collectionMob": "wrapped-canvas",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "collection-chaussettes": {
+        "type": "collection-chaussettes",
+        "settings": {
+          "collection_products_grid": "grid",
+          "collection_sort_enable": false,
+          "collection_tags_enable": true,
+          "product_vendor_enable": false,
+          "collectionMob": "wrapped-canvas",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "collection-serviette": {
+        "type": "collection-serviette",
+        "settings": {
+          "collection_products_grid": "grid",
+          "collection_sort_enable": false,
+          "collection_tags_enable": true,
+          "product_vendor_enable": false,
+          "collectionMob": "customized-apparel-1",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "collection-puzzle": {
+        "type": "collection-puzzle",
+        "settings": {
+          "collection_products_grid": "grid",
+          "collection_sort_enable": false,
+          "collection_tags_enable": true,
+          "product_vendor_enable": false,
+          "collectionMob": "customized-apparel-1",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "collection-yop": {
+        "type": "collection-yop",
+        "settings": {
+          "collection_products_grid": "grid",
+          "collection_sort_enable": false,
+          "collection_tags_enable": true,
+          "product_vendor_enable": false,
+          "collectionMob": "customized-apparel-1",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "collection-e-gift-cards": {
+        "type": "collection-e-gift-cards",
+        "settings": {
+          "collection_products_grid": "grid",
+          "collection_sort_enable": false,
+          "collection_tags_enable": true,
+          "product_vendor_enable": false,
+          "collectionMob": "wrapped-canvas",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "collection-mugs": {
+        "type": "collection-mugs",
+        "settings": {
+          "collection_products_grid": "grid",
+          "collection_sort_enable": false,
+          "collection_tags_enable": true,
+          "product_vendor_enable": false,
+          "collectionMob": "customized-apparel-1",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "collection-coussins": {
+        "type": "collection-coussins",
+        "settings": {
+          "collection_products_grid": "grid",
+          "collection_sort_enable": false,
+          "collection_tags_enable": true,
+          "product_vendor_enable": false,
+          "collectionMob": "wrapped-canvas",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "collection-coques": {
+        "type": "collection-coques",
+        "settings": {
+          "collection_products_grid": "grid",
+          "collection_sort_enable": false,
+          "collection_tags_enable": true,
+          "product_vendor_enable": false,
+          "collectionMob": "wrapped-canvas",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "collection-cartes-cadeaux": {
+        "type": "collection-cartes-cadeaux",
+        "settings": {
+          "collection_products_grid": "grid",
+          "collection_sort_enable": false,
+          "collection_tags_enable": true,
+          "product_vendor_enable": false,
+          "collectionMob": "cartes-cadeaux",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "collection-25": {
+        "type": "collection-25",
+        "settings": {
+          "collection_products_grid": "grid",
+          "collection_sort_enable": false,
+          "collection_tags_enable": true,
+          "product_vendor_enable": false,
+          "collectionMob": "wrapped-canvas",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "collection-50": {
+        "type": "collection-50",
+        "settings": {
+          "collection_products_grid": "grid",
+          "collection_sort_enable": false,
+          "collection_tags_enable": true,
+          "product_vendor_enable": false,
+          "collectionMob": "wrapped-canvas",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "collection-50-1": {
+        "type": "collection-50-1",
+        "settings": {
+          "collection_products_grid": "grid",
+          "collection_sort_enable": false,
+          "collection_tags_enable": true,
+          "product_vendor_enable": false,
+          "collectionMob": "wrapped-canvas",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "collection-100": {
+        "type": "collection-100",
+        "settings": {
+          "collection_products_grid": "grid",
+          "collection_sort_enable": false,
+          "collection_tags_enable": true,
+          "product_vendor_enable": false,
+          "collectionMob": "wrapped-canvas",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      },
+      "sectionMyAccount": {
+        "type": "sectionMyAccount",
+        "settings": {
+          "collectionMob": "customized-apparel-1",
+          "TextBottomMob": "<p>Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a><\/p>"
+        }
+      },
+      "1550232559131": {
+        "type": "loox-carousel-reviews",
+        "settings": {
+          "show_more": true
+        }
+      },
+      "1550234609278": {
+        "type": "Image-fullwidth",
+        "settings": {
+          "image": "",
+          "mobile_img": "shopify:\/\/shop_images\/pop-culture1_2bff2b89-74f1-4e61-8066-cfe3a7edd4b1.png",
+          "alignment": "center",
+          "title1": "Heading",
+          "title": "Image with text overlay",
+          "text": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.<\/p>",
+          "hero_size": "medium",
+          "text_size": "medium",
+          "button_label": "",
+          "button_link": ""
+        }
+      },
+      "1550246248747": {
+        "type": "new-carousel",
+        "settings": {
+          "new_carousel": true,
+          "collectionMob": "customized-apparel-1",
+          "TextBottomMob": "<div>\nRetrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>\n<\/div>",
+          "productcarousel_margin_top": "0"
+        }
+      },
+      "1550250217174": {
+        "type": "new-image-text-carousel",
+        "settings": {
+          "new_img_carousel": true,
+          "title": "Le cadeau indispensable...",
+          "align_text": "left",
+          "btn_colr": "Blue",
+          "image": "shopify:\/\/shop_images\/Untitled-2_9de9e2b4-5a92-45f9-80d8-41a089dc058f.jpg",
+          "image1": "shopify:\/\/shop_images\/text-left-img2.png",
+          "image2": "shopify:\/\/shop_images\/text-left-img3.png",
+          "text_desc": "Chat, chien, lapin, tortue, poisson rouge ...<br><br>\n<b>Tous les animaux sont les bienvenus !<\/b>\n<br><br>\n<b>Uploadez<\/b> simplement <b>une photo de votre compagnon<\/b> et laissez-vous tenter par l'aventure <b>MyAnimArt<\/b> !",
+          "button_label": "Accéder à la boutique !",
+          "button_link": "https:\/\/myanimart.com\/collections"
+        }
+      },
+      "1550258730797": {
+        "type": "new-image-center-text",
+        "settings": {
+          "new_img_center_text": true,
+          "image_selected": "shopify:\/\/shop_images\/HOMEPAGE_BULLDOG.png",
+          "img_width": "600px",
+          "img_height": "",
+          "m_img_width": "400px",
+          "m_img_height": "",
+          "text_desc1": "<br>Si vous avez une quelconque question, n'hésitez pas à nous contacter par mail: info@myanimart.com ou via notre formulaire de contact en cliquant <a href=\"https:\/\/mycreanimale.com\/pages\/contact-us\" style=\"color:#337ab7;text-decoration: underline;\">ici<\/a>."
+        }
+      },
+      "1550299636182": {
+        "type": "new-image-text-carousel",
+        "settings": {
+          "new_img_carousel": true,
+          "title": "... pour les amoureux des animaux!",
+          "align_text": "right",
+          "btn_colr": "Red",
+          "image": "shopify:\/\/shop_images\/Untitled-2_9de9e2b4-5a92-45f9-80d8-41a089dc058f.jpg",
+          "image1": "shopify:\/\/shop_images\/pop-culture1_c12347e4-8f1e-49e4-a93d-20762cf84011.png",
+          "image2": "shopify:\/\/shop_images\/pop-culture3.png",
+          "text_desc": "Pop, Sports, Fruits, Nourritures, Girly <br><b>.. et bien plus encore !<\/b><br><br>\n\n<b>+ de 80 arrières-plans<\/b> parmi plus 5 différentes catégories, <b>il y en a pour tout les goûts !<\/b><br><br>\n\nDes <b>tee-shirts<\/b> aux <b>mugs<\/b> en passant par des <b>coques pour téléphones<\/b> mais aussi de <b>sublimes tableaux<\/b>, <b>vous ne passerez plus un jour sans votre accessoire préféré !<\/b>",
+          "button_label": "Voir toutes nos collections !",
+          "button_link": "#"
+        }
+      },
+      "1550299841379": {
+        "type": "advanced-content",
+        "disabled": true,
+        "blocks": {
+          "1550299841379-0": {
+            "type": "html",
+            "settings": {
+              "code": "<div style=\"margin-bottom:25px;height:100px;background-color:blue;vertical-align:middle;text-align:center;padding:25px 20px 25px 20px;\"><strong>Text Banner Text Banner Text Banner Text Banner Text Banner Text Banner Text Banner Text Banner Text Banner<\/strong><\/div>",
+              "width": "100%",
+              "alignment": "center"
+            }
+          }
+        },
+        "block_order": [
+          "1550299841379-0"
+        ],
+        "settings": {}
+      },
+      "1550323013272": {
+        "type": "text-banner",
+        "disabled": true,
+        "settings": {
+          "banner_text": "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem IpsumLorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum",
+          "banner_background": "blue"
+        }
+      },
+      "slideroncontact": {
+        "type": "slideroncontact",
+        "settings": {
+          "collectionMob": "customized-apparel-1",
+          "TextBottomMob": "Retrouvez également l'ensemble de nos collections en cliquant  <a href=\"https:\/\/mycreanimale.com\/collections\"><u>ici.<\/u><\/a>"
+        }
+      }
+    },
+    "content_for_index": [
+      "1520670823594",
+      "1550299841379",
+      "1550323013272",
+      "1550250217174",
+      "1550299636182",
+      "1550234609278",
+      "1530781673551",
+      "1531758673348",
+      "1550246248747",
+      "1520664128015",
+      "1550232559131",
+      "1550258730797"
+    ]
+  },
+  "presets": {
+    "Classic": {
+      "cart_type": "drawer",
+      "cart_notes_enable": false,
+      "checkout_accent_color": "#a26b25",
+      "checkout_banner_background_color": "#fff",
+      "checkout_button_color": "#000000",
+      "checkout_call_to_action_color": "#a26b25",
+      "checkout_use_header_image": false,
+      "collection_products_grid": "collage",
+      "color_body_bg": "#ffffff",
+      "color_body_text": "#222323",
+      "color_borders": "#1c1d1d",
+      "color_button_text": "#ffffff",
+      "color_drawer_background": "#1c1d1d",
+      "color_drawer_border": "#343535",
+      "color_drawer_button": "#a26b25",
+      "color_drawer_button_text": "#ffffff",
+      "color_drawer_text": "#ffffff",
+      "color_headings": "#222323",
+      "color_input": "#f6f6f6",
+      "color_newsletter": "#f6f6f6",
+      "color_primary": "#1c1d1d",
+      "color_product_background": "#f7f7f7",
+      "color_sale_tag": "#990000",
+      "color_secondary": "#a26b25",
+      "customer_layout": "customer_area",
+      "favicon_enable": false,
+      "product_vendor_enable": false,
+      "share_facebook": true,
+      "share_pinterest": true,
+      "share_twitter": true,
+      "social_sharing_style": "clean",
+      "type_accent_family": "Google_Montserrat_400_sans",
+      "type_accent_spacing": true,
+      "type_accent_transform": true,
+      "type_accent_subheadings": true,
+      "type_base_family": "Google_Arapey_400_serif",
+      "type_base_italize_titles": true,
+      "type_base_size": "16px",
+      "type_header_base_size": "30px",
+      "type_header_border_thickness": "1px",
+      "type_header_family": "Google_Old+Standard+TT_400_serif",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "show_announcement": true,
+            "color_bg": "#1c1d1d",
+            "color_text": "#ffffff"
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "slideshow-0": {
+              "type": "slide",
+              "settings": {}
+            },
+            "slideshow-1": {
+              "type": "slide",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "slideshow-0",
+            "slideshow-1"
+          ],
+          "settings": {}
+        },
+        "featured-products": {
+          "type": "featured-products",
+          "settings": {
+            "home_featured_products": "frontpage"
+          }
+        },
+        "featured-content": {
+          "type": "featured-content",
+          "settings": {}
+        },
+        "featured-collections": {
+          "type": "featured-collections",
+          "blocks": {
+            "featured-collections-0": {
+              "type": "collection",
+              "settings": {}
+            },
+            "featured-collections-1": {
+              "type": "collection",
+              "settings": {}
+            },
+            "featured-collections-2": {
+              "type": "collection",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "featured-collections-0",
+            "featured-collections-1",
+            "featured-collections-2"
+          ],
+          "settings": {}
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "featured-content",
+        "featured-collections",
+        "featured-products",
+        "newsletter"
+      ]
+    },
+    "Playful": {
+      "color_body_bg": "#ffffff",
+      "color_body_text": "#565656",
+      "color_borders": "#5dd2b4",
+      "color_button_text": "#003b34",
+      "color_primary": "#5dd2b4",
+      "color_secondary": "#058677",
+      "color_product_background": "#fff4f6",
+      "color_sale_tag": "#e80970",
+      "color_input": "#f6f6f6",
+      "color_newsletter": "#bde9f2",
+      "color_drawer_background": "#360f5f",
+      "color_drawer_text": "#ffffff",
+      "color_drawer_border": "#50297a",
+      "color_drawer_button": "#5dd2b4",
+      "color_drawer_button_text": "#360f5f",
+      "color_headings": "#321863",
+      "type_header_family": "Google_Quicksand_700_sans",
+      "type_header_base_size": "38px",
+      "type_header_border_thickness": "1px",
+      "type_accent_family": "Google_Roboto_700_sans",
+      "type_accent_transform": true,
+      "type_accent_spacing": true,
+      "type_accent_subheadings": false,
+      "type_base_family": "'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+      "type_base_size": "17px",
+      "type_base_italize_titles": false,
+      "cart_type": "drawer",
+      "cart_notes_enable": true,
+      "social_facebook_link": "",
+      "social_twitter_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
+      "social_snapchat_link": "",
+      "social_google_plus_link": "",
+      "social_tumblr_link": "",
+      "social_youtube_link": "",
+      "social_vimeo_link": "",
+      "social_fancy_link": "",
+      "share_facebook": true,
+      "share_twitter": true,
+      "share_pinterest": true,
+      "favicon": "",
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "small",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#ffffff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#fff4f6",
+      "checkout_heading_font": "Helvetica Neue",
+      "checkout_body_font": "Roboto",
+      "checkout_accent_color": "#0d8d7e",
+      "checkout_button_color": "#5dd2b4",
+      "checkout_error_color": "#f01130",
+      "checkout_banner_background_color": "#fff",
+      "checkout_call_to_action_color": "#a26b25",
+      "checkout_use_header_image": false,
+      "collection_products_grid": "collage",
+      "customer_layout": "customer_area",
+      "favicon_enable": false,
+      "product_vendor_enable": false,
+      "social_sharing_style": "clean",
+      "sections": {
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "1495823280244": {
+              "type": "slide",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "1495823280244"
+          ],
+          "settings": {
+            "hero_home_auto": false,
+            "home_hero_auto_speed": "5000"
+          }
+        },
+        "featured-products": {
+          "type": "featured-products",
+          "settings": {
+            "home_featured_products": "frontpage",
+            "collection_products_grid": "collage"
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {}
+        },
+        "drawer-menu": {
+          "type": "drawer-menu",
+          "settings": {
+            "drawer_top_link_list": "main-menu",
+            "drawer_bottom_link_list": "footer",
+            "drawer_search_enable": false
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "main_menu_link_list": "main-menu",
+            "logo_max_width": "260",
+            "search": "modal",
+            "show_announcement": false,
+            "color_bg": "#290c49",
+            "color_text": "#ffffff"
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {}
+        },
+        "collection-template": {
+          "type": "collection-template",
+          "settings": {
+            "collection_products_grid": "grid",
+            "collection_tags_enable": false,
+            "product_vendor_enable": false
+          }
+        },
+        "1494860348200": {
+          "type": "featured-row",
+          "settings": {
+            "layout": "right"
+          }
+        },
+        "1494894035034": {
+          "type": "featured-row",
+          "settings": {
+            "layout": "left"
+          }
+        },
+        "product-template": {
+          "type": "product-template",
+          "settings": {
+            "zoom_enable": false,
+            "social_sharing_products": true,
+            "product_vendor_enable": false
+          }
+        },
+        "1496078102297": {
+          "type": "advanced-content",
+          "blocks": {
+            "1496078102297-0": {
+              "type": "html",
+              "settings": {
+                "code": "<div style=\"text-align:center;\">\n<h1 class=\"h1\">Use HTML to format your text so it can be easily read.<\/h1>This text can be used to share information about your brand with customers.<\/div>",
+                "width": "100%",
+                "alignment": "top-middle"
+              }
+            }
+          },
+          "block_order": [
+            "1496078102297-0"
+          ],
+          "settings": {}
+        },
+        "1496177901425": {
+          "type": "advanced-content",
+          "blocks": {
+            "1496177901425-0": {
+              "type": "html",
+              "settings": {
+                "code": "<div style=\"width:745px;text-align: center; margin: 0 auto;\">This text can be used to share information about your brand with customers.<\/div>",
+                "width": "100%",
+                "alignment": "top-middle"
+              }
+            }
+          },
+          "block_order": [
+            "1496177901425-0"
+          ],
+          "settings": {}
+        }
+      },
+      "content_for_index": [
+        "1496177901425",
+        "featured-products",
+        "newsletter",
+        "1496078102297",
+        "1494860348200",
+        "1494894035034"
+      ]
+    }
+  }
+}

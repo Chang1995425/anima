@@ -1,0 +1,350 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+{% comment %}
+  Collection template, used on collection.liquid and collection.image.liquid
+{% endcomment %}
+
+{% paginate collection.products by 12 %}
+
+
+<header class="section-header text-center">
+  <h1>{% comment %}ly_code_replace_for_[ collection.title ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h1>
+  <hr class="hr--small">
+  {% if collection.description != blank %}
+    <!--<div class="grid">
+      <div class="grid__item">
+        <div class="rte">
+          {% comment %}ly_code_replace_for_[ collection.description ]_begin{% endcomment %}{% include 'ly-description' with collection %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+        </div>
+      </div>
+    </div>-->
+  {% endif %}
+
+    <div class="grid--full collection-sorting{% if section.settings.collection_sort_enable %} collection-sorting--enabled{% endif %}">
+      {% if section.settings.collection_sort_enable %}
+        {% include 'collection-sorting' %}
+      {% endif %}
+    </div>
+  {% if section.settings.collection_tags_enable %}
+    {% if collection.handle == 'accessoires' or collection.handle == 'mugs' or collection.handle == 'coques' or collection.handle == 'carnets' or collection.handle == 'miroirs' or collection.handle == 'puzzle' or collection.handle == 'yoga' or collection.handle == 'parapluies' or collection.handle == 'sacs' %}
+      {% comment %}
+        To provide a 'catch-all' link at the top of the list,
+        check against the collection.handle, product type, and vendor.
+      {% endcomment %}
+  	  <ul class="tags webcast-collection-tags tags--collection inline-list" style="margin-top: 2.5em;margin-bottom: 2.5em;">
+  		{% for link in linklists.accessoires-tags.links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+        <li class="final-column">
+          <a href="/collections/accessoires">
+            VOIR TOUS NOS VETEMENTS
+          </a>
+        </li>
+  	  </ul>
+    {% elsif collection.all_tags.size > 0 or collection.handle == 'cartes-cadeaux' or collection.handle == 'deco' or collection.handle == '35x35' or collection.handle == '25' or collection.handle == '50' or collection.handle == '50-1' or collection.handle == '100' or collection.handle == 'chaussettes' or collection.handle == 'serviette' or collection.handle == 'puzzle' or collection.handle == 'yop' or collection.handle == 'coussins' or collection.handle == 'rideaux' or collection.handle == 'tapis' or collection.handle == 'maison' or collection.handle == 'pouf' %}
+      {% if section.settings.collection_sort_enable %}
+        <hr class="hr--small">
+      {% endif %}
+      {% comment %}
+        To provide a 'catch-all' link at the top of the list,
+        check against the collection.handle, product type, and vendor.
+      {% endcomment %}
+  	  
+  	  {% if collection.handle == 'e-gift-cards' or collection.handle == 'mugs' or collection.handle == 'coques'  or collection.handle == 'test' %}
+  	  <ul class="tags 12 webcast-collection-tags tags--collection inline-list" style="margin-top: 1.5em;/*margin-bottom: 2.5em;*/">
+        <li>
+          <a href="/collections/mugs">
+            MUGS
+          </a>
+        </li>
+        <li>
+          <a href="/collections/cartable">
+            CARTABLE
+          </a>
+        </li>
+        <li>
+          <a href="/collections/coques">
+            COQUES
+          </a>
+        </li><br>
+        <li style="margin-top: 10px;">
+          <a href="/collections/e-gift-cards">
+            VOIR TOUS NOS ACCESSOIRES
+          </a>
+        </li>
+  	  </ul>
+       
+  	  {% elsif collection.handle == 'wrapped-canvas' or collection.handle == '34x34' or collection.handle == '35x35' or collection.handle == '48x48' %}
+  	  <ul class="tags webcast-collection-tags tags--collection inline-list" style="margin-top: 2.5em;margin-bottom: 2.5em;">
+        <li> 
+          <a href="/collections/34x34">
+            34x34
+          </a>
+        </li>
+        <li>
+          <a href="/collections/35x35"> 
+            35x35
+          </a>
+        </li>
+        <li>
+          <a href="/collections/48x48">
+            48x48
+          </a>
+        </li><br>
+        <li class="final-column">
+          <a href="/collections/wrapped-canvas">
+            VOIR TOUS NOS TABLEAUX
+          </a>
+        </li>
+  	  </ul>
+  
+  
+  	  {% elsif collection.handle == 'cartes-cadeaux' or collection.handle == '25' or collection.handle == '50' or collection.handle == '50-1' or collection.handle == '100' %}
+  	  <ul class="tags webcast-collection-tags tags--collection inline-list" style="margin-top: 2.5em;margin-bottom: 2.5em;">
+        <li>
+          <a href="/collections/25">
+            25€
+          </a>
+        </li>
+        <li>
+          <a href="/collections/50">
+            50€
+          </a>
+        </li>
+        <li>
+          <a href="/collections/50-1">
+            75€
+          </a>
+        </li>
+        <li>
+          <a href="/collections/100">
+            100€
+          </a>
+        </li><br>
+        <li class="final-column">
+          <a href="/collections/cartes-cadeaux">
+            VOIR TOUTES NOS CARTES-CADEAUX
+          </a>
+        </li>
+  	  </ul>
+  
+  	  {% elsif collection.handle == 'deco'  or collection.handle == 'serviette' or collection.handle == 'chaussettes' or collection.handle == 'coussins' or collection.handle == 'rideaux' or collection.handle == 'tapis' or collection.handle == 'couverture' or collection.handle == 'maison' or collection.handle == 'pouf' or collection.handle == 'voir tous nos objects deco' %}
+  	  <ul class="tags webcast-collection-tags tags--collection inline-list" style="margin-top: 2.5em;margin-bottom: 2.5em;">
+        <li>
+          <a href="/collections/coussins">
+            COUSSINS
+          </a>
+        </li>
+        <li>
+          <a href="/collections/serviette">
+            SERVIETTE
+          </a>
+        </li>
+        <li>
+          <a href="/collections/rideaux">
+            RIDEAUX
+          </a>
+        </li>
+        <li>
+          <a href="/collections/tapis">
+            TAPIS
+          </a>
+        </li>
+        <li>
+          <a href="/collections/couverture">
+            COUVERTURE
+          </a>
+        </li>
+        <li>
+          <a href="/collections/maison">
+            MAISON
+          </a>
+        </li>
+        <li>
+          <a href="/collections/pouf">
+            POUF
+          </a>
+        </li><br>
+        <li class="final-column">
+          <a href="/collections/deco">
+            VOIR TOUS NOS OBJECTS DECO
+          </a>
+        </li>
+  	  </ul>
+  
+  	  {% elsif collection.handle == 'customized-apparel-1' or collection.handle == 'customized-apparel' or collection.handle == 'enfant' or collection.handle == 'femme' %}
+  	  
+  <ul class="tags webcast-collection-tags tags--collection inline-list" style="margin-top: 2.5em;margin-bottom: 2.5em;">
+        <li>
+          <a href="/collections/customized-apparel">
+            HOMME
+          </a>
+        </li>
+        <li>
+          <a href="/collections/femme">
+            FEMME
+          </a>
+        </li>
+        <li>
+          <a href="/collections/enfant">
+            ENFANT
+          </a>
+        </li><br>
+        <li class="final-column">
+          <a href="/collections/customized-apparel-1">
+            VOIR TOUS NOS VETEMENTS
+          </a>
+        </li>
+  	  </ul>
+  
+  {% elsif collection.handle == 'cartes-cadeaux' %}
+  		<style>
+          .tags--collection {display:none;}
+  		</style>
+  
+      {% else %}
+      <ul class="tags tags--collection inline-list">
+        <li{% unless current_tags %} class="tag--active"{% endunless %}>
+          {% comment %}
+            Good for /collections/all collection and regular collections
+          {% endcomment %}
+          {% if collection.handle %}
+            <a href="/collections/{{ collection.handle }}">
+              {% comment %}ly_i18n_replace_for_[ 'collections.general.all_of_collection' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.general.all_of_collection' | t }}{% endcapture %}{% include 'ly-static-string' with '8850678' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+            </a>
+
+          {% comment %}
+            Good for automatic type collections
+          {% endcomment %}
+          {% elsif collection.current_type %}
+            <a href="{{ collection.current_type | url_for_type }}">
+              {% comment %}ly_i18n_replace_for_[ 'collections.general.all_of_collection' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.general.all_of_collection' | t }}{% endcapture %}{% include 'ly-static-string' with '8850678' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+            </a>
+
+          {% comment %}
+            Good for automatic vendor collections
+          {% endcomment %}
+          {% elsif collection.current_vendor %}
+            <a href="{{ collection.current_vendor | url_for_vendor }}">
+              {% comment %}ly_i18n_replace_for_[ 'collections.general.all_of_collection' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.general.all_of_collection' | t }}{% endcapture %}{% include 'ly-static-string' with '8850678' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+            </a>
+          {% endif %}
+        </li>
+
+        {% for tag in collection.all_tags %}
+          {% if current_tags contains tag %}
+            <li class="tag--active">
+              {{ tag | link_to_remove_tag: tag }}
+            </li>
+          {% else %}
+            <li>
+              {% comment %}
+                Use link_to_add_tag if you want to allow filtering
+                by multiple tags
+              {% endcomment %}
+              {{ tag | link_to_tag: tag }}
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    {% endif %}
+    {% endif %}
+  {% endif %}
+
+  {% if section.settings.collection_tags_enable %}
+    <!--<hr class="hr--small hr--clear">-->
+  {% endif %}
+</header>
+
+
+{% if section.settings.collection_products_grid == 'collage' %}
+  <div class="grid grid-collage">
+    {% comment %}
+      Loop through our products in the current collection.
+      See the snippet 'snippets/product-grid-collage.liquid'.
+
+      `is_reverse_row__product`, `three_row_index__product`, `collection_product_count`, and `divisible_by_three__product` are
+      all used by 'snippets/product-grid-collage.liquid'
+    {% endcomment %}
+    {% assign is_reverse_row__product = false %}
+    {% assign three_row_index__product = 0 %}
+    {% assign collection_product_count__product = collection.products.size %}
+    {% assign divisible_by_three__product = collection_product_count__product | modulo:3 %}
+    {% for product in collection.products %}
+      {% include 'product-grid-collage' %}
+    {% else %}
+
+      {% if shop.products_count == 0 %}
+        {% comment %}
+          Add default products to help with onboarding for collections/all only
+        {% endcomment %}
+        {% include 'onboarding-featured-products' %}
+      {% else %}
+        {% comment %}
+          If collection exists but is empty, display message
+        {% endcomment %}
+        <div class="grid__item text-center">
+          <p>{% comment %}ly_i18n_replace_for_[ 'collections.general.no_matches' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.general.no_matches' | t }}{% endcapture %}{% include 'ly-static-string' with '8850679' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+  </div>
+{% elsif section.settings.collection_products_grid == 'grid' %}
+  <div class="grid-uniform collectionProducts">
+    {% assign grid_item_width = 'small--five-twelfths medium--one-half large--one-quarter' %}
+    {% for product in collection.products %}
+      {% include 'product-grid-item' %}
+    {% else %}
+      {% if collection.handle == 'all' %}
+        {% comment %}
+          Add default products to help with onboarding for collections/all only
+        {% endcomment %}
+        {% include 'onboarding-featured-products' %}
+      {% else %}
+        {% comment %}
+          If collection exists but is empty, display message
+        {% endcomment %}
+        <div class="grid__item text-center">
+          <p>{% comment %}ly_i18n_replace_for_[ 'collections.general.no_matches' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.general.no_matches' | t }}{% endcapture %}{% include 'ly-static-string' with '8850679' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% if paginate.pages > 1 %}
+  {% include 'pagination' %}
+{% endif %}
+
+{% endpaginate %}
+
+  <div class="section-you-may-like"></div>
+  
+  <div class="slideHIW">
+    
+    {% include 'webcast-product-slider' with firstCat: section.settings.collectionMob %}
+    
+    {% include 'BackgroundSlideMob' %}
+  </div>
+
+
+<script>
+/*$(document).ready(function() {
+	$(window).resize(function() {
+      var width = $(window).width();
+      if(width<768) {
+      	var pro_h = $('.grid-product').height();
+        console.log(pro_h);
+      }
+    });
+});*/
+</script>
+<script>
+$(document).ready(function() {
+  var url      = window.location.href;
+  if(url == 'https://mycreanimale.com/collections/mugs' || url == 'https://mycreanimale.com/collections/coques' ){
+    var apnd_data = $("#menu-div").html();
+    $(".section-header").append('<ul class="tags webcast-collection-tags tags--collection inline-list" style="margin-top: 1.5em;/*margin-bottom: 2.5em;*/"><li><a href="/collections/mugs">MUGS</a></li><li><a href="/collections/coussins">COUSSINS</a></li><li><a href="/collections/coques">COQUES</a></li><br><li style="margin-top: 10px;"><a href="/collections/customized-apparel-1">VOIR TOUS NOS ACCESSOIRES</a></li></ul>');
+  }
+});
+</script>

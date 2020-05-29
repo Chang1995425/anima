@@ -1,0 +1,3214 @@
+
+<button id="myBtn" data-target="#myModal2" class="myBTn button btn-grad-log btn--full">PREVIEW</button>
+
+
+<!-- The Modal -->
+
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content showSweetAlert">
+    <span class="close">&times;</span>
+    <div class="top-title">
+      <div class="top-left"><img src="//cdn.shopify.com/s/files/1/0004/0809/2719/t/58/assets/dog-face_1f436.png?v=7329337764500103556" style="top: 4px;position: relative;"></div> 
+      <div class="top-mid"><h2>TEST DE PREVISUALISATION GRATUIT</h2></div>          
+      <div class="top-right"><img src="//cdn.shopify.com/s/files/1/0004/0809/2719/t/58/assets/cat-face_1f431.png?v=6180248227635273531" style="top: 4px;position: relative;"></div>
+   </div>
+   <br class="spacer"> 
+   
+   <div style="margin-left: -6px;margin-right: -6px;" class="field">
+     Choose Nnumber Of Dogs: <a class="selectNum border2" id="num1" onclick="return modl1(1);">1</a> <a id="num2" class="selectNum border1" onclick="return modl1(2);">2</a> <a id="num3" class="selectNum border1" onclick="return modl1(3);">3</a>
+   </div>  
+<br/>
+<div id="bredd1">    
+<div class="field">
+  <div class="label">Choose Bredd Of Dog:</div>
+  <dl id="sample" class="dropdown">
+        <dt><a><span>Select Bredd Of Dog</span></a></dt>
+        <dd>
+            <ul>
+                <li><a><img class="flag" src="{{ 'dog1.png' | asset_url }}" alt="" width="15"/>Drog Bredd 1<span class="value">dbredd11</span></a></li>
+                <li><a><img class="flag" src="{{ 'dog2.png' | asset_url }}" alt="" width="15"/>Drog Bredd 2<span class="value">dbredd12</span></a></li>
+                <li><a><img class="flag" src="{{ 'dog3.png' | asset_url }}" alt="" width="15"/>Drog Bredd 3<span class="value">dbredd13</span></a></li>
+                <li><a><img class="flag" src="{{ 'dog4.png' | asset_url }}" alt="" width="15"/>Drog Bredd 4<span class="value">dbredd14</span></a></li>
+            </ul>
+        </dd>
+  </dl>
+  <!--<select id="id_select1_example" onchange="return breedOpt1(this.value);">
+    <option value="dbredd10" selected="selected">Choose Breed</option>
+    <option value="dbredd11" >Dog Breed 1</option>
+    <option value="dbredd12" >Dog Breed 2</option>
+    <option value="dbredd13" data-img_src="{{ 'dog3.jpg' | asset_url }}">Dog Breed 3</option>
+    <option value="dbredd14" data-img_src="{{ 'dog4.jpg' | asset_url }}">Dog Breed 4</option>
+  </select>-->
+</div>
+  
+<div class="field" id="dbredd11">
+  <div class="quote-div" id="sbledd11" onclick="return changeBledd11('sbledd11');"><img src="https://cdn.shopify.com/s/files/1/0004/0809/2719/files/17_1.png?v=1587319152"></div>
+    <div class="quote-div" id="sbledd12" onclick="return changeBledd11('sbledd12');"><img src="{{ 'dog1.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd13" onclick="return changeBledd11('sbledd13');"><img src="{{ 'dog1.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd14" onclick="return changeBledd11('sbledd14');"><img src="{{ 'dog1.png' | asset_url }}"></div>
+  <div class="quote-div" id="sbledd15" onclick="return changeBledd11('sbledd15');"><img src="{{ 'dog1.png' | asset_url }}"></div>
+<br/>  
+</div>  
+    
+<div class="field" id="dbredd12">
+  <div class="quote-div" id="sbledd21" onclick="return changeBledd12('sbledd21');"><img src="{{ 'dog2.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd22" onclick="return changeBledd12('sbledd22');"><img src="{{ 'dog2.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd23" onclick="return changeBledd12('sbledd23');"><img src="{{ 'dog2.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd24" onclick="return changeBledd12('sbledd24');"><img src="{{ 'dog2.png' | asset_url }}"></div>
+  <div class="quote-div" id="sbledd25" onclick="return changeBledd12('sbledd25');"><img src="{{ 'dog2.png' | asset_url }}"></div>
+  <br/>
+</div> 
+    
+<div class="field" id="dbredd13">
+  <div class="quote-div" id="sbledd31" onclick="return changeBledd13('sbledd31');"><img src="{{ 'dog3.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd32" onclick="return changeBledd13('sbledd32');"><img src="{{ 'dog3.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd33" onclick="return changeBledd13('sbledd33');"><img src="{{ 'dog3.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd34" onclick="return changeBledd13('sbledd34');"><img src="{{ 'dog3.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd35" onclick="return changeBledd13('sbledd35');"><img src="{{ 'dog3.png' | asset_url }}"></div>
+  <br/>
+</div>
+  
+<div class="field" id="dbredd14">
+  <div class="quote-div" id="sbledd41" onclick="return changeBledd14('sbledd41');"><img src="https://gossby.com/storage/personalizedDesign/design/images/09.10.2019/17.2992K5d9e97c29f267.preview.png"></div>
+    <div class="quote-div" id="sbledd42" onclick="return changeBledd14('sbledd42');"><img src="{{ 'dog4.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd43" onclick="return changeBledd14('sbledd43');"><img src="{{ 'dog4.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd44" onclick="return changeBledd14('sbledd44');"><img src="{{ 'dog4.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd45" onclick="return changeBledd14('sbledd45');"><img src="{{ 'dog4.png' | asset_url }}"></div>
+</div>
+</div>  
+<div class="field" id="p1">
+  <div class="label">Name Of Dog:</div>
+  <input type="text" id="dogName1" name="dogName1">
+</div>
+<div id="bredd2">    
+<div class="field">
+  <div class="label">Choose Bredd Of Dog:2</div>
+  <!--<select id="id_select11_example" onchange="return breedOpt2(this.value);">
+    <option value="" selected data-img_src="{{ 'blank.jpg' | asset_url }}">Choose Breed</option>
+    <option value="dbredd21" data-img_src="{{ 'dog1.jpg' | asset_url }}">Dog Breed 1</option>
+    <option value="dbredd22" data-img_src="{{ 'dog2.jpg' | asset_url }}">Dog Breed 2</option>
+    <option value="dbredd23" data-img_src="{{ 'dog3.jpg' | asset_url }}">Dog Breed 3</option>
+    <option value="dbredd24" data-img_src="{{ 'dog4.jpg' | asset_url }}">Dog Breed 4</option>
+  </select>-->
+  <dl id="sample2" class="dropdown2">
+        <dt><a ><span>Select Bredd Of Dog 2</span></a></dt>
+        <dd>
+            <ul>
+                <li><a><img class="flag2" src="{{ 'dog1.png' | asset_url }}" alt="" width="15"/>Drog Bredd 1<span class="value">dbredd21</span></a></li>
+                <li><a><img class="flag2" src="{{ 'dog2.png' | asset_url }}" alt="" width="15"/>Drog Bredd 2<span class="value">dbredd22</span></a></li>
+                <li><a><img class="flag2" src="{{ 'dog3.png' | asset_url }}" alt="" width="15"/>Drog Bredd 3<span class="value">dbredd23</span></a></li>
+                <li><a><img class="flag2" src="{{ 'dog4.png' | asset_url }}" alt="" width="15"/>Drog Bredd 4<span class="value">dbredd24</span></a></li>
+            </ul>
+        </dd>
+  </dl>
+</div>
+<div class="field" id="dbredd21">
+  <div class="quote-div" id="sbledd111" onclick="return changeBledd21('sbledd111');"><img src="{{ 'dog1.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd112" onclick="return changeBledd21('sbledd112');"><img src="{{ 'dog1.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd113" onclick="return changeBledd21('sbledd113');"><img src="{{ 'dog1.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd114" onclick="return changeBledd21('sbledd114');"><img src="{{ 'dog1.png' | asset_url }}"></div>
+  <div class="quote-div" id="sbledd115" onclick="return changeBledd21('sbledd115');"><img src="{{ 'dog1.png' | asset_url }}"></div>
+</div>      
+<div class="field" id="dbredd22">
+  <div class="quote-div" id="sbledd121" onclick="return changeBledd22('sbledd121');"><img src="https://gossby.com/storage/personalizedDesign/design/images/09.10.2019/17.ARENG5d9e97deeb11c.preview.png"></div>
+    <div class="quote-div" id="sbledd122" onclick="return changeBledd22('sbledd122');"><img src="{{ 'dog2.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd123" onclick="return changeBledd22('sbledd123');"><img src="{{ 'dog2.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd124" onclick="return changeBledd22('sbledd124');"><img src="{{ 'dog2.png' | asset_url }}"></div>
+  <div class="quote-div" id="sbledd125" onclick="return changeBledd22('sbledd125');"><img src="{{ 'dog2.png' | asset_url }}"></div>
+</div>    
+<div class="field" id="dbredd23">
+  <div class="quote-div" id="sbledd131" onclick="return changeBledd23('sbledd131');"><img src="https://gossby.com/storage/personalizedDesign/design/images/09.10.2019/17.46B2L5d9e9d65c7abb.preview.png"></div>
+    <div class="quote-div" id="sbledd132" onclick="return changeBledd23('sbledd132');"><img src="{{ 'dog3.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd133" onclick="return changeBledd23('sbledd133');"><img src="{{ 'dog3.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd134" onclick="return changeBledd23('sbledd134');"><img src="{{ 'dog3.png' | asset_url }}"></div>
+  <div class="quote-div" id="sbledd135" onclick="return changeBledd23('sbledd135');"><img src="{{ 'dog3.png' | asset_url }}"></div>
+</div>
+<div class="field" id="dbredd24">
+  <div class="quote-div" id="sbledd141" onclick="return changeBledd24('sbledd141');"><img src="https://gossby.com/storage/personalizedDesign/design/images/09.10.2019/17.2992K5d9e97c29f267.preview.png"></div>
+    <div class="quote-div" id="sbledd142" onclick="return changeBledd24('sbledd142');"><img src="{{ 'dog4.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd143" onclick="return changeBledd24('sbledd143');"><img src="{{ 'dog4.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd144" onclick="return changeBledd24('sbledd144');"><img src="{{ 'dog4.png' | asset_url }}"></div>
+  <div class="quote-div" id="sbledd145" onclick="return changeBledd24('sbledd145');"><img src="{{ 'dog4.png' | asset_url }}"></div>
+</div> 
+</div>  
+<div class="field" id="p2">
+  	<div class="label">Name Of Dog 2:</div>
+	<input type="text" id="dogName2" name="dogName2">
+</div>    
+<div id="bredd3">
+<div class="field">
+  <div class="label">Choose Bredd Of Dog:3</div>
+  <!--<select id="id_select12_example" onchange="return breedOpt3(this.value);">
+    <option value="" selected data-img_src="{{ 'blank.jpg' | asset_url }}">Choose Breed</option>
+    <option value="dbredd31" data-img_src="{{ 'dog1.jpg' | asset_url }}">Dog Breed 1</option>
+    <option value="dbredd32" data-img_src="{{ 'dog2.jpg' | asset_url }}">Dog Breed 2</option>
+    <option value="dbredd33" data-img_src="{{ 'dog3.jpg' | asset_url }}">Dog Breed 3</option>
+    <option value="dbredd34" data-img_src="{{ 'dog4.jpg' | asset_url }}">Dog Breed 4</option>
+  </select>-->
+  <dl id="sample3" class="dropdown3">
+        <dt><a><span>Select Bredd Of Dog 3</span></a></dt>
+        <dd>
+            <ul>
+                <li><a><img class="flag3" src="{{ 'dog1.png' | asset_url }}" alt="" width="15"/>Drog Bredd 1<span class="value">dbredd31</span></a></li>
+                <li><a><img class="flag3" src="{{ 'dog2.png' | asset_url }}" alt="" width="15"/>Drog Bredd 2<span class="value">dbredd32</span></a></li>
+                <li><a><img class="flag3" src="{{ 'dog3.png' | asset_url }}" alt="" width="15"/>Drog Bredd 3<span class="value">dbredd33</span></a></li>
+                <li><a><img class="flag3" src="{{ 'dog4.png' | asset_url }}" alt="" width="15"/>Drog Bredd 4<span class="value">dbredd34</span></a></li>
+            </ul>
+        </dd>
+  </dl>
+</div>
+<div class="field" id="dbredd31">
+  <div class="quote-div" id="sbledd231" onclick="return changeBledd31('sbledd231');"><img src="{{ 'dog1.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd232" onclick="return changeBledd31('sbledd232');"><img src="{{ 'dog1.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd233" onclick="return changeBledd31('sbledd233');"><img src="{{ 'dog1.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd234" onclick="return changeBledd31('sbledd234');"><img src="{{ 'dog1.png' | asset_url }}"></div>
+  <div class="quote-div" id="sbledd235" onclick="return changeBledd31('sbledd235');"><img src="{{ 'dog1.png' | asset_url }}"></div>
+</div>  
+<div class="field" id="dbredd32">
+  <div class="quote-div" id="sbledd241" onclick="return changeBledd32('sbledd241');"><img src="{{ 'dog2.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd242" onclick="return changeBledd32('sbledd242');"><img src="{{ 'dog2.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd243" onclick="return changeBledd32('sbledd243');"><img src="{{ 'dog2.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd244" onclick="return changeBledd32('sbledd244');"><img src="{{ 'dog2.png' | asset_url }}"></div>
+  <div class="quote-div" id="sbledd245" onclick="return changeBledd32('sbledd245');"><img src="{{ 'dog2.png' | asset_url }}"></div>
+</div> 
+<div class="field" id="dbredd33">
+  <div class="quote-div" id="sbledd251" onclick="return changeBledd33('sbledd251');"><img src="{{ 'dog3.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd252" onclick="return changeBledd33('sbledd252');"><img src="{{ 'dog3.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd253" onclick="return changeBledd33('sbledd253');"><img src="{{ 'dog3.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd254" onclick="return changeBledd33('sbledd254');"><img src="{{ 'dog3.png' | asset_url }}"></div>
+  <div class="quote-div" id="sbledd255" onclick="return changeBledd33('sbledd255');"><img src="{{ 'dog3.png' | asset_url }}"></div>
+</div> 
+<div class="field" id="dbredd34">
+  <div class="quote-div" id="sbledd261" onclick="return changeBledd34('sbledd261');"><img src="https://gossby.com/storage/personalizedDesign/design/images/09.10.2019/17.2992K5d9e97c29f267.preview.png"></div>
+    <div class="quote-div" id="sbledd262" onclick="return changeBledd34('sbledd262');"><img src="{{ 'dog4.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd263" onclick="return changeBledd34('sbledd263');"><img src="{{ 'dog4.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd264" onclick="return changeBledd34('sbledd264');"><img src="{{ 'dog4.png' | asset_url }}"></div>
+    <div class="quote-div" id="sbledd265" onclick="return changeBledd34('sbledd265');"><img src="{{ 'dog4.png' | asset_url }}"></div>
+</div> 
+</div> 
+<div class="field" id="p3">
+	<div class="label">Name Of Dog 3:</div>
+	<input type="text" id="dogName3" name="dogName3">
+</div>
+<div class="field" id="backq1">
+  <div class="label">Back side quote:</div>
+  <div class="quote-global">
+    <div class="quote-div" id="back11" onclick="return changeBack1('back11');"><img src="{{ 'back1.jpg' | asset_url }}"></div>
+    <div class="quote-div" id="back12" onclick="return changeBack1('back12');"><img src="{{ 'back2.jpg' | asset_url }}"></div>
+    <div class="quote-div" id="back13" onclick="return changeBack1('back13');"><img src="{{ 'back3.jpg' | asset_url }}"></div>
+    <div class="quote-div" id="back14" onclick="return changeBack1('back14');"><img src="{{ 'back4.jpg' | asset_url }}"></div>
+    <div class="quote-div" id="back15" onclick="return changeBack1('back15');"><img src="{{ 'back5.jpg' | asset_url }}"></div>
+  </div>  
+</div>
+<div class="field2" id="field1">
+    <p class="err-code" id="pop1Err">You must select all entries</p>
+	<button id="myBtn2"  onclick="return check1();" class="myBtn button btn-grad-log btn--full">BACKSIDE</button>
+   
+    <script>
+      $(".dropdown img.flag").addClass("flagvisibility");
+
+              $(".dropdown dt a").click(function() {
+                  $(".dropdown dd ul").toggle(); 
+              });
+
+              $(".dropdown dd ul li a").click(function() {
+                
+                  $('#dogbreed1').val('');
+                  
+                  var text = $(this).html();
+                  //alert(text);
+                  $(".dropdown dt a span").html(text);
+                  $(".dropdown dd ul").hide();
+                  $("#result").html("Selected value is: " + getSelectedValue("sample"));
+                  var bredd=getSelectedValue("sample");
+                  //alert(bredd);
+                  if(bredd=='dbredd11')
+                  {  
+                      document.getElementById('dbredd11').style.display = "block";
+                      document.getElementById('dbredd12').style.display = "none";
+                      document.getElementById('dbredd13').style.display = "none";
+                      document.getElementById('dbredd14').style.display = "none";
+                  }
+                if(bredd=='dbredd12')
+                  {  
+                      document.getElementById('dbredd11').style.display = "none";
+                      document.getElementById('dbredd12').style.display = "block";
+                      document.getElementById('dbredd13').style.display = "none";
+                      document.getElementById('dbredd14').style.display = "none";
+//                       document.getElementById('dogbreed1').value="dbredd12";
+                  }
+                if(bredd=='dbredd13')
+                  {  
+                      document.getElementById('dbredd11').style.display = "none";
+                      document.getElementById('dbredd12').style.display = "none";
+                      document.getElementById('dbredd13').style.display = "block";
+                      document.getElementById('dbredd14').style.display = "none";
+//                       document.getElementById('dogbreed1').value="dbredd13";
+                  }
+                if(bredd=='dbredd14')
+                  {  
+                      document.getElementById('dbredd11').style.display = "none";
+                      document.getElementById('dbredd12').style.display = "none";
+                      document.getElementById('dbredd13').style.display = "none";
+                      document.getElementById('dbredd14').style.display = "block";
+//                       document.getElementById('dogbreed1').value="dbredd14";
+                  }
+              });
+
+              function getSelectedValue(id) {
+                  return $("#" + id).find("dt a span.value").html();
+              }
+
+              $(document).bind('click', function(e) {
+                  var $clicked = $(e.target);
+                  if (! $clicked.parents().hasClass("dropdown"))
+                      $(".dropdown dd ul").hide();
+              });
+
+             $(".dropdown img.flag").toggleClass("flagvisibility");
+      </script>
+    <script>
+      $(".dropdown2 img.flag2").addClass("flagvisibility2");
+
+              $(".dropdown2 dt a").click(function() {
+                  $(".dropdown2 dd ul").toggle();
+              });
+
+              $(".dropdown2 dd ul li a").click(function() {
+                $('#dogbreed2').val('');
+                  var text = $(this).html();
+                  //
+                  $(".dropdown2 dt a span").html(text);
+                  $(".dropdown2 dd ul").hide();
+                  $("#result2").html("Selected value is: " + getSelectedValue("sample2"));
+                  var bredd2=getSelectedValue("sample2");
+                  //alert(bredd2);
+                  if(bredd2=='dbredd21')
+                  {  
+                      document.getElementById('dbredd21').style.display = "block";
+                      document.getElementById('dbredd22').style.display = "none";
+                      document.getElementById('dbredd23').style.display = "none";
+                      document.getElementById('dbredd24').style.display = "none";
+                  }
+                if(bredd2=='dbredd22')
+                  {  
+                      document.getElementById('dbredd21').style.display = "none";
+                      document.getElementById('dbredd22').style.display = "block";
+                      document.getElementById('dbredd23').style.display = "none";
+                      document.getElementById('dbredd24').style.display = "none";
+                  }
+                if(bredd2=='dbredd23')
+                  {  
+                      document.getElementById('dbredd21').style.display = "none";
+                      document.getElementById('dbredd22').style.display = "none";
+                      document.getElementById('dbredd23').style.display = "block";
+                      document.getElementById('dbredd24').style.display = "none";
+                  }
+                if(bredd2=='dbredd24')
+                  {  
+                      document.getElementById('dbredd21').style.display = "none";
+                      document.getElementById('dbredd22').style.display = "none";
+                      document.getElementById('dbredd23').style.display = "none";
+                      document.getElementById('dbredd24').style.display = "block";
+                  }
+              });
+
+              function getSelectedValue(id) {
+                  return $("#" + id).find("dt a span.value").html();
+              }
+
+              $(document).bind('click', function(e) {
+                  var $clicked = $(e.target);
+                  if (! $clicked.parents().hasClass("dropdown2"))
+                      $(".dropdown2 dd ul").hide();
+              });
+
+             $(".dropdown2 img.flag2").toggleClass("flagvisibility2");
+      </script>
+    <script>
+      $(".dropdown3 img.flag3").addClass("flagvisibility3");
+
+              $(".dropdown3 dt a").click(function() {
+                  $(".dropdown3 dd ul").toggle();
+              });
+
+              $(".dropdown3 dd ul li a").click(function() {
+                $('#dogbreed3').val('');
+                  var text = $(this).html();
+                  //
+                  $(".dropdown3 dt a span").html(text);
+                  $(".dropdown3 dd ul").hide();
+                  $("#result3").html("Selected value is: " + getSelectedValue("sample3"));
+                  var bredd3=getSelectedValue("sample3");
+                  //alert(bredd2);
+                  if(bredd3=='dbredd31')
+                  {  
+                      document.getElementById('dbredd31').style.display = "block";
+                      document.getElementById('dbredd32').style.display = "none";
+                      document.getElementById('dbredd33').style.display = "none";
+                      document.getElementById('dbredd34').style.display = "none";
+                  }
+                if(bredd3=='dbredd32')
+                  {  
+                      document.getElementById('dbredd31').style.display = "none";
+                      document.getElementById('dbredd32').style.display = "block";
+                      document.getElementById('dbredd33').style.display = "none";
+                      document.getElementById('dbredd34').style.display = "none";
+                  }
+                if(bredd3=='dbredd33')
+                  {  
+                      document.getElementById('dbredd31').style.display = "none";
+                      document.getElementById('dbredd32').style.display = "none";
+                      document.getElementById('dbredd33').style.display = "block";
+                      document.getElementById('dbredd34').style.display = "none";
+                  }
+                if(bredd3=='dbredd34')
+                  {  
+                      document.getElementById('dbredd31').style.display = "none";
+                      document.getElementById('dbredd32').style.display = "none";
+                      document.getElementById('dbredd33').style.display = "none";
+                      document.getElementById('dbredd34').style.display = "block";
+                  }
+                  
+              });
+
+              function getSelectedValue(id) {
+                  return $("#" + id).find("dt a span.value").html();
+              }
+
+              $(document).bind('click', function(e) {
+                  var $clicked = $(e.target);
+                  if (! $clicked.parents().hasClass("dropdown3"))
+                      $(".dropdown3 dd ul").hide();
+              });
+
+             $(".dropdown3 img.flag3").toggleClass("flagvisibility3");
+      </script>
+</div> 
+    
+</div>
+
+</div>
+
+
+<div id="myModal2" class="modal">
+  <!-- Modal content -->
+
+  <div class="modal-content showSweetAlert">
+    <span class="close2">&times;</span>
+        <div class="top-title">
+      <div class="top-left"><img src="//cdn.shopify.com/s/files/1/0004/0809/2719/t/58/assets/dog-face_1f436.png?v=7329337764500103556" style="top: 4px;position: relative;"></div> 
+      <div class="top-mid"><h2>TEST DE PREVISUALISATION GRATUIT</h2></div>          
+      <div class="top-right"><img src="//cdn.shopify.com/s/files/1/0004/0809/2719/t/58/assets/cat-face_1f431.png?v=6180248227635273531" style="top: 4px;position: relative;"></div>
+   </div>
+    <br class="spacer">
+   <div style="margin-left: -6px; margin-right: -3px;" class="field">
+     Choose Number Of Breeds: 
+     <a class="selectNum border2" id="numb1" onclick="return modl2(1);">1</a> 
+     <a id="numb2" class="selectNum border1" onclick="return modl2(2);">2</a> 
+     <a id="numb3" class="selectNum border1" onclick="return modl2(3);">3</a>
+   </div>  
+    <br/>
+<div class="field" id="color1">
+  <div class="label">Choose skin color:</div>
+  <div class="color-global">
+     <div class="selectSkin border1" id="skin1" onclick="return changeColor(1);"><img src="{{ 'color1.jpg' | asset_url }}"></div> <div id="skin2" class="selectSkin border1" onclick="return changeColor(2);"><img src="{{ 'color2.jpg' | asset_url }}"></div> <div id="skin3" class="selectSkin border1" onclick="return changeColor(3);"><img src="{{ 'color3.jpg' | asset_url }}"></div>
+   </div>
+</div>
+ 
+<div class="field" id="hairs1">
+	<div class="label">Choose hair style:</div>
+    <div id="hairt1">
+          <div id="hairs11" class="hair-global">
+            <div class="hair-div" id="hair110" onclick="return changeHair1('hair110');"><img src="https://cdn.shopify.com/s/files/1/0004/0809/2719/files/17_2.png?v=1587401816"></div>
+            <div class="hair-div" id="hair111" onclick="return changeHair1('hair111');"><img src="{{ 'hair11.jpg' | asset_url }}"></div>
+            <div class="hair-div" id="hair112" onclick="return changeHair1('hair112');"><img src="{{ 'hair12.jpg' | asset_url }}"></div>
+            <div class="hair-div" id="hair113" onclick="return changeHair1('hair113');"><img src="{{ 'hair13.jpg' | asset_url }}"></div>
+            <div class="hair-div" id="hair114" onclick="return changeHair1('hair114');"><img src="{{ 'hair14.jpg' | asset_url }}"></div>
+            <div class="hair-div" id="hair115" onclick="return changeHair1('hair115');"><img src="{{ 'hair15.jpg' | asset_url }}"></div>
+            <div class="hair-div" id="hair116" onclick="return changeHair1('hair116');"><img src="{{ 'hair16.jpg' | asset_url }}"></div>
+<!--             <br class="spacer"> -->
+          </div>           
+          <div id="hairs12" class="hair-global">
+              <div class="hair-div" id="hair117" onclick="return changeHair1('hair117');"><img src="{{ 'hair20.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair118" onclick="return changeHair1('hair118');"><img src="{{ 'hair21.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair119" onclick="return changeHair1('hair119');"><img src="{{ 'hair22.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair120" onclick="return changeHair1('hair120');"><img src="{{ 'hair23.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair121" onclick="return changeHair1('hair121');"><img src="{{ 'hair24.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair122" onclick="return changeHair1('hair122');"><img src="{{ 'hair25.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair123" onclick="return changeHair1('hair123');"><img src="{{ 'hair26.jpg' | asset_url }}"></div>
+<!--               <br class="spacer"> -->
+          </div>
+          <div id="hairs13" class="hair-global">
+              <div class="hair-div" id="hair124" onclick="return changeHair1('hair124');"><img src="{{ 'hair17.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair125" onclick="return changeHair1('hair125');"><img src="{{ 'hair18.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair126" onclick="return changeHair1('hair126');"><img src="{{ 'hair9.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair127" onclick="return changeHair1('hair127');"><img src="{{ 'hair1.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair128" onclick="return changeHair1('hair128');"><img src="{{ 'hair2.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair129" onclick="return changeHair1('hair129');"><img src="{{ 'hair3.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair130" onclick="return changeHair1('hair130');"><img src="{{ 'hair4.jpg' | asset_url }}"></div>
+<!--               <br class="spacer"> -->
+          </div>
+    </div>
+</div>  
+<div class="field" id="pname1">
+	<div class="label">Person Name:</div>
+	<input type="text" id="pName1" name="person-name1">
+</div>
+<div class="field" id="color2">
+  <div class="label">Choose skin color 2:</div>
+  <div class="color-global">
+     <div class="selectSkin border1" id="skin21" onclick="return changeColor2(1);"><img src="{{ 'color1.jpg' | asset_url }}"></div> <div id="skin22" class="selectSkin border1" onclick="return changeColor2(2);"><img src="{{ 'color2.jpg' | asset_url }}"></div> <div id="skin23" class="selectSkin border1" onclick="return changeColor2(3);"><img src="{{ 'color3.jpg' | asset_url }}"></div>
+   </div> 
+</div>    
+<div class="field" id="hairs2">
+	<div class="label">Choose hair style 2:</div>
+    <div id="hairt2">
+          <div id="hairs21" class="hair-global">
+            <div class="hair-div" id="hair210" onclick="return changeHair2('hair210');"><img src="{{ 'hair10.jpg' | asset_url }}"></div>
+            <div class="hair-div" id="hair211" onclick="return changeHair2('hair211');"><img src="{{ 'hair11.jpg' | asset_url }}"></div>
+            <div class="hair-div" id="hair212" onclick="return changeHair2('hair212');"><img src="{{ 'hair12.jpg' | asset_url }}"></div>
+            <div class="hair-div" id="hair213" onclick="return changeHair2('hair213');"><img src="{{ 'hair13.jpg' | asset_url }}"></div>
+            <div class="hair-div" id="hair214" onclick="return changeHair2('hair214');"><img src="{{ 'hair14.jpg' | asset_url }}"></div>
+            <div class="hair-div" id="hair215" onclick="return changeHair2('hair215');"><img src="{{ 'hair15.jpg' | asset_url }}"></div>
+            <div class="hair-div" id="hair216" onclick="return changeHair2('hair216');"><img src="{{ 'hair16.jpg' | asset_url }}"></div>
+          </div> 
+<!--           <br class="spacer"> -->
+          <div id="hairs22" class="hair-global">
+              <div class="hair-div" id="hair217" onclick="return changeHair2('hair217');"><img src="{{ 'hair20.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair218" onclick="return changeHair2('hair218');"><img src="{{ 'hair21.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair219" onclick="return changeHair2('hair219');"><img src="{{ 'hair22.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair220" onclick="return changeHair2('hair220');"><img src="{{ 'hair23.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair221" onclick="return changeHair2('hair221');"><img src="{{ 'hair24.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair222" onclick="return changeHair2('hair222');"><img src="{{ 'hair25.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair223" onclick="return changeHair2('hair223');"><img src="{{ 'hair26.jpg' | asset_url }}"></div>
+          </div>
+<!--           <br class="spacer"> -->
+          <div id="hairs23" class="hair-global">
+              <div class="hair-div" id="hair224" onclick="return changeHair2('hair224');"><img src="{{ 'hair17.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair225" onclick="return changeHair2('hair225');"><img src="{{ 'hair18.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair226" onclick="return changeHair2('hair226');"><img src="{{ 'hair9.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair227" onclick="return changeHair2('hair227');"><img src="{{ 'hair1.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair228" onclick="return changeHair2('hair228');"><img src="{{ 'hair2.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair229" onclick="return changeHair2('hair229');"><img src="{{ 'hair3.jpg' | asset_url }}"></div>
+              <div class="hair-div" id="hair230" onclick="return changeHair2('hair230');"><img src="{{ 'hair4.jpg' | asset_url }}"></div>
+          </div> 
+<!--       <br class="spacer"> -->
+    </div> 
+</div>
+<div class="field" id="pname2">
+  	<div class="label">Person Name 2:</div>
+	<input type="text" id="pName2" name="person-name2">
+</div>    
+<div class="field" id="color3">
+  <div class="label">Choose skin color 3:</div>
+  <div class="color-global">
+     <div class="selectSkin border1" id="skin31" onclick="return changeColor3(1);"><img src="{{ 'color1.jpg' | asset_url }}"></div> <div id="skin32" class="selectSkin border1" onclick="return changeColor3(2);"><img src="{{ 'color2.jpg' | asset_url }}"></div> <div id="skin33" class="selectSkin border1" onclick="return changeColor3(3);"><img src="{{ 'color3.jpg' | asset_url }}"></div>
+   </div>
+</div>  
+<div class="field" id="hairs3">
+  	<div class="label">Choose hair style 3:</div>
+    <div id="hairt3">
+      <div id="hairs31" class="hair-global">
+        <div class="hair-div" id="hair310" onclick="return changeHair3('hair310');"><img src="{{ 'hair10.jpg' | asset_url }}"></div>
+        <div class="hair-div" id="hair311" onclick="return changeHair3('hair311');"><img src="{{ 'hair11.jpg' | asset_url }}"></div>
+        <div class="hair-div" id="hair312" onclick="return changeHair3('hair312');"><img src="{{ 'hair12.jpg' | asset_url }}"></div>
+        <div class="hair-div" id="hair313" onclick="return changeHair3('hair313');"><img src="{{ 'hair13.jpg' | asset_url }}"></div>
+        <div class="hair-div" id="hair314" onclick="return changeHair3('hair314');"><img src="{{ 'hair14.jpg' | asset_url }}"></div>
+        <div class="hair-div" id="hair315" onclick="return changeHair3('hair315');"><img src="{{ 'hair15.jpg' | asset_url }}"></div>
+        <div class="hair-div" id="hair316" onclick="return changeHair3('hair316');"><img src="{{ 'hair16.jpg' | asset_url }}"></div>
+      </div> 
+<!--       <br class="spacer"> -->
+      <div id="hairs32" class="hair-global">
+          <div class="hair-div" id="hair317" onclick="return changeHair3('hair317');"><img src="{{ 'hair20.jpg' | asset_url }}"></div>
+          <div class="hair-div" id="hair318" onclick="return changeHair3('hair318');"><img src="{{ 'hair21.jpg' | asset_url }}"></div>
+          <div class="hair-div" id="hair319" onclick="return changeHair3('hair319');"><img src="{{ 'hair22.jpg' | asset_url }}"></div>
+          <div class="hair-div" id="hair320" onclick="return changeHair3('hair320');"><img src="{{ 'hair23.jpg' | asset_url }}"></div>
+          <div class="hair-div" id="hair321" onclick="return changeHair3('hair321');"><img src="{{ 'hair24.jpg' | asset_url }}"></div>
+          <div class="hair-div" id="hair322" onclick="return changeHair3('hair322');"><img src="{{ 'hair25.jpg' | asset_url }}"></div>
+          <div class="hair-div" id="hair323" onclick="return changeHair3('hair323');"><img src="{{ 'hair26.jpg' | asset_url }}"></div>
+      </div>
+<!--       <br class="spacer"> -->
+      <div id="hairs33" class="hair-global">
+          <div class="hair-div" id="hair324" onclick="return changeHair3('hair324');"><img src="{{ 'hair17.jpg' | asset_url }}"></div>
+          <div class="hair-div" id="hair325" onclick="return changeHair3('hair325');"><img src="{{ 'hair18.jpg' | asset_url }}"></div>
+          <div class="hair-div" id="hair326" onclick="return changeHair3('hair326');"><img src="{{ 'hair9.jpg' | asset_url }}"></div>
+          <div class="hair-div" id="hair327" onclick="return changeHair3('hair327');"><img src="{{ 'hair1.jpg' | asset_url }}"></div>
+          <div class="hair-div" id="hair328" onclick="return changeHair3('hair328');"><img src="{{ 'hair2.jpg' | asset_url }}"></div>
+          <div class="hair-div" id="hair329" onclick="return changeHair3('hair329');"><img src="{{ 'hair3.jpg' | asset_url }}"></div>
+          <div class="hair-div" id="hair330" onclick="return changeHair3('hair330');"><img src="{{ 'hair4.jpg' | asset_url }}"></div>
+      </div> 
+    </div>  
+<!--     <br class="spacer"> -->
+</div>
+<div class="field" id="pname3">
+  	<div class="label">Person Name 3:</div>
+	<input type="text" id="pName3" name="person-name3">
+</div>
+<div style="margin-bottom: 0px;" class="field2" id="field2">
+    <p class="err-code" id="pop2Err">You must select all entries</p>
+	<button id="myBtn3"  onclick="return check2();" class="myBtn button btn-grad-log btn--full">BACKSIDE</button>
+</div>    
+</div>
+
+</div>
+
+<div id="myModal3" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content showSweetAlert preview_fb">
+    <span class="close3">&times;</span>
+    
+    <div class="design-tabs">
+      <div class="activated" id="front">Front</div>
+      <div class="" id="back">Back</div>
+    </div>
+    <div class="fro-bac-pic" id="fro-bac-pic">
+      <div class="main-bg" id="front_pic">
+      <svg version="1.1" focusable="false"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 7800 10000" xml:space="preserve">
+	<defs>
+		<filter id="filter-1">
+			<feMerge>
+				<feMergeNode></feMergeNode>
+			</feMerge>
+		</filter>
+		
+		<filter id="filter-2">
+			<feMerge>
+				<feMergeNode></feMergeNode>
+			</feMerge>
+		</filter>
+		<filter id="filter-3">
+			<feMerge>
+				<feMergeNode></feMergeNode>
+			</feMerge>
+		</filter>
+		<filter id="filter-4">
+			<feMerge>
+				<feMergeNode></feMergeNode>
+			</feMerge>
+		</filter>
+	</defs>
+	<g data-document="design2d">
+		<g data-layer="New_object">
+			<g data-layer="Number_of_Dogs">
+				<g data-layer="Number">
+					<image x="0" y="0" id="main_bg_img" href=""  data-layer="Back" width="183" transform="translate(-173 380) scale(43 46)"/>
+					<g  data-layer="Girl">
+						<g data-layer="Your_Skin_Color">
+							<image id="Your_Skin_Color" href="https://gossby.com/storage/personalizedDesign/design/images/09.10.2019/17.NAOIL5d9e2745f2145.preview.png" data-layer="Light" width="95" transform="translate(3823 5168) scale(17 17)"/>
+						</g>
+						<g data-layer="Hair_Style">
+							<image id="Hair_Style" href="https://gossby.com/storage/personalizedDesign/design/images/30.09.2019/17.2N0KP5d923a1a6da5a.preview.png" data-layer="New_object__15" width="200" transform="rotate(-0.16814410686493 4700 6111) translate(3729 5153) scale(9.7 9.5)"/>
+						</g>
+						<text data-layer="Your_Name" font-family="Samellya" font-size="581" font-weight="normal" font-style="normal" letter-spacing="0" word-spacing="0" alignment-baseline="top" dominant-baseline="top" text-anchor="middle" filter="url(#filter-1)" fill="#000">
+							<tspan id="girl_Name" y="9500" alignment-baseline="top" dominant-baseline="top" text-anchor="middle" x="4718">a</tspan>
+						</text>
+					</g>
+					<g id="Dog_Breed_3_layer" data-layer="Dog_Breed_3">
+						<g data-layer="Dog_Breed">
+							<image id="Dog_Breed_3" href="https://gossby.com/storage/personalizedDesign/design/images/09.10.2019/17.2BCW55d9e97db75f16.preview.png" data-layer="New_object__2" width="78" transform="rotate(0.45733296871187 1473.7658183702 6968.8216406638) translate(1000.58214259956 5700.2688677273) scale(6 6)"/>
+						</g>
+					</g>
+					<g id="Dog_Breed_1_layer" data-layer="Dog_Breed_1">
+						<g  data-layer="Dog_Breed">
+							<image id="Dog_Breed_1" href="https://gossby.com/storage/personalizedDesign/design/images/09.10.2019/17.46B2L5d9e9d65c7abb.preview.png"  data-layer="New_object__1" width="64" transform="translate(992 5470) scale(16 16)"/>
+						</g>
+					</g>
+					<g id="Dog_Breed_2_layer" data-layer="Dog_Breed_2">
+						<g data-layer="Dog_Breed">
+							<image id="Dog_Breed_2" href="https://gossby.com/storage/personalizedDesign/design/images/09.10.2019/17.RUM7P5d9e99f47cf13.preview.png"  data-layer="New_object__3" width="78" transform="translate(2391 6093) scale(15 15)"/>
+						</g>
+					</g>
+					<text id="dog_3_name" data-layer="Dog_Name" font-family="Samellya" font-size="581" font-weight="normal" font-style="normal" letter-spacing="0" word-spacing="0" text-anchor="middle" filter="url(#filter-2)" fill="#000">
+						<tspan y="9581" x="6328">j</tspan>
+					</text>
+					<text id="dog_2_name" data-layer="Dog_Name" font-family="Samellya" font-size="581" font-weight="normal" font-style="normal" letter-spacing="0" word-spacing="0" text-anchor="middle" filter="url(#filter-3)" fill="#000">
+						<tspan y="9581"  x="2942.8753662109">c</tspan>
+					</text>
+					<text id="dog_1_name"  data-layer="Dog_Name" font-family="Samellya" font-size="581" font-weight="normal" font-style="normal" letter-spacing="0" word-spacing="0" dominant-baseline="top" text-anchor="middle" filter="url(#filter-4)" fill="#000">
+						<tspan y="9222" x="1439">b</tspan>
+					</text>
+				</g>
+			</g>
+		</g>
+	</g>
+</svg>
+    </div>
+      <div class="quote-bg" id="back_pic">
+      <div id="dog-quote1" class="dog-quote"><img src="{{ 'quote1.png' | asset_url }}"></div>
+      <div id="dog-quote2" class="dog-quote"><img src="{{ 'quote2.png' | asset_url }}"></div>
+      <div id="dog-quote3" class="dog-quote"><img src="{{ 'quote3.png' | asset_url }}"></div>
+      <div id="dog-quote4" class="dog-quote"><img src="{{ 'quote4.png' | asset_url }}"></div>
+      <div id="dog-quote5" class="dog-quote"><img src="{{ 'quote5.png' | asset_url }}"></div>
+  	</div>
+    </div>
+    <br class="spacer">
+  </div>
+</div>  
+
+
+  <script>
+    function changeColor(color)
+    {
+      if(color==1)
+      {
+        document.getElementById("hairs1").style.display = "block";
+      	document.getElementById("hairs11").style.display = "block";
+      	document.getElementById("hairs12").style.display = "none";
+      	document.getElementById("hairs13").style.display = "none";
+        document.getElementById('skin2').classList.remove("border2");
+        document.getElementById('skin3').classList.remove("border2");
+        document.getElementById('skin1').classList.add("border2");
+        
+      }
+      if(color==2)
+      {
+        document.getElementById("hairs1").style.display = "block";
+      	document.getElementById("hairs11").style.display = "none";
+      	document.getElementById("hairs12").style.display = "block";
+      	document.getElementById("hairs13").style.display = "none";
+        document.getElementById('skin1').classList.remove("border2");
+        document.getElementById('skin3').classList.remove("border2");
+        document.getElementById('skin2').classList.add("border2");
+        document.getElementById('skincolor1').value=2;
+      }
+      if(color==3)
+      {
+        document.getElementById("hairs1").style.display = "block";
+      	document.getElementById("hairs11").style.display = "none";
+      	document.getElementById("hairs12").style.display = "none";
+      	document.getElementById("hairs13").style.display = "block";
+        document.getElementById('skin2').classList.remove("border2");
+        document.getElementById('skin1').classList.remove("border2");
+        document.getElementById('skin3').classList.add("border2");
+        document.getElementById('skincolor1').value=3;
+      }
+    }
+    function changeColor2(color)
+    {
+      if(color==1)
+      {
+        document.getElementById("hairs2").style.display = "block";
+      	document.getElementById("hairs21").style.display = "block";
+      	document.getElementById("hairs22").style.display = "none";
+      	document.getElementById("hairs23").style.display = "none";
+        document.getElementById('skin22').classList.remove("border2");
+        document.getElementById('skin23').classList.remove("border2");
+        document.getElementById('skin21').classList.add("border2");
+        document.getElementById('skincolor2').value=1;
+      }
+      if(color==2)
+      {
+        document.getElementById("hairs2").style.display = "block";
+      	document.getElementById("hairs21").style.display = "none";
+      	document.getElementById("hairs22").style.display = "block";
+      	document.getElementById("hairs23").style.display = "none";
+        document.getElementById('skin21').classList.remove("border2");
+        document.getElementById('skin23').classList.remove("border2");
+        document.getElementById('skin22').classList.add("border2");
+        document.getElementById('skincolor2').value=2;
+      }
+      if(color==3)
+      {
+        document.getElementById("hairs2").style.display = "block";
+      	document.getElementById("hairs21").style.display = "none";
+      	document.getElementById("hairs22").style.display = "none";
+      	document.getElementById("hairs23").style.display = "block";
+        document.getElementById('skin21').classList.remove("border2");
+        document.getElementById('skin22').classList.remove("border2");
+        document.getElementById('skin23').classList.add("border2");
+        document.getElementById('skincolor2').value=3;
+      }
+    }
+    function changeColor3(color)
+    {
+      if(color==1)
+      {
+        document.getElementById("hairs3").style.display = "block";
+      	document.getElementById("hairs31").style.display = "block";
+      	document.getElementById("hairs32").style.display = "none";
+      	document.getElementById("hairs33").style.display = "none";
+        document.getElementById('skin32').classList.remove("border2");
+        document.getElementById('skin33').classList.remove("border2");
+        document.getElementById('skin31').classList.add("border2");
+        document.getElementById('skincolor3').value=1;
+      }
+      if(color==2)
+      {
+        document.getElementById("hairs3").style.display = "block";
+      	document.getElementById("hairs31").style.display = "none";
+      	document.getElementById("hairs32").style.display = "block";
+      	document.getElementById("hairs33").style.display = "none";
+        document.getElementById('skin31').classList.remove("border2");
+        document.getElementById('skin33').classList.remove("border2");
+        document.getElementById('skin32').classList.add("border2");
+        document.getElementById('skincolor3').value=2;
+      }
+      if(color==3)
+      {
+        document.getElementById("hairs3").style.display = "block";
+      	document.getElementById("hairs31").style.display = "none";
+      	document.getElementById("hairs32").style.display = "none";
+      	document.getElementById("hairs33").style.display = "block";
+        document.getElementById('skin32').classList.remove("border2");
+        document.getElementById('skin31').classList.remove("border2");
+        document.getElementById('skin33').classList.add("border2");
+        document.getElementById('skincolor3').value=3;
+      }
+    }
+	function modl1(cnt)
+  	{
+      
+    	if(cnt==1)
+        {
+          document.getElementById("p1").style.display = "block";
+          document.getElementById("p2").style.display = "none";
+          document.getElementById("p3").style.display = "none";
+          document.getElementById("bredd1").style.display = "block";
+          document.getElementById("bredd2").style.display = "none";
+          document.getElementById("bredd3").style.display = "none";
+          document.getElementById("num1").classList.remove("border1");
+          document.getElementById("num1").classList.add("border2");
+          document.getElementById("num2").classList.remove("border2");
+          document.getElementById("num2").classList.add("border1");
+          document.getElementById("num3").classList.remove("border2");
+          document.getElementById("num3").classList.add("border1");
+          document.getElementById("num3").value="num1";
+          document.getElementById("mod1Num").value=1;
+        }
+        if(cnt==2)
+        {
+          document.getElementById("p1").style.display = "block";
+          document.getElementById("p2").style.display = "block";
+          document.getElementById("p3").style.display = "none";
+          document.getElementById("bredd1").style.display = "block";
+          document.getElementById("bredd2").style.display = "block";
+          document.getElementById("bredd3").style.display = "none";
+          document.getElementById("num2").classList.remove("border1");
+          document.getElementById("num2").classList.add("border2");
+          document.getElementById("num1").classList.remove("border2");
+          document.getElementById("num1").classList.add("border1");
+          document.getElementById("num3").classList.remove("border2");
+          document.getElementById("num3").classList.add("border1");
+          document.getElementById("mod1Num").value=2;
+        }
+        if(cnt==3)
+        {
+          document.getElementById("p1").style.display = "block";
+          document.getElementById("p2").style.display = "block";
+          document.getElementById("p3").style.display = "block";
+          document.getElementById("bredd1").style.display = "block";
+          document.getElementById("bredd2").style.display = "block";
+          document.getElementById("bredd3").style.display = "block";
+          document.getElementById("num3").classList.remove("border1");
+          document.getElementById("num3").classList.add("border2");
+          document.getElementById("num2").classList.remove("border2");
+          document.getElementById("num2").classList.add("border1");
+          document.getElementById("num1").classList.remove("border2");
+          document.getElementById("num1").classList.add("border1");
+          document.getElementById("mod1Num").value=3;
+        }
+      
+        
+  	}
+    function breedOpt1(bredd)
+    {
+      if(bredd=='dbredd11')
+        {  
+      		document.getElementById('dbredd11').style.display = "block";
+            document.getElementById('dbredd12').style.display = "none";
+            document.getElementById('dbredd13').style.display = "none";
+          	document.getElementById('dbredd14').style.display = "none";
+        }
+      if(bredd=='dbredd12')
+        {  
+      		document.getElementById('dbredd11').style.display = "none";
+            document.getElementById('dbredd12').style.display = "block";
+            document.getElementById('dbredd13').style.display = "none";
+          	document.getElementById('dbredd14').style.display = "none";
+            document.getElementById('dogbreed1').value="dbredd12";
+        }
+      if(bredd=='dbredd13')
+        {  
+      		document.getElementById('dbredd11').style.display = "none";
+            document.getElementById('dbredd12').style.display = "none";
+            document.getElementById('dbredd13').style.display = "block";
+          	document.getElementById('dbredd14').style.display = "none";
+          	document.getElementById('dogbreed1').value="dbredd13";
+        }
+      if(bredd=='dbredd14')
+        {  
+      		document.getElementById('dbredd11').style.display = "none";
+            document.getElementById('dbredd12').style.display = "none";
+            document.getElementById('dbredd13').style.display = "none";
+          	document.getElementById('dbredd14').style.display = "block";
+          	document.getElementById('dogbreed1').value="dbredd14";
+        }
+    }
+    function breedOpt2(bredd)
+    {
+      if(bredd=='dbredd21')
+        {  
+      		document.getElementById('dbredd21').style.display = "block";
+            document.getElementById('dbredd22').style.display = "none";
+            document.getElementById('dbredd23').style.display = "none";
+          	document.getElementById('dbredd24').style.display = "none";
+        }
+      if(bredd=='dbredd22')
+        {  
+      		document.getElementById('dbredd21').style.display = "none";
+            document.getElementById('dbredd22').style.display = "block";
+            document.getElementById('dbredd23').style.display = "none";
+          	document.getElementById('dbredd24').style.display = "none";
+        }
+      if(bredd=='dbredd23')
+        {  
+      		document.getElementById('dbredd21').style.display = "none";
+            document.getElementById('dbredd22').style.display = "none";
+            document.getElementById('dbredd23').style.display = "block";
+          	document.getElementById('dbredd24').style.display = "none";
+        }
+      if(bredd=='dbredd24')
+        {  
+      		document.getElementById('dbredd21').style.display = "none";
+            document.getElementById('dbredd22').style.display = "none";
+            document.getElementById('dbredd23').style.display = "none";
+          	document.getElementById('dbredd24').style.display = "block";
+        }
+    }
+    function breedOpt3(bredd)
+    {
+      if(bredd=='dbredd31')
+        {  
+      		document.getElementById('dbredd31').style.display = "block";
+            document.getElementById('dbredd32').style.display = "none";
+            document.getElementById('dbredd33').style.display = "none";
+          	document.getElementById('dbredd34').style.display = "none";
+        }
+      if(bredd=='dbredd32')
+        {  
+      		document.getElementById('dbredd31').style.display = "none";
+            document.getElementById('dbredd32').style.display = "block";
+            document.getElementById('dbredd33').style.display = "none";
+          	document.getElementById('dbredd34').style.display = "none";
+        }
+      if(bredd=='dbredd33')
+        {  
+      		document.getElementById('dbredd31').style.display = "none";
+            document.getElementById('dbredd32').style.display = "none";
+            document.getElementById('dbredd33').style.display = "block";
+          	document.getElementById('dbredd34').style.display = "none";
+        }
+      if(bredd=='dbredd34')
+        {  
+      		document.getElementById('dbredd31').style.display = "none";
+            document.getElementById('dbredd32').style.display = "none";
+            document.getElementById('dbredd33').style.display = "none";
+          	document.getElementById('dbredd34').style.display = "block";
+        }
+    }
+    function changeBack1(bck)
+    {
+      if(bck=='back11')
+      {  
+        document.getElementById('back11').classList.remove("quote-div");
+        document.getElementById('back11').classList.add("quote-div2");
+        document.getElementById('back12').classList.remove("quote-div2");
+        document.getElementById('back12').classList.add("quote-div");
+        document.getElementById('back13').classList.remove("quote-div2");
+        document.getElementById('back13').classList.add("quote-div");
+        document.getElementById('back14').classList.remove("quote-div2");
+        document.getElementById('back14').classList.add("quote-div");
+        document.getElementById('back15').classList.remove("quote-div2");
+        document.getElementById('back15').classList.add("quote-div");
+        document.getElementById("backside").value="back11";
+        document.getElementById('dog-quote1').style.display = "block";
+        document.getElementById('dog-quote2').style.display = "none";
+        document.getElementById('dog-quote3').style.display = "none";
+        document.getElementById('dog-quote4').style.display = "none";
+        document.getElementById('dog-quote5').style.display = "none";
+        
+        document.getElementById('back11').classList.remove("err");
+        document.getElementById('back12').classList.remove("err");
+        document.getElementById('back13').classList.remove("err");
+        document.getElementById('back14').classList.remove("err");
+        document.getElementById('back15').classList.remove("err");
+      }
+      if(bck=='back12')
+      {  
+        document.getElementById('back11').classList.remove("quote-div2");
+        document.getElementById('back11').classList.add("quote-div");
+        document.getElementById('back12').classList.remove("quote-div");
+        document.getElementById('back12').classList.add("quote-div2");
+        document.getElementById('back13').classList.remove("quote-div2");
+        document.getElementById('back13').classList.add("quote-div");
+        document.getElementById('back14').classList.remove("quote-div2");
+        document.getElementById('back14').classList.add("quote-div");
+        document.getElementById('back15').classList.remove("quote-div2");
+        document.getElementById('back15').classList.add("quote-div");
+        document.getElementById("backside").value="back12";
+        document.getElementById('dog-quote1').style.display = "none";
+        document.getElementById('dog-quote2').style.display = "block";
+        document.getElementById('dog-quote3').style.display = "none";
+        document.getElementById('dog-quote4').style.display = "none";
+        document.getElementById('dog-quote5').style.display = "none";
+        
+        document.getElementById('back11').classList.remove("err");
+        document.getElementById('back12').classList.remove("err");
+        document.getElementById('back13').classList.remove("err");
+        document.getElementById('back14').classList.remove("err");
+        document.getElementById('back15').classList.remove("err");
+      }
+      if(bck=='back13')
+      {  
+        document.getElementById('back11').classList.remove("quote-div2");
+        document.getElementById('back11').classList.add("quote-div");
+        document.getElementById('back12').classList.remove("quote-div2");
+        document.getElementById('back12').classList.add("quote-div");
+        document.getElementById('back13').classList.remove("quote-div");
+        document.getElementById('back13').classList.add("quote-div2");
+        document.getElementById('back14').classList.remove("quote-div2");
+        document.getElementById('back14').classList.add("quote-div");
+        document.getElementById('back15').classList.remove("quote-div2");
+        document.getElementById('back15').classList.add("quote-div");
+        document.getElementById("backside").value="back13";
+        document.getElementById('dog-quote1').style.display = "none";
+        document.getElementById('dog-quote2').style.display = "none";
+        document.getElementById('dog-quote3').style.display = "block";
+        document.getElementById('dog-quote4').style.display = "none";
+        document.getElementById('dog-quote5').style.display = "none";
+        
+        document.getElementById('back11').classList.remove("err");
+        document.getElementById('back12').classList.remove("err");
+        document.getElementById('back13').classList.remove("err");
+        document.getElementById('back14').classList.remove("err");
+        document.getElementById('back15').classList.remove("err");
+      }
+      if(bck=='back14')
+      {  
+        document.getElementById('back11').classList.remove("quote-div2");
+        document.getElementById('back11').classList.add("quote-div");
+        document.getElementById('back12').classList.remove("quote-div2");
+        document.getElementById('back12').classList.add("quote-div");
+        document.getElementById('back13').classList.remove("quote-div2");
+        document.getElementById('back13').classList.add("quote-div");
+        document.getElementById('back14').classList.remove("quote-div");
+        document.getElementById('back14').classList.add("quote-div2");
+        document.getElementById('back15').classList.remove("quote-div2");
+        document.getElementById('back15').classList.add("quote-div");
+        document.getElementById("backside").value="back14";
+        document.getElementById('dog-quote1').style.display = "none";
+        document.getElementById('dog-quote2').style.display = "none";
+        document.getElementById('dog-quote3').style.display = "none";
+        document.getElementById('dog-quote4').style.display = "block";
+        document.getElementById('dog-quote5').style.display = "none";
+        
+        document.getElementById('back11').classList.remove("err");
+        document.getElementById('back12').classList.remove("err");
+        document.getElementById('back13').classList.remove("err");
+        document.getElementById('back14').classList.remove("err");
+        document.getElementById('back15').classList.remove("err");
+      }
+      if(bck=='back15')
+      {  
+        document.getElementById('back11').classList.remove("quote-div2");
+        document.getElementById('back11').classList.add("quote-div");
+        document.getElementById('back12').classList.remove("quote-div2");
+        document.getElementById('back12').classList.add("quote-div");
+        document.getElementById('back13').classList.remove("quote-div2");
+        document.getElementById('back13').classList.add("quote-div");
+        document.getElementById('back14').classList.remove("quote-div2");
+        document.getElementById('back14').classList.add("quote-div");
+        document.getElementById('back15').classList.remove("quote-div");
+        document.getElementById('back15').classList.add("quote-div2");
+        document.getElementById("backside").value="back15";
+        document.getElementById('dog-quote1').style.display = "none";
+        document.getElementById('dog-quote2').style.display = "none";
+        document.getElementById('dog-quote3').style.display = "none";
+        document.getElementById('dog-quote4').style.display = "none";
+        document.getElementById('dog-quote5').style.display = "block";
+        
+        document.getElementById('back11').classList.remove("err");
+        document.getElementById('back12').classList.remove("err");
+        document.getElementById('back13').classList.remove("err");
+        document.getElementById('back14').classList.remove("err");
+        document.getElementById('back15').classList.remove("err");
+      }
+    }
+    
+    function changeBledd11(sbledd)
+    {
+      if(sbledd=='sbledd11')
+      {  
+        document.getElementById('sbledd11').classList.remove("quote-div");
+        document.getElementById('sbledd11').classList.add("quote-div2");
+        document.getElementById('sbledd12').classList.remove("quote-div2");
+        document.getElementById('sbledd12').classList.add("quote-div");
+        document.getElementById('sbledd13').classList.remove("quote-div2");
+        document.getElementById('sbledd13').classList.add("quote-div");
+        document.getElementById('sbledd14').classList.remove("quote-div2");
+        document.getElementById('sbledd14').classList.add("quote-div");
+        document.getElementById('sbledd15').classList.remove("quote-div2");
+        document.getElementById('sbledd15').classList.add("quote-div");
+        document.getElementById('dogbreed1').value="dbredd11";
+        
+        document.getElementById('sample').classList.remove("err");
+        
+      }
+      if(sbledd=='sbledd12')
+      {  
+        document.getElementById('sbledd11').classList.remove("quote-div2");
+        document.getElementById('sbledd11').classList.add("quote-div");
+        document.getElementById('sbledd12').classList.remove("quote-div");
+        document.getElementById('sbledd12').classList.add("quote-div2");
+        document.getElementById('sbledd13').classList.remove("quote-div2");
+        document.getElementById('sbledd13').classList.add("quote-div");
+        document.getElementById('sbledd14').classList.remove("quote-div2");
+        document.getElementById('sbledd14').classList.add("quote-div");
+        document.getElementById('sbledd15').classList.remove("quote-div2");
+        document.getElementById('sbledd15').classList.add("quote-div");
+        document.getElementById('dogbreed1').value="dbredd12";
+        
+        document.getElementById('sample').classList.remove("err");
+        
+        var selecteddog = document.getElementById('sbledd12').getElementsByTagName('img')[0].src;
+        document.getElementById("Dog_Breed_1").setAttribute("href", selecteddog);
+      }
+      if(sbledd=='sbledd13')
+      {  
+        document.getElementById('sbledd11').classList.remove("quote-div2");
+        document.getElementById('sbledd11').classList.add("quote-div");
+        document.getElementById('sbledd12').classList.remove("quote-div2");
+        document.getElementById('sbledd12').classList.add("quote-div");
+        document.getElementById('sbledd13').classList.remove("quote-div");
+        document.getElementById('sbledd13').classList.add("quote-div2");
+        document.getElementById('sbledd14').classList.remove("quote-div2");
+        document.getElementById('sbledd14').classList.add("quote-div");
+        document.getElementById('sbledd15').classList.remove("quote-div2");
+        document.getElementById('sbledd15').classList.add("quote-div");
+        document.getElementById('dogbreed1').value="dbredd13";
+        
+        document.getElementById('sample').classList.remove("err");
+        
+         var selecteddog = document.getElementById('sbledd12').getElementsByTagName('img')[0].src;
+        document.getElementById("Dog_Breed_1").setAttribute("href", selecteddog);
+      }
+      if(sbledd=='sbledd14')
+      {  
+        document.getElementById('sbledd11').classList.remove("quote-div2");
+        document.getElementById('sbledd11').classList.add("quote-div");
+        document.getElementById('sbledd12').classList.remove("quote-div2");
+        document.getElementById('sbledd12').classList.add("quote-div");
+        document.getElementById('sbledd13').classList.remove("quote-div2");
+        document.getElementById('sbledd13').classList.add("quote-div");
+        document.getElementById('sbledd14').classList.remove("quote-div");
+        document.getElementById('sbledd14').classList.add("quote-div2");
+        document.getElementById('sbledd15').classList.remove("quote-div2");
+        document.getElementById('sbledd15').classList.add("quote-div");
+        document.getElementById('dogbreed1').value="dbredd14";
+        
+        document.getElementById('sample').classList.remove("err");
+        
+         var selecteddog = document.getElementById('sbledd14').getElementsByTagName('img')[0].src;
+        document.getElementById("Dog_Breed_1").setAttribute("href", selecteddog);
+      }
+      if(sbledd=='sbledd15')
+      {  
+        document.getElementById('sbledd11').classList.remove("quote-div2");
+        document.getElementById('sbledd11').classList.add("quote-div");
+        document.getElementById('sbledd12').classList.remove("quote-div2");
+        document.getElementById('sbledd12').classList.add("quote-div");
+        document.getElementById('sbledd13').classList.remove("quote-div2");
+        document.getElementById('sbledd13').classList.add("quote-div");
+        document.getElementById('sbledd14').classList.remove("quote-div2");
+        document.getElementById('sbledd14').classList.add("quote-div");
+        document.getElementById('sbledd15').classList.remove("quote-div");
+        document.getElementById('sbledd15').classList.add("quote-div2");
+        document.getElementById('dogbreed1').value="dbredd15";
+        
+        document.getElementById('sample').classList.remove("err");
+        
+        var selecteddog = document.getElementById('sbledd15').getElementsByTagName('img')[0].src;
+        document.getElementById("Dog_Breed_1").setAttribute("href", selecteddog);
+      }
+    }
+    
+    function changeBledd12(sbledd)
+    {
+      if(sbledd=='sbledd21')
+      {  
+        document.getElementById('sbledd21').classList.remove("quote-div");
+        document.getElementById('sbledd21').classList.add("quote-div2");
+        document.getElementById('sbledd22').classList.remove("quote-div2");
+        document.getElementById('sbledd22').classList.add("quote-div");
+        document.getElementById('sbledd23').classList.remove("quote-div2");
+        document.getElementById('sbledd23').classList.add("quote-div");
+        document.getElementById('sbledd24').classList.remove("quote-div2");
+        document.getElementById('sbledd24').classList.add("quote-div");
+        document.getElementById('sbledd25').classList.remove("quote-div2");
+        document.getElementById('sbledd25').classList.add("quote-div");
+        document.getElementById('dogbreed1').value="dbredd21";
+        
+        document.getElementById('sample').classList.remove("err");
+      }
+      if(sbledd=='sbledd22')
+      {  
+        document.getElementById('sbledd21').classList.remove("quote-div2");
+        document.getElementById('sbledd21').classList.add("quote-div");
+        document.getElementById('sbledd22').classList.remove("quote-div");
+        document.getElementById('sbledd22').classList.add("quote-div2");
+        document.getElementById('sbledd23').classList.remove("quote-div2");
+        document.getElementById('sbledd23').classList.add("quote-div");
+        document.getElementById('sbledd24').classList.remove("quote-div2");
+        document.getElementById('sbledd24').classList.add("quote-div");
+        document.getElementById('sbledd25').classList.remove("quote-div2");
+        document.getElementById('sbledd25').classList.add("quote-div");
+        document.getElementById('dogbreed1').value="dbredd22";
+        
+        document.getElementById('sample').classList.remove("err");
+      }
+      if(sbledd=='sbledd23')
+      {  
+        document.getElementById('sbledd21').classList.remove("quote-div2");
+        document.getElementById('sbledd21').classList.add("quote-div");
+        document.getElementById('sbledd22').classList.remove("quote-div2");
+        document.getElementById('sbledd22').classList.add("quote-div");
+        document.getElementById('sbledd23').classList.remove("quote-div");
+        document.getElementById('sbledd23').classList.add("quote-div2");
+        document.getElementById('sbledd24').classList.remove("quote-div2");
+        document.getElementById('sbledd24').classList.add("quote-div");
+        document.getElementById('sbledd25').classList.remove("quote-div2");
+        document.getElementById('sbledd25').classList.add("quote-div");
+        document.getElementById('dogbreed1').value="dbredd23";
+        
+        document.getElementById('sample').classList.remove("err");
+      }
+      if(sbledd=='sbledd24')
+      {  
+        document.getElementById('sbledd21').classList.remove("quote-div2");
+        document.getElementById('sbledd21').classList.add("quote-div");
+        document.getElementById('sbledd22').classList.remove("quote-div2");
+        document.getElementById('sbledd22').classList.add("quote-div");
+        document.getElementById('sbledd23').classList.remove("quote-div2");
+        document.getElementById('sbledd23').classList.add("quote-div");
+        document.getElementById('sbledd24').classList.remove("quote-div");
+        document.getElementById('sbledd24').classList.add("quote-div2");
+        document.getElementById('sbledd25').classList.remove("quote-div2");
+        document.getElementById('sbledd25').classList.add("quote-div");
+        document.getElementById('dogbreed1').value="dbredd24";
+        
+        document.getElementById('sample').classList.remove("err");
+      }
+      if(sbledd=='sbledd25')
+      {  
+        document.getElementById('sbledd21').classList.remove("quote-div2");
+        document.getElementById('sbledd21').classList.add("quote-div");
+        document.getElementById('sbledd22').classList.remove("quote-div2");
+        document.getElementById('sbledd22').classList.add("quote-div");
+        document.getElementById('sbledd23').classList.remove("quote-div2");
+        document.getElementById('sbledd23').classList.add("quote-div");
+        document.getElementById('sbledd24').classList.remove("quote-div2");
+        document.getElementById('sbledd24').classList.add("quote-div");
+        document.getElementById('sbledd25').classList.remove("quote-div");
+        document.getElementById('sbledd25').classList.add("quote-div2");
+        document.getElementById('dogbreed1').value="dbredd25";
+        
+        document.getElementById('sample').classList.remove("err");
+        
+        var selecteddog = document.getElementById('sbledd25').getElementsByTagName('img')[0].src;
+        document.getElementById("Dog_Breed_1").setAttribute("href", selecteddog);
+      }
+    }
+    
+    function changeBledd13(sbledd)
+    {
+      if(sbledd=='sbledd31')
+      {  
+        document.getElementById('sbledd31').classList.remove("quote-div");
+        document.getElementById('sbledd31').classList.add("quote-div2");
+        document.getElementById('sbledd32').classList.remove("quote-div2");
+        document.getElementById('sbledd32').classList.add("quote-div");
+        document.getElementById('sbledd33').classList.remove("quote-div2");
+        document.getElementById('sbledd33').classList.add("quote-div");
+        document.getElementById('sbledd34').classList.remove("quote-div2");
+        document.getElementById('sbledd34').classList.add("quote-div");
+        document.getElementById('sbledd35').classList.remove("quote-div2");
+        document.getElementById('sbledd35').classList.add("quote-div");
+        document.getElementById('dogbreed1').value="dbredd31";
+        
+        document.getElementById('sample').classList.remove("err");
+      }
+      if(sbledd=='sbledd32')
+      {  
+        document.getElementById('sbledd31').classList.remove("quote-div2");
+        document.getElementById('sbledd31').classList.add("quote-div");
+        document.getElementById('sbledd32').classList.remove("quote-div");
+        document.getElementById('sbledd32').classList.add("quote-div2");
+        document.getElementById('sbledd33').classList.remove("quote-div2");
+        document.getElementById('sbledd33').classList.add("quote-div");
+        document.getElementById('sbledd34').classList.remove("quote-div2");
+        document.getElementById('sbledd34').classList.add("quote-div");
+        document.getElementById('sbledd35').classList.remove("quote-div2");
+        document.getElementById('sbledd35').classList.add("quote-div");
+        document.getElementById('dogbreed1').value="dbredd32";
+        
+        document.getElementById('sample').classList.remove("err");
+      }
+      if(sbledd=='sbledd33')
+      {  
+        document.getElementById('sbledd31').classList.remove("quote-div2");
+        document.getElementById('sbledd31').classList.add("quote-div");
+        document.getElementById('sbledd32').classList.remove("quote-div2");
+        document.getElementById('sbledd32').classList.add("quote-div");
+        document.getElementById('sbledd33').classList.remove("quote-div");
+        document.getElementById('sbledd33').classList.add("quote-div2");
+        document.getElementById('sbledd34').classList.remove("quote-div2");
+        document.getElementById('sbledd34').classList.add("quote-div");
+        document.getElementById('sbledd35').classList.remove("quote-div2");
+        document.getElementById('sbledd35').classList.add("quote-div");
+        document.getElementById('dogbreed1').value="dbredd33";
+        
+        document.getElementById('sample').classList.remove("err");
+      }
+      if(sbledd=='sbledd34')
+      {  
+        document.getElementById('sbledd31').classList.remove("quote-div2");
+        document.getElementById('sbledd31').classList.add("quote-div");
+        document.getElementById('sbledd32').classList.remove("quote-div2");
+        document.getElementById('sbledd32').classList.add("quote-div");
+        document.getElementById('sbledd33').classList.remove("quote-div2");
+        document.getElementById('sbledd33').classList.add("quote-div");
+        document.getElementById('sbledd34').classList.remove("quote-div");
+        document.getElementById('sbledd34').classList.add("quote-div2");
+        document.getElementById('sbledd35').classList.remove("quote-div2");
+        document.getElementById('sbledd35').classList.add("quote-div");
+        document.getElementById('dogbreed1').value="dbredd34";
+        
+        document.getElementById('sample').classList.remove("err");
+      }
+      if(sbledd=='sbledd35')
+      {  
+        document.getElementById('sbledd31').classList.remove("quote-div2");
+        document.getElementById('sbledd31').classList.add("quote-div");
+        document.getElementById('sbledd32').classList.remove("quote-div2");
+        document.getElementById('sbledd32').classList.add("quote-div");
+        document.getElementById('sbledd33').classList.remove("quote-div2");
+        document.getElementById('sbledd33').classList.add("quote-div");
+        document.getElementById('sbledd34').classList.remove("quote-div2");
+        document.getElementById('sbledd34').classList.add("quote-div");
+        document.getElementById('sbledd35').classList.remove("quote-div");
+        document.getElementById('sbledd35').classList.add("quote-div2");
+        document.getElementById('dogbreed1').value="dbredd35";
+        
+        document.getElementById('sample').classList.remove("err");
+      }
+    }
+    
+    function changeBledd14(sbledd)
+    {
+      if(sbledd=='sbledd41')
+      {  
+        document.getElementById('sbledd41').classList.remove("quote-div");
+        document.getElementById('sbledd41').classList.add("quote-div2");
+        document.getElementById('sbledd42').classList.remove("quote-div2");
+        document.getElementById('sbledd42').classList.add("quote-div");
+        document.getElementById('sbledd43').classList.remove("quote-div2");
+        document.getElementById('sbledd43').classList.add("quote-div");
+        document.getElementById('sbledd44').classList.remove("quote-div2");
+        document.getElementById('sbledd44').classList.add("quote-div");
+        document.getElementById('sbledd45').classList.remove("quote-div2");
+        document.getElementById('sbledd45').classList.add("quote-div");
+        document.getElementById('dogbreed1').value="dbredd41";
+        
+        document.getElementById('sample').classList.remove("err");
+      }
+      if(sbledd=='sbledd42')
+      {  
+        document.getElementById('sbledd41').classList.remove("quote-div2");
+        document.getElementById('sbledd41').classList.add("quote-div");
+        document.getElementById('sbledd42').classList.remove("quote-div");
+        document.getElementById('sbledd42').classList.add("quote-div2");
+        document.getElementById('sbledd43').classList.remove("quote-div2");
+        document.getElementById('sbledd43').classList.add("quote-div");
+        document.getElementById('sbledd44').classList.remove("quote-div2");
+        document.getElementById('sbledd44').classList.add("quote-div");
+        document.getElementById('sbledd45').classList.remove("quote-div2");
+        document.getElementById('sbledd45').classList.add("quote-div");
+        document.getElementById('dogbreed1').value="dbredd42";
+        
+        document.getElementById('sample').classList.remove("err");
+      }
+      if(sbledd=='sbledd43')
+      {  
+        document.getElementById('sbledd41').classList.remove("quote-div2");
+        document.getElementById('sbledd41').classList.add("quote-div");
+        document.getElementById('sbledd42').classList.remove("quote-div2");
+        document.getElementById('sbledd42').classList.add("quote-div");
+        document.getElementById('sbledd43').classList.remove("quote-div");
+        document.getElementById('sbledd43').classList.add("quote-div2");
+        document.getElementById('sbledd44').classList.remove("quote-div2");
+        document.getElementById('sbledd44').classList.add("quote-div");
+        document.getElementById('sbledd45').classList.remove("quote-div2");
+        document.getElementById('sbledd45').classList.add("quote-div");
+        document.getElementById('dogbreed1').value="dbredd43";
+        
+        document.getElementById('sample').classList.remove("err");
+      }
+      if(sbledd=='sbledd44')
+      {  
+        document.getElementById('sbledd41').classList.remove("quote-div2");
+        document.getElementById('sbledd41').classList.add("quote-div");
+        document.getElementById('sbledd42').classList.remove("quote-div2");
+        document.getElementById('sbledd42').classList.add("quote-div");
+        document.getElementById('sbledd43').classList.remove("quote-div2");
+        document.getElementById('sbledd43').classList.add("quote-div");
+        document.getElementById('sbledd44').classList.remove("quote-div");
+        document.getElementById('sbledd44').classList.add("quote-div2");
+        document.getElementById('sbledd45').classList.remove("quote-div2");
+        document.getElementById('sbledd45').classList.add("quote-div");
+        document.getElementById('dogbreed1').value="dbredd44";
+        
+        document.getElementById('sample').classList.remove("err");
+      }
+      if(sbledd=='sbledd45')
+      {  
+        document.getElementById('sbledd41').classList.remove("quote-div2");
+        document.getElementById('sbledd41').classList.add("quote-div");
+        document.getElementById('sbledd42').classList.remove("quote-div2");
+        document.getElementById('sbledd42').classList.add("quote-div");
+        document.getElementById('sbledd43').classList.remove("quote-div2");
+        document.getElementById('sbledd43').classList.add("quote-div");
+        document.getElementById('sbledd44').classList.remove("quote-div2");
+        document.getElementById('sbledd44').classList.add("quote-div");
+        document.getElementById('sbledd45').classList.remove("quote-div");
+        document.getElementById('sbledd45').classList.add("quote-div2");
+        document.getElementById('dogbreed1').value="dbredd45";
+        
+        document.getElementById('sample').classList.remove("err");
+      }
+    }
+    
+    function changeBledd21(sbledd)
+    {
+      if(sbledd=='sbledd111')
+      {  
+        document.getElementById('sbledd111').classList.remove("quote-div");
+        document.getElementById('sbledd111').classList.add("quote-div2");
+        document.getElementById('sbledd112').classList.remove("quote-div2");
+        document.getElementById('sbledd112').classList.add("quote-div");
+        document.getElementById('sbledd113').classList.remove("quote-div2");
+        document.getElementById('sbledd113').classList.add("quote-div");
+        document.getElementById('sbledd114').classList.remove("quote-div2");
+        document.getElementById('sbledd114').classList.add("quote-div");
+        document.getElementById('sbledd115').classList.remove("quote-div2");
+        document.getElementById('sbledd115').classList.add("quote-div");
+        document.getElementById('dogbreed2').value="dbredd111";
+      }
+      if(sbledd=='sbledd112')
+      {  
+        document.getElementById('sbledd111').classList.remove("quote-div2");
+        document.getElementById('sbledd111').classList.add("quote-div");
+        document.getElementById('sbledd112').classList.remove("quote-div");
+        document.getElementById('sbledd112').classList.add("quote-div2");
+        document.getElementById('sbledd113').classList.remove("quote-div2");
+        document.getElementById('sbledd113').classList.add("quote-div");
+        document.getElementById('sbledd114').classList.remove("quote-div2");
+        document.getElementById('sbledd114').classList.add("quote-div");
+        document.getElementById('sbledd115').classList.remove("quote-div2");
+        document.getElementById('sbledd115').classList.add("quote-div");
+        document.getElementById('dogbreed2').value="dbredd112";
+      }
+      if(sbledd=='sbledd113')
+      {  
+        document.getElementById('sbledd111').classList.remove("quote-div2");
+        document.getElementById('sbledd111').classList.add("quote-div");
+        document.getElementById('sbledd112').classList.remove("quote-div2");
+        document.getElementById('sbledd112').classList.add("quote-div");
+        document.getElementById('sbledd113').classList.remove("quote-div");
+        document.getElementById('sbledd113').classList.add("quote-div2");
+        document.getElementById('sbledd114').classList.remove("quote-div2");
+        document.getElementById('sbledd114').classList.add("quote-div");
+        document.getElementById('sbledd115').classList.remove("quote-div2");
+        document.getElementById('sbledd115').classList.add("quote-div");
+        document.getElementById('dogbreed2').value="dbredd113";
+      }
+      if(sbledd=='sbledd114')
+      {  
+        document.getElementById('sbledd111').classList.remove("quote-div2");
+        document.getElementById('sbledd111').classList.add("quote-div");
+        document.getElementById('sbledd112').classList.remove("quote-div2");
+        document.getElementById('sbledd112').classList.add("quote-div");
+        document.getElementById('sbledd113').classList.remove("quote-div2");
+        document.getElementById('sbledd113').classList.add("quote-div");
+        document.getElementById('sbledd114').classList.remove("quote-div");
+        document.getElementById('sbledd114').classList.add("quote-div2");
+        document.getElementById('sbledd115').classList.remove("quote-div2");
+        document.getElementById('sbledd115').classList.add("quote-div");
+        document.getElementById('dogbreed2').value="dbredd114";
+      }
+      if(sbledd=='sbledd115')
+      {  
+        document.getElementById('sbledd111').classList.remove("quote-div2");
+        document.getElementById('sbledd111').classList.add("quote-div");
+        document.getElementById('sbledd112').classList.remove("quote-div2");
+        document.getElementById('sbledd112').classList.add("quote-div");
+        document.getElementById('sbledd113').classList.remove("quote-div2");
+        document.getElementById('sbledd113').classList.add("quote-div");
+        document.getElementById('sbledd114').classList.remove("quote-div2");
+        document.getElementById('sbledd114').classList.add("quote-div");
+        document.getElementById('sbledd115').classList.remove("quote-div");
+        document.getElementById('sbledd115').classList.add("quote-div2");
+        document.getElementById('dogbreed2').value="dbredd115";
+      }
+    }
+    
+    function changeBledd22(sbledd)
+    {
+      if(sbledd=='sbledd121')
+      {  
+        document.getElementById('sbledd121').classList.remove("quote-div");
+        document.getElementById('sbledd121').classList.add("quote-div2");
+        document.getElementById('sbledd122').classList.remove("quote-div2");
+        document.getElementById('sbledd122').classList.add("quote-div");
+        document.getElementById('sbledd123').classList.remove("quote-div2");
+        document.getElementById('sbledd123').classList.add("quote-div");
+        document.getElementById('sbledd124').classList.remove("quote-div2");
+        document.getElementById('sbledd124').classList.add("quote-div");
+        document.getElementById('sbledd125').classList.remove("quote-div2");
+        document.getElementById('sbledd125').classList.add("quote-div");
+        document.getElementById('dogbreed2').value="dbredd121";
+      }
+      if(sbledd=='sbledd122')
+      {  
+        document.getElementById('sbledd121').classList.remove("quote-div2");
+        document.getElementById('sbledd121').classList.add("quote-div");
+        document.getElementById('sbledd122').classList.remove("quote-div");
+        document.getElementById('sbledd122').classList.add("quote-div2");
+        document.getElementById('sbledd123').classList.remove("quote-div2");
+        document.getElementById('sbledd123').classList.add("quote-div");
+        document.getElementById('sbledd124').classList.remove("quote-div2");
+        document.getElementById('sbledd124').classList.add("quote-div");
+        document.getElementById('sbledd125').classList.remove("quote-div2");
+        document.getElementById('sbledd125').classList.add("quote-div");
+        document.getElementById('dogbreed2').value="dbredd122";
+      }
+      if(sbledd=='sbledd123')
+      {  
+        document.getElementById('sbledd121').classList.remove("quote-div2");
+        document.getElementById('sbledd121').classList.add("quote-div");
+        document.getElementById('sbledd122').classList.remove("quote-div2");
+        document.getElementById('sbledd122').classList.add("quote-div");
+        document.getElementById('sbledd123').classList.remove("quote-div");
+        document.getElementById('sbledd123').classList.add("quote-div2");
+        document.getElementById('sbledd124').classList.remove("quote-div2");
+        document.getElementById('sbledd124').classList.add("quote-div");
+        document.getElementById('sbledd125').classList.remove("quote-div2");
+        document.getElementById('sbledd125').classList.add("quote-div");
+        document.getElementById('dogbreed2').value="dbredd123";
+      }
+      if(sbledd=='sbledd124')
+      {  
+        document.getElementById('sbledd121').classList.remove("quote-div2");
+        document.getElementById('sbledd121').classList.add("quote-div");
+        document.getElementById('sbledd122').classList.remove("quote-div2");
+        document.getElementById('sbledd122').classList.add("quote-div");
+        document.getElementById('sbledd123').classList.remove("quote-div2");
+        document.getElementById('sbledd123').classList.add("quote-div");
+        document.getElementById('sbledd124').classList.remove("quote-div");
+        document.getElementById('sbledd124').classList.add("quote-div2");
+        document.getElementById('sbledd125').classList.remove("quote-div2");
+        document.getElementById('sbledd125').classList.add("quote-div");
+        document.getElementById('dogbreed2').value="dbredd124";
+      }
+      if(sbledd=='sbledd125')
+      {  
+        document.getElementById('sbledd121').classList.remove("quote-div2");
+        document.getElementById('sbledd121').classList.add("quote-div");
+        document.getElementById('sbledd122').classList.remove("quote-div2");
+        document.getElementById('sbledd122').classList.add("quote-div");
+        document.getElementById('sbledd123').classList.remove("quote-div2");
+        document.getElementById('sbledd123').classList.add("quote-div");
+        document.getElementById('sbledd124').classList.remove("quote-div2");
+        document.getElementById('sbledd124').classList.add("quote-div");
+        document.getElementById('sbledd125').classList.remove("quote-div");
+        document.getElementById('sbledd125').classList.add("quote-div2");
+        document.getElementById('dogbreed2').value="dbredd125";
+      }
+    }
+    
+    function changeBledd23(sbledd)
+    {
+      if(sbledd=='sbledd131')
+      {  
+        document.getElementById('sbledd131').classList.remove("quote-div");
+        document.getElementById('sbledd131').classList.add("quote-div2");
+        document.getElementById('sbledd132').classList.remove("quote-div2");
+        document.getElementById('sbledd132').classList.add("quote-div");
+        document.getElementById('sbledd133').classList.remove("quote-div2");
+        document.getElementById('sbledd133').classList.add("quote-div");
+        document.getElementById('sbledd134').classList.remove("quote-div2");
+        document.getElementById('sbledd134').classList.add("quote-div");
+        document.getElementById('sbledd135').classList.remove("quote-div2");
+        document.getElementById('sbledd135').classList.add("quote-div");
+        document.getElementById('dogbreed2').value="dbredd131";
+      }
+      if(sbledd=='sbledd132')
+      {  
+        document.getElementById('sbledd131').classList.remove("quote-div2");
+        document.getElementById('sbledd131').classList.add("quote-div");
+        document.getElementById('sbledd132').classList.remove("quote-div");
+        document.getElementById('sbledd132').classList.add("quote-div2");
+        document.getElementById('sbledd133').classList.remove("quote-div2");
+        document.getElementById('sbledd133').classList.add("quote-div");
+        document.getElementById('sbledd134').classList.remove("quote-div2");
+        document.getElementById('sbledd134').classList.add("quote-div");
+        document.getElementById('sbledd135').classList.remove("quote-div2");
+        document.getElementById('sbledd135').classList.add("quote-div");
+        document.getElementById('dogbreed2').value="dbredd132";
+      }
+      if(sbledd=='sbledd133')
+      {  
+        document.getElementById('sbledd131').classList.remove("quote-div2");
+        document.getElementById('sbledd131').classList.add("quote-div");
+        document.getElementById('sbledd132').classList.remove("quote-div2");
+        document.getElementById('sbledd132').classList.add("quote-div");
+        document.getElementById('sbledd133').classList.remove("quote-div");
+        document.getElementById('sbledd133').classList.add("quote-div2");
+        document.getElementById('sbledd134').classList.remove("quote-div2");
+        document.getElementById('sbledd134').classList.add("quote-div");
+        document.getElementById('sbledd135').classList.remove("quote-div2");
+        document.getElementById('sbledd135').classList.add("quote-div");
+        document.getElementById('dogbreed2').value="dbredd133";
+      }
+      if(sbledd=='sbledd134')
+      {  
+        document.getElementById('sbledd131').classList.remove("quote-div2");
+        document.getElementById('sbledd131').classList.add("quote-div");
+        document.getElementById('sbledd132').classList.remove("quote-div2");
+        document.getElementById('sbledd132').classList.add("quote-div");
+        document.getElementById('sbledd133').classList.remove("quote-div2");
+        document.getElementById('sbledd133').classList.add("quote-div");
+        document.getElementById('sbledd134').classList.remove("quote-div");
+        document.getElementById('sbledd134').classList.add("quote-div2");
+        document.getElementById('sbledd135').classList.remove("quote-div2");
+        document.getElementById('sbledd135').classList.add("quote-div");
+        document.getElementById('dogbreed2').value="dbredd134";
+      }
+      if(sbledd=='sbledd135')
+      {  
+        document.getElementById('sbledd131').classList.remove("quote-div2");
+        document.getElementById('sbledd131').classList.add("quote-div");
+        document.getElementById('sbledd132').classList.remove("quote-div2");
+        document.getElementById('sbledd132').classList.add("quote-div");
+        document.getElementById('sbledd133').classList.remove("quote-div2");
+        document.getElementById('sbledd133').classList.add("quote-div");
+        document.getElementById('sbledd134').classList.remove("quote-div2");
+        document.getElementById('sbledd134').classList.add("quote-div");
+        document.getElementById('sbledd135').classList.remove("quote-div");
+        document.getElementById('sbledd135').classList.add("quote-div2");
+        document.getElementById('dogbreed2').value="dbredd135";
+      }
+    }
+    
+    function changeBledd24(sbledd)
+    {
+      if(sbledd=='sbledd141')
+      {  
+        document.getElementById('sbledd141').classList.remove("quote-div");
+        document.getElementById('sbledd141').classList.add("quote-div2");
+        document.getElementById('sbledd142').classList.remove("quote-div2");
+        document.getElementById('sbledd142').classList.add("quote-div");
+        document.getElementById('sbledd143').classList.remove("quote-div2");
+        document.getElementById('sbledd143').classList.add("quote-div");
+        document.getElementById('sbledd144').classList.remove("quote-div2");
+        document.getElementById('sbledd144').classList.add("quote-div");
+        document.getElementById('sbledd145').classList.remove("quote-div2");
+        document.getElementById('sbledd145').classList.add("quote-div");
+        document.getElementById('dogbreed2').value="dbredd141";
+      }
+      if(sbledd=='sbledd142')
+      {  
+        document.getElementById('sbledd141').classList.remove("quote-div2");
+        document.getElementById('sbledd141').classList.add("quote-div");
+        document.getElementById('sbledd142').classList.remove("quote-div");
+        document.getElementById('sbledd142').classList.add("quote-div2");
+        document.getElementById('sbledd143').classList.remove("quote-div2");
+        document.getElementById('sbledd143').classList.add("quote-div");
+        document.getElementById('sbledd144').classList.remove("quote-div2");
+        document.getElementById('sbledd144').classList.add("quote-div");
+        document.getElementById('sbledd145').classList.remove("quote-div2");
+        document.getElementById('sbledd145').classList.add("quote-div");
+        document.getElementById('dogbreed2').value="dbredd142";
+      }
+      if(sbledd=='sbledd143')
+      {  
+        document.getElementById('sbledd141').classList.remove("quote-div2");
+        document.getElementById('sbledd141').classList.add("quote-div");
+        document.getElementById('sbledd142').classList.remove("quote-div2");
+        document.getElementById('sbledd142').classList.add("quote-div");
+        document.getElementById('sbledd143').classList.remove("quote-div");
+        document.getElementById('sbledd143').classList.add("quote-div2");
+        document.getElementById('sbledd144').classList.remove("quote-div2");
+        document.getElementById('sbledd144').classList.add("quote-div");
+        document.getElementById('sbledd145').classList.remove("quote-div2");
+        document.getElementById('sbledd145').classList.add("quote-div");
+        document.getElementById('dogbreed2').value="dbredd143";
+      }
+      if(sbledd=='sbledd144')
+      {  
+        document.getElementById('sbledd141').classList.remove("quote-div2");
+        document.getElementById('sbledd141').classList.add("quote-div");
+        document.getElementById('sbledd142').classList.remove("quote-div2");
+        document.getElementById('sbledd142').classList.add("quote-div");
+        document.getElementById('sbledd143').classList.remove("quote-div2");
+        document.getElementById('sbledd143').classList.add("quote-div");
+        document.getElementById('sbledd144').classList.remove("quote-div");
+        document.getElementById('sbledd144').classList.add("quote-div2");
+        document.getElementById('sbledd145').classList.remove("quote-div2");
+        document.getElementById('sbledd145').classList.add("quote-div");
+        document.getElementById('dogbreed2').value="dbredd144";
+      }
+      if(sbledd=='sbledd145')
+      {  
+        document.getElementById('sbledd141').classList.remove("quote-div2");
+        document.getElementById('sbledd141').classList.add("quote-div");
+        document.getElementById('sbledd142').classList.remove("quote-div2");
+        document.getElementById('sbledd142').classList.add("quote-div");
+        document.getElementById('sbledd143').classList.remove("quote-div2");
+        document.getElementById('sbledd143').classList.add("quote-div");
+        document.getElementById('sbledd144').classList.remove("quote-div2");
+        document.getElementById('sbledd144').classList.add("quote-div");
+        document.getElementById('sbledd145').classList.remove("quote-div");
+        document.getElementById('sbledd145').classList.add("quote-div2");
+        document.getElementById('dogbreed2').value="dbredd145";
+      }
+    }
+    
+    function changeBledd31(sbledd)
+    {
+      if(sbledd=='sbledd231')
+      {  
+        document.getElementById('sbledd231').classList.remove("quote-div");
+        document.getElementById('sbledd231').classList.add("quote-div2");
+        document.getElementById('sbledd232').classList.remove("quote-div2");
+        document.getElementById('sbledd232').classList.add("quote-div");
+        document.getElementById('sbledd233').classList.remove("quote-div2");
+        document.getElementById('sbledd233').classList.add("quote-div");
+        document.getElementById('sbledd234').classList.remove("quote-div2");
+        document.getElementById('sbledd234').classList.add("quote-div");
+        document.getElementById('sbledd235').classList.remove("quote-div2");
+        document.getElementById('sbledd235').classList.add("quote-div");
+        document.getElementById('dogbreed3').value="dbredd231";
+      }
+      if(sbledd=='sbledd232')
+      {  
+        document.getElementById('sbledd231').classList.remove("quote-div2");
+        document.getElementById('sbledd231').classList.add("quote-div");
+        document.getElementById('sbledd232').classList.remove("quote-div");
+        document.getElementById('sbledd232').classList.add("quote-div2");
+        document.getElementById('sbledd233').classList.remove("quote-div2");
+        document.getElementById('sbledd233').classList.add("quote-div");
+        document.getElementById('sbledd234').classList.remove("quote-div2");
+        document.getElementById('sbledd234').classList.add("quote-div");
+        document.getElementById('sbledd235').classList.remove("quote-div2");
+        document.getElementById('sbledd235').classList.add("quote-div");
+        document.getElementById('dogbreed3').value="dbredd232";
+      }
+      if(sbledd=='sbledd233')
+      {  
+        document.getElementById('sbledd231').classList.remove("quote-div2");
+        document.getElementById('sbledd231').classList.add("quote-div");
+        document.getElementById('sbledd232').classList.remove("quote-div2");
+        document.getElementById('sbledd232').classList.add("quote-div");
+        document.getElementById('sbledd233').classList.remove("quote-div");
+        document.getElementById('sbledd233').classList.add("quote-div2");
+        document.getElementById('sbledd234').classList.remove("quote-div2");
+        document.getElementById('sbledd234').classList.add("quote-div");
+        document.getElementById('sbledd235').classList.remove("quote-div2");
+        document.getElementById('sbledd235').classList.add("quote-div");
+        document.getElementById('dogbreed3').value="dbredd233";
+      }
+      if(sbledd=='sbledd234')
+      {  
+        document.getElementById('sbledd231').classList.remove("quote-div2");
+        document.getElementById('sbledd231').classList.add("quote-div");
+        document.getElementById('sbledd232').classList.remove("quote-div2");
+        document.getElementById('sbledd232').classList.add("quote-div");
+        document.getElementById('sbledd233').classList.remove("quote-div2");
+        document.getElementById('sbledd233').classList.add("quote-div");
+        document.getElementById('sbledd234').classList.remove("quote-div");
+        document.getElementById('sbledd234').classList.add("quote-div2");
+        document.getElementById('sbledd235').classList.remove("quote-div2");
+        document.getElementById('sbledd235').classList.add("quote-div");
+        document.getElementById('dogbreed3').value="dbredd234";
+      }
+      if(sbledd=='sbledd235')
+      {  
+        document.getElementById('sbledd231').classList.remove("quote-div2");
+        document.getElementById('sbledd231').classList.add("quote-div");
+        document.getElementById('sbledd232').classList.remove("quote-div2");
+        document.getElementById('sbledd232').classList.add("quote-div");
+        document.getElementById('sbledd233').classList.remove("quote-div2");
+        document.getElementById('sbledd233').classList.add("quote-div");
+        document.getElementById('sbledd234').classList.remove("quote-div2");
+        document.getElementById('sbledd234').classList.add("quote-div");
+        document.getElementById('sbledd235').classList.remove("quote-div");
+        document.getElementById('sbledd235').classList.add("quote-div2");
+        document.getElementById('dogbreed3').value="dbredd235";
+      }
+    }
+    
+    function changeBledd32(sbledd)
+    {
+      if(sbledd=='sbledd241')
+      {  
+        document.getElementById('sbledd241').classList.remove("quote-div");
+        document.getElementById('sbledd241').classList.add("quote-div2");
+        document.getElementById('sbledd242').classList.remove("quote-div2");
+        document.getElementById('sbledd242').classList.add("quote-div");
+        document.getElementById('sbledd243').classList.remove("quote-div2");
+        document.getElementById('sbledd243').classList.add("quote-div");
+        document.getElementById('sbledd244').classList.remove("quote-div2");
+        document.getElementById('sbledd244').classList.add("quote-div");
+        document.getElementById('sbledd245').classList.remove("quote-div2");
+        document.getElementById('sbledd245').classList.add("quote-div");
+        document.getElementById('dogbreed3').value="dbredd241";
+      }
+      if(sbledd=='sbledd242')
+      {  
+        document.getElementById('sbledd241').classList.remove("quote-div2");
+        document.getElementById('sbledd241').classList.add("quote-div");
+        document.getElementById('sbledd242').classList.remove("quote-div");
+        document.getElementById('sbledd242').classList.add("quote-div2");
+        document.getElementById('sbledd243').classList.remove("quote-div2");
+        document.getElementById('sbledd243').classList.add("quote-div");
+        document.getElementById('sbledd244').classList.remove("quote-div2");
+        document.getElementById('sbledd244').classList.add("quote-div");
+        document.getElementById('sbledd245').classList.remove("quote-div2");
+        document.getElementById('sbledd245').classList.add("quote-div");
+        document.getElementById('dogbreed3').value="dbredd242";
+      }
+      if(sbledd=='sbledd243')
+      {  
+        document.getElementById('sbledd241').classList.remove("quote-div2");
+        document.getElementById('sbledd241').classList.add("quote-div");
+        document.getElementById('sbledd242').classList.remove("quote-div2");
+        document.getElementById('sbledd242').classList.add("quote-div");
+        document.getElementById('sbledd243').classList.remove("quote-div");
+        document.getElementById('sbledd243').classList.add("quote-div2");
+        document.getElementById('sbledd244').classList.remove("quote-div2");
+        document.getElementById('sbledd244').classList.add("quote-div");
+        document.getElementById('sbledd245').classList.remove("quote-div2");
+        document.getElementById('sbledd245').classList.add("quote-div");
+        document.getElementById('dogbreed3').value="dbredd243";
+      }
+      if(sbledd=='sbledd244')
+      {  
+        document.getElementById('sbledd241').classList.remove("quote-div2");
+        document.getElementById('sbledd241').classList.add("quote-div");
+        document.getElementById('sbledd242').classList.remove("quote-div2");
+        document.getElementById('sbledd242').classList.add("quote-div");
+        document.getElementById('sbledd243').classList.remove("quote-div2");
+        document.getElementById('sbledd243').classList.add("quote-div");
+        document.getElementById('sbledd244').classList.remove("quote-div");
+        document.getElementById('sbledd244').classList.add("quote-div2");
+        document.getElementById('sbledd245').classList.remove("quote-div2");
+        document.getElementById('sbledd245').classList.add("quote-div");
+        document.getElementById('dogbreed3').value="dbredd244";
+      }
+      if(sbledd=='sbledd245')
+      {  
+        document.getElementById('sbledd241').classList.remove("quote-div2");
+        document.getElementById('sbledd241').classList.add("quote-div");
+        document.getElementById('sbledd242').classList.remove("quote-div2");
+        document.getElementById('sbledd242').classList.add("quote-div");
+        document.getElementById('sbledd243').classList.remove("quote-div2");
+        document.getElementById('sbledd243').classList.add("quote-div");
+        document.getElementById('sbledd244').classList.remove("quote-div2");
+        document.getElementById('sbledd244').classList.add("quote-div");
+        document.getElementById('sbledd245').classList.remove("quote-div");
+        document.getElementById('sbledd245').classList.add("quote-div2");
+        document.getElementById('dogbreed3').value="dbredd245";
+      }
+    }
+    
+    function changeBledd33(sbledd)
+    {
+      if(sbledd=='sbledd251')
+      {  
+        document.getElementById('sbledd251').classList.remove("quote-div");
+        document.getElementById('sbledd251').classList.add("quote-div2");
+        document.getElementById('sbledd252').classList.remove("quote-div2");
+        document.getElementById('sbledd252').classList.add("quote-div");
+        document.getElementById('sbledd253').classList.remove("quote-div2");
+        document.getElementById('sbledd253').classList.add("quote-div");
+        document.getElementById('sbledd254').classList.remove("quote-div2");
+        document.getElementById('sbledd254').classList.add("quote-div");
+        document.getElementById('sbledd255').classList.remove("quote-div2");
+        document.getElementById('sbledd255').classList.add("quote-div");
+        document.getElementById('dogbreed3').value="dbredd251";
+      }
+      if(sbledd=='sbledd252')
+      {  
+        document.getElementById('sbledd251').classList.remove("quote-div2");
+        document.getElementById('sbledd251').classList.add("quote-div");
+        document.getElementById('sbledd252').classList.remove("quote-div");
+        document.getElementById('sbledd252').classList.add("quote-div2");
+        document.getElementById('sbledd253').classList.remove("quote-div2");
+        document.getElementById('sbledd253').classList.add("quote-div");
+        document.getElementById('sbledd254').classList.remove("quote-div2");
+        document.getElementById('sbledd254').classList.add("quote-div");
+        document.getElementById('sbledd255').classList.remove("quote-div2");
+        document.getElementById('sbledd255').classList.add("quote-div");
+        document.getElementById('dogbreed3').value="dbredd252";
+      }
+      if(sbledd=='sbledd253')
+      {  
+        document.getElementById('sbledd251').classList.remove("quote-div2");
+        document.getElementById('sbledd251').classList.add("quote-div");
+        document.getElementById('sbledd252').classList.remove("quote-div2");
+        document.getElementById('sbledd252').classList.add("quote-div");
+        document.getElementById('sbledd253').classList.remove("quote-div");
+        document.getElementById('sbledd253').classList.add("quote-div2");
+        document.getElementById('sbledd254').classList.remove("quote-div2");
+        document.getElementById('sbledd254').classList.add("quote-div");
+        document.getElementById('sbledd255').classList.remove("quote-div2");
+        document.getElementById('sbledd255').classList.add("quote-div");
+        document.getElementById('dogbreed3').value="dbredd253";
+      }
+      if(sbledd=='sbledd254')
+      {  
+        document.getElementById('sbledd251').classList.remove("quote-div2");
+        document.getElementById('sbledd251').classList.add("quote-div");
+        document.getElementById('sbledd252').classList.remove("quote-div2");
+        document.getElementById('sbledd252').classList.add("quote-div");
+        document.getElementById('sbledd253').classList.remove("quote-div2");
+        document.getElementById('sbledd253').classList.add("quote-div");
+        document.getElementById('sbledd254').classList.remove("quote-div");
+        document.getElementById('sbledd254').classList.add("quote-div2");
+        document.getElementById('sbledd255').classList.remove("quote-div2");
+        document.getElementById('sbledd255').classList.add("quote-div");
+        document.getElementById('dogbreed3').value="dbredd254";
+      }
+      if(sbledd=='sbledd255')
+      {  
+        document.getElementById('sbledd251').classList.remove("quote-div2");
+        document.getElementById('sbledd251').classList.add("quote-div");
+        document.getElementById('sbledd252').classList.remove("quote-div2");
+        document.getElementById('sbledd252').classList.add("quote-div");
+        document.getElementById('sbledd253').classList.remove("quote-div2");
+        document.getElementById('sbledd253').classList.add("quote-div");
+        document.getElementById('sbledd254').classList.remove("quote-div2");
+        document.getElementById('sbledd254').classList.add("quote-div");
+        document.getElementById('sbledd255').classList.remove("quote-div");
+        document.getElementById('sbledd255').classList.add("quote-div2");
+        document.getElementById('dogbreed3').value="dbredd255";
+      }
+    }
+    
+    function changeBledd34(sbledd)
+    {
+      if(sbledd=='sbledd261')
+      {  
+        document.getElementById('sbledd261').classList.remove("quote-div");
+        document.getElementById('sbledd261').classList.add("quote-div2");
+        document.getElementById('sbledd262').classList.remove("quote-div2");
+        document.getElementById('sbledd262').classList.add("quote-div");
+        document.getElementById('sbledd263').classList.remove("quote-div2");
+        document.getElementById('sbledd263').classList.add("quote-div");
+        document.getElementById('sbledd264').classList.remove("quote-div2");
+        document.getElementById('sbledd264').classList.add("quote-div");
+        document.getElementById('sbledd265').classList.remove("quote-div2");
+        document.getElementById('sbledd265').classList.add("quote-div");
+        document.getElementById('dogbreed3').value="dbredd261";
+      }
+      if(sbledd=='sbledd262')
+      {  
+        document.getElementById('sbledd261').classList.remove("quote-div2");
+        document.getElementById('sbledd261').classList.add("quote-div");
+        document.getElementById('sbledd262').classList.remove("quote-div");
+        document.getElementById('sbledd262').classList.add("quote-div2");
+        document.getElementById('sbledd263').classList.remove("quote-div2");
+        document.getElementById('sbledd263').classList.add("quote-div");
+        document.getElementById('sbledd264').classList.remove("quote-div2");
+        document.getElementById('sbledd264').classList.add("quote-div");
+        document.getElementById('sbledd265').classList.remove("quote-div2");
+        document.getElementById('sbledd265').classList.add("quote-div");
+        document.getElementById('dogbreed3').value="dbredd262";
+      }
+      if(sbledd=='sbledd263')
+      {  
+        document.getElementById('sbledd261').classList.remove("quote-div2");
+        document.getElementById('sbledd261').classList.add("quote-div");
+        document.getElementById('sbledd262').classList.remove("quote-div2");
+        document.getElementById('sbledd262').classList.add("quote-div");
+        document.getElementById('sbledd263').classList.remove("quote-div");
+        document.getElementById('sbledd263').classList.add("quote-div2");
+        document.getElementById('sbledd264').classList.remove("quote-div2");
+        document.getElementById('sbledd264').classList.add("quote-div");
+        document.getElementById('sbledd265').classList.remove("quote-div2");
+        document.getElementById('sbledd265').classList.add("quote-div");
+        document.getElementById('dogbreed3').value="dbredd263";
+      }
+      if(sbledd=='sbledd264')
+      {  
+        document.getElementById('sbledd261').classList.remove("quote-div2");
+        document.getElementById('sbledd261').classList.add("quote-div");
+        document.getElementById('sbledd262').classList.remove("quote-div2");
+        document.getElementById('sbledd262').classList.add("quote-div");
+        document.getElementById('sbledd263').classList.remove("quote-div2");
+        document.getElementById('sbledd263').classList.add("quote-div");
+        document.getElementById('sbledd264').classList.remove("quote-div");
+        document.getElementById('sbledd264').classList.add("quote-div2");
+        document.getElementById('sbledd265').classList.remove("quote-div2");
+        document.getElementById('sbledd265').classList.add("quote-div");
+        document.getElementById('dogbreed3').value="dbredd264";
+      }
+      if(sbledd=='sbledd265')
+      {  
+        document.getElementById('sbledd261').classList.remove("quote-div2");
+        document.getElementById('sbledd261').classList.add("quote-div");
+        document.getElementById('sbledd262').classList.remove("quote-div2");
+        document.getElementById('sbledd262').classList.add("quote-div");
+        document.getElementById('sbledd263').classList.remove("quote-div2");
+        document.getElementById('sbledd263').classList.add("quote-div");
+        document.getElementById('sbledd264').classList.remove("quote-div2");
+        document.getElementById('sbledd264').classList.add("quote-div");
+        document.getElementById('sbledd265').classList.remove("quote-div");
+        document.getElementById('sbledd265').classList.add("quote-div2");
+        document.getElementById('dogbreed3').value="dbredd265";
+      }
+    }
+    
+    function modl2(cntm)
+    {
+      if(cntm==1)
+      {
+        document.getElementById('pname1').style.display = "block";
+        document.getElementById('pname2').style.display = "none";
+        document.getElementById('pname3').style.display = "none";
+        
+//         document.getElementById('hairs1').style.display = "block";
+        document.getElementById('hairs2').style.display = "none";
+        document.getElementById('hairs3').style.display = "none";
+        
+        document.getElementById('color1').style.display = "block";
+        document.getElementById('color2').style.display = "none";
+        document.getElementById('color3').style.display = "none";
+        
+        document.getElementById("numb1").classList.remove("border1");
+        document.getElementById("numb1").classList.add("border2");
+        document.getElementById("numb2").classList.remove("border2");
+        document.getElementById("numb2").classList.add("border1");
+        document.getElementById("numb3").classList.remove("border2");
+        document.getElementById("numb3").classList.add("border1");
+        document.getElementById("mod2Num").value=1;
+        
+        if(screen.width < 400 && screen.height < 670) {
+          document.getElementById('field2').style.marginBottom = '0';
+        }
+        else {
+          document.getElementById('field2').style.marginBottom = '0';
+        };
+        
+      }
+      if(cntm==2)
+      {
+        document.getElementById('pname1').style.display = "block";
+        document.getElementById('pname2').style.display = "block";
+        document.getElementById('pname3').style.display = "none";
+        
+//         document.getElementById('hairs1').style.display = "block";
+//         document.getElementById('hairs2').style.display = "block";
+        document.getElementById('hairs3').style.display = "none";
+        
+        document.getElementById('color1').style.display = "block";
+        document.getElementById('color2').style.display = "block";
+        document.getElementById('color3').style.display = "none";
+        
+        document.getElementById("numb1").classList.remove("border2");
+        document.getElementById("numb1").classList.add("border1");
+        document.getElementById("numb2").classList.remove("border1");
+        document.getElementById("numb2").classList.add("border2");
+        document.getElementById("numb3").classList.remove("border2");
+        document.getElementById("numb3").classList.add("border1");
+        
+        document.getElementById("mod2Num").value=2;
+        document.getElementById('field2').style.marginBottom = '0';
+      }
+      if(cntm==3)
+      {
+        document.getElementById('pname1').style.display = "block";
+        document.getElementById('pname2').style.display = "block";
+        document.getElementById('pname3').style.display = "block";
+        
+//         document.getElementById('hairs1').style.display = "block";
+//         document.getElementById('hairs2').style.display = "block";
+//         document.getElementById('hairs3').style.display = "block";
+        
+        document.getElementById('color1').style.display = "block";
+        document.getElementById('color2').style.display = "block";
+        document.getElementById('color3').style.display = "block";
+        
+        document.getElementById("numb1").classList.remove("border2");
+        document.getElementById("numb1").classList.add("border1");
+        document.getElementById("numb2").classList.remove("border2");
+        document.getElementById("numb2").classList.add("border1");
+        document.getElementById("numb3").classList.remove("border1");
+        document.getElementById("numb3").classList.add("border2");
+        
+        document.getElementById("mod2Num").value=3;
+        document.getElementById('field2').style.marginBottom = '0';
+      }
+    }
+    
+    function ch(cl)
+    {
+      if(cl==1)
+      {
+        document.getElementById("color11").classList.remove("colorbox");
+        document.getElementById("color11").classList.add("colorbox1");
+        document.getElementById("color12").classList.remove("colorbox1");
+        document.getElementById("color12").classList.add("colorbox");
+        document.getElementById("color13").classList.remove("colorbox1");
+        document.getElementById("color13").classList.add("colorbox");
+      } 
+      if(cl==2)
+      {
+        document.getElementById("color11").classList.remove("colorbox1");
+        document.getElementById("color11").classList.add("colorbox");
+        document.getElementById("color12").classList.remove("colorbox");
+        document.getElementById("color12").classList.add("colorbox1");
+        document.getElementById("color13").classList.remove("colorbox1");
+        document.getElementById("color13").classList.add("colorbox");
+      } 
+      if(cl==3)
+      {
+        document.getElementById("color11").classList.remove("colorbox1");
+        document.getElementById("color11").classList.add("colorbox");
+        document.getElementById("color12").classList.remove("colorbox1");
+        document.getElementById("color12").classList.add("colorbox");
+        document.getElementById("color13").classList.remove("colorbox");
+        document.getElementById("color13").classList.add("colorbox1");
+      } 
+    }
+    
+    function ch1(cl2)
+    {
+      if(cl2==1)
+      {
+        document.getElementById("color21").classList.remove("colorbox");
+        document.getElementById("color21").classList.add("colorbox1");
+        document.getElementById("color22").classList.remove("colorbox1");
+        document.getElementById("color22").classList.add("colorbox");
+        document.getElementById("color23").classList.remove("colorbox1");
+        document.getElementById("color23").classList.add("colorbox");
+      } 
+      if(cl2==2)
+      {
+        document.getElementById("color21").classList.remove("colorbox1");
+        document.getElementById("color21").classList.add("colorbox");
+        document.getElementById("color22").classList.remove("colorbox");
+        document.getElementById("color22").classList.add("colorbox1");
+        document.getElementById("color23").classList.remove("colorbox1");
+        document.getElementById("color23").classList.add("colorbox");
+      } 
+      if(cl2==3)
+      {
+        document.getElementById("color21").classList.remove("colorbox1");
+        document.getElementById("color21").classList.add("colorbox");
+        document.getElementById("color22").classList.remove("colorbox1");
+        document.getElementById("color22").classList.add("colorbox");
+        document.getElementById("color23").classList.remove("colorbox");
+        document.getElementById("color23").classList.add("colorbox1");
+      } 
+    }
+    
+    function ch2(cl3)
+    {
+      if(cl3==1)
+      {
+        document.getElementById("color31").classList.remove("colorbox");
+        document.getElementById("color31").classList.add("colorbox1");
+        document.getElementById("color32").classList.remove("colorbox1");
+        document.getElementById("color32").classList.add("colorbox");
+        document.getElementById("color33").classList.remove("colorbox1");
+        document.getElementById("color33").classList.add("colorbox");
+      } 
+      if(cl3==2)
+      {
+        document.getElementById("color31").classList.remove("colorbox1");
+        document.getElementById("color31").classList.add("colorbox");
+        document.getElementById("color32").classList.remove("colorbox");
+        document.getElementById("color32").classList.add("colorbox1");
+        document.getElementById("color33").classList.remove("colorbox1");
+        document.getElementById("color33").classList.add("colorbox");
+      } 
+      if(cl3==3)
+      {
+        document.getElementById("color31").classList.remove("colorbox1");
+        document.getElementById("color31").classList.add("colorbox");
+        document.getElementById("color32").classList.remove("colorbox1");
+        document.getElementById("color32").classList.add("colorbox");
+        document.getElementById("color33").classList.remove("colorbox");
+        document.getElementById("color33").classList.add("colorbox1");
+      } 
+    }
+    
+    function hairChange(htype)
+    {
+    	if(htype=='htype11')
+        {
+          document.getElementById('hairs1').style.display = "block";
+          document.getElementById('hairs11').style.display = "block";
+          document.getElementById('hairs12').style.display = "none";
+          document.getElementById('hairs13').style.display = "none";
+        }
+      	if(htype=='htype12')
+        {
+          document.getElementById('hairs1').style.display = "block";
+          document.getElementById('hairs11').style.display = "none";
+          document.getElementById('hairs12').style.display = "block";
+          document.getElementById('hairs13').style.display = "none";
+        }
+      	if(htype=='htype13')
+        {
+          document.getElementById('hairs1').style.display = "block";
+          document.getElementById('hairs11').style.display = "none";
+          document.getElementById('hairs12').style.display = "none";
+          document.getElementById('hairs13').style.display = "block";
+        }
+    }
+    
+    function changeHair1(hr)
+    {
+      var j;
+		for (j = 110; j < 131; j++) {
+          var hr3='hair'+j;
+          if(hr==hr3)
+          {
+  				document.getElementById(hr3).classList.remove("hair-div");
+        		document.getElementById(hr3).classList.add("hair-div2");
+            	document.getElementById('hairStyle1').value=j;
+          }
+          else
+          {
+            	document.getElementById(hr3).classList.remove("hair-div2");
+        		document.getElementById(hr3).classList.add("hair-div");
+          }
+		}
+      
+    }
+    
+    function changeHair2(hr2)
+    {
+      	var i;
+		for (i = 210; i < 231; i++) {
+          var hr3='hair'+i;
+          if(hr2==hr3)
+          {
+  				document.getElementById(hr3).classList.remove("hair-div");
+        		document.getElementById(hr3).classList.add("hair-div2");
+            	document.getElementById('hairStyle2').value=i;
+          }
+          else
+          {
+            	document.getElementById(hr3).classList.remove("hair-div2");
+        		document.getElementById(hr3).classList.add("hair-div");
+          }
+		}
+    }
+    function changeHair3(hr4)
+    {
+      	var k;
+		for (k = 310; k < 331; k++) {
+          var hr5='hair'+k;
+          
+          if(hr5==hr4)
+          {
+  				document.getElementById(hr5).classList.remove("hair-div");
+        		document.getElementById(hr5).classList.add("hair-div2");
+            	document.getElementById('hairStyle3').value=k;
+          }
+          else
+          {
+            	document.getElementById(hr5).classList.remove("hair-div2");
+        		document.getElementById(hr5).classList.add("hair-div");
+          }
+		}
+    }
+    
+ function check1()
+    {
+   
+      var mod1s=document.getElementById("mod1Num").value;
+      var g1=parseInt(mod1s);
+    if(g1==1)
+    {  
+      
+      if((document.getElementById("dogbreed1").value=="")&&(document.getElementById("dogName1").value=="")&&(document.getElementById("backside").value==""))
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if((document.getElementById("dogbreed1").value=="")&&(document.getElementById("dogName1").value==""))
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if((document.getElementById("dogbreed1").value=="")&&(document.getElementById("backside").value==""))
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if((document.getElementById("dogName1").value=="")&&(document.getElementById("backside").value==""))
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if(document.getElementById("dogbreed1").value=="")
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if(document.getElementById("dogName1").value=="")
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if(document.getElementById("backside").value=="")
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else
+      {
+//         document.getElementById("mod2Num").value=1;
+//         document.getElementById("hairStyle1").value=="";
+//         document.getElementById("hairStyle2").value=="";
+//         document.getElementById("hairStyle3").value=="";
+        
+//         document.getElementById("pName1").value=="";
+//         document.getElementById("pName2").value=="";
+//         document.getElementById("pName3").value=="";
+        
+//         document.getElementById("skin1").classList.remove("border2");
+//         document.getElementById("skin2").classList.remove("border2");
+//         document.getElementById("skin2").classList.remove("border2");
+//         document.getElementById("skin21").classList.remove("border2");
+//         document.getElementById("skin22").classList.remove("border2");
+//         document.getElementById("skin23").classList.remove("border2");
+//         document.getElementById("skin31").classList.remove("border2");
+//         document.getElementById("skin32").classList.remove("border2");
+//         document.getElementById("skin33").classList.remove("border2");
+        
+        modal.style.display = "none";
+  		modal2.style.display = "block";
+        document.body.style.overflow  = "hidden";
+        document.body.style.position = "relative";
+        if(screen.width < 400 && screen.height < 670) {
+          document.getElementById('field2').style.marginBottom = '0';
+        }
+        else {
+          document.getElementById('field2').style.marginBottom = '0';
+        };
+      }
+      
+    }
+      
+      
+    if(g1==2)
+    {  
+      
+      if((document.getElementById("dogbreed1").value=="")&&(document.getElementById("dogName1").value=="")&&(document.getElementById("dogbreed2").value=="")&&(document.getElementById("dogName2").value=="")&&(document.getElementById("backside").value==""))
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if((document.getElementById("dogbreed1").value=="")&&(document.getElementById("dogName1").value==""))
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if((document.getElementById("dogbreed1").value=="")&&(document.getElementById("backside").value==""))
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if((document.getElementById("dogName1").value=="")&&(document.getElementById("backside").value==""))
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if((document.getElementById("dogbreed2").value=="")&&(document.getElementById("dogName2").value==""))
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if((document.getElementById("dogbreed2").value=="")&&(document.getElementById("backside").value==""))
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if((document.getElementById("dogName2").value=="")&&(document.getElementById("backside").value==""))
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if(document.getElementById("dogbreed1").value=="")
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if(document.getElementById("dogName1").value=="")
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if(document.getElementById("dogbreed2").value=="")
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if(document.getElementById("dogName2").value=="")
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if(document.getElementById("backside").value=="")
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else
+      {
+//         document.getElementById("mod2Num").value=1;
+//         document.getElementById("hairStyle1").value=="";
+//         document.getElementById("hairStyle2").value=="";
+//         document.getElementById("hairStyle3").value=="";
+        
+//         document.getElementById("pName1").value=="";
+//         document.getElementById("pName2").value=="";
+//         document.getElementById("pName3").value=="";
+        
+//         document.getElementById("skin1").classList.remove("border2");
+//         document.getElementById("skin2").classList.remove("border2");
+//         document.getElementById("skin2").classList.remove("border2");
+//         document.getElementById("skin21").classList.remove("border2");
+//         document.getElementById("skin22").classList.remove("border2");
+//         document.getElementById("skin23").classList.remove("border2");
+//         document.getElementById("skin31").classList.remove("border2");
+//         document.getElementById("skin32").classList.remove("border2");
+//         document.getElementById("skin33").classList.remove("border2");
+        
+        document.getElementById("numb3").style.display="none";
+        
+        modal.style.display = "none";
+  		modal2.style.display = "block";
+        document.body.style.overflow  = "hidden";
+        document.body.style.position  = "relative";
+        if(screen.width < 400 && screen.height < 670) {
+          document.getElementById('field2').style.marginBottom = '0';
+        }
+        else {
+          document.getElementById('field2').style.marginBottom = '0';
+        };
+      }
+    }
+     
+    if(g1==3)
+    {  
+      
+      if((document.getElementById("dogbreed1").value=="")&&(document.getElementById("dogName1").value=="")&&(document.getElementById("dogbreed2").value=="")&&(document.getElementById("dogName2").value=="")&&(document.getElementById("dogbreed3").value=="")&&(document.getElementById("dogName3").value=="")&&(document.getElementById("backside").value==""))
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if(document.getElementById("dogbreed1").value=="")
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if(document.getElementById("dogName1").value=="")
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if(document.getElementById("dogbreed2").value=="")
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if(document.getElementById("dogName2").value=="")
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if(document.getElementById("dogbreed3").value=="")
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if(document.getElementById("dogName3").value=="")
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else if(document.getElementById("backside").value=="")
+      {
+        document.getElementById("pop1Err").style.display="block";
+        return false;
+      }
+      else
+      {
+//         document.getElementById("mod2Num").value=1;
+//         document.getElementById("hairStyle1").value=="";
+//         document.getElementById("hairStyle2").value=="";
+//         document.getElementById("hairStyle3").value=="";
+        
+//         document.getElementById("pName1").value=="";
+//         document.getElementById("pName2").value=="";
+//         document.getElementById("pName3").value=="";
+        
+//         document.getElementById("skin1").classList.remove("border2");
+//         document.getElementById("skin2").classList.remove("border2");
+//         document.getElementById("skin2").classList.remove("border2");
+//         document.getElementById("skin21").classList.remove("border2");
+//         document.getElementById("skin22").classList.remove("border2");
+//         document.getElementById("skin23").classList.remove("border2");
+//         document.getElementById("skin31").classList.remove("border2");
+//         document.getElementById("skin32").classList.remove("border2");
+//         document.getElementById("skin33").classList.remove("border2");
+        document.getElementById("numb2").style.display="none";
+        document.getElementById("numb3").style.display="none";
+        
+        modal.style.display = "none";
+  		modal2.style.display = "block";
+        document.body.style.overflow  = "hidden";
+        document.body.style.position  = "relative";
+        if(screen.width < 400 && screen.height < 670) {
+          document.getElementById('field2').style.marginBottom = '0';
+        }
+        else {
+          document.getElementById('field2').style.marginBottom = '0';
+        };
+      }
+    }  
+      
+ }   
+
+
+function check2()
+    {
+   
+      var mod2s=document.getElementById("mod2Num").value;
+      var g2=parseInt(mod2s);
+       if(g2==1)
+    {  
+      if((document.getElementById("hairStyle1").value=="")&&(document.getElementById("pName1").value==""))
+      {
+        
+        document.getElementById("pop2Err").style.display="block";
+        return false;
+      }
+      else if(document.getElementById("hairStyle1").value=="")
+      {
+        document.getElementById("pop2Err").style.display="block";
+        return false;
+      }
+      else if(document.getElementById("pName1").value=="")
+      {
+        document.getElementById("pop2Err").style.display="block";
+        return false;
+      }
+      else
+      {
+          modal2.style.display = "none";
+  		  modal3.style.display = "block";
+        
+          var text1=document.getElementById("pName1").value;
+          document.getElementById("girl_Name").innerHTML = text1;
+        document.body.style.overflow  = "hidden";
+        document.body.style.position = "relative";
+        var front_pic = document.getElementById('front_pic');
+        var preview_width = front_pic.parentElement.clientWidth;
+        front_pic.parentElement.style.height = preview_width + 'px';
+      }
+    }
+    if(g2==2)
+     {  
+       
+      if((document.getElementById("hairStyle1").value=="")&&(document.getElementById("pName1").value=="")&&(document.getElementById("hairStyle2").value=="")&&(document.getElementById("pName2").value==""))
+      {
+        document.getElementById("pop2Err").style.display="block";
+        return false;
+      }
+      else if((document.getElementById("hairStyle1").value=="")&&(document.getElementById("pName1").value=="")&&(document.getElementById("hairStyle2").value==""))
+      {
+        document.getElementById("pop2Err").style.display="block";
+        return false;
+      }
+      else if((document.getElementById("hairStyle1").value=="")&&(document.getElementById("pName1").value=="")&&(document.getElementById("pName2").value==""))
+      {
+        document.getElementById("pop2Err").style.display="block";
+        return false;
+      }
+      else if((document.getElementById("pName1").value=="")&&(document.getElementById("pName2").value=="")&&(document.getElementById("hairStyle2").value==""))
+      {
+        document.getElementById("pop2Err").style.display="block";
+        return false;
+      }
+      else if((document.getElementById("hairStyle1").value=="")&&(document.getElementById("pName1").value=="")&&(document.getElementById("hairStyle2").value==""))
+      {
+        document.getElementById("pop2Err").style.display="block";
+        return false;
+      } 
+      else if((document.getElementById("hairStyle1").value=="")&&(document.getElementById("pName2").value=="")&&(document.getElementById("hairStyle2").value==""))
+      {
+        document.getElementById("pop2Err").style.display="block";
+        return false;
+      }
+      else if((document.getElementById("hairStyle1").value=="")&&(document.getElementById("pName1").value==""))
+      {
+        document.getElementById("pop2Err").style.display="block";
+        return false;
+      }
+      else if((document.getElementById("hairStyle1").value=="")&&(document.getElementById("pName2").value==""))
+      {
+        document.getElementById("pop2Err").style.display="block";
+        return false;
+      } 
+      else if((document.getElementById("hairStyle1").value=="")&&(document.getElementById("hairStyle2").value==""))
+      {
+        document.getElementById("pop2Err").style.display="block";
+        return false;
+      } 
+      else if((document.getElementById("hairStyle2").value=="")&&(document.getElementById("pName1").value==""))
+      {
+        document.getElementById("pop2Err").style.display="block";
+        return false;
+      }
+      else if((document.getElementById("hairStyle2").value=="")&&(document.getElementById("pName2").value==""))
+      {
+        document.getElementById("pop2Err").style.display="block";
+        return false;
+      }  
+      else if((document.getElementById("pName1").value=="")&&(document.getElementById("pName2").value==""))
+      {
+        document.getElementById("pop2Err").style.display="block";
+        return false;
+      }  
+      else if(document.getElementById("hairStyle1").value=="")
+      {
+        document.getElementById("pop2Err").style.display="block";
+        return false;
+      } 
+      else if(document.getElementById("pName1").value=="")
+      {
+        document.getElementById("pop2Err").style.display="block";
+        return false;
+      }
+      else if(document.getElementById("hairStyle2").value=="")
+      {
+        document.getElementById("pop2Err").style.display="block";
+        return false;
+      }  
+      else if(document.getElementById("pName2").value=="")
+      {
+        document.getElementById("pop2Err").style.display="block";
+        return false;
+      }
+       else
+      {
+         
+          modal2.style.display = "none";
+  		  modal3.style.display = "block";
+          document.body.style.overflow  = "hidden";
+          document.body.style.position  = "relative";
+          var front_pic = document.getElementById('front_pic');
+          var preview_width = front_pic.parentElement.clientWidth;
+          front_pic.parentElement.style.height = preview_width + 'px';
+      }
+     }
+      
+      if(g2==3){
+      	if((document.getElementById("hairStyle1").value=="")&&(document.getElementById("pName1").value=="")&&(document.getElementById("hairStyle2").value=="")&&(document.getElementById("pName2").value=="")&&(document.getElementById("hairStyle3").value=="")&&(document.getElementById("pName3").value==""))
+        {
+          document.getElementById("pop2Err").style.display="block";
+          return false;
+        }else{
+          
+        	modal2.style.display = "none"; 
+            modal3.style.display = "block";
+          	document.body.style.overflow  = "hidden";
+          	document.body.style.position = "relative";
+            var front_pic = document.getElementById('front_pic');
+            var preview_width = front_pic.parentElement.clientWidth;
+            front_pic.parentElement.style.height = preview_width + 'px';
+        }
+      } 
+      
+      
+     /* Preview functionality */ 
+      var totaldog = parseInt(document.getElementById("mod1Num").value);
+      var totalperson = parseInt(document.getElementById("mod2Num").value);
+      var finalobject = totaldog + totalperson;
+      
+      if( finalobject == 2){
+        document.getElementById("main_bg_img").setAttribute("href", "https://cdn.shopify.com/s/files/1/0004/0809/2719/files/first.png?v=1587311934");
+      	var myEle = document.getElementById("Dog_Breed_2_layer");
+    	if(myEle){
+        	document.getElementById("Dog_Breed_2_layer").remove();
+          	document.getElementById("Dog_Breed_3_layer").remove();
+            document.getElementById("dog_2_name").remove();
+            document.getElementById("dog_3_name").remove();
+          	
+        }
+        
+        var selecteddog1 = document.getElementById('bredd1').querySelector(".quote-div2");
+        var adddog1 = selecteddog1.getElementsByTagName('img')[0].src;
+        document.getElementById("Dog_Breed_1").setAttribute("href", adddog1);
+          document.getElementById("dogbreed1").value = adddog1;
+       
+        
+        document.getElementById('dog_1_name').getElementsByTagName('tspan')[0].setAttribute("x", "2283");
+        document.getElementById('dog_1_name').getElementsByTagName('tspan')[0].setAttribute("y", "9500");
+       
+        
+        document.getElementById("Dog_Breed_1").setAttribute("transform", "translate(1537 3857) scale(24 24.6)");
+        document.getElementById("Dog_Breed_1").setAttribute("width","78");
+        
+         var selectedhair = document.getElementById('hairs1').querySelector(".hair-div2");
+        var addgirl = selectedhair.getElementsByTagName('img')[0].src;
+      	document.getElementById('Hair_Style').setAttribute("href", addgirl); 
+        document.getElementById("hairStyle1").value = addgirl;
+        
+        document.getElementById("Hair_Style").setAttribute("transform", "rotate(0.014820400625482 4580 5045) translate(3420 3883) scale(11 11)");
+        
+         document.getElementById("Your_Skin_Color").setAttribute("transform", "translate(3407 4000) scale(23.5 23.5)");
+        
+        var text1=document.getElementById("dogName1").value;
+        document.getElementById("dog_1_name").getElementsByTagName('tspan')[0].innerHTML = text1;
+        document.getElementById("dog1Name").value = text1;
+        
+      } else if(finalobject == 3){
+        document.getElementById("main_bg_img").setAttribute("href", "https://cdn.shopify.com/s/files/1/0004/0809/2719/files/third.png?v=1587311934");
+      	var myEle = document.getElementById("Dog_Breed_3_layer");
+    	if(myEle){
+        	
+          	document.getElementById("Dog_Breed_3_layer").remove();
+            document.getElementById("dog_3_name").remove();
+          	
+        }
+        
+        if(totaldog == 2){
+        
+          /* Dog 1 */	
+        document.getElementById('dog_1_name').getElementsByTagName('tspan')[0].setAttribute("x", "1768.6820215254");
+        document.getElementById('dog_1_name').getElementsByTagName('tspan')[0].setAttribute("y", "9500");
+        var text1=document.getElementById("dogName1").value;
+        document.getElementById("dog_1_name").getElementsByTagName('tspan')[0].innerHTML = text1;
+          document.getElementById("dog1Name").value = text1;
+          
+        var selecteddog1 = document.getElementById('bredd1').querySelector(".quote-div2");
+        var adddog1 = selecteddog1.getElementsByTagName('img')[0].src;
+        document.getElementById("Dog_Breed_1").setAttribute("href", adddog1);
+          document.getElementById("dogbreed1").value = adddog1;
+          
+        document.getElementById("Dog_Breed_1").setAttribute("transform", "translate(1108.7040011213 4380.6499542704) scale(21.854978492574 21.891341064244)");
+        document.getElementById("Dog_Breed_1").setAttribute("width","78");
+          
+        /* Dog 2 */  
+        var selecteddog2 = document.getElementById('bredd2').querySelector(".quote-div2");
+        var adddog2 = selecteddog2.getElementsByTagName('img')[0].src;
+        document.getElementById("Dog_Breed_2").setAttribute("href", adddog2);  
+           document.getElementById("dogbreed2").value = adddog2;
+          
+        document.getElementById('dog_2_name').getElementsByTagName('tspan')[0].setAttribute("x", "5951.4088815718");
+        document.getElementById('dog_2_name').getElementsByTagName('tspan')[0].setAttribute("y", "9500");
+        var text2=document.getElementById("dogName2").value;
+        document.getElementById("dog_2_name").getElementsByTagName('tspan')[0].innerHTML = text2;  
+          document.getElementById("dog2Name").value = text2;
+          
+        document.getElementById("Dog_Breed_2").setAttribute("transform","translate(4898.3268770339 4380.6499542704) scale(21.854977928023 21.891341064244) scale(-1 1) translate(-78.586278586279 0)");
+        
+        
+        /* Girl */ 
+        var selectedhair = document.getElementById('hairs1').querySelector(".hair-div2");
+        var addgirl = selectedhair.getElementsByTagName('img')[0].src;
+      	document.getElementById('Hair_Style').setAttribute("href", addgirl); 
+          document.getElementById("hairStyle1").value = addgirl;
+          
+        document.getElementById("Hair_Style").setAttribute("transform", "rotate(-0.16814410686493 3885.3492205425 5414.5483711958) translate(2794.4583548866 4322.857989996) scale(10.908908656559 10.916903811998) scale(-1 1) translate(-200 0)");
+        document.getElementById("Your_Skin_Color").setAttribute("transform", "translate(2796.3405409856 4349.8526615883) scale(20.923231789991 20.938557610583)");
+        
+        document.getElementById('girl_Name').setAttribute("x", "3903.379867326");
+        document.getElementById('girl_Name').setAttribute("y", "9500");
+        var text2=document.getElementById("pName1").value;
+        document.getElementById("girl_Name").innerHTML = text2;  
+          document.getElementById("person1").value = text2;
+          
+          
+        }else{
+        	 /* Dog 1 */	
+              document.getElementById('dog_1_name').getElementsByTagName('tspan')[0].setAttribute("x", "1768.6820215254");
+              document.getElementById('dog_1_name').getElementsByTagName('tspan')[0].setAttribute("y", "9500");
+              var text1=document.getElementById("dogName1").value;
+              document.getElementById("dog_1_name").getElementsByTagName('tspan')[0].innerHTML = text1;
+          		document.getElementById("dog1Name").value = text1;
+
+              var selecteddog1 = document.getElementById('bredd1').querySelector(".quote-div2");
+              var adddog1 = selecteddog1.getElementsByTagName('img')[0].src;
+              document.getElementById("Dog_Breed_1").setAttribute("href", adddog1);
+          document.getElementById("dogbreed1").value = adddog1;
+
+              document.getElementById("Dog_Breed_1").setAttribute("transform", "translate(1108.7040011213 4380.6499542704) scale(21.854978492574 21.891341064244)");
+              document.getElementById("Dog_Breed_1").setAttribute("width","78");
+
+              /* Girl 2 */  
+          	document.getElementById("Dog_Breed_2_layer").innerHTML = "";
+          	document.getElementById("Dog_Breed_2_layer").innerHTML +=  
+              "<g data-layer='Your_Skin_Color'><image id='Your_Skin_Color_1' href='https://gossby.com/storage/personalizedDesign/design/images/09.10.2019/17.NAOIL5d9e2745f2145.preview.png' width='95' transform='translate(2796.3405409856 4349.8526615883) scale(20.923231789991 20.938557610583)'></image></g><g data-layer='Hair_Style'><image id='Hair_Style_1' href='https://cdn.shopify.com/s/files/1/0004/0809/2719/files/17_2.png?v=1587401816' width='200' transform='rotate(-0.16814410686493 3885.3492205425 5414.5483711958) translate(2794.4583548866 4322.857989996) scale(10.908908656559 10.916903811998) scale(-1 1) translate(-200 0)'></image></g>"; 
+
+          		var selectedhair = document.getElementById('hairs2').querySelector(".hair-div2");
+              var addgirl = selectedhair.getElementsByTagName('img')[0].src;
+              document.getElementById('Hair_Style_1').setAttribute("href", addgirl); 
+           	document.getElementById("hairStyle2").value = addgirl;
+          
+              document.getElementById('dog_2_name').getElementsByTagName('tspan')[0].setAttribute("x", "5951.4088815718");
+              document.getElementById('dog_2_name').getElementsByTagName('tspan')[0].setAttribute("y", "9500");
+              var text2=document.getElementById("pName2").value;
+              document.getElementById("dog_2_name").getElementsByTagName('tspan')[0].innerHTML = text2;  
+          document.getElementById("person2").value = text2;
+
+              document.getElementById("Hair_Style_1").setAttribute("transform", "rotate(-0.16814410686493 3885.3492205425 5414.5483711958) translate(4794.4583548866 4322.857989996) scale(10.908908656559 10.916903811998) scale(-1 1) translate(-200 0)");
+              document.getElementById("Your_Skin_Color_1").setAttribute("transform", "translate(4790 4400) scale(20.923231789991 20.938557610583)");
+
+
+              /* Girl */ 
+              var selectedhair = document.getElementById('hairs1').querySelector(".hair-div2");
+              var addgirl = selectedhair.getElementsByTagName('img')[0].src;
+              document.getElementById('Hair_Style').setAttribute("href", addgirl);
+          	document.getElementById("hairStyle1").value = addgirl;
+
+              document.getElementById("Hair_Style").setAttribute("transform", "rotate(-0.16814410686493 3885.3492205425 5414.5483711958) translate(2794.4583548866 4322.857989996) scale(10.908908656559 10.916903811998) scale(-1 1) translate(-200 0)");
+              document.getElementById("Your_Skin_Color").setAttribute("transform", "translate(2796 4400) scale(20.923231789991 20.938557610583)");
+
+              document.getElementById('girl_Name').setAttribute("x", "3903.379867326");
+              document.getElementById('girl_Name').setAttribute("y", "9500");
+              var text2=document.getElementById("pName1").value;
+              document.getElementById("girl_Name").innerHTML = text2; 
+          	document.getElementById("person1").value = text2;
+        	
+        }
+        
+        
+      } else if(finalobject == 4){
+       document.getElementById("main_bg_img").setAttribute("href", "https://cdn.shopify.com/s/files/1/0004/0809/2719/files/second.png?v=1587311934");
+        
+        if(totaldog == 3){
+        
+           /* Dog 1 */	
+          document.getElementById('dog_1_name').getElementsByTagName('tspan')[0].setAttribute("x", "6328");
+          document.getElementById('dog_1_name').getElementsByTagName('tspan')[0].setAttribute("y", "9500");
+          var text1=document.getElementById("dogName1").value;
+          document.getElementById("dog_1_name").getElementsByTagName('tspan')[0].innerHTML = text1;
+          document.getElementById("dog1Name").value = text1;
+
+          var selecteddog1 = document.getElementById('bredd1').querySelector(".quote-div2");
+          var adddog1 = selecteddog1.getElementsByTagName('img')[0].src;
+          document.getElementById("Dog_Breed_1").setAttribute("href", adddog1);
+          document.getElementById("dogbreed1").value = adddog1;
+
+          document.getElementById("Dog_Breed_1").setAttribute("transform", "translate(5454.8234699799 5089.5749075828) scale(18.402453137019 18.441734014142) scale(-1 1) translate(-78.586278586279 0)");
+          document.getElementById("Dog_Breed_1").setAttribute("width","78");
+
+          /* Dog 2 */  
+          var selecteddog2 = document.getElementById('bredd2').querySelector(".quote-div2");
+          var adddog2 = selecteddog2.getElementsByTagName('img')[0].src;
+          document.getElementById("Dog_Breed_2").setAttribute("href", adddog2);  
+           document.getElementById("dogbreed2").value = adddog2;
+
+          document.getElementById('dog_2_name').getElementsByTagName('tspan')[0].setAttribute("x", "2943");
+          document.getElementById('dog_2_name').getElementsByTagName('tspan')[0].setAttribute("y", "9500");
+          var text2=document.getElementById("dogName2").value;
+          document.getElementById("dog_2_name").getElementsByTagName('tspan')[0].innerHTML = text2;  
+          document.getElementById("dog2Name").value = text2;
+
+          document.getElementById("Dog_Breed_2").setAttribute("transform","translate(2500 5700) scale(15.120021530885 15.152297891293)");
+          
+          
+          /* Dog 3 */  
+          var selecteddog2 = document.getElementById('bredd3').querySelector(".quote-div2");
+          var adddog2 = selecteddog2.getElementsByTagName('img')[0].src;
+          document.getElementById("Dog_Breed_3").setAttribute("href", adddog2);  
+          document.getElementById("dogbreed3").value = adddog2;
+
+          document.getElementById('dog_3_name').getElementsByTagName('tspan')[0].setAttribute("x", "1439");
+          document.getElementById('dog_3_name').getElementsByTagName('tspan')[0].setAttribute("y", "9500");
+          var text3=document.getElementById("dogName3").value;
+          document.getElementById("dog_3_name").getElementsByTagName('tspan')[0].innerHTML = text3;  
+           document.getElementById("dog3Name").value = text3;
+
+          document.getElementById("Dog_Breed_3").setAttribute("transform","rotate(0.45733296871187 1473.7658183702 6968.8216406638) translate(1000.58214259956 5700.2688677273) scale(6 6)");
+		  document.getElementById("Dog_Breed_3").setAttribute("width","200");
+
+          /* Girl */ 
+          var selectedhair = document.getElementById('hairs1').querySelector(".hair-div2");
+          var addgirl = selectedhair.getElementsByTagName('img')[0].src;
+          document.getElementById('Hair_Style').setAttribute("href", addgirl); 
+          document.getElementById("hairStyle1").value = addgirl;
+
+          document.getElementById("Hair_Style").setAttribute("transform", "rotate(-0.16814410686493 4700.466121431 6111.6376446083) translate(3729.6969454706 5153.2599885467) scale(9.707691759604 9.5837765606159)");
+          document.getElementById("Your_Skin_Color").setAttribute("transform", "translate(3823.3364550751 5168.8849816083) scale(17.32509808887 17.36013041801)");
+
+          document.getElementById('girl_Name').setAttribute("x", "4718");
+          document.getElementById('girl_Name').setAttribute("y", "9500");
+          var text2=document.getElementById("pName1").value;
+          document.getElementById("girl_Name").innerHTML = text2;  
+           document.getElementById("person1").value = text2;
+          
+        }else if(totaldog == 2 && totalperson == 2){
+          
+          /* Dog 1 */	
+          document.getElementById('dog_1_name').getElementsByTagName('tspan')[0].setAttribute("x", "6328");
+          document.getElementById('dog_1_name').getElementsByTagName('tspan')[0].setAttribute("y", "9500");
+          var text1=document.getElementById("dogName1").value;
+          document.getElementById("dog_1_name").getElementsByTagName('tspan')[0].innerHTML = text1;
+          document.getElementById("dog1Name").value = text1;
+
+          var selecteddog1 = document.getElementById('bredd1').querySelector(".quote-div2");
+          var adddog1 = selecteddog1.getElementsByTagName('img')[0].src;
+          document.getElementById("Dog_Breed_1").setAttribute("href", adddog1);
+           document.getElementById("dogbreed1").value = adddog1;
+
+          document.getElementById("Dog_Breed_1").setAttribute("transform", "translate(5454.8234699799 5089.5749075828) scale(18.402453137019 18.441734014142) scale(-1 1) translate(-78.586278586279 0)");
+          document.getElementById("Dog_Breed_1").setAttribute("width","78");
+
+          /* Dog 2 */  
+          var selecteddog2 = document.getElementById('bredd2').querySelector(".quote-div2");
+          var adddog2 = selecteddog2.getElementsByTagName('img')[0].src;
+          document.getElementById("Dog_Breed_2").setAttribute("href", adddog2); 
+           document.getElementById("dogbreed2").value = adddog2;
+
+          document.getElementById('dog_2_name').getElementsByTagName('tspan')[0].setAttribute("x", "2943");
+          document.getElementById('dog_2_name').getElementsByTagName('tspan')[0].setAttribute("y", "9500");
+          var text2=document.getElementById("dogName2").value;
+          document.getElementById("dog_2_name").getElementsByTagName('tspan')[0].innerHTML = text2;  
+           document.getElementById("dog2Name").value = text2;
+
+          document.getElementById("Dog_Breed_2").setAttribute("transform","translate(2500 5700) scale(15.120021530885 15.152297891293)");
+          
+          
+          /* Dog 3 */            
+          document.getElementById("Dog_Breed_3_layer").innerHTML = "";
+          document.getElementById("Dog_Breed_3_layer").innerHTML +=  
+            "<g data-layer='Your_Skin_Color'><image id='Your_Skin_Color_1' href='https://gossby.com/storage/personalizedDesign/design/images/09.10.2019/17.NAOIL5d9e2745f2145.preview.png' width='95' transform='translate(2796.3405409856 4349.8526615883) scale(20.923231789991 20.938557610583)'></image></g><g data-layer='Hair_Style'><image id='Hair_Style_1' href='https://cdn.shopify.com/s/files/1/0004/0809/2719/files/17_2.png?v=1587401816' width='200' transform='rotate(-0.16814410686493 3885.3492205425 5414.5483711958) translate(2794.4583548866 4322.857989996) scale(10.908908656559 10.916903811998) scale(-1 1) translate(-200 0)'></image></g>"; 
+
+          
+          var selectedhair = document.getElementById('hairs2').querySelector(".hair-div2");
+          var addgirl = selectedhair.getElementsByTagName('img')[0].src;
+          document.getElementById('Hair_Style_1').setAttribute("href", addgirl);
+           document.getElementById("hairStyle1").value = addgirl;
+          
+          document.getElementById('dog_3_name').getElementsByTagName('tspan')[0].setAttribute("x", "1439");
+          document.getElementById('dog_3_name').getElementsByTagName('tspan')[0].setAttribute("y", "9500");
+          var text2=document.getElementById("pName2").value;
+          document.getElementById("dog_3_name").getElementsByTagName('tspan')[0].innerHTML = text2;  
+           document.getElementById("person1").value = text2;
+
+          document.getElementById("Hair_Style_1").setAttribute("transform", "rotate(-0.16814410686493 3885.3492205425 5414.5483711958) translate(500 5000) scale(10.908908656559 10.916903811998) scale(-1 1) translate(-200 0)");
+          document.getElementById("Your_Skin_Color_1").setAttribute("transform", "translate(700 5200) scale(17.385426861169 17.422927)");
+
+          
+
+          /* Girl */ 
+          var selectedhair = document.getElementById('hairs1').querySelector(".hair-div2");
+          var addgirl = selectedhair.getElementsByTagName('img')[0].src;
+          document.getElementById('Hair_Style').setAttribute("href", addgirl); 
+          document.getElementById("hairStyle2").value = addgirl;
+
+          document.getElementById("Hair_Style").setAttribute("transform", "rotate(-0.16814410686493 4700.466121431 6111.6376446083) translate(3729.6969454706 5153.2599885467) scale(9.707691759604 9.5837765606159)");
+          document.getElementById("Your_Skin_Color").setAttribute("transform", "translate(3823.3364550751 5168.8849816083) scale(17.32509808887 17.36013041801)");
+
+          document.getElementById('girl_Name').setAttribute("x", "4718");
+          document.getElementById('girl_Name').setAttribute("y", "9500");
+          var text2=document.getElementById("pName1").value;
+          document.getElementById("girl_Name").innerHTML = text2;  
+          document.getElementById("person2").value = text2;
+        	
+        }else if(totalperson == 3){
+          
+          /* Dog 1 */	
+          document.getElementById("Dog_Breed_1_layer").innerHTML = "";
+          document.getElementById("Dog_Breed_1_layer").innerHTML +=  
+            "<g data-layer='Your_Skin_Color'><image id='Your_Skin_Color_2' href='https://gossby.com/storage/personalizedDesign/design/images/09.10.2019/17.NAOIL5d9e2745f2145.preview.png' width='95' transform='translate(2796.3405409856 4349.8526615883) scale(20.923231789991 20.938557610583)'></image></g><g data-layer='Hair_Style'><image id='Hair_Style_2' href='https://cdn.shopify.com/s/files/1/0004/0809/2719/files/17_2.png?v=1587401816' width='200' transform='rotate(-0.16814410686493 3885.3492205425 5414.5483711958) translate(2794.4583548866 4322.857989996) scale(10.908908656559 10.916903811998) scale(-1 1) translate(-200 0)'></image></g>"; 
+
+          
+          var selectedhair = document.getElementById('hairs3').querySelector(".hair-div2");
+          var addgirl = selectedhair.getElementsByTagName('img')[0].src;
+          document.getElementById('Hair_Style_2').setAttribute("href", addgirl);
+          document.getElementById("hairStyle1").value = addgirl;
+          
+          document.getElementById('dog_1_name').getElementsByTagName('tspan')[0].setAttribute("x", "6328");
+          document.getElementById('dog_1_name').getElementsByTagName('tspan')[0].setAttribute("y", "9500");
+          var text2=document.getElementById("pName3").value;
+          document.getElementById("dog_1_name").getElementsByTagName('tspan')[0].innerHTML = text2;  
+          document.getElementById("person1").value = text2;
+
+          document.getElementById("Hair_Style_2").setAttribute("transform", "rotate(-0.16814410686493 3885.3492205425 5414.5483711958) translate(5000 5000) scale(10.908908656559 10.916903811998) scale(-1 1) translate(-200 0)");
+          document.getElementById("Your_Skin_Color_2").setAttribute("transform", "translate(5454.8234699799 5089.5749075828) scale(18.402453137019 18.441734014142) scale(-1 1) translate(-78.586278586279 0)");
+
+          /* Dog 2 */  
+          var selecteddog2 = document.getElementById('bredd1').querySelector(".quote-div2");
+          var adddog2 = selecteddog2.getElementsByTagName('img')[0].src;
+          document.getElementById("Dog_Breed_2").setAttribute("href", adddog2); 
+          document.getElementById("dogbreed1").value = adddog2;
+
+          document.getElementById('dog_2_name').getElementsByTagName('tspan')[0].setAttribute("x", "2943");
+          document.getElementById('dog_2_name').getElementsByTagName('tspan')[0].setAttribute("y", "9500");
+          var text2=document.getElementById("dogName1").value;
+          document.getElementById("dog_2_name").getElementsByTagName('tspan')[0].innerHTML = text2;  
+          document.getElementById("dog1Name").value = text2;
+
+          document.getElementById("Dog_Breed_2").setAttribute("transform","translate(2500 5700) scale(15.120021530885 15.152297891293)");
+          
+          
+          /* Dog 3 */            
+          document.getElementById("Dog_Breed_3_layer").innerHTML = "";
+          document.getElementById("Dog_Breed_3_layer").innerHTML +=  
+            "<g data-layer='Your_Skin_Color'><image id='Your_Skin_Color_1' href='https://gossby.com/storage/personalizedDesign/design/images/09.10.2019/17.NAOIL5d9e2745f2145.preview.png' width='95' transform='translate(2796.3405409856 4349.8526615883) scale(20.923231789991 20.938557610583)'></image></g><g data-layer='Hair_Style'><image id='Hair_Style_1' href='https://cdn.shopify.com/s/files/1/0004/0809/2719/files/17_2.png?v=1587401816' width='200' transform='rotate(-0.16814410686493 3885.3492205425 5414.5483711958) translate(2794.4583548866 4322.857989996) scale(10.908908656559 10.916903811998) scale(-1 1) translate(-200 0)'></image></g>"; 
+
+          
+          var selectedhair = document.getElementById('hairs2').querySelector(".hair-div2");
+          var addgirl = selectedhair.getElementsByTagName('img')[0].src;
+          document.getElementById('Hair_Style_1').setAttribute("href", addgirl);
+          document.getElementById("hairStyle3").value = addgirl;
+          
+          document.getElementById('dog_3_name').getElementsByTagName('tspan')[0].setAttribute("x", "1439");
+          document.getElementById('dog_3_name').getElementsByTagName('tspan')[0].setAttribute("y", "9500");
+          var text2=document.getElementById("pName2").value;
+          document.getElementById("dog_3_name").getElementsByTagName('tspan')[0].innerHTML = text2; 
+          document.getElementById("person3").value = text2;
+
+          document.getElementById("Hair_Style_1").setAttribute("transform", "rotate(-0.16814410686493 3885.3492205425 5414.5483711958) translate(500 5000) scale(10.908908656559 10.916903811998) scale(-1 1) translate(-200 0)");
+          document.getElementById("Your_Skin_Color_1").setAttribute("transform", "translate(700 5200) scale(17.385426861169 17.422927)");
+
+          
+
+          /* Girl */ 
+          var selectedhair = document.getElementById('hairs1').querySelector(".hair-div2");
+          var addgirl = selectedhair.getElementsByTagName('img')[0].src;
+          document.getElementById('Hair_Style').setAttribute("href", addgirl); 
+          document.getElementById("hairStyle2").value = text2;
+
+          document.getElementById("Hair_Style").setAttribute("transform", "rotate(-0.16814410686493 4700.466121431 6111.6376446083) translate(3729.6969454706 5153.2599885467) scale(9.707691759604 9.5837765606159)");
+          document.getElementById("Your_Skin_Color").setAttribute("transform", "translate(3823.3364550751 5168.8849816083) scale(17.32509808887 17.36013041801)");
+
+          document.getElementById('girl_Name').setAttribute("x", "4718");
+          document.getElementById('girl_Name').setAttribute("y", "9500");
+          var text2=document.getElementById("pName1").value;
+          document.getElementById("girl_Name").innerHTML = text2;  
+          document.getElementById("person2").value = text2;
+        	
+        }
+        
+        
+      } else{
+      	modal2.style.display = "none";
+        document.getElementById("main_bg_img").setAttribute("href", "https://cdn.shopify.com/s/files/1/0004/0809/2719/files/first.png?v=1587311934");
+      	
+      }
+     
+    }
+</script>
+<script>
+  
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("dogbreed1").value="";
+  document.getElementById("dogbreed2").value="";
+  document.getElementById("dogbreed3").value="";
+  document.getElementById("backside").value="";
+  
+  document.getElementById("dogName1").value="";
+  document.getElementById("dogName2").value="";
+  document.getElementById("dogName3").value="";
+  
+  document.getElementById("mod1Num").value="1";
+  document.getElementById("mod2Num").value="1";
+  
+  document.getElementById("dbredd11").style.display="none";
+  document.getElementById("dbredd12").style.display="none";
+  document.getElementById("dbredd13").style.display="none";
+  document.getElementById("dbredd14").style.display="none";
+  
+  document.getElementById("back11").classList.remove("quote-div2");
+  document.getElementById("back12").classList.remove("quote-div2");
+  document.getElementById("back13").classList.remove("quote-div2");
+  document.getElementById("back14").classList.remove("quote-div2");
+  document.getElementById("back15").classList.remove("quote-div2");
+  
+  document.getElementById("back11").classList.add("quote-div");
+  document.getElementById("back12").classList.add("quote-div");
+  document.getElementById("back13").classList.add("quote-div");
+  document.getElementById("back14").classList.add("quote-div");
+  document.getElementById("back15").classList.add("quote-div");  
+  
+  document.getElementById("pName1").value="";
+  document.getElementById("pName2").value="";
+  document.getElementById("pName3").value="";
+  
+});
+  
+// Get the modal
+var modal = document.getElementById("myModal");
+var modal2 = document.getElementById("myModal2");
+var modal3 = document.getElementById("myModal3");  
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+var btn2 = document.getElementById("myBtn2");
+var btn3 = document.getElementById("myBtn3");  
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+var span2 = document.getElementsByClassName("close2")[0];
+var span3 = document.getElementsByClassName("close3")[0];  
+// When the user clicks the button, open the modal 
+  $('#myBtn').click(function(e){
+  e.preventDefault();
+  $("body").css("overflow", "hidden");
+   $("body").css("position", "relative");
+  modal.style.display = "block";
+  document.getElementById('field2').style.marginBottom = '0';
+  if(screen.width < 500 && screen.height < 750) {
+    document.getElementById('field1').style.marginBottom = '65px';
+  }
+  else {
+    document.getElementById('field1').style.marginBottom = '0';
+  };
+});
+/*btn2.onclick = function() {
+  modal.style.display = "none";
+  modal2.style.display = "block";
+}
+btn3.onclick = function() {
+  modal2.style.display = "none";
+  modal3.style.display = "block";
+}*/
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+//   modal.style.display = "none";
+  $('#myModal').fadeOut(500);
+  document.body.style.overflow = "visible";
+  
+}
+span2.onclick = function() {
+//   modal2.style.display = "none";
+  $('#myModal2').fadeOut(500);
+  document.body.style.overflow = "visible";
+}
+
+span3.onclick = function() {
+  $('#myModal3').fadeOut(500);
+  document.body.style.overflow = "visible";
+//   modal3.style.display = "none";
+}
+// When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//   if (event.target == modal) {
+//     modal.style.display = "none";
+//   }
+// }
+// window.onclick = function(event) {
+//   if (event.target == modal2) {
+//     modal2.style.display = "none";
+//   }
+// }
+
+// window.onclick = function(event) {
+//   if (event.target == modal3) {
+//     modal3.style.display = "none";
+//   }
+// }
+
+$(document).click(function (e) {
+    if ($(e.target).is('#myModal')) {
+        $('#myModal').fadeOut(500);
+  		document.body.style.overflow = "visible";
+    }
+
+});
+$(document).click(function (e) {
+    if ($(e.target).is('#myModal2')) {
+        $('#myModal2').fadeOut(500);
+  		document.body.style.overflow = "visible";
+    }
+
+});
+  
+$(document).click(function (e) {
+    if ($(e.target).is('#myModal3')) {
+        $('#myModal3').fadeOut(500);
+  		document.body.style.overflow = "visible";
+    }
+});
+  
+  
+/* Freelancer Harun made this part. */
+  var front = document.getElementById('front');
+  var back = document.getElementById('back');
+  var front_pic = document.getElementById('front_pic');
+  var back_pic = document.getElementById('back_pic');
+  var fro_bac_pic = document.getElementById('fro-bac-pic');
+  front.onclick = function() {
+    fro_bac_pic.style.backgroundImage = 'url(https://cdn.shopify.com/s/files/1/0004/0809/2719/t/60/assets/front.png)';
+  	front.classList.add("activated");
+    back.classList.remove("activated");
+    front_pic.style.display = "block";
+    back_pic.style.display = "none";
+  }
+  back.onclick = function() {
+    fro_bac_pic.style.backgroundImage = 'url(https://cdn.shopify.com/s/files/1/0004/0809/2719/t/60/assets/back.png)';
+  	back.classList.add("activated");
+    front.classList.remove("activated");
+    front_pic.style.display = "none";
+    back_pic.style.display = "block";
+  }
+//   var is_selected_2 = document.getElementById('color2');
+//   btn2.onclick = function() {
+//     if( is_selected_2.style.display == 'none' ) {
+//       alert('I am here!');
+//       $('#myModal2 #field2').css('margin-bottom', '25px');
+//     }
+//     else {
+//       $('#myModal2 #field2').css('margin-bottom', '65px');
+//     };
+//   };
+  
+//  js code to fixup from NS 
+  $('[data-target="#myModal2"]').on("click",function(e) {
+    e.preventDefault();
+    $('.err-code').hide();
+	$('#test-product').css('overflow', 'hidden');
+	$('#test-product').css('position', 'relative');
+  });
+  
+  
+
+  
+</script>
+
+
+<style>
+.main-bg
+{
+/*   background:url({{ '17.HBP2P5da35e12b96cf.preview.png' | asset_url }}); */
+/*   height:400px; */
+  width:60%;
+  background-size:cover;
+  display:inline-block;
+  float:left;
+}  
+</style>

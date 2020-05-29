@@ -1,0 +1,42 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<div class="banner-wrapper">
+  <div class="banner-box">
+    <div class="banner-text"><h5>{{section.settings.banner_text}}</h5></div>
+  </div>
+</div>
+<style>
+  .banner-wrapper{
+    width:100%;
+    padding:25px;
+    height:100px;
+  }
+  .banner-box{
+    background-color:#fff;
+    text-align:center;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Text Banner",
+    "settings": [
+     {
+        "type": "text",
+        "id": "banner_text",
+        "label": "Enter Banner Text"
+     },
+     {
+          "id": "banner_background",
+          "type": "text",
+          "label": "Background Color"
+   	 }
+     ],
+   "presets": [
+      {
+        "name": "Text Banner",
+        "category": "Image"
+      }
+    ]
+  }
+
+{% endschema %}

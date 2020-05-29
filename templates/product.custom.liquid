@@ -1,0 +1,95 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<!-- /templates/product.liquid  &larr; -->
+{% comment %}
+  The contents of the product.liquid template can be found in /sections/product-template.liquid
+{% endcomment %}
+
+{% section 'product-template-custom' %}
+
+
+{% section 'you-may-like'  %}
+
+<div class="product-pagination">
+
+   {% if collection %}
+  
+      <div class="grid__item large--six-twelfths medium--seven-twelfths text-center"
+           >
+      <a href="{{ collection.url }}" class="return-link">
+        <div class="skrim__overlay grid__image" style="background-image: url({{ collection | img_url: '800x' }});"></div>
+        
+      
+      <div class="ppc-title">
+          <i class="fa fa-long-arrow-left" aria-hidden="true"></i>  
+          {% comment %}ly_i18n_replace_for_[ 'products.general.collection_return' | t: collection: collection.title ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.general.collection_return' | t: collection: collection.title }}{% endcapture %}{% include 'ly-static-string' with '8851101' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% include 'ly-title' with collection %}{% assign replacement = ly_translation %}{% assign ly_template = ly_template | replace: '[[collection]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+       </div>   
+       
+        </a>
+  
+  
+  </div>
+    {% endif %}
+  
+  {% comment %}
+  {% if collection %}
+{% if collection.previous_product or collection.next_product %}
+  <p>
+    
+    {% if collection.previous_product %}
+      {% capture prev_url %}{{ collection.previous_product}}#content{% endcapture %}
+      {{ 'prev' | link_to: prev_url }}
+    {% else %}
+      {{ 'prev' }}
+    {% endif %}
+    |
+    
+    
+    {% if collection.next_product %}
+      {% capture next_url %}{{ collection.next_product}}#content{% endcapture %}
+      {{ 'next'  | link_to: next_url }}
+   {% if collection.next_product contains product.handle %}
+        <a href="{{ collection.next_product }}" title="{% comment %}ly_code_replace_for_[ product.title | escape ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}">NEXT BATH GIFT {{ product.featured_image | product_img_url: 'pico' | img_tag }}</a> <span>&#187;</span>
+      {% endif %}
+    {% else %}
+      {{ 'products.general.next_product_html' | t }}
+    {% endif %}
+  </p>
+{% endif %}
+{% endif %}
+  {% endcomment %}
+ 
+   {% if collection %}
+  {% for product in collection.products %}
+ {% if collection.next_product %}
+      {% if collection.next_product contains product.handle %} 
+    <div class="grid__item large--six-twelfths medium--seven-twelfths text-center next-div">
+  <a href="{{ collection.next_product }}" title="{% comment %}ly_code_replace_for_[ product.title | escape ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}">
+
+<div class="skrim__overlay grid__image" style="background-image: url({{ product.featured_image | product_img_url: '800x' }});"></div>
+   {% comment %}
+     {% if collection.previous_product %}
+      {% if collection.previous_product contains product.handle %}
+        <span>&#171;</span> <a href="{{ collection.next_product }}" title="{% comment %}ly_code_replace_for_[ product.title | escape ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}">{{ product.featured_image | product_img_url: 'pico' | img_tag }} PREVIOUS BATH GIFT</a>
+      {% endif %}
+    {% endif %}
+     {% endcomment %}
+     
+    
+         
+   
+           <div class="ppc-title pp-pr--ttile">
+            <ly-as-8851099>Next</ly-as-8851099>  {% comment %}ly_code_replace_for_[ product.title | escape ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}
+             <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+            </div>
+        
+       
+     </a> 
+      </div>
+   {% endif %}
+    {% endif %}
+    {% endfor %}
+{% endif %}
+  
+</div> 
+ <hr class="hr--clear pp-clear-btm">
+{% section 'you-may-like'  %}

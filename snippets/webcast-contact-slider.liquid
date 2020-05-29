@@ -1,0 +1,157 @@
+<div class="wrapper">
+<div class="wrapper Featured-collection-wrapper test">
+<header class="section-header">
+        <h2 class="section-header__title">You May Also Like</h2>
+      </header>
+<div class="product-template__container page-width product-page-related" itemscope itemtype="http://schema.org/Product" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true">
+ <aside class="grid">
+    <div class="grid__item">
+      {% unless heading == blank %}
+      <header class="section-header">
+        <h2 class="section-header__title">You May Also Like</h1>
+      </header>
+      {% endunless %}
+
+      <div class="grid-uniform product-related">
+        <div class="owl-carousel related-products aaaaaaaaaa owl-theme" style="margin-bottom: 0;">        
+       {% assign number_of_related_products_to_show = 20 %}
+{% assign image_size = 'large' %}
+
+  {% assign counter = '' %}
+  {% for prod in collections.all.products %}
+          {% for collection in prod.collections %}
+          {% if forloop.first == true %}
+    {% assign col = collection.title | handleize %}
+          {% endif %}
+{% endfor %}
+      {% assign new_tag = 'canvas-medium-canvas-small-chambray-button-down' %}
+      {% if new_tag contains prod.handle and counter.size < number_of_related_products_to_show %}
+     
+     <div class="item">
+      <div class="grid__item grid-product">
+       
+        <div class="grid-product__wrapper">
+         <div data-aos="zoom-out" data-aos-delay="200" class="grid-product__image-wrapper" data-aos="row-of-4">
+          <a class="grid-product__image-link" href="{{shop.url}}/collections/{{ col  }}/products/{{ prod.handle }}">
+           
+          <div class="image-wrap product--wrapper">
+            <div>
+              {% comment %}
+               {{ prod.featured_image | product_img_url: image_size | img_tag }}
+              {% endcomment %}
+              {% if product.images.size == 1 %} 
+                   {{ prod.images[0] | product_img_url: image_size | img_tag }}
+              {% else %}
+                {{ prod.images[1] | product_img_url: image_size | img_tag }}
+              {% endif %}
+            </div>
+          </div>
+          <noscript>
+            <img class="grid-product__image" src="//cdn.shopify.com/s/files/1/0004/0809/2719/products/crew_3hd_1024x.jpg?v=1521949750" alt="Tee shirt Homme en V">
+          </noscript>
+            
+            
+           </a>
+           
+           
+           </div>
+          
+          <a href="{{shop.url}}/collections/{{ col  }}/products/{{ prod.handle }}" class="grid-product__meta">
+      <span class="grid-product__title">{{ prod.title }}</span>
+          <div class="yotpo bottomLine"
+  data-product-id="{{ prod.id }}"  data-url="{{shop.url}}/collections/{{ col  }}/products/{{ prod.handle }}">
+</div>
+      <span class="grid-product__price-wrap">
+        
+        <span class="grid-product__price">
+          
+             <span class="visually-hidden">Regular price</span>
+          {{ prod.price | money }}
+        </span>
+      </span>
+      
+    </a>
+          
+          </div>
+          </div>
+         </div>
+      {% endif %}
+    {% endfor %}
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  
+</div>
+
+</div>
+</div>
+<style>
+  :focus {outline:none;}
+  .grid__item .section-header {
+  display: none;
+}
+.image-wrap.product--wrapper img {
+    margin: 0 auto;
+    text-align: center;
+   
+}
+.owl-nav.disabled {
+    display: block !important;
+}
+
+</style>
+
+<script>
+$(document).ready(function(){
+$('.related-products').owlCarousel({
+    nav:true,
+    loop:true,
+  	slideBy:1,
+    responsive:{
+        0:{
+            items:2,
+            margin:20
+        },
+        600:{
+            items:3,
+            margin:20
+        },
+        1000:{
+            items:4,
+          margin:30
+        }
+    }
+});
+
+$('.related-products').on('changed.owl.carousel',function(property){
+    var current = property.item.index;
+    var itemsAmount = property.item.count;
+    console.log(property);
+    console.log(current);
+    console.log(itemsAmount);
+    var webcast;
+    if(property.page.size == 2){
+    webcast = 2;
+    }
+    else {
+    webcast = 1;
+    }
+    
+    //if (current === itemsAmount+webcast) {
+    //console.log(current);
+    if(property.page.size == 4 && property.property.value == 7) {
+    $('.owl-prev').click(function (){
+    	//$(".related-products").trigger('to.owl.carousel', [0, 500]);
+    })
+  	$(".related-products").trigger('prev.owl.carousel', 500);
+  } 
+  else if (current === itemsAmount+webcast) {
+    $(".related-products").trigger('to.owl.carousel', [0, 500]);
+    }
+  //}
+});
+});
+</script>

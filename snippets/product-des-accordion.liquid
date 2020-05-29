@@ -1,0 +1,564 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<style>
+ 
+
+.contant span{
+   padding-top: 10px;
+   display:block;
+   letter-spacing:7px;
+}
+
+.contant { 
+   position: relative; 
+   margin:auto;
+   margin-bottom:3%;
+   overflow:hidden;
+ 
+}
+
+.contant > div{
+   width: 98%;
+   margin: 1%;
+   overflow:hidden;
+}
+
+.contant input { 
+   display: none;
+}
+
+.contant input:checked + label { 
+/*     background: -webkit-linear-gradient(top,#34495e,#95a5a6);
+    border: solid 1px rgba(0,0,0,.15); */
+/*     color: red;  */
+/*     box-shadow: 0 1px 1px rgba(0,0,0,.65), 0 1px 0 rgba(255,255,255,.1) inset; */
+}
+
+.contant label { 
+    cursor: pointer; 
+    display: block; 
+   width: 100%; 
+    color: #333;
+    background-color: #f5f5f5;
+    border-bottom: 0;
+    padding: 10px 15px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.contant label:hover {     
+/*     background: -webkit-linear-gradient(top,#34495e,#95a5a6);
+    border: solid 1px rgba(0,0,0,.15);  */
+}
+
+.contant p { 
+   height: 0; 
+   overflow: hidden; 
+   position: relative; 
+   margin-bottom: 0;
+   padding : 0 20px;
+   line-height: 2;
+   color: #333;
+   font-size: 14px;
+   opacity: 0;
+   -webkit-transition: height .3s linear, opacity .2s linear; 
+}
+
+.contant div > input:checked ~ p { 
+   height: 200px;
+   margin-top:10px;
+   opacity: 1;
+}
+ 
+/*   Acc new */
+  
+  
+
+.accordion{
+/*   background-color:#333;
+  position:relative;
+  box-shadow: 3px 0px 7px #666; */
+}
+
+.accordion .accordion-head{
+     cursor: pointer;
+    display: block;
+    width: 100%;
+    color: #333;
+    background-color: #f5f5f5;
+    border-bottom: 0;
+    padding: 10px 15px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    cursor: pointer;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 13px;
+      margin-top: 5px;
+  border: 1px solid #ddd;
+}
+
+.accordion .accordion-head:last-child{
+  border-bottom-width:0;
+}
+
+.accordion .accordion-head:hover{
+/*   color:#0099cc; */
+  
+}
+
+
+
+.accordion-body{
+    border: 1px solid #ddd;
+  border-top: none;
+  width:100%;
+  overflow:hidden;
+  display:none;
+  padding: 2%;
+}
+
+.accordion-body ul{
+  list-style:none;
+  
+}
+
+.accordion-body ul li{
+
+  display:inline;
+  float:left;
+  margin: 15px;
+ 	padding: 10px;
+ text-align:center;
+
+
+}
+
+.accordion-body ul li a{
+  display: block;
+  text-decoration:none;
+  margin-top:10px;
+ 
+  font-size:1.1em;
+}
+.accordion-body ul li a img{
+  width:60px;
+   background-color:blue;
+  border-radius:50%;
+  
+}
+
+.accordion-body ul li a img:hover{
+ background-color:blue;
+  border-radius:50%;
+  width:70px;
+  
+}
+
+.acc-pannel{margin-top:5px;
+  border-radius: 3px;
+    border: 1px solid #ddd; 
+}
+  .shogun-table-column-container .shogun-table-column {
+    float: left;
+    width: 33%;
+    text-align: center;
+        font-weight: bold;
+}
+ .shogun-table-column-container  .shogun-table-row {
+    width: 33%;
+    float: left;
+}
+  .shogun-table {
+    float: left;
+    width: 100%;
+    margin-top: auto;
+}
+  .shogun-table-row-container .shogun-table-row {
+    float: left;
+    width: 33%;
+}
+  .shogun-table-row-container { float:left; width:100%; margin-top:10px;  }
+  .shogun-table-row-container .shogun-table-row span, .shogun-table-row-container .shogun-table-row p {
+    font-size: 13px!important;
+}
+  .background-images_1 {overflow:hidden;}
+  
+</style>
+
+<!-- Pen By Sahebt Alezar -->
+<!-- checked="checked" -->
+{% comment %}
+<div class="contant">
+   <div>
+      <input type="radio" name="size" id="one" />
+     <label for="one"><a href="javascript:void(0)">Size Chart ></a></label>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+         It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+         desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum..</p>
+   </div>
+   <div>
+      <input type="radio" name="size" id="two"/>
+      <label for="two">How it  works ></label>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+         It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+         desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum..</p>
+   </div>
+   <div>
+     
+      <input type="radio" name="size" id="three" />
+      <label for="three">Background Options ></label>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+         It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+         desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+   </div>
+   <div>
+      <input type="radio" name="size" id="four" value="four" />
+      <label for="four">Photo Guide ></label>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+         It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+         desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum..</p>
+   </div>
+   <div>
+      <input type="radio" name="size" id="five" />
+      <label for="five">Shipping ></label>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+         It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+         desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+   </div>
+</div>
+{% endcomment %}
+
+<div class="accordion">
+
+    <div class="accordion-head"><a href="javascript:void(0)"><ly-as-8850704>Size Chart ></ly-as-8850704></a>
+        <div class="arrow down"></div>
+    </div>
+   <div class="accordion-body">
+      <div class="shogun-heading-component">
+    <h5>  <ly-as-8850705>Fit: Relaxed</ly-as-8850705></h5>
+</div>
+
+<div id="s-92798c65-013d-4a4d-abfb-96c375582dec" class="shg-c  ">
+<p>
+<span style="font-size:14px"><ly-as-8850706>Model is wearing size:</ly-as-8850706><strong><ly-as-8850707>Small</ly-as-8850707></strong></span></p>
+</div>
+<div id="s-bc4c9833-5e0b-4878-b09b-36bea9a73ee7" class="shg-c  ">
+<div class="shogun-table">
+<div class="shogun-table-column-container">
+<div class="shogun-table-column">
+        <ly-as-8850708>Size</ly-as-8850708>
+      </div>
+<div class="shogun-table-column">
+        <ly-as-8850709>Comparable Size</ly-as-8850709>
+      </div>
+<div class="shogun-table-column">
+        <ly-as-8850710>Bust</ly-as-8850710>
+      </div>
+</div>
+<div class="shogun-table-row-container">
+<div class="shogun-table-row">
+<div id="s-8bd05d7d-0c38-46e2-a738-9a5eddd7a08f" class="shg-c  ">
+<p style="text-align:center">
+<span style="font-size:16px"><ly-as-8850707>Small</ly-as-8850707></span></p>
+</div>
+</div>
+<div class="shogun-table-row">
+<div id="s-d7f34860-3d9e-4188-b5c2-a4310d185fdc" class="shg-c  ">
+<p style="text-align:center">
+<span style="font-size:16px">2-4</span></p>
+</div>
+</div>
+<div class="shogun-table-row">
+<div id="s-598ccaf8-1ea6-4906-b9ef-112ce79cabeb" class="shg-c  ">
+<p style="text-align:center">
+<span style="font-size:16px">32.5"-33.5"</span></p>
+</div>
+</div>
+</div>
+<div class="shogun-table-row-container">
+<div class="shogun-table-row">
+<div id="s-49561d22-d280-4800-ab4c-6e29ee859b2c" class="shg-c  ">
+<p style="text-align:center">
+<span style="font-size:16px"><ly-as-8850711>Medium</ly-as-8850711></span></p>
+</div>
+</div>
+<div class="shogun-table-row">
+<div id="s-640012e4-7ee9-4c39-99cf-3e1b9f0659ce" class="shg-c  ">
+<p style="text-align:center">
+<span style="font-size:16px">6-8</span></p>
+</div>
+</div>
+<div class="shogun-table-row">
+<div id="s-81cad677-280f-49d5-8a65-1277bb1c7296" class="shg-c  ">
+<p style="text-align:center">
+<span style="font-size:16px">34.5-35.5"</span></p>
+</div>
+</div>
+</div>
+<div class="shogun-table-row-container">
+<div class="shogun-table-row">
+<div id="s-35f6218e-f0fd-4375-9630-e1c91f73bf17" class="shg-c  ">
+<p style="text-align:center">
+<span style="font-size:16px"><ly-as-8850712>Large</ly-as-8850712></span></p>
+</div>
+</div>
+<div class="shogun-table-row">
+<div id="s-9849d0de-f717-45d4-a0c0-d2915409c2d9" class="shg-c  ">
+<p style="text-align:center">
+<span style="font-size:16px">10-12</span></p>
+</div>
+</div>
+<div class="shogun-table-row">
+<div id="s-db89b4bc-0f93-4d4f-8834-8f2440463b13" class="shg-c  ">
+<p style="text-align:center">37"-38.5"</p>
+</div>
+</div>
+</div>
+<div class="shogun-table-row-container">
+<div class="shogun-table-row">
+<div id="s-901fdddd-9145-4448-b85a-0983e4bd9598" class="shg-c  ">
+<p style="text-align:center">
+<span style="font-size:16px"><ly-as-8850713>X- Large</ly-as-8850713></span></p>
+</div>
+</div>
+<div class="shogun-table-row">
+<div id="s-d0885db5-30e7-49df-9d86-f36b7adb2cf2" class="shg-c  ">
+<p style="text-align:center">14-16</p>
+</div>
+</div>
+<div class="shogun-table-row">
+<div id="s-53570157-33ba-4dbe-bd02-cbc8b4cd43bd" class="shg-c  ">
+<p style="text-align:center">
+<span style="font-size:16px">40-41.5"</span></p>
+</div>
+</div>
+</div>
+<div class="shogun-table-row-container">
+<div class="shogun-table-row">
+<div id="s-4d358209-1821-426d-8ae1-deaf1ca47d9a" class="shg-c  ">
+<p style="text-align:center">
+<span style="font-size:16px"><ly-as-8850714>XX-Large</ly-as-8850714></span></p>
+</div>
+</div>
+<div class="shogun-table-row">
+<div id="s-537b1f9f-fc13-47af-8766-372ff4008d2c" class="shg-c  ">
+<p style="text-align:center">
+<span style="font-size:16px">16-18</span></p>
+</div>
+</div>
+<div class="shogun-table-row">
+<div id="s-c3a504ba-0f5d-4b53-a208-cc429e903603" class="shg-c  ">
+<p style="text-align:center">
+<span style="font-size:16px">42"-44"</span></p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+  </div>
+ 
+  <div class="accordion-head"><a href="javascript:void(0)"><ly-as-8850715>How it  works ></ly-as-8850715></a>
+        <div class="arrow down"></div>
+    </div>
+    <div class="accordion-body">
+  <div class="accordion-head"><ly-as-8850716>When will I see my pop art proof?</ly-as-8850716> 
+        <div class="arrow down"></div>
+    </div>
+   <div class="accordion-body">
+       <p> <ly-as-8850717>After you complete your purchase, we get popping. Our amazing in-house artists will create your pop art in 1-2 business days</ly-as-8850717></p>
+</div>
+       <div class="accordion-head"><ly-as-8850718>How do I see my proof?</ly-as-8850718> 
+        <div class="arrow down"></div>
+    </div>
+   <div class="accordion-body">
+     <p>  <ly-as-8850719>After purchase, you will receive a confirmation email with a link to your unique-order profile. There, you can:</ly-as-8850719></p>
+     
+      <ly-as-8850720>- Review/approve your proof</ly-as-8850720><br>
+
+      <ly-as-8850721>- Request revisions</ly-as-8850721><br>
+
+      <ly-as-8850722>- Preview your pet-art on our backgrounds in real time</ly-as-8850722><br>
+
+      <ly-as-8850723>- Chat with our customer service team.</ly-as-8850723> 
+     
+</div>
+      <div class="accordion-head"><ly-as-8850724>When do I select my background?</ly-as-8850724>
+        <div class="arrow down"></div>
+    </div>
+   <div class="accordion-body">
+     <p><ly-as-8850725>After our artists complete your proof, You can preview your pet-art on our backgrounds in real time.</ly-as-8850725></p>
+</div>
+       <div class="accordion-head"><ly-as-8850726>What if I don't like my proof ?</ly-as-8850726>
+        <div class="arrow down"></div>
+    </div>
+   <div class="accordion-body">
+     <p><ly-as-8850727>We want you to LOVE your proof. We are confident we can create you an epic pop art, which you will love, or your money back!</ly-as-8850727></p>
+</div>
+         <div class="accordion-head"><ly-as-8850728>How long do revisions take?</ly-as-8850728>
+        <div class="arrow down"></div>
+    </div>
+   <div class="accordion-body">
+     <p><ly-as-8850729>If you wish to request a revision for your pop art, our artists will have the change completed within one business day.</ly-as-8850729></p>
+</div>
+
+      
+</div>
+ 
+
+  <div class="accordion-head"><a href="javascript:void(0)"><ly-as-8850730>Background Options ></ly-as-8850730></a>
+        <div class="arrow down"></div>
+    </div>
+    <div class="accordion-body">
+             <div class="accordion-head"><ly-as-8850731>When can I choose my background?</ly-as-8850731>
+        <div class="arrow down"></div>
+    </div>
+   <div class="accordion-body">
+     <p><ly-as-8850732>Backgrounds are selected after our artists complete your proof. Once your art is ready to be reviewed, we will email you a link to your order profile. There, you can preview your pet art on all of our available backgrounds</ly-as-8850732></p>
+   </div>
+         <div class="accordion-head"><ly-as-8850733>What are my background options?</ly-as-8850733>
+        <div class="arrow down"></div>
+    </div>
+   <div class="accordion-body">
+       <div class="accordion-head"><ly-as-8850734>Solid Colors ></ly-as-8850734>
+        <div class="arrow down"></div>
+    </div>
+   <div class="accordion-body">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+         It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+         desktop publishing software like Aldus PageMaker including versions 
+<!--      <div class="background-images_1">
+     {% if section.blocks.size > 0 %}
+      {% for block in section.blocks %}
+        <div class="logo-bar__item">
+          {{ block.settings.image | img_url: '160x160', scale: 2 | img_tag: block.settings.image.alt, 'logo-bar__image' }}
+       </div>
+      {% endfor %}
+    
+  {% endif %}
+</div> -->
+     </div>
+     <div class="accordion-head"><ly-as-8850736>Pop Culture ></ly-as-8850736>
+        <div class="arrow down"></div>
+    </div>
+   <div class="accordion-body">
+         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+         It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+         desktop publishing software like Aldus PageMaker including versions 
+</div>
+     <div class="accordion-head"><ly-as-8850737>Pop Text ></ly-as-8850737>
+        <div class="arrow down"></div>
+    </div>
+   <div class="accordion-body">
+         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+         It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+         desktop publishing software like Aldus PageMaker including versions 
+</div>
+     <div class="accordion-head"><ly-as-8850738>Munchies ></ly-as-8850738>
+        <div class="arrow down"></div>
+    </div>
+   <div class="accordion-body">
+         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+         It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+         desktop publishing software like Aldus PageMaker including versions 
+</div>
+     <div class="accordion-head"><ly-as-8850739>Floral ></ly-as-8850739>
+        <div class="arrow down"></div>
+    </div>
+   <div class="accordion-body">
+         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+         It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+         desktop publishing software like Aldus PageMaker including versions 
+</div>
+     <div class="accordion-head"><ly-as-8850740>Mosaic ></ly-as-8850740>
+        <div class="arrow down"></div>
+    </div>
+   <div class="accordion-body">
+         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+         It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+         desktop publishing software like Aldus PageMaker including versions 
+</div>
+     <div class="accordion-head"><ly-as-8850741>Botanical ></ly-as-8850741>
+        <div class="arrow down"></div>
+    </div>
+   <div class="accordion-body">
+         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+         It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+         desktop publishing software like Aldus PageMaker including versions 
+</div>
+     <div class="accordion-head"><ly-as-8850742>Pop Ecletic ></ly-as-8850742>
+        <div class="arrow down"></div>
+    </div>
+   <div class="accordion-body">
+         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+         It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+         desktop publishing software like Aldus PageMaker including versions 
+</div>
+</div>
+</div>
+  
+
+  <div class="accordion-head"><a href="javascript:void(0)"><ly-as-8850743>Photo Guide ></ly-as-8850743></a>
+        <div class="arrow down"></div>
+    </div>
+    <div class="accordion-body">
+      <p><ly-as-8850744>For best results, a close-up picture of your pet sitting or standing up will work best. Have no fear; if we find we need another photo to try, we will help you find a great option.</ly-as-8850744></p>
+    </div>
+  
+
+  <div class="accordion-head"><a href="javascript:void(0)"><ly-as-8850745>Shipping ></ly-as-8850745></a>
+        <div class="arrow down"></div>
+    </div>
+    <div class="accordion-body">
+        <div class="accordion-head"><ly-as-8850746>When will my order be shipped out? ></ly-as-8850746>
+        <div class="arrow down"></div>
+    </div>
+   <div class="accordion-body">
+     <p><ly-as-8850747>We will print and ship out your product within one business day, from when you approve your proof, and finalize your order.</ly-as-8850747></p>
+</div>
+       <div class="accordion-head"><ly-as-8850748>Estimated transit time free- standard shipping ></ly-as-8850748>
+        <div class="arrow down"></div>
+    </div>
+   <div class="accordion-body">
+     <p><img src="https://ucarecdn.com/02ea66bd-4f98-4da1-9c8a-05d12d1801ef/-/stretch/off/-/resize/3000x/-/quality/best/" width="" height="" alt="" class="shogun-image img-responsive "></p>
+</div>
+       <div class="accordion-head"><ly-as-8850749>Estimated transit time for international shipping</ly-as-8850749>
+        <div class="arrow down"></div>
+    </div>
+   <div class="accordion-body">
+     <p><ly-as-8850750>Transit times vary from country to country due to customs procedures. Typically 12-15 business days are the longest we have seen for international transit.</ly-as-8850750></p>
+</div>
+       <div class="accordion-head"> <ly-as-8850751>Upgraded Shipping ></ly-as-8850751>
+        <div class="arrow down"></div>
+    </div>
+   <div class="accordion-body">
+       <p><ly-as-8850752>We offer 2 upgraded shipping methods:</ly-as-8850752><p>
+
+     <strong><ly-as-8850753>1- Day Shipping</ly-as-8850753> </strong><ly-as-8850754>(price calculated at check out)</ly-as-8850754><br>
+
+     <strong><ly-as-8850755>2- Day Shipping</ly-as-8850755> </strong> <ly-as-8850754>(price calculated at check out)</ly-as-8850754>
+     
+</div>
+    </div>
+
+
+
+
+</div>
+
+<script>
+  $('.accordion').on('click', '.accordion-head', function () {
+    $(this).removeClass('close').addClass('close');
+    $(this).next('.accordion-body').slideToggle().siblings('.accordion-body').slideUp();
+});
+// $('.accordion .accordion-body:first').show();
+</script>

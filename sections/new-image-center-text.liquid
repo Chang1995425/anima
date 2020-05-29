@@ -1,0 +1,116 @@
+<div class="row">
+  <div class="full-width mobile-margn" style="text-align:center;width:100%;margin:10px">
+    <div class="img-center-size mobile-hide">
+      <img src="{{section.settings.image_selected | img_url:'original' }}" alt="{{section.settings.image_selected}}" />
+    </div>
+    <div class="img-center-size mobileImg desktop-hide">
+      <img src="{{section.settings.image_selected | img_url:'original' }}" alt="{{section.settings.image_selected}}" />
+    </div>
+    <div class="text-desc" style="text-align:center;margin-top:15px;padding:0 15px;float:left;width:100%;">{{section.settings.text_desc1}}</div>
+    
+  </div>
+</div>
+<style>
+  #owl-new1 .item img{display:block;width:100% !important;height:auto !important;}
+  .img-center-size img{
+    width:{{section.settings.img_width}} !important;
+    /*height:{{section.settings.img_height}} !important;*/
+    margin: 0 auto;
+  }
+  .mobileImg img{
+    width:{{section.settings.m_img_width}} !important;
+    /*height:{{section.settings.m_img_height}} !important;*/
+    margin: 0 auto; 
+  }
+  .mobileImg {
+      float: left;
+      width: 100%;
+      margin: 0 auto !important;
+  }
+  .img-center-size {
+    width: 100%;
+    float: left;
+    margin: 0 auto !important;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .mobile-margn{
+      margin:0 auto !important;
+    }
+    .mobile-hide {
+      display:none !important;
+    }
+    #shopify-section-1550258730797 {
+      margin-top: 20px;
+    }
+    
+  }
+  
+  @media only screen and (min-width: 600px) {
+    .desktop-hide {
+      display:none !important;
+    }
+    #shopify-section-1550258730797 {
+      margin-top: 40px;
+    }
+  }
+  
+</style>
+
+{% schema %}
+  {
+    "name": "New Image Center Text",
+    "settings": [
+     {
+        "type": "checkbox",
+        "id": "new_img_center_text",
+        "label": "New image with text center"
+     },
+     {
+        "type": "image_picker",
+        "id": "image_selected",
+        "label": "Image"
+      },
+      {
+        "type": "header",
+        "content": "Desktop Image Size"
+      },
+      {
+        "type": "text",
+        "id": "img_width",
+        "label": "Image Width"
+      },
+      {
+        "type": "text",
+        "id": "img_height",
+        "label": "Image Height"
+      },
+      {
+        "type": "header",
+        "content": "Mobile Image Size"
+      },
+      {
+        "type": "text",
+        "id": "m_img_width",
+        "label": "Image Width"
+      },
+      {
+        "type": "text",
+        "id": "m_img_height",
+        "label": "Image Height"
+      },
+      {
+        "type": "html",
+        "id": "text_desc1",
+        "label": "Text Description"
+      }
+      ],
+   "presets": [
+      {
+        "name": "New Image Center Text",
+        "category": "Image"
+      }
+    ]
+  }
+
+{% endschema %}

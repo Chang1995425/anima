@@ -1,0 +1,187 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<div class="image-full custom-dev-image-full" style="background:url('{{ section.settings.background_section | img_url: '1920x' }}')">
+<div class="wrapper">
+<!--    {% if section.settings.sectiontitle != blank %}
+    <div class="section-header text-ce">
+      <h2 class="section-header__title">{{ section.settings.sectiontitle | escape }}</h2>
+    </div>
+  {% endif %} -->
+  
+  <div class="page-width feature-row image-row-right">
+   {% capture image_layout %}
+      <div class="feature-row__item">
+        {% if section.settings.image != blank %}
+          <noscript>
+            {{ section.settings.image | img_url: '600x600' | img_tag: section.settings.image.alt, 'feature-row__image-no-js' }}
+          </noscript>
+<!--         style="padding-top:{{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100}}%;" -->
+<!--           <div class="feature-row__image-wrapper" data-aos="collection-callout" >
+            {% assign img_url = section.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+            <img class="feature-row__image lazyload callout-image"
+              src="{{ section.settings.image | img_url: '300x' }}"
+              alt="{{ section.settings.image.alt | escape }}">
+            <img class="feature-row__image lazyload callout-image"
+              src="{{ section.settings.image1 | img_url: '300x' }}"
+              alt="{{ section.settings.image1.alt | escape }}">
+            <img class="feature-row__image lazyload callout-image"
+              src="{{ section.settings.image2 | img_url: '300x' }}"
+              alt="{{ section.settings.image2.alt | escape }}">
+            <img class="feature-row__image lazyload callout-image"
+              src="{{ section.settings.image3 | img_url: '300x' }}"
+              alt="{{ section.settings.image3.alt | escape }}">
+            <img class="feature-row__image lazyload callout-image"
+              src="{{ section.settings.image4 | img_url: '300x' }}"
+              alt="{{ section.settings.image4.alt | escape }}">
+        	</div> -->
+        {% else %}
+          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}
+        {{ 'bgr-apparel.png' | asset_url | img_tag }}
+        <img class="image-apparel" src="{{ section.settings.image_left | img_url : '560x'}}" alt="{{ section.settings.image_left.alt | escape }}">
+      </div>
+    {% endcapture %}
+
+    <div class="feature-row">
+      {% if section.settings.layout == 'left' %}
+        {{ image_layout }}
+      {% endif %}
+
+      <div class="feature-row__item feature-row__text feature-row__text--{{ section.settings.layout }}">
+        {% if section.settings.title1 != blank %}
+          <h2 class="head-col">{{ section.settings.title1 | escape }}</h2>
+        {% endif %}
+        {% if section.settings.title != blank %}
+          <h2 class="sub-head-col">{{ section.settings.title | escape }}</h2>
+        {% endif %}
+        {% if section.settings.text != blank %}
+          <div class="rte-setting featured-row__subtext">{{ section.settings.text }}</div>
+        {% endif %}
+        {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+          <a href="{{ section.settings.button_link }}" class="btn bt-left">
+            {{ section.settings.button_label | escape }}
+          </a>
+        {% endif %}
+          {% if section.settings.button_label1 != blank and section.settings.button_link1 != blank %}
+          <a href="{{ section.settings.button_link1 }}" class="btn bt-right">
+            {{ section.settings.button_label1 | escape }}
+          </a>
+        {% endif %}
+      </div>
+
+      {% if section.settings.layout == 'right' %}
+        {{ image_layout }}
+      {% endif %}
+    </div>
+  </div>
+  
+</div>
+</div>
+{% schema %}
+  {
+    "name": "Image with text right",
+    "settings": [
+      {
+        "type": "text",
+        "id": "sectiontitle",
+        "label": "Sectiontitle",
+        "default": "sectiontitle"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image1",
+        "label": "Image"
+      },
+     {
+        "type": "image_picker",
+        "id": "image2",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image3",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image4",
+        "label": "Image"
+      },
+      {
+        "type": "select",
+        "id": "layout",
+        "label": "Image alignment",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "title1",
+        "label": "Subtitle",
+        "default": "Subtitle"
+      },
+       {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Image with text"
+      },
+      
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text",
+        "default": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+      },
+      {
+        "type": "text",
+        "id": "button_label",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Button link"
+      },
+     {
+        "type": "text",
+        "id": "button_label1",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "button_link1",
+        "label": "Button link"
+      },
+      {
+        "type": "image_picker",
+        "id": "background_section",
+        "label": "Background Section"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_left",
+        "label": "Image left"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image with text right",
+        "category": "Image"
+      }
+    ]
+  }
+{% endschema %}

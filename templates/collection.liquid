@@ -1,0 +1,70 @@
+
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<!-- /templates/collection.liquid -->
+{% comment %}
+  The contents of the collection.liquid template can be found in /sections/collection-template.liquid
+{% endcomment %}
+
+{% if collection.handle == 'customized-apparel' %}
+  {% section 'collection-customized-apparel' %}
+{% elsif collection.handle == 'customized-apparel-1' %}
+  {% section 'collection-customized-apparel-1' %}
+{% elsif collection.handle == 'femme' %}
+  {% section 'collection-femme' %}
+{% elsif collection.handle == 'enfant' %}
+  {% section 'collection-enfant' %}
+{% elsif collection.handle == 'wrapped-canvas' %}
+  {% section 'collection-wrapped-canvas' %}
+{% elsif collection.handle == '34x34' %}
+  {% section 'collection-34x34' %}
+{% elsif collection.handle == '35x35' %}
+  {% section 'collection-35x35' %}
+{% elsif collection.handle == '48x48' %}
+  {% section 'collection-48x48' %}
+{% elsif collection.handle == 'deco' %}
+  {% section 'collection-deco' %}
+{% elsif collection.handle == 'chaussettes' %}
+  {% section 'collection-chaussettes' %}
+{% elsif collection.handle == 'serviette' %}
+  {% section 'collection-serviette' %}
+{% elsif collection.handle == 'pouf' %}
+  {% section 'collection-yop' %}
+{% elsif collection.handle == 'e-gift-cards' %}
+  {% section 'collection-e-gift-cards' %}
+{% elsif collection.handle == 'mugs' %}
+  {% section 'collection-mugs' %}
+{% elsif collection.handle == 'coussins' %}
+  {% section 'collection-coussins' %}
+{% elsif collection.handle == 'coques' %}
+  {% section 'collection-coques' %}
+{% elsif collection.handle == 'cartes-cadeaux' %}
+  {% section 'collection-cartes-cadeaux' %}
+{% elsif collection.handle == '25' %}
+  {% section 'collection-25' %}
+{% elsif collection.handle == '50' %}
+  {% section 'collection-50' %}
+{% elsif collection.handle == '50-1' %}
+  {% section 'collection-50-1' %}
+{% elsif collection.handle == '100' %}
+  {% section 'collection-100' %}
+{% else %}
+  {% section 'collection-template' %}
+{% endif %}
+
+
+<script>
+$(document).ready(function(){
+  function resizeForm(){
+    var width = (window.innerWidth > 0) ? window.innerWidth : document.documentElement.clientWidth;
+    if(width < 800) {
+      $('#CollectionSection .grid-uniform .grid__item').eq(0).find('.grid-product__wrapper .grid-product__image-wrapper').attr('data-aos','');
+      $('#CollectionSection .grid-uniform .grid__item').eq(0).find('img').css('opacity','1');
+      $('#CollectionSection .grid-uniform .grid__item').eq(1).find('.grid-product__wrapper .grid-product__image-wrapper').attr('data-aos','');
+      $('#CollectionSection .grid-uniform .grid__item').eq(1).find('img').css('opacity','1');
+    }
+  }
+  window.onresize = resizeForm;
+  resizeForm();
+
+});
+</script>

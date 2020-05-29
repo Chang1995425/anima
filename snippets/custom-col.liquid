@@ -1,0 +1,124 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+{% unless image_size %}
+  {% assign image_size = 'grande' %}
+{% endunless %}
+{% assign tabbed_description = collection.description | split: '<!-- split -->' %}
+{% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+{% assign no_collection_image = true %}
+<div class="grid__item custom-col-4 hide-on-mobile" >
+  <div class="image-wrapper">
+      {% if collection == blank %}
+      	{% assign collection_title = 'home_page.onboarding.collection_title' | t %}
+      {% else %}
+      	{% assign collection_title = collections[collection_handle].title | escape %}
+      {% endif %}
+
+      {% if collection.image %}
+      	{%- assign collection_image = collection.image -%}
+      {% elsif collection.products.first and collection.products.first.images != empty %}
+      	{%- assign collection_image = collection.products.first.featured_image -%}
+      {% else %}
+      	{%- assign collection_image = blank -%}
+      {% endif %}
+
+      {% if grid_item_responsive %}
+        {% if collection == blank %}
+    <div class="grid__image"><a href="{{ collections[collection_handle].url }}" >{{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}</a></div>
+        {% else %}
+        <div class=" grid__image lazyload">
+          {% unless collection_image == blank %}
+          <a href="{{ collections[collection_handle].url }}" >
+          <img data-aos="zoom-out" src="{{ collection_image | img_url: '330x330' }}" alt="" role="presentation" />
+          </a>
+          {% endunless %}
+        </div>
+        {% endif %}
+      {% else %}
+        {% if collection == blank %}
+    		
+              {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+              <div class=" grid__image">{{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}</div>
+              {% else %}
+              <div class="grid__image lazyload">
+                {% unless collection_image == blank %}
+                  <a href="{{ collections[collection_handle].url }}" >
+                 	 <img class="feature-row__image lazyload aos-init" data-aos-delay="600" data-aos="zoom-out" src="{{ collection_image | img_url: '330x330' }}" alt="" role="presentation" />
+                  </a>
+                {% endunless %}
+              </div>
+    		
+        {% endif %}
+      {% endif %}
+      <div class="custm-collection-grid__item-title--wrapper">
+        <div class="innrcntrdiv">
+          <a href="{{ collections[collection_handle].url }}" >
+          <span class="custm-collection-grid__item-title">
+            {{ collection_title }}
+          </span>
+            
+          <span class="short-desc">{{ tabbed_description[0] }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+
+<div class="new_grid custom-col-4 show-on-mobile" >
+	<div class="new_wrapper">
+      {% if collection == blank %}
+      	{% assign collection_title = 'home_page.onboarding.collection_title' | t %}
+      {% else %}
+      	{% assign collection_title = collections[collection_handle].title | escape %}
+      {% endif %}
+
+      {% if collection.image %}
+      	{%- assign collection_image = collection.image -%}
+      {% elsif collection.products.first and collection.products.first.images != empty %}
+      	{%- assign collection_image = collection.products.first.featured_image -%}
+      {% else %}
+      	{%- assign collection_image = blank -%}
+      {% endif %}
+	  
+	  {% if grid_item_responsive %}
+		{% if collection == blank %}
+	    <figure class="_new_grid_image">
+			<a href="{{ collections[collection_handle].url }}" >{{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}</a>
+		</figure>
+		 {% else %}
+			<figure class="_new_grid_image">
+				{% unless collection_image == blank %}
+				<a href="{{ collections[collection_handle].url }}" ><img data-aos="zoom-out" src="{{ collection_image | img_url: '330x330' }}" alt="" role="presentation" /></a>
+				{% endunless %}
+				<figcaption>
+					<div class="innrcntr_div">
+					  <a href="{{ collections[collection_handle].url }}" >
+							  <span class="custm-collection-grid__item-title">
+								{{ collection_title }}
+							  </span>						
+					  </a>
+					</div>
+				  </figcaption>
+			</figure>
+		 {% endif %}
+	  {% else %}
+			<figure class="_new_grid_image">
+				{% unless collection_image == blank %}
+				<a href="{{ collections[collection_handle].url }}" ><img data-aos="zoom-out" src="{{ collection_image | img_url: '330x330' }}" alt="" role="presentation" /></a>
+				{% endunless %}
+				<figcaption>
+					<div class="innrcntr_div">
+					  <a href="{{ collections[collection_handle].url }}" >
+							  <span class="custm-collection-grid__item-title">
+								{{ collection_title }}
+							  </span>						
+					  </a>
+					</div>
+				  </figcaption>
+              <a href="{{ collections[collection_handle].url }}" class="full_click"></a>
+			</figure>
+	   {% endif %}
+  </div>
+ </div>
+
+ 

@@ -1,0 +1,43 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<!-- snippets/onboarding-featured-blog.liquid -->
+<div class="grid-uniform">
+  {% for i in (1..section.settings.post_limit)  %}
+    <div class="grid__item {{ width }}{% if forloop.index > 3 %} hide-post__mobile{% endif %}">
+      <div class="featured-blog__post">
+        {% if section.settings.blog_show_image %}
+          <div class="article__featured-image-link">
+            {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+            {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {% endif %}
+        {% unless section.settings.post_limit == 1 and section.settings.blog_show_image %}
+          <h2 class="h3{% if section.settings.post_limit == 1 and section.settings.blog_show_image == false %} title--one-post{% endif %}"><a href="{{ article.url }}">{% comment %}ly_i18n_replace_for_[ 'home_page.onboarding.blog_title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'home_page.onboarding.blog_title' | t }}{% endcapture %}{% include 'ly-static-string' with '8850685' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a></h2>
+          {% if section.settings.blog_show_excerpt %}
+            <div class="rte rte--indented-images">
+              {% comment %}ly_i18n_replace_for_[ 'home_page.onboarding.blog_excerpt' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'home_page.onboarding.blog_excerpt' | t }}{% endcapture %}{% include 'ly-static-string' with '8850686' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+            </div>
+          {% endif %}
+          <p>
+            <a href="{{ article.url }}" class="text-link">{% comment %}ly_i18n_replace_for_[ 'blogs.article.read_more' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.article.read_more' | t }}{% endcapture %}{% include 'ly-static-string' with '8850687' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %} <span class="icon icon-arrow-right" aria-hidden="true"></span></a>
+          </p>
+        {% endunless %}
+      </div>
+    </div>
+
+    {% if section.settings.post_limit == 1 and section.settings.blog_show_image %}
+      <div class="grid__item {{ width }}">
+        <div class="featured-blog__post">
+          <h2 class="h3{% if section.settings.post_limit == 1 and section.settings.blog_show_image == false %} title--one-post{% endif %}"><a href="{{ article.url }}">{% comment %}ly_i18n_replace_for_[ 'home_page.onboarding.blog_title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'home_page.onboarding.blog_title' | t }}{% endcapture %}{% include 'ly-static-string' with '8850685' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a></h2>
+          {% if section.settings.blog_show_excerpt %}
+            <div class="rte rte--indented-images">
+              {% comment %}ly_i18n_replace_for_[ 'home_page.onboarding.blog_excerpt' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'home_page.onboarding.blog_excerpt' | t }}{% endcapture %}{% include 'ly-static-string' with '8850686' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+            </div>
+          {% endif %}
+          <p>
+            <a href="{{ article.url }}" class="text-link">{% comment %}ly_i18n_replace_for_[ 'blogs.article.read_more' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.article.read_more' | t }}{% endcapture %}{% include 'ly-static-string' with '8850687' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %} <span class="icon icon-arrow-right" aria-hidden="true"></span></a>
+          </p>
+        </div>
+      </div>
+    {% endif %}
+
+  {% endfor %}
+</div>

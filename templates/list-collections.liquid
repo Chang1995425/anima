@@ -1,0 +1,22 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<!-- /templates/list-collections.liquid -->
+{% comment %}
+  The contents of the lists-collections.liquid template can be found in /sections/lists-collections-template.liquid
+{% endcomment %}
+{% section 'list-collections-template' %}
+
+<script>
+$(document).ready(function(){
+  function resizeForm(){
+   	var width = (window.innerWidth > 0) ? window.innerWidth : document.documentElement.clientWidth;
+    if(width < 800) {
+      $('.collection-grid .new_grid').eq(0).find('img').attr('data-aos','');
+      $('.collection-grid .new_grid').eq(1).find('img').attr('data-aos','');
+    }
+  }
+  window.onresize = resizeForm;
+  resizeForm();
+
+  
+});
+</script>

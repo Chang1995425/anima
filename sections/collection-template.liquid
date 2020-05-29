@@ -1,0 +1,57 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<!-- /templates/collection.liquid -->
+{% include 'breadcrumb' %}
+
+<div id="CollectionSection" data-section-id="{{ section.id }}" data-section-type="collection-template" data-grid-type="{{ section.settings.collection_products_grid }}">
+  {% include 'collection-template' %}    
+</div>
+
+{% schema %}
+  {
+    "name": "Collection pages",
+    "settings": [
+      {
+        "type": "select",
+        "id": "collection_products_grid",
+        "label": "Grid style",
+        "options": [
+          {
+            "value": "collage",
+            "label": "Collage"
+          },
+          {
+            "value": "grid",
+            "label": "Grid"
+          }
+        ],
+        "default": "grid"
+      },
+      {
+        "type": "checkbox",
+        "id": "collection_sort_enable",
+        "label": "Enable collection sorting"
+      },
+      {
+        "type": "checkbox",
+        "id": "collection_tags_enable",
+        "label": "Show collection tags",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "product_vendor_enable",
+        "label": "Show product vendor"
+      },
+      {
+          "id": "collectionMob",
+          "type": "collection",
+          "label": "Mobile Collection"
+		},
+		{
+          "id": "TextBottomMob",
+          "type": "html",
+          "label": "Bottom Text For Mobile"
+		}
+    ]
+  }
+{% endschema %}

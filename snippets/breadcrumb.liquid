@@ -1,0 +1,230 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+{% unless template == 'index'  or template == 'list-collections' %}
+<nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
+  {% if template contains 'product' %}
+  <a href="/collections/" title="<ly-as-8850668>Home</ly-as-8850668>"><ly-as-8850667>Tous nos produits</ly-as-8850667></a>
+  {% elsif template contains 'collection' %}
+  <a href="/collections/" title="<ly-as-8850668>Home</ly-as-8850668>"><ly-as-8850667>Tous nos produits</ly-as-8850667></a>
+  {% else %}
+  <a href="/" title="<ly-as-8850668>Home</ly-as-8850668>"><ly-as-8850667>Accueil</ly-as-8850667></a>
+  {% endif %}
+  {% if template contains 'page' %}
+    <span aria-hidden="true">|</span>
+    <span>{% comment %}ly_code_replace_for_[ page.title ]_begin{% endcomment %}{% include 'ly-title' with page %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</span>
+  {% elsif template contains 'product' %}
+  
+  {% comment %}
+    {% if collection.url %}
+      <span aria-hidden="true">|</span>
+      {% comment %}ly_code_replace_for_[ collection.title | link_to: collection.url ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation | link_to: collection.url }}{% comment %}ly_code_replace_end{% endcomment %}
+    {% else %}
+     {% for collection in product.collections %}
+  		{% if collection.handle == 'e-gift-cards' %}
+          {% if forloop.first == true %}
+              <span aria-hidden="true">|</span>
+              {% comment %}ly_code_replace_for_[ collection.title | link_to: collection.url ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation | link_to: collection.url }}{% comment %}ly_code_replace_end{% endcomment %}
+          {% endif %}
+        {% else %}
+              {% if forloop.last == true %}
+                  <span aria-hidden="true">|</span>
+                  {% comment %}ly_code_replace_for_[ collection.title | link_to: collection.url ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation | link_to: collection.url }}{% comment %}ly_code_replace_end{% endcomment %}
+              {% endif %}
+        {% endif %}
+     {% endfor %}
+    {% endif %}
+  
+  
+  	{% for collection in product.collections %}
+      {% if collection.handle == 'e-gift-cards' or collection.handle == 'yop' or collection.handle == 'serviette' or collection.handle == 'puzzle' %}
+        {% if forloop.last == true %}
+            <span aria-hidden="true">|</span>
+            {% comment %}ly_code_replace_for_[ collection.title | link_to: collection.url ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation | link_to: collection.url }}{% comment %}ly_code_replace_end{% endcomment %}
+        {% endif %}
+      {% else %}	
+  		{% if forloop.first == true %}
+    		<span aria-hidden="true">|</span>
+      		{% comment %}ly_code_replace_for_[ collection.title | link_to: collection.url ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation | link_to: collection.url }}{% comment %}ly_code_replace_end{% endcomment %}
+  		{% endif %}
+  	  {% endif %}
+   	{% endfor %}
+  	{% endcomment %}
+  
+  	{% assign collection_deco = false %}
+  	{% assign collection_vetements = false %}
+  	{% assign collection_tableaux = false %}
+  	{% assign collection_accessoires = false %}
+  	{% assign collection_animaux = false %}
+  	{% assign collection_cartes_cadeaux = false %}
+  	{% assign collection = '' %}
+  	{% for collection in product.collections %}
+  	  {% if collection.handle == 'deco' or collection.handle == 'customized-apparel-1' or collection.handle == 'wrapped-canvas' or collection.handle == 'accessoires' or collection.handle == 'animaux' or collection.handle == 'cartes-cadeaux' %}
+  		{% capture collection %}
+  		<span aria-hidden="true">|</span>
+  		{% comment %}ly_code_replace_for_[ collection.title | link_to: collection.url ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation | link_to: collection.url }}{% comment %}ly_code_replace_end{% endcomment %}
+  		{% endcapture %}
+  	  {% endif %} 
+  	  {% if collection.handle == 'deco' %}
+  		{% assign collection_deco = true %}
+  	  {% elsif collection.handle == 'customized-apparel-1' %}
+  		{% assign collection_vetements = true %}
+  	  {% elsif collection.handle == 'wrapped-canvas' %}
+  		{% assign collection_tableaux = true %}
+  	  {% elsif collection.handle == 'accessoires' %}
+  		{% assign collection_accessoires = true %}
+  	  {% elsif collection.handle == 'animaux' %}
+  		{% assign collection_animaux = true %}
+  	  {% elsif collection.handle == 'cartes-cadeaux' %}
+  		{% assign collection_cartes_cadeaux = true %}
+  	  {% endif %}
+    {% endfor %}
+  	{{ collection }}
+  	{% if collection_deco or collection_vetements or collection_tableaux or collection_accessoires or collection_animaux or collection_cartes_cadeaux %}	
+  	  {% assign restcollection = '' %}
+  	  
+  	  {% for collection in product.collections %}
+  		{% assign ch = collection.handle %}
+  		
+        {% if collection_deco %}
+          {% if ch == 'chaussettes' or ch == 'serviette' or ch == 'coussins' or ch == 'rideaux' or ch == 'tapis' or ch == 'couverture' or ch == 'maison' or ch == 'pouf' %}
+  		  {% capture restcollection %}
+  			<span aria-hidden="true">|</span>
+  			{% comment %}ly_code_replace_for_[ collection.title | link_to: collection.url ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation | link_to: collection.url }}{% comment %}ly_code_replace_end{% endcomment %}
+   		  {% endcapture %}
+  		  {% endif %}
+        {% elsif collection_vetements %}
+  		  {% if ch == 'customized-apparel' or ch == 'femme' or ch == 'enfant' %}
+  		  {% capture restcollection %}
+  			<span aria-hidden="true">|</span>
+  			{% comment %}ly_code_replace_for_[ collection.title | link_to: collection.url ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation | link_to: collection.url }}{% comment %}ly_code_replace_end{% endcomment %}
+   		  {% endcapture %}
+  		  {% endif %}
+        {% elsif collection_tableaux %}
+          {% if ch == '34x34' or ch == '35x35' or ch == '48x48' %}
+  		  {% capture restcollection %}
+  			<span aria-hidden="true">|</span>
+  			{% comment %}ly_code_replace_for_[ collection.title | link_to: collection.url ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation | link_to: collection.url }}{% comment %}ly_code_replace_end{% endcomment %}
+   		  {% endcapture %}
+  		  {% endif %}
+        {% elsif collection_accessoires %}
+          {% if ch == 'mugs' or ch == 'carnets' or ch == 'coques' or ch == 'miroirs' or ch == 'puzzle' or ch == 'yoga' or ch == 'parapluies' or ch == 'sacs' %}
+  		  {% capture restcollection %}
+  			<span aria-hidden="true">|</span>
+  			{% comment %}ly_code_replace_for_[ collection.title | link_to: collection.url ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation | link_to: collection.url }}{% comment %}ly_code_replace_end{% endcomment %}
+   		  {% endcapture %}
+  		  {% endif %}
+        {% elsif collection_animaux %}
+  		  {% capture restcollection %}{% comment %}
+  			<span aria-hidden="true">|</span>
+  			{% comment %}ly_code_replace_for_[ collection.title | link_to: collection.url ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation | link_to: collection.url }}{% comment %}ly_code_replace_end{% endcomment %}
+   		  {% endcomment %}{% endcapture %}
+        {% elsif collection_cartes_cadeaux %}
+          {% if ch == '25' or ch == '50' or ch == '50-1' or ch == '100' %}
+  		  {% capture restcollection %}
+  			<span aria-hidden="true">|</span>
+  			{% comment %}ly_code_replace_for_[ collection.title | link_to: collection.url ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation | link_to: collection.url }}{% comment %}ly_code_replace_end{% endcomment %}
+   		  {% endcapture %}
+  		  {% endif %}
+        {% endif %}
+  		
+      {% endfor %}
+  	  
+  	  {{ restcollection }}
+  	{% else %}
+      {% for collection in product.collections %}
+          {% if collection.handle == 'e-gift-cards' or collection.handle == 'yop' or collection.handle == 'puzzle' %}
+              {% if forloop.last == true %}
+                <span aria-hidden="true">|</span>
+                {% comment %}ly_code_replace_for_[ collection.title | link_to: collection.url ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation | link_to: collection.url }}{% comment %}ly_code_replace_end{% endcomment %}
+              {% endif %}
+          {% else %}	
+              {% if forloop.first == true %}
+                  <span aria-hidden="true">|</span>
+                  {% comment %}ly_code_replace_for_[ collection.title | link_to: collection.url ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation | link_to: collection.url }}{% comment %}ly_code_replace_end{% endcomment %}
+              {% endif %}
+          {% endif %}
+      {% endfor %}
+
+      {% if collection.url %}
+        <span aria-hidden="true">|</span>
+        {% comment %}ly_code_replace_for_[ collection.title | link_to: collection.url ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation | link_to: collection.url }}{% comment %}ly_code_replace_end{% endcomment %}
+      {% else %}
+        {% for collection in product.collections %}
+          {% if collection.handle == 'e-gift-cards' %}
+              {% if forloop.first == true %}
+              <span aria-hidden="true">|</span>
+              {% comment %}ly_code_replace_for_[ collection.title | link_to: collection.url ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation | link_to: collection.url }}{% comment %}ly_code_replace_end{% endcomment %}
+              {% endif %}
+          {% else %}
+              {% if forloop.last == true %}
+                  <span aria-hidden="true">|</span>
+                  {% comment %}ly_code_replace_for_[ collection.title | link_to: collection.url ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation | link_to: collection.url }}{% comment %}ly_code_replace_end{% endcomment %}
+              {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+      <!--<span aria-hidden="true">|</span>
+      <span>{% comment %}ly_code_replace_for_[ product.title ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</span>-->
+  	{% endif %}
+  {% elsif template contains 'collection' and collection.handle %}
+   {% for link in linklists.collection-breadcrumb.links %}
+  	{% assign inside_links_handle = link.handle %}
+	{% for inside_link in linklists[inside_links_handle].links %}
+    {% if collection.title == inside_link.title %}
+  	<span aria-hidden="true">|</span>
+  	<a href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+  	{% endif %}
+  	{% endfor %}
+   	{% endfor %}
+    <span aria-hidden="true">|</span>
+    {% if current_tags %}
+      {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
+      {% comment %}ly_code_replace_for_[ collection.title | link_to: url ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation | link_to: url }}{% comment %}ly_code_replace_end{% endcomment %}
+      <span aria-hidden="true">|</span>
+      <span>{{ current_tags | join: " + " }}</span>
+    {% else %}
+      <span>{% comment %}ly_code_replace_for_[ collection.title ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</span>
+    {% endif %}
+  {% elsif template == 'blog' %}
+    <span aria-hidden="true">|</span>
+    {% if current_tags %}
+      {% comment %}ly_code_replace_for_[ blog.title | link_to: blog.url ]_begin{% endcomment %}{% include 'ly-title' with blog %}{{ ly_translation | link_to: blog.url }}{% comment %}ly_code_replace_end{% endcomment %}
+      <span aria-hidden="true">|</span>
+      <span>{{ current_tags | join: " + " }}</span>
+    {% else %}
+    <span>{% comment %}ly_code_replace_for_[ blog.title ]_begin{% endcomment %}{% include 'ly-title' with blog %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</span>
+    {% endif %}
+  {% elsif template == 'article' %}
+    <span aria-hidden="true">|</span>
+    {% comment %}ly_code_replace_for_[ blog.title | link_to: blog.url ]_begin{% endcomment %}{% include 'ly-title' with blog %}{{ ly_translation | link_to: blog.url }}{% comment %}ly_code_replace_end{% endcomment %}
+    <span aria-hidden="true">|</span>
+    <span>{% comment %}ly_code_replace_for_[ article.title ]_begin{% endcomment %}{% include 'ly-title' with article %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</span>
+  {% elsif template == 'cart' %}
+   <span aria-hidden="true">|</span>
+   <span>Mon panier</span>
+  {% else %}
+   <span aria-hidden="true">|</span>
+   <span>{{ langify_title }}</span>
+  {% endif %}
+  
+</nav>
+{% endunless %}
+
+
+{% if product.handle == 'puzzle' %}
+ <style>
+  #puzzle nav.breadcrumb a:nth-child(3) {display: none;}
+  #puzzle nav.breadcrumb a:nth-child(1) {border-right: 1px solid #dddddd;}
+ </style>
+{% endif %}
+{% if product.handle == 'serviette' %}
+ <style>
+  #serviette nav.breadcrumb a:nth-child(3) {display: none;}
+  #serviette nav.breadcrumb a:nth-child(1) { border-right: 1px solid #dddddd; }
+ </style>
+{% endif %}
+{% if product.handle == 'yop' %}
+ <style>
+  #yop nav.breadcrumb a:nth-child(3) { display: none; }
+  #yop nav.breadcrumb a:nth-child(1) { border-right: 1px solid #dddddd; }
+ </style>
+{% endif %}

@@ -1,0 +1,83 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+<div class="how-it-work" style="background:url('{{ section.settings.background | img_url: '2048x' }}');">
+  <div class="bgr-how-it-work" style="background:url('{{ section.settings.background_2 | img_url: '2048x' }}');">
+  <div class="wrapper">
+    <div class="title-section">
+    	<h2 class="desktop-titl">{{ section.settings.title_section }}</h2>
+        <h2 class="mobil-titl">{{ section.settings.mobil_titl }}</h2>
+      	<hr>
+    </div>
+    
+    <div class="box-iframe">
+      <div class="border-radius">
+    	<iframe src="{{ section.settings.link_video }}"></iframe>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+{% schema %}
+  {
+    "name": "New How It Work",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title_section",
+        "label": " Desktop Title"
+      },
+      {
+        "type": "text",
+        "id": "mobil_titl",
+        "label": "Mobile Title"
+      },
+	  {
+        "type": "image_picker",
+        "id": "background",
+        "label": "Desktop Background"
+      },
+	  {
+        "type": "image_picker",
+        "id": "background_2",
+        "label": "Desktop Background 2"
+      },
+      {
+        "type": "image_picker",
+        "id": "mobil_background",
+        "label": "Mobile Background"
+      },
+	  {
+        "type": "text",
+        "id": "link_video",
+        "label": "Link Video"
+      }
+	],
+    "presets": [
+      {
+        "name": "New How It Work",
+        "category": "New How It Work"
+      }
+    ]
+  }
+{% endschema %}
+
+<style>
+@media only screen and (max-width: 600px) {
+  .desktop-titl {
+    display:none !important;
+  }
+  .bgr-how-it-work{background:unset !important;}
+  .how-it-work{background:url('{{ section.settings.mobil_background | img_url: 'large' }}') !important;}
+  .box-iframe{background:unset !important;}
+  .how-it-work .bgr-how-it-work {
+        padding: 10px 0px !important;
+  }
+  
+}
+
+@media only screen and (min-width: 600px) {
+  .mobil-titl {
+    display:none !important;
+  }
+}
+  
+</style>
